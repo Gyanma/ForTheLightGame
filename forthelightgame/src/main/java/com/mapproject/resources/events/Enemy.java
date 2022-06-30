@@ -2,17 +2,19 @@ package com.mapproject.resources.events;
 
 import java.util.List;
 
+import com.mapproject.enums.Location;
+
 public class Enemy extends Event {
 
     private List<Integer> actions;
 
     private String manualDescription;
 
-    public Enemy(int eventId, String name, String description, boolean skippable, List<Integer> actions,
-            String manualDescription) {
-        super(eventId, name, description, skippable);
-        setActions(actions);
-        setManualDescription(manualDescription);
+    public Enemy(int eventId, String name, String description, Location location,
+            String manualDescription, List<Integer> actions) {
+        super(eventId, name, description, true, location);
+        this.actions = actions;
+        this.manualDescription = manualDescription;
     }
 
     public List<Integer> getActions() {

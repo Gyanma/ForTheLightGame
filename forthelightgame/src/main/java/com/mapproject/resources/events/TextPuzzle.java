@@ -1,5 +1,6 @@
 package com.mapproject.resources.events;
 
+import com.mapproject.enums.Location;
 import com.mapproject.resources.items.Item;
 
 public class TextPuzzle extends Event {
@@ -20,19 +21,19 @@ public class TextPuzzle extends Event {
 
     private Item reward; // item reward in case of correct answer
 
-    public TextPuzzle(int eventId, String name, String presentation, boolean skippable,
+    public TextPuzzle(int eventId, String name, String presentation, Location location,
             String question, String answer, boolean isSingleAnswer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
             Item reward) {
-        super(eventId, name, presentation, skippable);
-        setQuestion(question);
-        setAnswer(answer);
-        setSingleAnswer(isSingleAnswer);
-        setCorrectReply(correctReply);
-        setIncorrectReply(incorrectReply);
-        setTryAgainReply(tryAgainReply);
-        setSurrenderReply(surrenderReply);
-        setReward(reward);
+        super(eventId, name, presentation, true, location);
+        this.question = question;
+        this.answer = answer;
+        this.isSingleAnswer = isSingleAnswer;
+        this.correctReply = correctReply;
+        this.incorrectReply = incorrectReply;
+        this.tryAgainReply = tryAgainReply;
+        this.surrenderReply = surrenderReply;
+        this.reward = reward;
 
     }
 

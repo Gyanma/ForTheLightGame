@@ -13,7 +13,7 @@ public class Room {
 
     private final int phase;
 
-    private String description;
+    private String description = "";
 
     private Room south = null;
 
@@ -23,7 +23,9 @@ public class Room {
 
     private Room west = null;
 
-    private Event npc = null;
+    private Event event = null;
+
+    private boolean eventConcluded = false;
 
     private List<Item> objects = new ArrayList<>();
 
@@ -32,13 +34,6 @@ public class Room {
     public Room(int id, int phase) {
         this.id = id;
         this.phase = phase;
-        setDescription("description");
-        setEast(null);
-        setWest(null);
-        setNorth(null);
-        setSouth(null);
-        setNpc(null);
-        setChest(null);
 
     }
 
@@ -90,15 +85,22 @@ public class Room {
         this.west = west;
     }
 
-    public Event getNpc() {
-        return npc;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setNpc(Event npc) {
-        this.npc = npc;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    // end new
+    public boolean isEventConcluded() {
+        return eventConcluded;
+    }
+
+    public void setEventConcluded(boolean eventConcluded) {
+        this.eventConcluded = eventConcluded;
+    }
+
     public List<Item> getObjects() {
         return objects;
     }

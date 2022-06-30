@@ -1,5 +1,7 @@
 package com.mapproject.resources.events;
 
+import com.mapproject.enums.Location;
+
 public class Event {
 
     private final int eventId;
@@ -10,15 +12,18 @@ public class Event {
 
     private boolean isSkippable;
 
+    private Location location; // sets the location of the event in the room;
+
     public Event(int eventId) {
         this.eventId = eventId;
     }
 
-    public Event(int eventId, String name, String presentation, boolean isSkippable) {
+    public Event(int eventId, String name, String presentation, boolean isSkippable, Location location) {
         this.eventId = eventId;
         setName(name);
         setPresentation(presentation);
         setSkippable(isSkippable);
+        setLocation(location);
 
     }
 
@@ -50,4 +55,11 @@ public class Event {
         this.isSkippable = skippable;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 }

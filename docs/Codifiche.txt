@@ -19,10 +19,11 @@ Items: id 1000+
 
 
 Events: id 2000+
-    Requests: id 100+
+    Danger: id 100+
 
     TextPuzzle: id 200+
 
     VisualPuzzle: id 300+
 
     Enemy: id 400+
+        Bosses: id 50+

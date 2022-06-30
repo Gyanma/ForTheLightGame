@@ -1,5 +1,6 @@
 package com.mapproject.resources.events;
 
+import com.mapproject.enums.Location;
 import com.mapproject.operations.visualHandler.VisualHandler;
 
 public class VisualPuzzle extends Event {
@@ -9,10 +10,10 @@ public class VisualPuzzle extends Event {
 
     private boolean isSolved;
 
-    public VisualPuzzle(String name, String presentation, int eventId, boolean skippable,
+    public VisualPuzzle(String name, String presentation, int eventId, Location location,
             int visualId, String description, boolean isSolved) {
 
-        super(eventId, name, presentation, skippable);
+        super(eventId, name, presentation, false, location);
         setVisualId(visualId);
         setDescription(description);
         setSolved(false);

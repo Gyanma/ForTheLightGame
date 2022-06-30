@@ -1,5 +1,7 @@
 package com.mapproject.resources.events;
 
+import com.mapproject.enums.Location;
+
 public class JugPuzzle extends Event {
 
     static class Jug {
@@ -86,13 +88,13 @@ public class JugPuzzle extends Event {
         super(eventId);
     }
 
-    public JugPuzzle(int eventId, String name, String presentation, boolean isSkippable) {
-        super(eventId, name, presentation, isSkippable);
+    public JugPuzzle(int eventId, String name, String presentation, Location location) {
+        super(eventId, name, presentation, true, location);
     }
 
-    public JugPuzzle(int eventId, String name, String presentation, boolean isSkippable, JugSet playerJugSet,
-            JugSet correctJugSet) {
-        super(eventId, name, presentation, isSkippable);
+    public JugPuzzle(int eventId, String name, String presentation, Location location,
+            JugSet playerJugSet, JugSet correctJugSet) {
+        super(eventId, name, presentation, true, location);
         this.playerJugSet = playerJugSet;
         this.correctJugSet = correctJugSet;
     }

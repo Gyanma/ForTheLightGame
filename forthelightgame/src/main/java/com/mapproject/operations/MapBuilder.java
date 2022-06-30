@@ -57,6 +57,34 @@ public class MapBuilder {
         map.setEndRoomId(map.getRoom(end).getId());
     }
 
+    private void fillMap() {
+        int puzzleId1 = (int) (Math.random() * 10) + 1;
+        int puzzleId2;
+        do {
+            puzzleId2 = (int) (Math.random() * 10) + 1;
+        } while (puzzleId1 == puzzleId2);
+
+        if (puzzleId1 == 4 || puzzleId1 == 5) {
+            if (map.getPhase() == 2) {
+                puzzleId1 += 7; // switch to phase 2 puzzle
+            }
+            if (map.getPhase() == 3) {
+                puzzleId1 += 9; // switch to phase 2 puzzle
+            }
+
+        }
+        if (puzzleId2 == 4 || puzzleId2 == 5) {
+            if (map.getPhase() == 2) {
+                puzzleId2 += 7; // switch to phase 2 puzzle
+            }
+            if (map.getPhase() == 3) {
+                puzzleId2 += 9; // switch to phase 2 puzzle
+            }
+
+        }
+        // TODO: add the rest of the elements to the map
+    }
+
     public Map createMap(int phase) {
 
         do {
@@ -73,7 +101,7 @@ public class MapBuilder {
 
         } while (map.getVisitableRooms() == null);
 
-        printMap();
+        fillMap();
 
         /*
          * int rand = (int) (Math.random()* mainMap.getVisitableRooms().size());
@@ -88,27 +116,6 @@ public class MapBuilder {
          * }
          */
         return map;
-    }
-
-    public void printMap() {
-        Room tempRoom;
-        for (int i = 1; i <= ROOMNUMBER; i++) {
-            tempRoom = map.getRoom(i);
-            System.out.print("\n Room = " + tempRoom.getId());
-            if (tempRoom.getEast() != null) {
-                System.out.print("\t East ");
-            } else if (tempRoom.getEast() == null) {
-                System.out.print("\t null ");
-            }
-            if (tempRoom.getSouth() != null) {
-                System.out.print("\t South ");
-            } else if (tempRoom.getSouth() == null) {
-                System.out.print("\t null ");
-            }
-
-        }
-
-        System.out.print("\n Partenza = " + map.getStartingRoomId() + "\n Arrivo = " + map.getEndRoomId() + "\n");
     }
 
 }

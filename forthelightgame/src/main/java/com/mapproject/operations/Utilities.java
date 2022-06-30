@@ -1,9 +1,7 @@
 package com.mapproject.operations;
 
-import java.io.File;
-import java.io.FileReader;
 //import java.io.FileWriter;
-import java.io.IOException;
+
 //import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -12,11 +10,9 @@ import java.util.Queue;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.google.gson.Gson;
 import com.mapproject.resources.Map;
 import com.mapproject.resources.Room;
 //import resources.items.Item;
-import com.mapproject.resources.items.Weapon;
 
 public class Utilities {
 
@@ -105,18 +101,6 @@ public class Utilities {
             return visitableRooms;
         }
 
-    }
-
-    public static Weapon loadWeapon(String item) throws Exception {
-
-        try {
-            FileReader reader = new FileReader(new File("src/resources/items/" + item + ".json"));
-            Weapon weapon = new Gson().fromJson(reader, Weapon.class);
-            return weapon;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 }
