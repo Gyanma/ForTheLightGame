@@ -1,0 +1,87 @@
+Ascia
+    Corpo a Corpo
+    Peso: Alto
+    Precisione: Bassa
+    Danno: Alto
+
+    spawnodds: 2, 2, 2
+
+Spada
+    Corpo a Corpo
+    Peso: Medio
+    Precisione: Media
+    Danno: Medio
+
+    spawnodds: 3, 1, 1
+
+Mazza Chiodata (Spada +)
+    Corpo a Corpo
+    Peso: Alto
+    Precisione: Media
+    Danno: Alto
+
+    spawnodds: 0, 3, 3
+
+Katana (Spada +)
+    Corpo a Corpo
+    Peso: Medio
+    Precisione: Alta
+    Danno: Medio
+
+    spawnodds: 0, 3, 3
+
+Pugnale
+    Corpo a Corpo
+    Peso: Basso
+    Precisione: Alta
+    Danno: Basso
+
+    spawnodds: 2, 2, 2
+
+
+
+
+
+
+
+Arco
+    A distanza
+    Peso: Medio
+    Precisione: Media
+    Danno: Medio
+
+    spawnodds: 3, 1, 1
+
+Lancia
+    A distanza
+    Peso: Alto
+    Precisione: Bassa
+    Danno: Alto
+
+    spawnodds: 2, 2, 2
+
+Balestra (Lancia +)
+    A distanza
+    Peso: Alto
+    Precisione: Media
+    Danno: Alto
+
+    spawnodds: 0, 3, 3
+
+Fionda
+    A distanza
+    Peso: Basso
+    Precisione: Altas
+    Danno: Basso
+
+    spawnodds: 2, 2, 2
+     
+Shuriken (Fionda +)
+    A distanza
+    Peso: Basso
+    Precisione: Alta
+    Danno: Medio
+
+    spawnodds: 0, 3, 3
+
+

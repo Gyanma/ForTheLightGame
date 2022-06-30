@@ -1,0 +1,42 @@
+Ti risvegli in una stanza buia.
+L'aria è umida, come se questo posto non sia stato pulito da anni.
+Ti giunge alle narici un odore che non sai ben definire.
+Senz'altro non si può definire piacevole.
+Provi a fare mente locale, ma non riesci a ricordare cosa sia successo ieri notte.
+Sei andato a dormire presto? Hai fatto tardi a lavoro? Sei andato a bere al solito pub?
+Nulla, non riesci a ricordare.
+Un senso d'inquietudine ti pervade.
+Ti guardi attorno e noti una pergamena abbandonata per terra, proprio accanto a te.
+La afferri, e con la fioca luce che spunta da uno spiraglio nel muro fai del tuo meglio per leggerla.
+La pergamena recita:
+"Ben risvegliato. Sono certo che tutto questo ti sembrerà molto strano.
+Esattamente l'effetto sperato.
+La confusione è un fattore importante per impedirti di uscire da qui.
+Mettiti comodo e goditi l'ambiente. Familiarizza con gli altri ospiti.
+Alcuni sono qui da molti anni. Altri sono appena arrivati. Non essere scortese.
+Del resto passerete l'eternità insieme.
+O forse no. Dipende tutto da quanto velocemente ti fai trovare."
+Un brivido ti corre lungo la schiena.
+Questa pergamena non promette nulla di buono.
+Ti alzi in piedi e ti fai coraggio.
+Forse non ricordi cosa è successo ieri notte, ma sai con certezza che non vuoi rimanere qui.
+Bisogna trovare un'uscita.
+Costi quel che costi.
+/*Cosa farai ora?*/
+
+Pergamena
+Esamini la pergamena.
+Non è chiaro di che materiale sia fatta, né tanto meno con cosa ci abbiano scritto sopra.
+Temi che questa sia una domanda a cui preferiresti non avere risposta, quindi procedi a leggerla.
+"Per un futuro lettore:
+La pergamena misteriosa parlava di altri ospiti, c'è da aspettarsi che qualcuno di questi sarà umano.
+Sarebbe più inquietante se tu non lo fossi e riuscissi comunque a leggere questo foglio.
+Ad ogni modo. La mia sopravvivenza non è garantita. Questo posto brulica di mostri.
+Bestie multiforme e decisamente lontane dall'essere innocue. Stanne alla larga il più possibile.
+Pensa in fretta. Anche se sembrano amichevoli, non fidarti. Questo posto è pieno di misteri.
+Però posso darti una speranza.
+Mentre girovagavo in queste stanze ho visto un passaggio che conduceva più in profondità.
+Questo passaggio è sorvegliato da una sorta di statua. Non ho osato avvicinarmici.
+Se in questo momento sono ancora vivo forse ci incontreremo. È altamente probabile che non sarà così.
+In tal caso buona fortuna. Ti servirà."
+Quanto tempo fa è stata scritta questa pergamena? La domanda ti devasta.

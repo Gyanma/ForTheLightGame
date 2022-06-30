@@ -1,0 +1,18 @@
+    @SuppressWarnings("unchecked")
+    public static void buildPuzzle() {
+
+        JSONObject itemJson = new JSONObject();
+        itemJson.put("name", "Combinazione Criptica");
+        itemJson.put("presentation",
+                "La porta sembra bloccata da un qualche meccanismo. Esaminalo e scopri come aprirla.");
+        itemJson.put("eventId", 4002);
+        itemJson.put("description", "Per aprire la porta, dovrai premere i pulsanti giusti. Ti servir� un due, ma lascia stare quattro!");
+        itemJson.put("visualId", 2);
+            FileWriter file = new FileWriter("src/resources/archive/text puzzles/" + itemJson.get("name") + ".json");
+            file.write(itemJson.toJSONString());
+            file.flush();
+            file.close();
+        } catch (Exception e) {
+            System.out.println("Error while writing item JSON");
+        }
+    }

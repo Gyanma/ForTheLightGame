@@ -1,0 +1,28 @@
+Items: id 1000+
+    Weapons: id 100+
+
+        spawn: 1 = probabilità singola
+        spawn: 2 = probabilità doppia
+        spawn: 3 = probabilità tripla
+
+        peso: 1 = peso leggero = probabilità del 95% schivare
+        peso: 2 = peso medio = probabilità del 80% di schivare
+        peso: 3 = peso pesante = probabilità del 65% di schivare
+
+        danno: 1 = danno Basso = infliggono 20 danni
+        danno: 2 = danno Medio = infliggono 30 danni
+        danno: 3 = danno Alto = infliggono 50 danni
+
+        accuracy: 1 = accuracy bassa = probabilità dell'85% di colpire
+        accuracy: 2 = accuracy media = probabilità del 90% di colpire
+        accuracy: 3 = accuracy alta = probabilità del 95% di colpire
+
+
+Events: id 2000+
+    Requests: id 100+
+
+    TextPuzzle: id 200+
+
+    VisualPuzzle: id 300+
+
+    Enemy: id 400+

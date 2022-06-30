@@ -1,0 +1,39 @@
+Fune: -Permette di fuggire da buche
+        -Permette di piazzare una trappola
+Cibo: -Permette di attirare animali
+Otre di acqua: - permette di spegnere incendi
+Vanga: -Permette di scavare e cercare tesori (5 usi);
+Borsa: - Inventario raddoppiato;
+Torcia: - Illumina la stanza;
+Rosario benedetto: - per il resto della mappa, i nemici sono ignorati (boss a parte)
+Acchiappa sogni: -I prossimi 3 eventi droppano più oggetti;
+
+
+Pitture di guerra: - Attacco leggermente aumentato per tutta la mappa;
+Meridiana: - Accuratezza leggermente aumentata per tutta la mappa;
+Esoscheletro: - Agilità leggermente aumentata per tutta la mappa;
+Libri:
+        -Libro della forza: attacco molto aumentato per il prossimo combattimento (o il combattimento in corso);
+        -Libro dell'agilità: agilità molto aumentata per il prossimo combattimento (o il combattimento in corso);
+        -Libro della destrezza: accuratezza molto aumentata per il prossimo combattimento (o il combattimento in corso);
+        -Libro delle maledizioni: il nemico è immobilizzato per due turni
+
+Bomba fumogena: - permette di fuggire da un nemico non boss; - contro i boss, fa perdere un turno prima di attaccare
+Armatura: -Riduce i danni inflitti (si deteriora dopo 10 colpi subiti);
+Fiala del sangue: - Recuperi HP dopo ogni attacco per il prossimo combattimento (o il combattimento in corso);
+Affilatore: - Aumenta leggermente l'attacco di un'arma a corto raggio per il resto della sessione.
+Punta in titanio: - Aumenta leggermente l'attacco di un'arma a lungo raggio per il resto della sessione.
+
+
+
+Candele sacre: - Permette di scacciare gli npc spettri; (premio)
+Sacca di perle: - Più oggetti nella prossima mappa; (premio)
+Pozione: (premi)
+    -Cura: rigenera HP; cura ferite agli npc
+    -Fuoco: infligge danni da fuoco; genera fiammate;
+    -Fulmine: infligge danni da fulmine; genera una saetta;
+    -Gelo: infligge danni da gelo; genera una ventata gelida;   
+    -Veleno: infligge danni da veleno; avvelena npc non immuni;
+
+Libro mastro: Accesso a informazioni su ogni item;
+Bestiario: Accesso a informazioni su ogni npc;

@@ -1,0 +1,43 @@
+    @SuppressWarnings("unchecked")
+    public static void buildPuzzle() {
+
+        JSONObject itemJson = new JSONObject();
+        itemJson.put("name", "Carte da gioco");
+        itemJson.put("presentation",
+                "Nell'angolo della stanza noti un'ombra che si agita. Ti avvicini e vedi un goblin dietro a un carretto.\n"
+                        + "Appena il goblin ti nota, inizia a urlare: \"Venghino, signori, venghino. Tutti possono giocare,\n "
+                        + "ma solo i più furbi possono vincere.\"");
+        itemJson.put("eventId", 5001);
+        itemJson.put("question", "Il goblin si aggiusta il monocolo e comincia a spiegare le regole.\n"
+                + "\"Come può vedere ho posizionato cinque carte da gioco coperte di fronte a me. \n"
+                + "Se vossignoria ha cuore di credermi, le posso garantire che sono 4 assi di semi diversi E un jolly.\n"
+                + "Ora, se usando le quattro regole che vedete accanto a voi riuscirete a indovinare \n"
+                + "quale carta sta dove, avrete vinto il premio segreto!\n"
+                + "Vi basterà dirmele in ordine, da sinistra a destra.\"\n"
+                + "Dai un'occhiata alle regole, che recitano:\n"
+                + "1. I fiori sono immediatamente a destra dei cuori.\n"
+                + "2. Le picche non sono vicine al jolly o ai quadri.\n"
+                + "3. I fiori non sono vicini ai quadri o al jolly.\n"
+                + "4. I cuori non sono vicini ai quadri o alle picche.\n");
+        itemJson.put("answer", "Quadri + Jolly + Cuori + Fiori + Picche");
+        itemJson.put("correctReply", "Il goblin salta sul tavolo, costringedoti a indietreggiare\n"
+                + "\"Ben fatto! A voi il vostro premio!\"\n"
+                + "Il goblin ti porge una fiala a forma di saetta con un liquido semitrasparente dentro.\n"
+                + "Rialzi lo sguardo e sia il goblin sia il carretto sono spariti...\n");
+        itemJson.put("incorrectReply", "\"Oh che peccato, forse non siete così sveglio come pensavo.\"\n"
+                + "Il goblin scopre le carte, e per un breve secondo riesci a intravedere le figure:\n"
+                + "i Quadri, poi il Jolly, i Cuori, i Fiori e infine le Picche...\n"
+                + "Ma in men che non si dica il goblin lancia un fumogeno a terra.\n"
+                + "Ti copri gli occhi e il naso e ti alliontani dalla nuvola. \n"
+                + "Dopo che il fumo si dissipa, noti che sia il goblin sia il carretto sono spariti...\n");
+        itemJson.put("tryAgainReply", "\"Questa risposta è sbagliata. Ma non si disperi!\n"
+                + "Ha ancora un'altra possibilità\"\n");
+        try {
+            FileWriter file = new FileWriter("src/resources/archive/text puzzles/" + itemJson.get("name") + ".json");
+            file.write(itemJson.toJSONString());
+            file.flush();
+            file.close();
+        } catch (Exception e) {
+            System.out.println("Error while writing item JSON");
+        }
+    }

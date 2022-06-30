@@ -1,0 +1,63 @@
+
+    @SuppressWarnings("unchecked")
+    public static void buildItems() {
+
+        List<String> alias = new ArrayList<>();
+
+        alias.add("balestra");
+
+        int id = 3008;
+
+        String name = "Balestra";
+
+        String description = "Una balestra trovata nel labirinto. Permette di colpire a distanza con grande forza."
+
+        long spawnOdds1 = 2;
+
+        long spawnOdds2 = 2;
+
+        long spawnOdds3 = 2;
+
+        boolean pickupable = true;
+
+        boolean throwable = true;
+
+        int damage = 3;
+        int weight = 3;
+        int accuracy = 2;
+
+        int usage = 1; 
+
+        Weapon newItem = new Weapon(id, name,
+                description, alias,
+                (int) spawnOdds1, (int) spawnOdds2, (int) spawnOdds3,
+                pickupable, throwable,
+                usage, damage, weight, accuracy);
+
+        JSONObject itemJson = new JSONObject();
+        itemJson.put("id", newItem.getId());
+        itemJson.put("name", newItem.getName());
+        itemJson.put("description", newItem.getDescription());
+        itemJson.put("alias", newItem.getAlias());
+        try {
+            itemJson.put("spawnOddsPhase1", newItem.getSpawnOdds1());
+            itemJson.put("spawnOddsPhase2", newItem.getSpawnOdds2());
+            itemJson.put("spawnOddsPhase3", newItem.getSpawnOdds3());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        itemJson.put("pickupable", newItem.isPickupable());
+        itemJson.put("throwable", newItem.isThrowable());
+
+        System.out.println(itemJson);
+        try {
+            FileWriter file = new FileWriter("src/resources/archive/item/" + newItem.getName() + ".json");
+            file.write(itemJson.toJSONString());
+            file.flush();
+            file.close();
+        } catch (Exception e) {
+            System.out.println("Error while writing item JSON");
+        }
+
+    }
