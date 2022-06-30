@@ -8,8 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Based on: Puzzle 33333! from the game "Professor Layton and the Curious Village"
  */
 
 /**

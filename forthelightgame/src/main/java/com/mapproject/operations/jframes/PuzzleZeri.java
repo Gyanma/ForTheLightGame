@@ -6,6 +6,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 /*
+ * * Based on: Puzzle Zero-Sum Game from the game "Professor Layton and the Unwound Future"
+ */
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */

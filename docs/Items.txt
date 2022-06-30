@@ -2,6 +2,7 @@ Fune: -Permette di fuggire da buche
         -Permette di piazzare una trappola
 Cibo: -Permette di attirare animali
 Otre di acqua: - permette di spegnere incendi
+
 Vanga: -Permette di scavare e cercare tesori (5 usi);
 Borsa: - Inventario raddoppiato;
 Torcia: - Illumina la stanza;
@@ -37,3 +38,4 @@ Pozione: (premi)
 
 Libro mastro: Accesso a informazioni su ogni item;
 Bestiario: Accesso a informazioni su ogni npc;
+Mappa Mistica: Apre la mappa corrente;

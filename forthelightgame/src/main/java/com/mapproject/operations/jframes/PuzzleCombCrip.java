@@ -4,6 +4,9 @@ import java.awt.Window;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
+/*
+ * Based on: Puzzle A Cryptic Combo from the game "Professor Layton and the Unwound Future"
+ */
 /**
  *
  * @author gmrut
