@@ -1,5 +1,7 @@
 package com.mapproject.operations;
 
+import com.mapproject.resources.events.Enemy;
+import com.mapproject.resources.events.TextPuzzle;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -21,6 +23,38 @@ public class Loader {
 
     public static Weapon loadWeapon(int i) throws Exception {
         return loadWeapon(recognizeElement(i));
+    }
+
+    public static Enemy loadEnemy(String item) throws Exception {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + item + ".json"));
+            Enemy enemy = new Gson().fromJson(reader, Enemy.class);
+            return enemy;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static TextPuzzle loadTextPuzzle(int i) throws Exception {
+        return loadTextPuzzle(recognizeElement(i));
+    }
+
+    public static TextPuzzle loadTextPuzzle(String item) throws Exception {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + item + ".json"));
+            TextPuzzle enemy = new Gson().fromJson(reader, TextPuzzle.class);
+            return enemy;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Enemy loadEnemy(int i) throws Exception {
+        return loadEnemy(recognizeElement(i));
     }
 
     private static String recognizeElement(int i) {
