@@ -27,15 +27,16 @@ Punta in titanio: - Aumenta leggermente l'attacco di un'arma a lungo raggio per 
 
 
 
-Candele sacre: - Permette di scacciare gli npc spettri; (premio)
-Sacca di perle: - Più oggetti nella prossima mappa; (premio)
-Pozione: (premi)
+Sacca di perle: (premio) 
+
+Pozione: (premi) (Venditore di pozioni) (con la sacca di perle ottieni tutto)
     -Cura: rigenera HP; cura ferite agli npc
     -Fuoco: infligge danni da fuoco; genera fiammate;
     -Fulmine: infligge danni da fulmine; genera una saetta;
     -Gelo: infligge danni da gelo; genera una ventata gelida;   
     -Veleno: infligge danni da veleno; avvelena npc non immuni;
 
-Libro mastro: Accesso a informazioni su ogni item;
+Libro mastro: Accesso a informazioni su ogni item; (Biblioteca segreta)
 Bestiario: Accesso a informazioni su ogni npc;
-Mappa Mistica: Apre la mappa corrente;
+
+Mappa Mistica: Apre la mappa corrente; (Esploratore)

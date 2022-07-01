@@ -1,7 +1,11 @@
 package com.mapproject.operations;
 
+import com.mapproject.resources.events.Danger;
 import com.mapproject.resources.events.Enemy;
+import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
+import com.mapproject.resources.events.VisualPuzzle;
+import com.mapproject.resources.items.Item;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -9,10 +13,10 @@ import java.io.File;
 import java.io.FileReader;
 
 public class Loader {
-    public static Weapon loadWeapon(String item) throws Exception {
+    public static Weapon loadWeapon(String element) throws Exception {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + item + ".json"));
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
             Weapon weapon = new Gson().fromJson(reader, Weapon.class);
             return weapon;
         } catch (IOException e) {
@@ -25,27 +29,11 @@ public class Loader {
         return loadWeapon(recognizeElement(i));
     }
 
-    public static Enemy loadEnemy(String item) throws Exception {
+    public static Enemy loadEnemy(String element) throws Exception {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + item + ".json"));
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
             Enemy enemy = new Gson().fromJson(reader, Enemy.class);
-            return enemy;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static TextPuzzle loadTextPuzzle(int i) throws Exception {
-        return loadTextPuzzle(recognizeElement(i));
-    }
-
-    public static TextPuzzle loadTextPuzzle(String item) throws Exception {
-
-        try {
-            FileReader reader = new FileReader(new File("src/resources/" + item + ".json"));
-            TextPuzzle enemy = new Gson().fromJson(reader, TextPuzzle.class);
             return enemy;
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,6 +43,86 @@ public class Loader {
 
     public static Enemy loadEnemy(int i) throws Exception {
         return loadEnemy(recognizeElement(i));
+    }
+
+    public static TextPuzzle loadTextPuzzle(int i) throws Exception {
+        return loadTextPuzzle(recognizeElement(i));
+    }
+
+    public static TextPuzzle loadTextPuzzle(String element) throws Exception {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            TextPuzzle enemy = new Gson().fromJson(reader, TextPuzzle.class);
+            return enemy;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Danger loadDanger(int i) {
+        return loadDanger(recognizeElement(i));
+    }
+
+    public static Danger loadDanger(String element) {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            Danger danger = new Gson().fromJson(reader, Danger.class);
+            return danger;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static VisualPuzzle loadVisualPuzzle(int i) {
+        return loadVisualPuzzle(recognizeElement(i));
+    }
+
+    public static VisualPuzzle loadVisualPuzzle(String element) {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            VisualPuzzle visualPuzzle = new Gson().fromJson(reader, VisualPuzzle.class);
+            return visualPuzzle;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static PacificEncounter loadPacificEncounter(int i) {
+        return loadPacificEncounter(recognizeElement(i));
+    }
+
+    public static PacificEncounter loadPacificEncounter(String element) {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            PacificEncounter pacificEncounter = new Gson().fromJson(reader, PacificEncounter.class);
+            return pacificEncounter;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Item loadItem(int i) {
+        return loadItem(recognizeElement(i));
+    }
+
+    public static Item loadItem(String element) {
+
+        try {
+            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            Item item = new Gson().fromJson(reader, Item.class);
+            return item;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private static String recognizeElement(int i) {

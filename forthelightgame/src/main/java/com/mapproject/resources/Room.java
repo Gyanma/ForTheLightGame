@@ -109,6 +109,10 @@ public class Room {
         this.objects = objects;
     }
 
+    public void addObject(Item object) {
+        this.objects.add(object);
+    }
+
     public Chest getChest() {
         return chest;
     }

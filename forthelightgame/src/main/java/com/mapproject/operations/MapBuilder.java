@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.mapproject.resources.Map;
 import com.mapproject.resources.Room;
+import com.mapproject.resources.items.Item;
 
 public class MapBuilder {
 
@@ -13,6 +14,12 @@ public class MapBuilder {
     private final int COLUMN = 4;
 
     private Map map = new Map();
+    boolean isElitePresent = false;
+    private static Set<Integer> placedBosses = new HashSet<>();
+    private static Set<Integer> placedTextPuzzles = new HashSet<>();
+    private static Set<Integer> placedDangers = new HashSet<>();
+    private static Set<Integer> placedVisualPuzzles = new HashSet<>();
+    private static Set<Integer> placedPacificEncounters = new HashSet<>();
 
     private void initializeMap() {
         map.setEndRoomId(0);
@@ -61,23 +68,211 @@ public class MapBuilder {
     }
 
     private void addBoss() {
+
+        // choose a random boss
         int bossId = (int) (Math.random() * 6) + 2451; // boss id is between 2451 and 2457
+
+        // choose a random room
         Room tempRoom = map.getRoom(map.getEndRoomId());
+
+        // add the enemy to the room
         try {
             tempRoom.setEvent(Loader.loadEnemy(bossId));
         } catch (Exception e) {
             tempRoom.setEvent(null);
         }
         map.addRoom(map.getEndRoomId(), tempRoom);
+        placedBosses.add(map.getEndRoomId());
 
     }
 
     private void addTextPuzzles() {
 
-        int puzzleNumber;
-        Set<Integer> puzzleIdSet = new HashSet<>();
+        // choose a random puzzle
+        int puzzleId;
+        do {
+            puzzleId = (int) (Math.random() * 10) + 2201; // puzzle id is between 2201 and 2211
+        } while (placedTextPuzzles.contains(puzzleId));
 
-        // count how many puzzles the map will have
+        if (puzzleId == 4 || puzzleId == 5) {
+            if (map.getPhase() == 2) {
+                puzzleId += 7; // switch to phase 2 puzzle
+            }
+            if (map.getPhase() == 3) {
+                puzzleId += 9; // switch to phase 3 puzzle
+            }
+
+        }
+        placedTextPuzzles.add(puzzleId);
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getEvent() != null);
+
+        // add the puzzle to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.setEvent(Loader.loadTextPuzzle(puzzleId));
+        } catch (Exception e) {
+            tempRoom.setEvent(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+
+    }
+
+    private void addDanger() {
+
+        // choose a random danger
+        int dangerId;
+        do {
+            dangerId = (int) (Math.random() * 4) + 2101; // danger id is between 2101 and 2105
+        } while (placedDangers.contains(dangerId));
+
+        placedDangers.add(dangerId);
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getEvent() != null);
+
+        // add the danger to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.setEvent(Loader.loadDanger(dangerId));
+        } catch (Exception e) {
+            tempRoom.setEvent(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+
+    }
+
+    private void addEnemies() {
+
+        // choose a random enemy
+        int enemyId = 0;
+        if (Math.random() < 0.8) {
+            enemyId = (int) (Math.random() * 8) + 2401; // enemy id is between 2401 and 2409
+        } else if (!isElitePresent) {
+            enemyId = (int) (Math.random() * 5) + 2410; // elite enemy id is between 2411 and 2416
+            isElitePresent = true;
+        }
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getEvent() != null);
+
+        // add the enemy to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.setEvent(Loader.loadEnemy(enemyId));
+        } catch (Exception e) {
+            tempRoom.setEvent(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+
+    }
+
+    private void addVisualPuzzles() {
+        // choose a random puzzle
+        int puzzleId;
+        do {
+            puzzleId = (int) (Math.random() * 3) + 2201; // puzzle id is between 2201 and 2203
+        } while (placedVisualPuzzles.contains(puzzleId));
+
+        placedVisualPuzzles.add(puzzleId);
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getEvent() != null);
+
+        // add the enemy to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.setEvent(Loader.loadVisualPuzzle(puzzleId));
+        } catch (Exception e) {
+            tempRoom.setEvent(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+    }
+
+    private void addPacificEncounter() {
+        // choose a random encounter
+        int encounterId;
+        do {
+            encounterId = (int) (Math.random() * 2) + 2201; // encounter id is between 2201 and 2202
+        } while (placedPacificEncounters.contains(encounterId));
+        placedPacificEncounters.add(encounterId);
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getEvent() != null);
+
+        // add the encounter to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.setEvent(Loader.loadPacificEncounter(encounterId));
+        } catch (Exception e) {
+            tempRoom.setEvent(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+    }
+
+    private void addItems() {
+        // choose a random item
+        int itemId;
+
+        itemId = (int) (Math.random() * 30) + 1001; // item id is between 1001 and 1030
+        Item item = Loader.loadItem(itemId);
+
+        // choose a random room
+        int roomId;
+        do {
+            roomId = Utilities.selectRoomFromSet(
+                    (int) (Math.random() * map.getVisitableRooms().size()) + 1, map.getVisitableRooms());
+
+        } while (map.getRoom(roomId).getObjects().contains(item));
+
+        // add the item to the room
+        Room tempRoom = map.getRoom(roomId);
+        try {
+            tempRoom.addObject(item);
+        } catch (Exception e) {
+            tempRoom.addObject(null);
+        }
+
+        map.addRoom(roomId, tempRoom);
+    }
+
+    private void fillMap() {
+
+        addBoss();
+
+        int puzzleNumber;
+
         if (map.getVisitableRooms().size() <= 12) {
             puzzleNumber = 2;
         } else {
@@ -86,50 +281,8 @@ public class MapBuilder {
 
         // fill the map with puzzles
         for (int i = 0; i < puzzleNumber; i++) {
-            // choose a random puzzle
-            int puzzleId;
-            do {
-                puzzleId = (int) (Math.random() * 10) + 2201; // puzzle id is between 2201 and 2211
-            } while (puzzleIdSet.contains(puzzleId));
-            puzzleIdSet.add(puzzleId);
-
-            if (puzzleId == 4 || puzzleId == 5) {
-                if (map.getPhase() == 2) {
-                    puzzleId += 7; // switch to phase 2 puzzle
-                }
-                if (map.getPhase() == 3) {
-                    puzzleId += 9; // switch to phase 3 puzzle
-                }
-
-            }
-
-            // choose a random room
-            int roomId;
-            do {
-                roomId = (int) (Math.random() * map.getVisitableRooms().size()) + 1;
-                roomId = Utilities.selectRoomFromSet(roomId, map.getVisitableRooms());
-
-            } while (map.getRoom(roomId).getEvent() != null);
-
-            // add the puzzle to the room
-            Room tempRoom = map.getRoom(roomId);
-            try {
-                tempRoom.setEvent(Loader.loadTextPuzzle(puzzleId));
-            } catch (Exception e) {
-                tempRoom.setEvent(null);
-            }
-
-            map.addRoom(roomId, tempRoom);
-
+            addTextPuzzles();
         }
-
-    }
-
-    private void addTrap() {
-        // TODO add trap
-    }
-
-    private void addEnemies() {
 
         // count how many enemies the map will have
 
@@ -139,27 +292,27 @@ public class MapBuilder {
         // choose if there will be a trap
         if (map.getVisitableRooms().size() > 10 && map.getPhase() > 1) {
             if (Math.random() < 0.5) {
-                addTrap();
+                addDanger();
                 enemyNumber--;
             }
         }
 
-        // fill the map with enemies
         for (int i = 0; i < enemyNumber; i++) {
-            // TODO add enemies
+            addEnemies();
         }
 
-    }
+        if (map.getVisitableRooms().size() > 10) {
+            addPacificEncounter();
+        }
 
-    private void fillMap() {
+        if (map.getVisitableRooms().size() > 12 && map.getPhase() > 1) {
 
-        addBoss();
+            addVisualPuzzles();
 
-        addTextPuzzles();
+        }
 
-        addEnemies();
+        addItems();
 
-        // TODO: add the rest of the elements to the map
     }
 
     public Map createMap(int phase) {
@@ -180,19 +333,47 @@ public class MapBuilder {
 
         fillMap();
 
-        /*
-         * int rand = (int) (Math.random()* mainMap.getVisitableRooms().size());
-         * int counter = 0;
-         * int current = 0;
-         * for (int i : mainMap.getVisitableRooms()){
-         * 
-         * if(counter==rand){
-         * current = i;
-         * }
-         * counter++;
-         * }
-         */
         return map;
+    }
+
+    public Set<Integer> getPlacedTextPuzzles() {
+        return placedTextPuzzles;
+    }
+
+    public void setPlacedTextPuzzles(Set<Integer> placedTextPuzzles) {
+        MapBuilder.placedTextPuzzles = placedTextPuzzles;
+    }
+
+    public Set<Integer> getPlacedDangers() {
+        return placedDangers;
+    }
+
+    public void setPlacedDangers(Set<Integer> placedDangers) {
+        MapBuilder.placedDangers = placedDangers;
+    }
+
+    public Set<Integer> getPlacedVisualPuzzles() {
+        return placedVisualPuzzles;
+    }
+
+    public void setPlacedVisualPuzzles(Set<Integer> placedVisualPuzzles) {
+        MapBuilder.placedVisualPuzzles = placedVisualPuzzles;
+    }
+
+    public Set<Integer> getPlacedPacificEncounters() {
+        return placedPacificEncounters;
+    }
+
+    public void setPlacedPacificEncounters(Set<Integer> placedPacificEncounters) {
+        MapBuilder.placedPacificEncounters = placedPacificEncounters;
+    }
+
+    public Set<Integer> getPlacedBosses() {
+        return placedBosses;
+    }
+
+    public void setPlacedBosses(Set<Integer> placedBosses) {
+        MapBuilder.placedBosses = placedBosses;
     }
 
 }

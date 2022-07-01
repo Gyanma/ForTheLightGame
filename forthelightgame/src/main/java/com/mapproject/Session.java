@@ -16,7 +16,11 @@ public class Session {
 
     private List<Item> inventory;
 
-    private Map sessionMap;
+    private Map sessionMapPhase1;
+
+    private Map sessionMapPhase2;
+
+    private Map sessionMapPhase3;
 
     private int currentRoom;
 
@@ -26,22 +30,42 @@ public class Session {
 
     public Session(int mode) {
         this.mode = mode;
-        setSessionMap(new Map());
-        setInventory(new ArrayList<Item>());
-        setCurrentRoom(0);
-        setCurrentStatus(Status.EXPLORING);
+
+        this.sessionMapPhase1 = new Map(1);
+        this.sessionMapPhase2 = new Map(2);
+        this.sessionMapPhase3 = new Map(3);
+
+        this.inventory = new ArrayList<Item>();
+        this.currentRoom = 0;
+        this.currentStatus = Status.EXPLORING;
     }
 
     public int getMode() {
         return mode;
     }
 
-    public void setSessionMap(Map sessionMap) {
-        this.sessionMap = sessionMap;
+    public void setSessionMapPhase1(Map sessionMap) {
+        this.sessionMapPhase1 = sessionMap;
     }
 
-    public Map getSessionMap() {
-        return sessionMap;
+    public Map getSessionMapPhase1() {
+        return sessionMapPhase1;
+    }
+
+    public void setSessionMapPhase2(Map sessionMap) {
+        this.sessionMapPhase2 = sessionMap;
+    }
+
+    public Map getSessionMapPhase2() {
+        return sessionMapPhase2;
+    }
+
+    public void setSessionMapPhase3(Map sessionMap) {
+        this.sessionMapPhase3 = sessionMap;
+    }
+
+    public Map getSessionMapPhase3() {
+        return sessionMapPhase3;
     }
 
     public void setInventory(List<Item> inventory) {
