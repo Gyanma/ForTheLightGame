@@ -1,8 +1,9 @@
 package com.mapproject.resources.events;
 
 import com.mapproject.enums.Location;
+import com.mapproject.resources.items.Item;
 
-public class JugPuzzle extends Event {
+public class JugPuzzle extends TextPuzzle {
 
     static class Jug {
         private int jugContent;
@@ -84,17 +85,21 @@ public class JugPuzzle extends Event {
     private JugSet playerJugSet;
     private JugSet correctJugSet;
 
-    public JugPuzzle(int eventId) {
-        super(eventId);
-    }
+    public JugPuzzle(int eventId, String name, String presentation, Location location,
+            String question, String answer, boolean isSingleAnswer,
+            String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
+            Item reward) {
+        super(eventId, name, presentation, location, question, answer,
+                isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
 
-    public JugPuzzle(int eventId, String name, String presentation, Location location) {
-        super(eventId, name, presentation, true, location);
     }
 
     public JugPuzzle(int eventId, String name, String presentation, Location location,
-            JugSet playerJugSet, JugSet correctJugSet) {
-        super(eventId, name, presentation, true, location);
+            String question, String answer, boolean isSingleAnswer,
+            String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
+            Item reward, JugSet playerJugSet, JugSet correctJugSet) {
+        super(eventId, name, presentation, location, question, answer,
+                isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
         this.playerJugSet = playerJugSet;
         this.correctJugSet = correctJugSet;
     }

@@ -2,8 +2,6 @@ package com.mapproject.resources.items;
 
 import java.util.List;
 
-import org.json.JSONObject;
-
 public class Item {
 
     private final int id;
@@ -22,7 +20,7 @@ public class Item {
 
     private boolean pickupable = true;
 
-    private boolean throwable = false;
+    private boolean throwable = true;
 
     public Item(int id) {
         this.id = id;
@@ -32,28 +30,14 @@ public class Item {
             int spawnOdds1, int spawnOdds2, int spawnOdds3,
             boolean pickupable, boolean throwable) {
         this.id = id;
-        setName(name);
-        setDescription(description);
-        setAlias(alias);
-        setSpawnOddPhase1(spawnOdds1);
-        setSpawnOddPhase2(spawnOdds2);
-        setSpawnOddPhase3(spawnOdds3);
-        setPickupable(pickupable);
-        setThrowable(throwable);
-
-    }
-
-    @SuppressWarnings("unchecked")
-    public Item(JSONObject jsonSource) {
-        this.id = (int) jsonSource.get("id");
-        setName((String) jsonSource.get("name"));
-        setDescription((String) jsonSource.get("description"));
-        setAlias((List<String>) jsonSource.get("alias"));
-        setSpawnOddPhase1((int) jsonSource.get("spawnOddPhase1"));
-        setSpawnOddPhase2((int) jsonSource.get("spawnOddPhase2"));
-        setSpawnOddPhase3((int) jsonSource.get("spawnOddPhase3"));
-        setPickupable((boolean) jsonSource.get("pickupable"));
-        setThrowable((boolean) jsonSource.get("throwable"));
+        this.name = name;
+        this.description = description;
+        this.alias = alias;
+        this.spawnOddPhase1 = spawnOdds1;
+        this.spawnOddPhase2 = spawnOdds2;
+        this.spawnOddPhase3 = spawnOdds3;
+        this.pickupable = pickupable;
+        this.throwable = throwable;
 
     }
 

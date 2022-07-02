@@ -2,8 +2,6 @@ package com.mapproject.resources.items;
 
 import java.util.List;
 
-import org.json.JSONObject;
-
 enum SpawnOdds {
     SINGLE, DOUBLE, TRIPLE
 }
@@ -44,29 +42,6 @@ public class Weapon extends Item {
             boolean pickupable, boolean throwable,
             int usage, int damage, int weight, int accuracy) {
         super(id, name, description, alias, spawnOdds1, spawnOdds2, spawnOdds3, pickupable, throwable);
-
-    }
-
-    public Weapon(JSONObject jsonSource) {
-        super(jsonSource);
-        setUsage((int) jsonSource.get("usage"));
-
-        try {
-            setDamage((int) jsonSource.get("damage"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            setWeight((int) jsonSource.get("weight"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            setAccuracy((int) jsonSource.get("accuracy"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
 

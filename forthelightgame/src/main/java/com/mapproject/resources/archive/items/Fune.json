@@ -1,0 +1,14 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Fune",
+    "description": "Una fune trovata nel labirinto. Ora manca solo il fedora.",
+    "alias": [
+        "fune",
+        "corda"
+    ],
+    "id": 2001,
+    "spawnOddsPhase1": 2,
+    "spawnOddsPhase3": 2,
+    "spawnOddsPhase2": 2
+}

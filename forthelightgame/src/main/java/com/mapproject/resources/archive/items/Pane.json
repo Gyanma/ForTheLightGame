@@ -1,0 +1,15 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Pane",
+    "description": "Un tozzo di pane trovato nel labirinto. Di norma non sapresti cosa farne, ma chiss\u00e0 cosa ti aspetta nel labirinto.",
+    "alias": [
+        "pane",
+        "cibo",
+        "pagnotta"
+    ],
+    "id": 2002,
+    "spawnOddsPhase1": 2,
+    "spawnOddsPhase3": 2,
+    "spawnOddsPhase2": 2
+}

@@ -1,5 +1,6 @@
 package com.mapproject;
 
+import com.mapproject.operations.AddToArchive;
 import com.mapproject.operations.MapBuilder;
 import com.mapproject.operations.jframes.MysticalMap;
 import com.mapproject.resources.Map;
@@ -13,7 +14,8 @@ public final class App {
     }
 
     public static void main(String[] args) {
-        checkMap();
+
+        AddToArchive.addItem();
 
         // Puzzle puzzle = new Puzzle("Puzzle 1", "Puzzle 1", 3, 3, "Puzzle 1");
         // checkPuzzle(puzzle);
