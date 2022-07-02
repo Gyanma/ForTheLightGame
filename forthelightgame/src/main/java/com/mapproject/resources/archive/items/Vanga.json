@@ -1,1 +1,11 @@
-{"pickupable":true,"throwable":true,"name":"Vanga","description":"Una vanga trovata nel labirinto. L'attrezzo fondamentale di un esploratore preparato.","alias":["vanga","pala"],"id":2004,"spawnOddsPhase1":3,"spawnOddsPhase3":2,"spawnOddsPhase2":3}
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Vanga",
+    "description": "Una vanga trovata nel labirinto. L'attrezzo fondamentale di un esploratore preparato.",
+    "alias": [
+        "vanga",
+        "pala"
+    ],
+    "id": 2004
+}

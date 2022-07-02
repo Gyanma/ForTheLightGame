@@ -25,18 +25,19 @@ public class AddToArchive {
     public static void addItem() {
         List<String> alias = new ArrayList<>();
 
-        alias.add("vanga");
-        alias.add("pala");
+        alias.add("torcia");
+        alias.add("fiaccola");
+        // alias.add("bisaccia");
+        // alias.add("pala");
+        // alias.add("pala");
+        // alias.add("pala");
 
         JSONObject itemJson = new JSONObject();
-        itemJson.put("id", 2004);
-        itemJson.put("name", "Vanga");
-        itemJson.put("description", "Una vanga trovata nel labirinto. "
-                + "L'attrezzo fondamentale di un esploratore preparato.");
+        itemJson.put("id", 2006);
+        itemJson.put("name", "Torcia");
+        itemJson.put("description", "Una torcia trovata nel labirinto. "
+                + "C'è anche un acciarino; ora il buio non è più un problema.");
         itemJson.put("alias", alias);
-        itemJson.put("spawnOddsPhase1", 3);
-        itemJson.put("spawnOddsPhase2", 3);
-        itemJson.put("spawnOddsPhase3", 2);
 
         itemJson.put("pickupable", true);
         itemJson.put("throwable", true);

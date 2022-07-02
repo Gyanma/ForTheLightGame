@@ -2,27 +2,6 @@ package com.mapproject.resources.items;
 
 import java.util.List;
 
-enum SpawnOdds {
-    SINGLE, DOUBLE, TRIPLE
-}
-
-enum Weight {
-    LIGHT, MEDIUM, HEAVY
-}
-
-enum Damage {
-    LOW, MEDIUM, HIGH
-}
-
-enum Accuracy {
-    LOW, MEDIUM, HIGH
-
-}
-
-enum Usage {
-    THROW_FIRE, SWING
-}
-
 public class Weapon extends Item {
 
     private int usage;
@@ -38,10 +17,9 @@ public class Weapon extends Item {
     }
 
     public Weapon(int id, String name, String description, List<String> alias,
-            int spawnOdds1, int spawnOdds2, int spawnOdds3,
             boolean pickupable, boolean throwable,
             int usage, int damage, int weight, int accuracy) {
-        super(id, name, description, alias, spawnOdds1, spawnOdds2, spawnOdds3, pickupable, throwable);
+        super(id, name, description, alias, pickupable, throwable);
 
     }
 
