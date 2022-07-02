@@ -15,7 +15,7 @@ public final class App {
 
     public static void main(String[] args) {
 
-        AddToArchive.addItem();
+        AddToArchive.addWeapon();
 
         // Puzzle puzzle = new Puzzle("Puzzle 1", "Puzzle 1", 3, 3, "Puzzle 1");
         // checkPuzzle(puzzle);

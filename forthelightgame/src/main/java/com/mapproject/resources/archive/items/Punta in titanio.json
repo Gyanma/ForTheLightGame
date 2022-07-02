@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Se usato su un'arma a distanza, il suo danno aumenta leggermente per il resto della prova.",
     "pickupable": true,
     "throwable": true,
     "name": "Punta in titanio",

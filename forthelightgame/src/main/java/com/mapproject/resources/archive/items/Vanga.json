@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Fino a 5 volte, puoi cercare degli scrigni nelle stanze.",
     "pickupable": true,
     "throwable": true,
     "name": "Vanga",

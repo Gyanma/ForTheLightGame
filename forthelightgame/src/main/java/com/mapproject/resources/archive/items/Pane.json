@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Il pane può attirare animali in fuga, o essere donato a chi ne ha pi\u00f9",
     "pickupable": true,
     "throwable": true,
     "name": "Pane",

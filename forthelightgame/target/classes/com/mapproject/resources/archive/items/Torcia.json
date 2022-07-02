@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Permette di illuminare stanze buie o essere donate.",
     "pickupable": true,
     "throwable": true,
     "name": "Torcia",

@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Puoi usarla su un nemico e infiggergli danni.",
     "pickupable": true,
     "throwable": true,
     "name": "Pozione del fuoco",

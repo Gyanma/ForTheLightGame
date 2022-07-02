@@ -1,0 +1,15 @@
+{
+    "damage": 2,
+    "manualDescription": "Un'arma a distanza. Peso medio, danno medio e precisione media.",
+    "pickupable": true,
+    "throwable": true,
+    "usage": 1,
+    "name": "Arco",
+    "description": "Un arco trovato nel labirinto. Un'arma da usare a distanza, semplice ed efficace.",
+    "alias": [
+        "arco"
+    ],
+    "accuracy": 2,
+    "weight": 2,
+    "id": 1102
+}

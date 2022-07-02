@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Riporta i tuoi HP al massimo.",
     "pickupable": true,
     "throwable": true,
     "name": "Pozione di cura",

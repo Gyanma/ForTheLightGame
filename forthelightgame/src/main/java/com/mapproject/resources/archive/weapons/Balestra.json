@@ -1,0 +1,15 @@
+{
+    "damage": 3,
+    "manualDescription": "Un'arma a distanza. Danni alti, precisione media, ma peso alto",
+    "pickupable": true,
+    "throwable": true,
+    "usage": 1,
+    "name": "Balestra",
+    "description": "Una balestra trovata nel labirinto. Permette di colpire a distanza con grande forza.",
+    "alias": [
+        "balestra"
+    ],
+    "accuracy": 2,
+    "weight": 3,
+    "id": 1110
+}
