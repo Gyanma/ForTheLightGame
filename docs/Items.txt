@@ -2,12 +2,11 @@ Fune: -Permette di fuggire da buche
         -Permette di piazzare una trappola
 Cibo: -Permette di attirare animali
 Otre di acqua: - permette di spegnere incendi
-
 Vanga: -Permette di scavare e cercare tesori (5 usi);
 Borsa: - Inventario raddoppiato;
 Torcia: - Illumina la stanza;
-Rosario benedetto: - per il resto della mappa, i nemici sono ignorati (boss a parte)
-Acchiappa sogni: -I prossimi 3 eventi droppano più oggetti;
+Acchiappa sogni: - per il resto della mappa, i nemici sono ignorati (boss a parte)
+
 
 
 Pitture di guerra: - Attacco leggermente aumentato per tutta la mappa;

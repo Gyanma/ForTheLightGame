@@ -1,1 +1,11 @@
-{"pickupable":true,"throwable":true,"name":"Torcia","description":"Una torcia trovata nel labirinto. C'è anche un acciarino; ora il buio non è più un problema.","alias":["torcia","fiaccola"],"id":2006}
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Torcia",
+    "description": "Una torcia trovata nel labirinto. C'\u00e8 anche un acciarino; ora il buio non \u00e8 pi\u00f9 un problema.",
+    "alias": [
+        "torcia",
+        "fiaccola"
+    ],
+    "id": 2006
+}

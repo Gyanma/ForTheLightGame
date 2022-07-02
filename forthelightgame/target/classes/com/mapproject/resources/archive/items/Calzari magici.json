@@ -1,0 +1,13 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Calzari magici",
+    "description": "Un paio di calzari incantati trovato nel labirinto. Una volta indossati, senti i piedi leggeri e una gran forza nelle gambe.",
+    "alias": [
+        "calzari magici",
+        "calzari",
+        "stivali",
+        "scarpe"
+    ],
+    "id": 2010
+}

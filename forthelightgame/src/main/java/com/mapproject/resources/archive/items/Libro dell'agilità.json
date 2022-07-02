@@ -1,0 +1,12 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Libro dell'agilit\u00e0",
+    "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
+    "alias": [
+        "libro dell'agilit\u00e0",
+        "manuale dell'agilit\u00e0",
+        "tomo dell'agilit\u00e0"
+    ],
+    "id": 2012
+}

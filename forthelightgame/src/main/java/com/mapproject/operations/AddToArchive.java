@@ -25,18 +25,17 @@ public class AddToArchive {
     public static void addItem() {
         List<String> alias = new ArrayList<>();
 
-        alias.add("torcia");
-        alias.add("fiaccola");
-        // alias.add("bisaccia");
-        // alias.add("pala");
-        // alias.add("pala");
+        alias.add("libro delle maledizioni");
+        alias.add("manuale delle maledizioni");
+        alias.add("tomo delle maledizioni");
+        // alias.add("scarpe");
         // alias.add("pala");
 
         JSONObject itemJson = new JSONObject();
-        itemJson.put("id", 2006);
-        itemJson.put("name", "Torcia");
-        itemJson.put("description", "Una torcia trovata nel labirinto. "
-                + "C'è anche un acciarino; ora il buio non è più un problema.");
+        itemJson.put("id", 2014);
+        itemJson.put("name", "Libro delle maledizioni");
+        itemJson.put("description", "Un antico volume trovato nel labirinto. "
+                + "Contiene maledizioni molto potenti; in pochi hanno saputo domarle.");
         itemJson.put("alias", alias);
 
         itemJson.put("pickupable", true);

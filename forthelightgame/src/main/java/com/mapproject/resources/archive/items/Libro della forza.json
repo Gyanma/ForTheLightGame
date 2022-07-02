@@ -1,0 +1,12 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Libro della forza",
+    "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
+    "alias": [
+        "libro della forza",
+        "manuale della forza",
+        "tomo della forza"
+    ],
+    "id": 2011
+}

@@ -1,1 +1,12 @@
-{"pickupable":true,"throwable":true,"name":"Sacca","description":"Una borsa trovata nel labirinto. Meglio essere preparati a ogni evenienza.","alias":["borsa","sacca","bisaccia"],"id":2005}
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Sacca",
+    "description": "Una borsa trovata nel labirinto. Meglio essere preparati a ogni evenienza.",
+    "alias": [
+        "borsa",
+        "sacca",
+        "bisaccia"
+    ],
+    "id": 2005
+}

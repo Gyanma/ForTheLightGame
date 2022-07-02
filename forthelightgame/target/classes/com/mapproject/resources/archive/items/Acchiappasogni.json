@@ -1,0 +1,10 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Acchiappasogni",
+    "description": "Un acchiappasogni trovato nel labirinto. I mostri sembrano volerne stare alla larga il pi\u00f9 possibile.",
+    "alias": [
+        "acchiappasogni"
+    ],
+    "id": 2007
+}
