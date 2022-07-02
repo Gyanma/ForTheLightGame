@@ -1,1 +1,17 @@
-{"damage":3,"manualDescription":"Un'arma a distanza. Peso alto, danno alto e precisione bassa.","pickupable":true,"throwable":true,"usage":1,"name":"Lancia","description":"Una lancia trovata nel labirinto. Capace di infliggere grossi danni da una grande gittata.","alias":["lancia","asta","giavellotto"],"accuracy":1,"weight":3,"id":1104}
+{
+    "damage": 3,
+    "manualDescription": "Un'arma a distanza. Peso alto, danno alto e precisione bassa.",
+    "pickupable": true,
+    "throwable": true,
+    "usage": 1,
+    "name": "Lancia",
+    "description": "Una lancia trovata nel labirinto. Capace di infliggere grossi danni da una grande gittata.",
+    "alias": [
+        "lancia",
+        "asta",
+        "giavellotto"
+    ],
+    "accuracy": 1,
+    "weight": 3,
+    "id": 1104
+}

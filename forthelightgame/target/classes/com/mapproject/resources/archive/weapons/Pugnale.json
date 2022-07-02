@@ -1,1 +1,16 @@
-{"damage":1,"manualDescription":"Un'arma corpo a corpo. Danno basso, ma peso basso e precisione alta.","pickupable":true,"throwable":true,"usage":2,"name":"Pugnale","description":"Un pugnale trovato nel labirinto. Perfetto per chi preferisce combattere dall'ombra.","alias":["pugnale","coltello"],"accuracy":3,"weight":1,"id":1105}
+{
+    "damage": 1,
+    "manualDescription": "Un'arma corpo a corpo. Danno basso, ma peso basso e precisione alta.",
+    "pickupable": true,
+    "throwable": true,
+    "usage": 2,
+    "name": "Pugnale",
+    "description": "Un pugnale trovato nel labirinto. Perfetto per chi preferisce combattere dall'ombra.",
+    "alias": [
+        "pugnale",
+        "coltello"
+    ],
+    "accuracy": 3,
+    "weight": 1,
+    "id": 1105
+}

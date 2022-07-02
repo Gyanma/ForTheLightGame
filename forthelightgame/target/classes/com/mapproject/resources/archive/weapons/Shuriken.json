@@ -1,1 +1,15 @@
-{"damage":2,"manualDescription":"Un'arma a distanza. Danni intermedi, peso basso e precisione alta.","pickupable":true,"throwable":true,"usage":1,"name":"Shuriken","description":"Shuriken trovati nel labirinto. Lame piccole ma acuminate, eredità di guerrieri di epoche passate.","alias":["shuriken"],"accuracy":3,"weight":1,"id":1109}
+{
+    "damage": 2,
+    "manualDescription": "Un'arma a distanza. Danni intermedi, peso basso e precisione alta.",
+    "pickupable": true,
+    "throwable": true,
+    "usage": 1,
+    "name": "Shuriken",
+    "description": "Shuriken trovati nel labirinto. Lame piccole ma acuminate, ereditï¿½ di guerrieri di epoche passate.",
+    "alias": [
+        "shuriken"
+    ],
+    "accuracy": 3,
+    "weight": 1,
+    "id": 1109
+}
