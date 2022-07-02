@@ -1,0 +1,12 @@
+{
+    "manualDescription": "Una volta usata, ogni colpo inflitto rigenerer\u00e0 degli HP, fino alla fine del prossimo combattimento.",
+    "pickupable": true,
+    "throwable": true,
+    "name": "Fiala del sangue",
+    "description": "Una fiala trovata nel labirinto. L'etichetta lo descrive come un siero energizzante, che restituisce vitalit\u00e0 a ogni scatto di adrenalina.",
+    "alias": [
+        "fiala del sangue",
+        "fiala"
+    ],
+    "id": 2017
+}

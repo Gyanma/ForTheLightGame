@@ -1,0 +1,10 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Pozione del veleno",
+    "description": "Una pozione ottenuta nel labirinto. Genera all'istante una nuvola tossica. Utilizzare con cautela.",
+    "alias": [
+        "pozione del veleno"
+    ],
+    "id": 2025
+}

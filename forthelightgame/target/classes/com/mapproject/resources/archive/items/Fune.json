@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Puoi usarla per fuggire da buche o trappole, o donarla a chi ne ha bisogno.",
     "pickupable": true,
     "throwable": true,
     "name": "Fune",

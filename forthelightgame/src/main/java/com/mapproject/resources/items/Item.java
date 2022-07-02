@@ -16,17 +16,19 @@ public class Item {
 
     private boolean throwable = true;
 
+    private String manualDescription;
+
     public Item(int id) {
         this.id = id;
     }
 
     public Item(int id, String name, String description, List<String> alias,
-            boolean pickupable, boolean throwable) {
+            boolean pickupable, boolean throwable, String manualDescription) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.alias = alias;
-
+        this.manualDescription = manualDescription;
         this.pickupable = pickupable;
         this.throwable = throwable;
 
@@ -78,6 +80,14 @@ public class Item {
 
     public void addAlias(String alias) {
         this.alias.add(alias);
+    }
+
+    public String getManualDescription() {
+        return manualDescription;
+    }
+
+    public void setManualDescription(String manualDescription) {
+        this.manualDescription = manualDescription;
     }
 
     @Override

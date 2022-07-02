@@ -1,0 +1,10 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Mappa Mistica",
+    "description": "Una mappa magica ottenuta nel labirinto. Su di essa appare magicamente la tua posizione e l'uscita dal labirinto.",
+    "alias": [
+        "Mappa"
+    ],
+    "id": 2026
+}

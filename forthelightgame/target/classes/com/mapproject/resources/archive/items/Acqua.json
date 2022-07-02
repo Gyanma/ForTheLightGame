@@ -1,4 +1,5 @@
 {
+    "manualDescription": "L'acqua può essere usata per spegnere incendi, o donata a chi ne ha più bisogno.",
     "pickupable": true,
     "throwable": true,
     "name": "Acqua",

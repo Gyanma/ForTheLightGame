@@ -1,0 +1,10 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Libro mastro",
+    "description": "Un tomo ottenuto nel labirinto. Ti dar\u00e0 ogni informazione necessaria su ogni oggetto che potresti trovare.",
+    "alias": [
+        "Libro mastro"
+    ],
+    "id": 2026
+}

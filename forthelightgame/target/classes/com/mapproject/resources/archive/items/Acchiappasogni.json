@@ -1,4 +1,5 @@
 {
+    "manualDescription": "Una volta usato, i nemici ti ignoreranno per il resto della mappa. Al livello successivo, sparisce dall'inventario.",
     "pickupable": true,
     "throwable": true,
     "name": "Acchiappasogni",

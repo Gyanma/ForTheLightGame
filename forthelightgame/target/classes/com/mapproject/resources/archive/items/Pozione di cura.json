@@ -1,0 +1,10 @@
+{
+    "pickupable": true,
+    "throwable": true,
+    "name": "Pozione di cura",
+    "description": "Una pozione ottenuta nel labirinto. Utile in caso ti senta a secco.",
+    "alias": [
+        "pozione di cura"
+    ],
+    "id": 2021
+}

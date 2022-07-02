@@ -17,9 +17,13 @@ public class Weapon extends Item {
     }
 
     public Weapon(int id, String name, String description, List<String> alias,
-            boolean pickupable, boolean throwable,
+            boolean pickupable, boolean throwable, String manualDescription,
             int usage, int damage, int weight, int accuracy) {
-        super(id, name, description, alias, pickupable, throwable);
+        super(id, name, description, alias, pickupable, throwable, manualDescription);
+        this.usage = usage;
+        this.damage = damage;
+        this.weight = weight;
+        this.accuracy = accuracy;
 
     }
 
