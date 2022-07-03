@@ -11,7 +11,7 @@ public class VisualPuzzle extends Event {
     private boolean isSolved;
 
     public VisualPuzzle(String name, String presentation, int eventId, Location location,
-            int visualId, String description, boolean isSolved) {
+            int visualId, String description) {
 
         super(eventId, name, presentation, false, location);
         setVisualId(visualId);

@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileReader;
 
 public class Loader {
-    public static Weapon loadWeapon(String element) throws Exception {
+    public static Weapon loadWeapon(String element) {
 
         try {
             FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
@@ -25,11 +25,11 @@ public class Loader {
         return null;
     }
 
-    public static Weapon loadWeapon(int i) throws Exception {
+    public static Weapon loadWeapon(int i) {
         return loadWeapon(recognizeElement(i));
     }
 
-    public static Enemy loadEnemy(String element) throws Exception {
+    public static Enemy loadEnemy(String element) {
 
         try {
             FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
@@ -41,15 +41,11 @@ public class Loader {
         return null;
     }
 
-    public static Enemy loadEnemy(int i) throws Exception {
+    public static Enemy loadEnemy(int i) {
         return loadEnemy(recognizeElement(i));
     }
 
-    public static TextPuzzle loadTextPuzzle(int i) throws Exception {
-        return loadTextPuzzle(recognizeElement(i));
-    }
-
-    public static TextPuzzle loadTextPuzzle(String element) throws Exception {
+    public static TextPuzzle loadTextPuzzle(String element) {
 
         try {
             FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
@@ -61,8 +57,8 @@ public class Loader {
         return null;
     }
 
-    public static Danger loadDanger(int i) {
-        return loadDanger(recognizeElement(i));
+    public static TextPuzzle loadTextPuzzle(int i) {
+        return loadTextPuzzle(recognizeElement(i));
     }
 
     public static Danger loadDanger(String element) {
@@ -77,14 +73,16 @@ public class Loader {
         return null;
     }
 
-    public static VisualPuzzle loadVisualPuzzle(int i) {
-        return loadVisualPuzzle(recognizeElement(i));
+    public static Danger loadDanger(int i) {
+        return loadDanger(recognizeElement(i));
     }
 
     public static VisualPuzzle loadVisualPuzzle(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\visual puzzles\\"
+                            + element + ".json"));
             VisualPuzzle visualPuzzle = new Gson().fromJson(reader, VisualPuzzle.class);
             return visualPuzzle;
         } catch (IOException e) {
@@ -93,8 +91,8 @@ public class Loader {
         return null;
     }
 
-    public static PacificEncounter loadPacificEncounter(int i) {
-        return loadPacificEncounter(recognizeElement(i));
+    public static VisualPuzzle loadVisualPuzzle(int i) {
+        return loadVisualPuzzle(recognizeElement(i));
     }
 
     public static PacificEncounter loadPacificEncounter(String element) {
@@ -109,8 +107,8 @@ public class Loader {
         return null;
     }
 
-    public static Item loadItem(int i) {
-        return loadItem(recognizeElement(i));
+    public static PacificEncounter loadPacificEncounter(int i) {
+        return loadPacificEncounter(recognizeElement(i));
     }
 
     public static Item loadItem(String element) {
@@ -125,8 +123,12 @@ public class Loader {
         return null;
     }
 
-    private static String recognizeElement(int i) {
+    public static Item loadItem(int i) {
+        return loadItem(recognizeElement(i));
+    }
 
+    private static String recognizeElement(int i) {
+        // TODO return strings
         switch (i / 1000) {// check the first digit to get if it's event or item
             case 1: // it's an item
 
