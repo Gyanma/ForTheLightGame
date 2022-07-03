@@ -1,0 +1,12 @@
+{
+    "id": 1028,
+    "name": "Sacca di diamanti",
+    "description": "Una sacca di diamanti ottenuta nel labirinto. Oggetti preziosi e da un grande valore.",
+    "alias": [
+        "sacca di diamanti",
+        "diamanti"
+    ],
+    "pickupable": true,
+    "throwable": true,
+    "used": false
+}

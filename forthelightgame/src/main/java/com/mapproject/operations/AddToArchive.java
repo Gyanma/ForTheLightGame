@@ -19,43 +19,51 @@ public class AddToArchive {
                 TextPuzzle vP;
                 JSONObject itemJson = new JSONObject();
 
-                itemJson.put("name", "Carte da gioco");
+                itemJson.put("name", "500 perle");
                 itemJson.put("presentation",
-                                "Nell'angolo della stanza noti un'ombra che si agita. Ti avvicini e vedi un goblin dietro a un carretto.\n"
-                                                + "Appena il goblin ti nota, inizia a urlare: \"Venghino, signori, venghino. Tutti possono giocare,\n "
-                                                + "ma solo i pi\u00f9 furbi possono vincere.\"");
-                itemJson.put("eventId", 2201);
+                                "Vedi un avventuriero parecchio affaccendato. Sembra esaminare un forziere.\n");
+                itemJson.put("eventId", 2203);
                 itemJson.put("isSkippable", true);
-                itemJson.put("location", Location.NORTH_WEST);
-                itemJson.put("question", "Il goblin si aggiusta il monocolo e comincia a spiegare le regole.\n"
-                                + "\"Come pu\u00f2 vedere ho posizionato cinque carte da gioco coperte di fronte a me. \n"
-                                + "Se vossignoria ha cuore di credermi, le posso garantire che sono 4 assi di semi diversi E un jolly.\n"
-                                + "Ora, se usando le quattro regole che vedete accanto a voi riuscirete a indovinare \n"
-                                + "quale carta sta dove, avrete vinto il premio segreto!\n"
-                                + "Vi baster\u00e0 dirmele in ordine, da sinistra a destra.\"\n"
-                                + "Dai un'occhiata alle regole, che recitano:\n"
-                                + "1. I fiori sono immediatamente a destra dei cuori.\n"
-                                + "2. Le picche non sono vicine al jolly o ai quadri.\n"
-                                + "3. I fiori non sono vicini ai quadri o al jolly.\n"
-                                + "4. I cuori non sono vicini ai quadri o alle picche.\n");
-                itemJson.put("isSingleAnswer", false);
-                itemJson.put("answer", "Quadri+Jolly+Cuori+Fiori+Picche");
-                itemJson.put("correctReply", "Il goblin salta sul tavolo, costringedoti a indietreggiare\n"
-                                + "\"Ben fatto! A voi il vostro premio!\"\n"
-                                + "Il goblin ti porge una fiala a forma di saetta con un liquido semitrasparente dentro.\n"
-                                + "Rialzi lo sguardo e sia il goblin sia il carretto sono spariti...\n");
-                itemJson.put("incorrectReply", "\"Oh che peccato, forse non siete cos\u00ec sveglio come pensavo.\"\n"
-                                + "Il goblin scopre le carte, e per un breve secondo riesci a intravedere le figure:\n"
-                                + "i Quadri, poi il Jolly, i Cuori, i Fiori e infine le Picche...\n"
-                                + "Ma in men che non si dica il goblin lancia un fumogeno a terra.\n"
-                                + "Ti copri gli occhi e il naso e ti alliontani dalla nuvola. \n"
-                                + "Dopo che il fumo si dissipa, noti che sia il goblin sia il carretto sono spariti...\n");
-                itemJson.put("tryAgainReply", "\"Questa risposta \u00e8 sbagliata. Ma non si disperi!\n"
-                                + "Ha ancora un'altra possibilit\u00e0\"\n");
-                itemJson.put("surrenderReply", "\"Vuole arrendersi? Davvero?\n"
-                                + "Che peccato. Sar\u00e0 per un'altra volta\"\n"
-                                + "Il goblin fa un gesto con la mano e in un'istante sia lui che il carretto non si vedono pi\u00f9");
-                itemJson.put("reward", Loader.loadItem("pozione del fulmine").getId());
+                itemJson.put("location", Location.NORTH_EAST);
+                itemJson.put("question", "L'avventuriero ti nota e immediatamente ti rivolge la parola\n"
+                                + "\"Oh, che gioia incontrare un altro viaggiatore. Guarda, questo \u00e8\n"
+                                + "il forziere incantato di Adhara. Sul muro \u00e8 inciso un messaggio, ma non riesco a decifrarlo.\n"
+                                + "Hai tu forse idea di cosa ci sa scritto?\"\n"
+                                + "In effetti, riesci a leggere la scritta, cos\u00ec la traduci al viaggiatore.\n"
+                                + "\"Questo forziere contiene 500 perle. Chiunque voglia prenderle, \u00e8 libero di farlo.\n"
+                                + "Ma se il numero di perle prese \u00e8 diverso dal numero preferito del leggendario\n"
+                                + "Adhara, le perle torneranno nel forziere in men che non si dica, e chiunque\n"
+                                + "le abbia toccate subir\u00e0 un terribile sortilegio.\n"
+                                + "Adhara \u00e8 sempre stato un'anima generosa. Ogni volta che tornava da una spedizione,\n"
+                                + "divideva i suoi ritrovamenti con tutti gli altri abitanti del suo villaggio.\n"
+                                + "In particolare, teneva sempre da parte uno solo di qualsiasi oggetto ritrovava\n"
+                                + "e poi divideva equamente il resto. E quando tornava con il suo numero preferito di perle,\n"
+                                + "non importava quante persone si trovava davanti; due, tre, quattro, cinque,\n"
+                                + "sei o sette, riusciva sempre a dividerle senza fare danno a nessuno.\"\n"
+                                + "Una volta concluso, l'avventuriero riprende a parlare.\n"
+                                + "\"Ora \u00e8 tutto chiaro. Basta trovare questo numero speciale e le perle saranno nostre!\n"
+                                + "Pensiamoci su. Quando hai qualche idea avvisami. Ma pensaci bene!\n"
+                                + "Con quella maledizione non possiamo permetterci errori.\"\n"
+                                + "Ebbene? Quante perle vuoi prendere?\n");
+                itemJson.put("isSingleAnswer", true);
+                itemJson.put("answer", "421");
+                itemJson.put("correctReply", "\"Ma certo. Tutto torna!\"\n"
+                                + "Insieme all'avventuriero, raccogli 421 perle dal baule.\n"
+                                + "Dopo aver atteso qualche minuto, la stanza inizia a tremare.\n"
+                                + "Dal baule fuoriesce una luce intensa, che vi toglie la vista.\n"
+                                + "D'un tratto, la luce si interrompe. Il baule \u00e8 scomparso, e una nuova incisione ha sostituito\n"
+                                + "la precedente sul muro. \"Ben fatto. Le perle sono vostre. Fatene buon uso e ricordate\n"
+                                + "le gesta del grande Adhara.\"\n"
+                                + "\"Senza di te non sarei mai riuscito a prendere le perle. Per ringraziarti, ti lascer\u00f2\n"
+                                + "la parte pi\u00f9 grande.\" L'avventuriero prende 150 perle e le mette nella sua bisaccia.\n"
+                                + "\"Bene, ho preso la mia parte. A presto, e ancora grazie!\" aggiunge, per poi allontanarsi nell'oscurit\u00e0\n"
+                                + "Prendi le tue perle, le infili nella tua borsa e ti guardi nuovamente intorno.\n");
+                itemJson.put("incorrectReply", "");
+                itemJson.put("tryAgainReply", "\"Dici? No, non mi convince.\" ti risponde l'avventuriero\n"
+                                + "\"Riflettiamo ancora, prima di fare mosse avventate\"");
+                itemJson.put("surrenderReply", "\"Oh, d'accordo; se vuoi allontanarti non ti fermer\u00f2\n"
+                                + "Grazie ancora per l'aiuto, non lo dimenticher\u00f2!\"\n");
+                itemJson.put("reward", Loader.loadItem("Sacca di perle").getId());
 
                 /*
                  * (int eventId, String name, String presentation, Location location,
