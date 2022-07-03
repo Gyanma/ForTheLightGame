@@ -9,72 +9,20 @@ import com.mapproject.resources.events.VisualPuzzle;
 
 public class AddToArchive {
 
-    public static void addDanger() {
-        // (int eventId, String name, String description, String presentation, int
-        // timeLimit, Item solution,
-        // Item prize);
-        /*
-         * int eventId;
-         * String name;
-         * String description;
-         * String presentation;
-         * int timeLimit;
-         * Item solution;
-         * Item prize;
-         */ }
-
-    /*
-     * public static void addWeapon() {
-     * List<String> alias = new ArrayList<>();
-     * 
-     * alias.add("shuriken");
-     * 
-     * JSONObject weaponJson = new JSONObject();
-     * weaponJson.put("id", 1109);
-     * weaponJson.put("name", "Shuriken");
-     * weaponJson.put("description", "Shuriken trovati nel labirinto. "
-     * + "Lame piccole ma acuminate, eredit\u00e0 di guerrieri di epoche passate.");
-     * weaponJson.put("alias", alias);
-     * weaponJson.put("manualDescription",
-     * "Un'arma a distanza. Danni intermedi, peso basso e precisione alta.");
-     * weaponJson.put("pickupable", true);
-     * weaponJson.put("throwable", true);
-     * weaponJson.put("damage", 2);
-     * weaponJson.put("accuracy", 3);
-     * weaponJson.put("weight", 1);
-     * weaponJson.put("usage", 1);
-     * 
-     * try {
-     * FileWriter file = new FileWriter(
-     * "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\weapons\\"
-     * + weaponJson.get("name") + ".json");
-     * file.write(weaponJson.toString());
-     * file.flush();
-     * file.close();
-     * } catch (Exception e) {
-     * e.printStackTrace();
-     * }
-     * }
-     * 
-     * 
-     * 
-     * (String name, String presentation, int eventId, Location location,
-     * int visualId, String description)
-     */
-
     public static void addVisualPuzzle() {
 
         VisualPuzzle vP;
         JSONObject itemJson = new JSONObject();
-        itemJson.put("name", "33333!");
+
+        itemJson.put("name", "Gli Zeri");
         itemJson.put("presentation",
                 "La porta sembra bloccata da un qualche meccanismo. Esaminalo e scopri come aprirla.");
-        itemJson.put("eventId", 4001);
-        itemJson.put("location", Location.EVERYWHERE);
+        itemJson.put("eventId", 4003);
         itemJson.put("description",
-                "Una semplice sottrazione. Il primo numero meno il secondo deve dare 33333. \nPer\u00f2 puoi usare ogni cifra da 1 a 9 una volta sola. Pensi di farcela?");
-        itemJson.put("visualId", 1);
+                "Quattro pannelli, quattro pulsanti. Quando i pannelli mostreranno tutti 0, la via sar\u00e0 libera.");
+        itemJson.put("visualId", 3);
 
+        itemJson.put("location", Location.EVERYWHERE);
         vP = new VisualPuzzle((String) itemJson.get("name"),
                 (String) itemJson.get("presentation"),
                 (int) itemJson.get("eventId"),

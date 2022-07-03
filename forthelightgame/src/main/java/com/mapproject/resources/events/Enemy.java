@@ -6,23 +6,28 @@ import com.mapproject.enums.Location;
 
 public class Enemy extends Event {
 
-    private List<Integer> actions;
+    private List<Integer> attacks;
+
+    private int healthPoints;
+    private boolean isFlying;
 
     private String manualDescription;
 
-    public Enemy(int eventId, String name, String description, Location location,
-            String manualDescription, List<Integer> actions) {
-        super(eventId, name, description, true, location);
-        this.actions = actions;
+    public Enemy(int eventId, String name, String description, Location location, boolean isSkippable,
+            String manualDescription, List<Integer> attacks, int healthPoints, boolean isFlying) {
+        super(eventId, name, description, isSkippable, location);
+        this.attacks = attacks;
         this.manualDescription = manualDescription;
+        this.healthPoints = healthPoints;
+        this.isFlying = isFlying;
     }
 
-    public List<Integer> getActions() {
-        return actions;
+    public List<Integer> getAttacks() {
+        return attacks;
     }
 
-    public void setActions(List<Integer> actions) {
-        this.actions = actions;
+    public void setAttacks(List<Integer> attacks) {
+        this.attacks = attacks;
     }
 
     public String getManualDescription() {
@@ -32,4 +37,21 @@ public class Enemy extends Event {
     public void setManualDescription(String description) {
         this.manualDescription = description;
     }
+
+    public int getHealthPoints() {
+        return healthPoints;
+    }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public boolean isFlying() {
+        return isFlying;
+    }
+
+    public void setFlying(boolean isFlying) {
+        this.isFlying = isFlying;
+    }
+
 }

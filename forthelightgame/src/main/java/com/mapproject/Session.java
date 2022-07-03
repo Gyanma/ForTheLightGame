@@ -14,6 +14,8 @@ enum Status {
 
 public class Session {
 
+    private int MAX_HEALTH = 100;
+
     private List<Item> inventory;
 
     private Map sessionMapPhase1;
@@ -25,6 +27,8 @@ public class Session {
     private int currentRoom;
 
     private Status currentStatus;
+
+    private int healthPoints;
 
     private final int mode; // 0 is the normal mode, 1 is the demo mode
 
@@ -38,6 +42,7 @@ public class Session {
         this.inventory = new ArrayList<Item>();
         this.currentRoom = 0;
         this.currentStatus = Status.EXPLORING;
+        this.healthPoints = MAX_HEALTH;
     }
 
     public int getMode() {
@@ -92,4 +97,11 @@ public class Session {
         return currentStatus;
     }
 
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public int getHealthPoints() {
+        return healthPoints;
+    }
 }

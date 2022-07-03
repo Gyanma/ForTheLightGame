@@ -16,7 +16,9 @@ public class Loader {
     public static Weapon loadWeapon(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\weapons\\"
+                            + element + ".json"));
             Weapon weapon = new Gson().fromJson(reader, Weapon.class);
             return weapon;
         } catch (IOException e) {
@@ -32,7 +34,9 @@ public class Loader {
     public static Enemy loadEnemy(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\enemies\\"
+                            + element + ".json"));
             Enemy enemy = new Gson().fromJson(reader, Enemy.class);
             return enemy;
         } catch (IOException e) {
@@ -48,7 +52,9 @@ public class Loader {
     public static TextPuzzle loadTextPuzzle(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\"
+                            + element + ".json"));
             TextPuzzle enemy = new Gson().fromJson(reader, TextPuzzle.class);
             return enemy;
         } catch (IOException e) {
@@ -64,7 +70,9 @@ public class Loader {
     public static Danger loadDanger(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dangers\\"
+                            + element + ".json"));
             Danger danger = new Gson().fromJson(reader, Danger.class);
             return danger;
         } catch (IOException e) {
@@ -98,7 +106,9 @@ public class Loader {
     public static PacificEncounter loadPacificEncounter(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(new File(
+                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\pacific encounters\\"
+                            + element + ".json"));
             PacificEncounter pacificEncounter = new Gson().fromJson(reader, PacificEncounter.class);
             return pacificEncounter;
         } catch (IOException e) {
@@ -114,7 +124,9 @@ public class Loader {
     public static Item loadItem(String element) {
 
         try {
-            FileReader reader = new FileReader(new File("src/resources/" + element + ".json"));
+            FileReader reader = new FileReader(
+                    new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\items\\" + element
+                            + ".json"));
             Item item = new Gson().fromJson(reader, Item.class);
             return item;
         } catch (IOException e) {
@@ -141,6 +153,24 @@ public class Loader {
                         switch (i) {
                             case 1:
                                 return "spada";
+                            case 2:
+                                return "ascia";
+                            case 3:
+                                return "pugnale";
+                            case 4:
+                                return "katana";
+                            case 5:
+                                return "maglio";
+                            case 6:
+                                return "arco";
+                            case 7:
+                                return "lancia";
+                            case 8:
+                                return "fionda";
+                            case 9:
+                                return "balestra";
+                            case 10:
+                                return "shuriken";
                             default:
                                 return "";
                         }
