@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Riporta i tuoi HP al massimo.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1021,
     "name": "Pozione di cura",
     "description": "Una pozione ottenuta nel labirinto. Utile in caso ti senta a secco.",
     "alias": [
         "pozione di cura"
     ],
-    "id": 2021
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Riporta i tuoi HP al massimo."
 }

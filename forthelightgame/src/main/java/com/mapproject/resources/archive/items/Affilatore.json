@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Se usato su un'arma corpo a corpo, il suo danno aumenta leggermente per il resto della prova.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1018,
     "name": "Affilatore",
-    "description": "Un affilatore trovato nel labirinto. L'antica conoscenza di mastri artigiani migliora qualsiasi lama.",
+    "description": "Un affilatore trovato nel labirinto. L\u0027antica conoscenza di mastri artigiani migliora qualsiasi lama.",
     "alias": [
         "affilatore"
     ],
-    "id": 2018
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Se usato su un\u0027arma corpo a corpo, il suo danno aumenta leggermente per il resto della prova."
 }

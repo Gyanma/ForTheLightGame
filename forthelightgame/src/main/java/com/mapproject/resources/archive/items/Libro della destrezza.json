@@ -1,7 +1,5 @@
 {
-    "manualDescription": "Una volta utilizzato, la tua accuratezza aumenterà di molto fino alla fine del prossimo combattimento.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1013,
     "name": "Libro della destrezza",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "alias": [
@@ -9,5 +7,8 @@
         "manuale della destrezza",
         "tomo della destrezza"
     ],
-    "id": 2013
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta utilizzato, la tua accuratezza aumenter\u00e0 di molto fino alla fine del prossimo combattimento."
 }

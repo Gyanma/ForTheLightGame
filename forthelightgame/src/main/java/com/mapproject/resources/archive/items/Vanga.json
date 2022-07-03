@@ -1,12 +1,13 @@
 {
-    "manualDescription": "Fino a 5 volte, puoi cercare degli scrigni nelle stanze.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1004,
     "name": "Vanga",
-    "description": "Una vanga trovata nel labirinto. L'attrezzo fondamentale di un esploratore preparato.",
+    "description": "Una vanga trovata nel labirinto. L\u0027attrezzo fondamentale di un esploratore preparato.",
     "alias": [
         "vanga",
         "pala"
     ],
-    "id": 2004
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Fino a 5 volte, puoi cercare degli scrigni nelle stanze."
 }

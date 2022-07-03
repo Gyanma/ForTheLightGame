@@ -1,7 +1,6 @@
 package com.mapproject.resources.events;
 
 import com.mapproject.enums.Location;
-import com.mapproject.resources.items.Item;
 
 public class TextPuzzle extends Event {
 
@@ -19,12 +18,12 @@ public class TextPuzzle extends Event {
 
     private String surrenderReply; // npc's response when you surrender
 
-    private Item reward; // item reward in case of correct answer
+    private int rewardId; // item reward in case of correct answer
 
     public TextPuzzle(int eventId, String name, String presentation, Location location,
             String question, String answer, boolean isSingleAnswer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
-            Item reward) {
+            int rewardId) {
         super(eventId, name, presentation, true, location);
         this.question = question;
         this.answer = answer;
@@ -33,7 +32,7 @@ public class TextPuzzle extends Event {
         this.incorrectReply = incorrectReply;
         this.tryAgainReply = tryAgainReply;
         this.surrenderReply = surrenderReply;
-        this.reward = reward;
+        this.rewardId = rewardId;
 
     }
 
@@ -85,19 +84,19 @@ public class TextPuzzle extends Event {
         this.tryAgainReply = tryAgainReply;
     }
 
-    public Item getReward() {
-        return reward;
-    }
-
-    public void setReward(Item reward) {
-        this.reward = reward;
-    }
-
     public String getSurrenderReply() {
         return surrenderReply;
     }
 
     public void setSurrenderReply(String surrenderReply) {
         this.surrenderReply = surrenderReply;
+    }
+
+    public int getRewardId() {
+        return rewardId;
+    }
+
+    public void setRewardId(int rewardId) {
+        this.rewardId = rewardId;
     }
 }

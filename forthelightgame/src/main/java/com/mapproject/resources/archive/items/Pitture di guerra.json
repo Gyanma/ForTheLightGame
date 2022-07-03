@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Una volta utilizzato, la tua forza d'attacco aumenta leggermente per tutta la prova.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1008,
     "name": "Pitture di guerra",
     "description": "Un set di pittura da guerra trovato nel labirinto. Quando applicate, infondono una forza mai vista.",
     "alias": [
         "pitture di guerra"
     ],
-    "id": 2008
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta utilizzato, la tua forza d\u0027attacco aumenta leggermente per tutta la prova."
 }

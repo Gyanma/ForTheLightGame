@@ -1,7 +1,5 @@
 {
-    "manualDescription": "Una volta indossati la tua agilit\u00e0 aumenta leggermente per tutta la prova.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1010,
     "name": "Calzari magici",
     "description": "Un paio di calzari incantati trovato nel labirinto. Una volta indossati, senti i piedi leggeri e una gran forza nelle gambe.",
     "alias": [
@@ -10,5 +8,8 @@
         "stivali",
         "scarpe"
     ],
-    "id": 2010
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta indossati la tua agilit\u00e0 aumenta leggermente per tutta la prova."
 }

@@ -1,11 +1,12 @@
 {
-    "pickupable": true,
-    "throwable": true,
+    "id": 1020,
     "name": "Sacca di perle",
     "description": "Una sacca di perle ottenuta nel labirinto. Sono molto ricercate da collezionisti di tutto il mondo.",
     "alias": [
         "sacca di perle",
         "perle"
     ],
-    "id": 2020
+    "pickupable": true,
+    "throwable": true,
+    "used": false
 }

@@ -1,11 +1,13 @@
 package com.mapproject.resources.events;
 
+import java.util.HashMap;
+
 import com.mapproject.enums.Location;
 import com.mapproject.resources.items.Item;
 
 public class Danger extends Event {
 
-    private String presentation;
+    private HashMap<Integer, String> countdown;
     private int timeLimit;
     private Item solution;
     private Item prize;
@@ -20,23 +22,23 @@ public class Danger extends Event {
 
     }
 
-    public Danger(int eventId, String name, String description, String presentation, int timeLimit, Item solution,
+    public Danger(int eventId, String name, String description, HashMap<Integer, String> countdown, int timeLimit,
+            Item solution,
             Item prize) {
         super(eventId, name, description, false, Location.EVERYWHERE);
 
-        this.presentation = presentation;
+        this.countdown = countdown;
         this.timeLimit = timeLimit;
         this.solution = solution;
         this.prize = prize;
-
     }
 
-    public String getPresentation() {
-        return presentation;
+    public HashMap<Integer, String> getCountdown() {
+        return countdown;
     }
 
-    public void setPresentation(String presentation) {
-        this.presentation = presentation;
+    public void setCountdown(HashMap<Integer, String> countdown) {
+        this.countdown = countdown;
     }
 
     public int getTimeLimit() {

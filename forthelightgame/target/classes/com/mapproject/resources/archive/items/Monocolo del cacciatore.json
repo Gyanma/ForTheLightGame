@@ -1,7 +1,5 @@
 {
-    "manualDescription": "Una volta indossato, la tua accuratezza aumenta leggermente per tutta la prova. ",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1009,
     "name": "Monocolo del cacciatore",
     "description": "Uno strano monocolo trovato nel labirinto. Una volta indossato, senti i tuoi sensi acuirsi.",
     "alias": [
@@ -9,5 +7,8 @@
         "monocolo del cacciatore",
         "lente"
     ],
-    "id": 2009
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta indossato, la tua accuratezza aumenta leggermente per tutta la prova. "
 }

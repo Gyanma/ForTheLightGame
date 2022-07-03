@@ -1,13 +1,14 @@
 {
-    "manualDescription": "Una volta utilizzato, la tua agilità aumenterà di molto fino alla fine del prossimo combattimento.",
-    "pickupable": true,
-    "throwable": true,
-    "name": "Libro dell'agilit\u00e0",
+    "id": 1012,
+    "name": "Libro dell\u0027agilit\u00e0",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "alias": [
-        "libro dell'agilit\u00e0",
-        "manuale dell'agilit\u00e0",
-        "tomo dell'agilit\u00e0"
+        "libro dell\u0027agilit\u00e0",
+        "manuale dell\u0027agilit\u00e0",
+        "tomo dell\u0027agilit\u00e0"
     ],
-    "id": 2012
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta utilizzato, la tua agilità aumenter\u00e0 di molto fino alla fine del prossimo combattimento."
 }

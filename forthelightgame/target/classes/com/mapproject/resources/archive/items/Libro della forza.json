@@ -1,7 +1,5 @@
 {
-    "manualDescription": "Una volta utilizzato, la tua forza d'attacco aumenterà di molto fino alla fine del prossimo combattimento.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1011,
     "name": "Libro della forza",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "alias": [
@@ -9,5 +7,8 @@
         "manuale della forza",
         "tomo della forza"
     ],
-    "id": 2011
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta utilizzato, la tua forza d\u0027attacco aumenter\u00e0 di molto fino alla fine del prossimo combattimento."
 }

@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Una volta indossata, i danni che subisci vengono ridotti. Regge al massimo 10 colpi.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1016,
     "name": "Armatura",
-    "description": "Un'armatura trovata nel labirinto. Una prova pericolosa necessita di una protezione adeguata.",
+    "description": "Un\u0027armatura trovata nel labirinto. Una prova pericolosa necessita di una protezione adeguata.",
     "alias": [
         "armatura"
     ],
-    "id": 2016
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta indossata, i danni che subisci vengono ridotti. Regge al massimo 10 colpi."
 }

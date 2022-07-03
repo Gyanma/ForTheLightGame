@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Usala per vedere tutte le stanze raggiungibili e la stanza di partenza.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1026,
     "name": "Mappa",
-    "description": "La mappa con cui hai cominciato la tua avventura. Avere un'idea delle stanze che puoi raggiungere aiuta.",
+    "description": "La mappa con cui hai cominciato la tua avventura. Avere un\u0027idea delle stanze che puoi raggiungere aiuta.",
     "alias": [
         "Mappa"
     ],
-    "id": 2026
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Usala per vedere tutte le stanze raggiungibili e la stanza di partenza."
 }

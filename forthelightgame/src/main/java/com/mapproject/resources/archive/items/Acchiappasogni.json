@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Una volta usato, i nemici ti ignoreranno per il resto della mappa. Al livello successivo, sparisce dall'inventario.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1007,
     "name": "Acchiappasogni",
     "description": "Un acchiappasogni trovato nel labirinto. I mostri sembrano volerne stare alla larga il pi\u00f9 possibile.",
     "alias": [
         "acchiappasogni"
     ],
-    "id": 2007
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Una volta usato, i nemici ti ignoreranno per il resto della mappa. Al livello successivo, sparisce dall\u0027inventario."
 }

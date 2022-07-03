@@ -1,12 +1,13 @@
 {
-    "manualDescription": "Se usato su un'arma a distanza, il suo danno aumenta leggermente per il resto della prova.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1019,
     "name": "Punta in titanio",
     "description": "Una punta trovata nel labirinto. Se il tuo obietivo \u00e8 trafiggere, non puoi sbagliarti.",
     "alias": [
         "punta in titanio",
         "punta"
     ],
-    "id": 2019
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Se usato su un\u0027arma a distanza, il suo danno aumenta leggermente per il resto della prova."
 }

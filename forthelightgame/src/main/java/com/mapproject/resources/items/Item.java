@@ -5,16 +5,13 @@ import java.util.List;
 public class Item {
 
     private final int id;
-
     private String name;
-
     private String description;
-
     private List<String> alias;
 
     private boolean pickupable = true;
-
     private boolean throwable = true;
+    private boolean used = false;
 
     private String manualDescription;
 
@@ -23,15 +20,15 @@ public class Item {
     }
 
     public Item(int id, String name, String description, List<String> alias,
-            boolean pickupable, boolean throwable, String manualDescription) {
+            String manualDescription) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.alias = alias;
         this.manualDescription = manualDescription;
-        this.pickupable = pickupable;
-        this.throwable = throwable;
-
+        this.pickupable = true;
+        this.throwable = true;
+        this.used = false;
     }
 
     public int getId() {
@@ -88,6 +85,14 @@ public class Item {
 
     public void setManualDescription(String manualDescription) {
         this.manualDescription = manualDescription;
+    }
+
+    public boolean isUsed() {
+        return used;
+    }
+
+    public void setUsed(boolean used) {
+        this.used = used;
     }
 
     @Override

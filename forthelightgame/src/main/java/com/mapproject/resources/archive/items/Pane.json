@@ -1,7 +1,5 @@
 {
-    "manualDescription": "Il pane può attirare animali in fuga, o essere donato a chi ne ha pi\u00f9",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1002,
     "name": "Pane",
     "description": "Un tozzo di pane trovato nel labirinto. Di norma non sapresti cosa farne, ma chiss\u00e0 cosa ti aspetta nel labirinto.",
     "alias": [
@@ -9,5 +7,8 @@
         "cibo",
         "pagnotta"
     ],
-    "id": 2002
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Il pane può attirare animali in fuga, o essere donato a chi ne ha pi�"
 }

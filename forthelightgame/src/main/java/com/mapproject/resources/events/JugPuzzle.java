@@ -1,7 +1,6 @@
 package com.mapproject.resources.events;
 
 import com.mapproject.enums.Location;
-import com.mapproject.resources.items.Item;
 
 public class JugPuzzle extends TextPuzzle {
 
@@ -88,7 +87,7 @@ public class JugPuzzle extends TextPuzzle {
     public JugPuzzle(int eventId, String name, String presentation, Location location,
             String question, String answer, boolean isSingleAnswer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
-            Item reward) {
+            int reward) {
         super(eventId, name, presentation, location, question, answer,
                 isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
 
@@ -97,7 +96,7 @@ public class JugPuzzle extends TextPuzzle {
     public JugPuzzle(int eventId, String name, String presentation, Location location,
             String question, String answer, boolean isSingleAnswer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
-            Item reward, JugSet playerJugSet, JugSet correctJugSet) {
+            int reward, JugSet playerJugSet, JugSet correctJugSet) {
         super(eventId, name, presentation, location, question, answer,
                 isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
         this.playerJugSet = playerJugSet;

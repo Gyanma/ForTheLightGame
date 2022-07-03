@@ -1,12 +1,13 @@
 {
-    "manualDescription": "Usandola il nemico con cui stai combattendo, potrai uscire dalla stanza senza combattere, e il nemico fuggir\u00e0. Non funziona con i boss.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1015,
     "name": "Bomba fumogena",
     "description": "Un aggeggio trovato nel labirinto. Questo marchingegno rilascia una cortina di fumo che ti permette di fuggire senza essere visto.",
     "alias": [
         "bomba fumogena",
         "fumogeno"
     ],
-    "id": 2015
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Usandola il nemico con cui stai combattendo, potrai uscire dalla stanza senza combattere, e il nemico fuggir\u00e0. Non funziona con i boss."
 }

@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Puoi usarla su un nemico e infiggergli danni.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1022,
     "name": "Pozione del fuoco",
-    "description": "Una pozione ottenuta nel labirinto. Genera all'istante una fiammata. Utilizzare con cautela.",
+    "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una fiammata. Utilizzare con cautela.",
     "alias": [
         "pozione del fuoco"
     ],
-    "id": 2022
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Puoi usarla su un nemico e infiggergli danni."
 }

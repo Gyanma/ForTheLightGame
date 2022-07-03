@@ -1,11 +1,12 @@
 {
-    "manualDescription": "Puoi usarla su un nemico e avvelenarlo, per infliggergli danni lievi per 5 turni.",
-    "pickupable": true,
-    "throwable": true,
+    "id": 1025,
     "name": "Pozione del veleno",
-    "description": "Una pozione ottenuta nel labirinto. Genera all'istante una nuvola tossica. Utilizzare con cautela.",
+    "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una nuvola tossica. Utilizzare con cautela.",
     "alias": [
         "pozione del veleno"
     ],
-    "id": 2025
+    "pickupable": true,
+    "throwable": true,
+    "used": false,
+    "manualDescription": "Puoi usarla su un nemico e avvelenarlo, per infliggergli danni lievi per 5 turni."
 }

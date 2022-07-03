@@ -5,21 +5,18 @@ import java.util.List;
 public class Weapon extends Item {
 
     private int usage;
-
     private int damage;
-
     private int weight;
-
     private int accuracy;
 
     public Weapon(int id) {
         super(id);
     }
 
-    public Weapon(int id, String name, String description, List<String> alias,
-            boolean pickupable, boolean throwable, String manualDescription,
+    public Weapon(int id, String name,
+            String description, List<String> alias, String manualDescription,
             int usage, int damage, int weight, int accuracy) {
-        super(id, name, description, alias, pickupable, throwable, manualDescription);
+        super(id, name, description, alias, manualDescription);
         this.usage = usage;
         this.damage = damage;
         this.weight = weight;

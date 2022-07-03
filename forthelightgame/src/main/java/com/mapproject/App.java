@@ -6,16 +6,13 @@ import com.mapproject.operations.jframes.MysticalMap;
 import com.mapproject.resources.Map;
 import com.mapproject.resources.events.VisualPuzzle;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
 
     public static void main(String[] args) {
 
-        AddToArchive.addVisualPuzzle();
+        AddToArchive.addTextPuzzle();
 
         // Puzzle puzzle = new Puzzle("Puzzle 1", "Puzzle 1", 3, 3, "Puzzle 1");
         // checkPuzzle(puzzle);
