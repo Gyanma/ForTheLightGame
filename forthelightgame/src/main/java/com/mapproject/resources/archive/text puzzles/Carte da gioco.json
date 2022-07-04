@@ -1,9 +1,9 @@
 {
-    "reward": 1023,
+    "rewardId": 1023,
     "eventId": 2201,
     "question": "Il goblin si aggiusta il monocolo e comincia a spiegare le regole.\n\"Come pu\u00f2 vedere ho posizionato cinque carte da gioco coperte di fronte a me. \nSe vossignoria ha cuore di credermi, le posso garantire che sono 4 assi di semi diversi E un jolly.\nOra, se usando le quattro regole che vedete accanto a voi riuscirete a indovinare \nquale carta sta dove, avrete vinto il premio segreto!\nVi baster\u00e0 dirmele in ordine, da sinistra a destra.\"\nDai un'occhiata alle regole, che recitano:\n1. I fiori sono immediatamente a destra dei cuori.\n2. Le picche non sono vicine al jolly o ai quadri.\n3. I fiori non sono vicini ai quadri o al jolly.\n4. I cuori non sono vicini ai quadri o alle picche.\n",
     "isSingleAnswer": false,
-    "tryAgainReply": "\"Questa risposta \u00e8 sbagliata. Ma non si disperi!\nHa ancora un'altra possibilit\u00e0\"\n",
+    "tryAgainReply": "",
     "correctReply": "Il goblin salta sul tavolo, costringedoti a indietreggiare\n\"Ben fatto! A voi il vostro premio!\"\nIl goblin ti porge una fiala a forma di saetta con un liquido semitrasparente dentro.\nRialzi lo sguardo e sia il goblin sia il carretto sono spariti...\n",
     "presentation": "Nell'angolo della stanza noti un'ombra che si agita. Ti avvicini e vedi un goblin dietro a un carretto.\nAppena il goblin ti nota, inizia a urlare: \"Venghino, signori, venghino. Tutti possono giocare,\n ma solo i pi\u00f9 furbi possono vincere.\"",
     "answer": "Quadri+Jolly+Cuori+Fiori+Picche",

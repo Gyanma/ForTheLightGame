@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mapproject.resources.events.Event;
-import com.mapproject.resources.items.Chest;
 import com.mapproject.resources.items.Item;
 
 public class Room {
@@ -28,8 +27,6 @@ public class Room {
     private boolean eventConcluded = false;
 
     private List<Item> objects = new ArrayList<>();
-
-    private Chest chest = null;
 
     public Room(int id, int phase) {
         this.id = id;
@@ -111,14 +108,6 @@ public class Room {
 
     public void addObject(Item object) {
         this.objects.add(object);
-    }
-
-    public Chest getChest() {
-        return chest;
-    }
-
-    public void setChest(Chest chest) {
-        this.chest = chest;
     }
 
     @Override

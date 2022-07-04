@@ -19,52 +19,40 @@ public class AddToArchive {
                 TextPuzzle vP;
                 JSONObject itemJson = new JSONObject();
 
-                itemJson.put("name", "500 perle");
-                itemJson.put("presentation",
-                                "Vedi un avventuriero parecchio affaccendato. Sembra esaminare un forziere.\n");
-                itemJson.put("eventId", 2203);
+                itemJson.put("name", "Inscatolamento");
+                itemJson.put("presentation", "C'è un elfo che guarda con insistenza due casse vuote...\n");
+                itemJson.put("eventId", 2209);
                 itemJson.put("isSkippable", true);
-                itemJson.put("location", Location.NORTH_EAST);
-                itemJson.put("question", "L'avventuriero ti nota e immediatamente ti rivolge la parola\n"
-                                + "\"Oh, che gioia incontrare un altro viaggiatore. Guarda, questo \u00e8\n"
-                                + "il forziere incantato di Adhara. Sul muro \u00e8 inciso un messaggio, ma non riesco a decifrarlo.\n"
-                                + "Hai tu forse idea di cosa ci sa scritto?\"\n"
-                                + "In effetti, riesci a leggere la scritta, cos\u00ec la traduci al viaggiatore.\n"
-                                + "\"Questo forziere contiene 500 perle. Chiunque voglia prenderle, \u00e8 libero di farlo.\n"
-                                + "Ma se il numero di perle prese \u00e8 diverso dal numero preferito del leggendario\n"
-                                + "Adhara, le perle torneranno nel forziere in men che non si dica, e chiunque\n"
-                                + "le abbia toccate subir\u00e0 un terribile sortilegio.\n"
-                                + "Adhara \u00e8 sempre stato un'anima generosa. Ogni volta che tornava da una spedizione,\n"
-                                + "divideva i suoi ritrovamenti con tutti gli altri abitanti del suo villaggio.\n"
-                                + "In particolare, teneva sempre da parte uno solo di qualsiasi oggetto ritrovava\n"
-                                + "e poi divideva equamente il resto. E quando tornava con il suo numero preferito di perle,\n"
-                                + "non importava quante persone si trovava davanti; due, tre, quattro, cinque,\n"
-                                + "sei o sette, riusciva sempre a dividerle senza fare danno a nessuno.\"\n"
-                                + "Una volta concluso, l'avventuriero riprende a parlare.\n"
-                                + "\"Ora \u00e8 tutto chiaro. Basta trovare questo numero speciale e le perle saranno nostre!\n"
-                                + "Pensiamoci su. Quando hai qualche idea avvisami. Ma pensaci bene!\n"
-                                + "Con quella maledizione non possiamo permetterci errori.\"\n"
-                                + "Ebbene? Quante perle vuoi prendere?\n");
+                itemJson.put("location", Location.NORTH_WEST);
+                itemJson.put("question", "Quando approcci l'elfo, lui ti saluta con aria di superiorità \"Oh, salve.\n"
+                                + "Stavo giusto cercando qualcuno con cui lamentarmi di quell'idiota del mio capo.\n"
+                                + "Queste casse misurano 30 cm per ogni dimensione.\n"
+                                + "Posso utilizzare una coppia di scatole per trasportare queste scatole\n"
+                                + "che invece misurano 20x20x10.\n"
+                                + "Anche un bambino vedrebbe che con due casse posso trasportare non più di 10 scatole\n"
+                                + "e invece il mio capo dice che \"sono troppo poche\"!\n"
+                                + "Come se ci fosse un modo per trasportarne di più che\n"
+                                + "IO non sono riuscito a trovare. Bah\"\n"
+                                + "Inizi a riflettere sulle parole dell'elfo... chissà se...\n"
+                                + "L'elfo interrompe il tuo flusso di pensieri.\n"
+                                + "Cosa ti turba? Pensi forse che abbia ragione lui?\n"
+                                + "Sentiamo dunque, quante scatole riusciresti a trasportare?\"\n");
                 itemJson.put("isSingleAnswer", true);
-                itemJson.put("answer", "421");
-                itemJson.put("correctReply", "\"Ma certo. Tutto torna!\"\n"
-                                + "Insieme all'avventuriero, raccogli 421 perle dal baule.\n"
-                                + "Dopo aver atteso qualche minuto, la stanza inizia a tremare.\n"
-                                + "Dal baule fuoriesce una luce intensa, che vi toglie la vista.\n"
-                                + "D'un tratto, la luce si interrompe. Il baule \u00e8 scomparso, e una nuova incisione ha sostituito\n"
-                                + "la precedente sul muro. \"Ben fatto. Le perle sono vostre. Fatene buon uso e ricordate\n"
-                                + "le gesta del grande Adhara.\"\n"
-                                + "\"Senza di te non sarei mai riuscito a prendere le perle. Per ringraziarti, ti lascer\u00f2\n"
-                                + "la parte pi\u00f9 grande.\" L'avventuriero prende 150 perle e le mette nella sua bisaccia.\n"
-                                + "\"Bene, ho preso la mia parte. A presto, e ancora grazie!\" aggiunge, per poi allontanarsi nell'oscurit\u00e0\n"
-                                + "Prendi le tue perle, le infili nella tua borsa e ti guardi nuovamente intorno.\n");
+                itemJson.put("answer", "12");
+                itemJson.put("correctReply", "Spieghi all'elfo come posizionare le scatole e le casse\n"
+                                + "per trasportarne 12.\n"
+                                + "L'elfo ti risponde:\"Tsk, certo. Lo sapevo anche io.\n"
+                                + "Ora levati di mezzo. C'è del lavoro da fare qui.\"\n"
+                                + "Mentre si allontana, dalla bisaccia dell'elfo casca un otre di acqua.\n"
+                                + "Decidi di prenderlo, come... ringraziamento, e ti allontani.\n");
                 itemJson.put("incorrectReply", "");
-                itemJson.put("tryAgainReply", "\"Dici? No, non mi convince.\" ti risponde l'avventuriero\n"
-                                + "\"Riflettiamo ancora, prima di fare mosse avventate\"");
-                itemJson.put("surrenderReply", "\"Oh, d'accordo; se vuoi allontanarti non ti fermer\u00f2\n"
-                                + "Grazie ancora per l'aiuto, non lo dimenticher\u00f2!\"\n");
-                itemJson.put("reward", Loader.loadItem("Sacca di perle").getId());
-
+                itemJson.put("tryAgainReply",
+                                "Spieghi la tua idea all'elfo, ma lui ti risponde in malo modo\n"
+                                                + "Oh, che assurdità. Sapevo di non podermi affidare a te.\n");
+                itemJson.put("surrenderReply", "\"Ecco. Ora spero che ti renda conto che ho ragione. Addio.\"\n"
+                                + "Ti allontani dall'elfo prima di passare alla violenza.\n");
+                itemJson.put("rewardId", Loader.loadItem("acqua").getId());
+                // TODO Enigma dei clown + enigmi delle brocche
                 /*
                  * (int eventId, String name, String presentation, Location location,
                  * String question, String answer, boolean isSingleAnswer,
@@ -84,13 +72,7 @@ public class AddToArchive {
                                 (String) itemJson.get("incorrectReply"),
                                 (String) itemJson.get("tryAgainReply"),
                                 (String) itemJson.get("surrenderReply"),
-                                (int) itemJson.get("reward"));
-
-                System.out.println(vP.getEventId());
-                System.out.println(vP.getName());
-                System.out.println(vP.getPresentation());
-                System.out.println(vP.getLocation());
-                System.out.println(vP.getQuestion());
+                                (int) itemJson.get("rewardId"));
 
                 try {
                         FileWriter file = new FileWriter(
@@ -109,6 +91,13 @@ public class AddToArchive {
                 System.out.println(vP2.getPresentation());
                 System.out.println(vP2.getLocation());
                 System.out.println(vP2.getQuestion());
+                System.out.println(vP2.getAnswer());
+                System.out.println(vP2.isSingleAnswer());
+                System.out.println(vP2.getCorrectReply());
+                System.out.println(vP2.getIncorrectReply());
+                System.out.println(vP2.getTryAgainReply());
+                System.out.println(vP2.getSurrenderReply());
+                System.out.println(vP2.getRewardId());
         }
 
         public static void addItem(String element) {

@@ -16,7 +16,6 @@ public class MapBuilder {
     private final int COLUMN = 4;
 
     private Map map = new Map();
-    boolean isElitePresent = false;
     private static Set<Integer> placedBosses = new HashSet<>();
     private static Set<Integer> placedTextPuzzles = new HashSet<>();
     private static Set<Integer> placedDangers = new HashSet<>();
@@ -146,13 +145,7 @@ public class MapBuilder {
     private void addEnemies() {
 
         // choose a random enemy
-        int enemyId = 0;
-        if (Math.random() < 0.8) {
-            enemyId = (int) (Math.random() * 8) + 2401; // enemy id is between 2401 and 2409
-        } else if (!isElitePresent) {
-            enemyId = (int) (Math.random() * 5) + 2410; // elite enemy id is between 2411 and 2416
-            isElitePresent = true;
-        }
+        int enemyId = (int) (Math.random() * 8) + 2401; // enemy id is between 2401 and 2409
 
         // choose a random room
         int roomId;
