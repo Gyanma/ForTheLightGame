@@ -9,50 +9,76 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 import com.mapproject.enums.Location;
+
 import com.mapproject.resources.events.TextPuzzle;
+import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.items.Item;
 
 public class AddToArchive {
 
         public static void addTextPuzzle() {
 
-                TextPuzzle vP;
                 JSONObject itemJson = new JSONObject();
 
-                itemJson.put("name", "Inscatolamento");
-                itemJson.put("presentation", "C'è un elfo che guarda con insistenza due casse vuote...\n");
-                itemJson.put("eventId", 2209);
+                itemJson.put("name", "L'ascia rubata");
+                itemJson.put("presentation", "Nella stanza si ergono tre oni, che stanno discutendo di fronte\n"
+                                + "a cinque forzieri con diversi ornamenti.\n"
+                                + "Sembrano tipi con cui è meglio non avere a che fare.\n"
+                                + "A poca distanza, c'è un folletto che li osserva con furtività.\n");
+                itemJson.put("eventId", 2210);
                 itemJson.put("isSkippable", true);
                 itemJson.put("location", Location.NORTH_WEST);
-                itemJson.put("question", "Quando approcci l'elfo, lui ti saluta con aria di superiorità \"Oh, salve.\n"
-                                + "Stavo giusto cercando qualcuno con cui lamentarmi di quell'idiota del mio capo.\n"
-                                + "Queste casse misurano 30 cm per ogni dimensione.\n"
-                                + "Posso utilizzare una coppia di scatole per trasportare queste scatole\n"
-                                + "che invece misurano 20x20x10.\n"
-                                + "Anche un bambino vedrebbe che con due casse posso trasportare non più di 10 scatole\n"
-                                + "e invece il mio capo dice che \"sono troppo poche\"!\n"
-                                + "Come se ci fosse un modo per trasportarne di più che\n"
-                                + "IO non sono riuscito a trovare. Bah\"\n"
-                                + "Inizi a riflettere sulle parole dell'elfo... chissà se...\n"
-                                + "L'elfo interrompe il tuo flusso di pensieri.\n"
-                                + "Cosa ti turba? Pensi forse che abbia ragione lui?\n"
-                                + "Sentiamo dunque, quante scatole riusciresti a trasportare?\"\n");
+                itemJson.put("question", "Cercando di non attirare l'attenzione degli oni, ti avvicini al folletto\n"
+                                + "e gli chiedi perché sta osservando gli oni.\n"
+                                + "\"Quei bruti mi hanno rubato un ciondolo molto prezioso.\n"
+                                + "Dicevano che sarebbe uno splendido ornamento per le loro asce.\n"
+                                + "Li ho sentiti conversare prima, ma non ho potuto vedere i loro volti.\n"
+                                + "Ho scoperto che hanno un modo molto particolare di lasciare il loro\n"
+                                + "equipaggiamento nei forzieri.\n"
+                                + "Uno di loro lascia lo scudo nel forziere dorato, l'ascia nel forziere di legno e l'arco nel forziere di pietra.\n"
+                                + "Il secondo lascia l'arco nel forziere di pietra e il resto nel forziere di ferro.\n"
+                                + "L'ultimo lascia lo scudo nel forziere di legno e il resto nel forziere d'avorio.\n"
+                                + "Ora sto provando ad aspettare un momento propizio per riprendermi il ciondolo.\"\n"
+                                + "Il folletto si interrompe e ti fa segno di rimanere in silenzio.\n"
+                                + "Ascolti il discorso degli oni:\n"
+                                + "\"Pronti allora? Tu vuoi davvero lasciare il tuo scudo?\"\n"
+                                + "\"Sì, non mi servirà. Del resto anche tu stai lasciando la tua ascia e lui sta lasciando l'arco.\"\n"
+                                + "\"D'accordo allora, andiamo\"\n"
+                                + "Il folletto esclama: \"Guarda! I due oni con l'ascia non hanno ciondoli appesi all'ascia;\n"
+                                + "il mio sarà sicuramente appeso all'ascia che hanno lasciato!\n"
+                                + "Devo andare a recuperarlo!\"\n"
+                                + "Insieme al folletto vi avvicinate ai forzieri. Per qualche motivo gli oni non si sono curati di chiuderli.\n"
+                                + "\"Tu apri il forziere di pietra, io aprirò quello di legno.\"\n"
+                                + "Esegui il comando, ma entrambe le casse sono vuote.\n"
+                                + "Prima che possiate dirvi altro, sentite una voca tuonare.\n"
+                                + "\"Va bene, vado a chiuderli io, ma sappi che toccava a te.\"\n"
+                                + "\"Oh miseria, stanno tornando!\"\n"
+                                + "Il tempo stringe, puoi aprire un solo forziere!\n"
+                                + "Riesci a capire in che forziere si trova l'ascia con il ciondolo?\n");
                 itemJson.put("isSingleAnswer", true);
-                itemJson.put("answer", "12");
-                itemJson.put("correctReply", "Spieghi all'elfo come posizionare le scatole e le casse\n"
-                                + "per trasportarne 12.\n"
-                                + "L'elfo ti risponde:\"Tsk, certo. Lo sapevo anche io.\n"
-                                + "Ora levati di mezzo. C'è del lavoro da fare qui.\"\n"
-                                + "Mentre si allontana, dalla bisaccia dell'elfo casca un otre di acqua.\n"
-                                + "Decidi di prenderlo, come... ringraziamento, e ti allontani.\n");
-                itemJson.put("incorrectReply", "");
-                itemJson.put("tryAgainReply",
-                                "Spieghi la tua idea all'elfo, ma lui ti risponde in malo modo\n"
-                                                + "Oh, che assurdità. Sapevo di non podermi affidare a te.\n");
-                itemJson.put("surrenderReply", "\"Ecco. Ora spero che ti renda conto che ho ragione. Addio.\"\n"
-                                + "Ti allontani dall'elfo prima di passare alla violenza.\n");
-                itemJson.put("rewardId", Loader.loadItem("acqua").getId());
-                // TODO Enigma dei clown + enigmi delle brocche
+                itemJson.put("answer", "forziere di ferro");
+                itemJson.put("correctReply", "Ti lanci verso il forziere di ferro.\n"
+                                + "Lo apri con tutta la forza che hai in corpo e\n"
+                                + "dentro trovi proprio l'ascia con il ciondolo!\n"
+                                + "Afferri il ciondolo e fai segno al folletto di svignarvela.\n"
+                                + "Tornate al riparo e osservate l'oni chiudere i forzieri.\n"
+                                + "Non sembra notare l'assenza del ciondolo.\n"
+                                + "Una volta che si è allontanato per tornare dai suoi compagni, il folleto ti dice:\n"
+                                + "\"Grazie infinite, senza la tua prontezza di riflessi non sarei mai riuscito a recuperarlo!\n"
+                                + "Tieni questo, ti servirà nel tuo viaggio. A presto!\"\n"
+                                + "Il folletto ti lascia una punta in titanio e vola via.\n");
+                itemJson.put("incorrectReply", "Con gran fretta apri il forziere,\n"
+                                + "ma sfortunatamente l'ascia non sembra essere lì.\n"
+                                + "Il folletto ti incita: \"Non c'è tempo, torniamo al riparo!\"\n"
+                                + "Vi nascondete in fretta e furia e osservate l'oni richiudere i forzieri.\n"
+                                + "Dopo che l'oni lascia la stanza, il folletto ti dice:\n"
+                                + "\"C'è mancato davvero poco. Dovrò aspettare che tornino.\n"
+                                + "Grazie dell'aiuto, viandante. Almeno ho potuto scartare due forzieri.\n"
+                                + "A presto e buona fortuna nelle tue avventure.\"\n"
+                                + "Lasci il folletto alla sua vedetta.\n");
+                itemJson.put("tryAgainReply", "");
+                itemJson.put("surrenderReply", "");
+                itemJson.put("rewardId", Loader.loadItem("punta in titanio").getId());
                 /*
                  * (int eventId, String name, String presentation, Location location,
                  * String question, String answer, boolean isSingleAnswer,
@@ -60,23 +86,10 @@ public class AddToArchive {
                  * surrenderReply,
                  * Item reward)
                  */
-                vP = new TextPuzzle(
-                                (int) itemJson.get("eventId"),
-                                (String) itemJson.get("name"),
-                                (String) itemJson.get("presentation"),
-                                (Location) itemJson.get("location"),
-                                (String) itemJson.get("question"),
-                                (String) itemJson.get("answer"),
-                                (boolean) itemJson.get("isSingleAnswer"),
-                                (String) itemJson.get("correctReply"),
-                                (String) itemJson.get("incorrectReply"),
-                                (String) itemJson.get("tryAgainReply"),
-                                (String) itemJson.get("surrenderReply"),
-                                (int) itemJson.get("rewardId"));
 
                 try {
                         FileWriter file = new FileWriter(
-                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\"
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
                                                         + itemJson.get("name") + ".json");
                         file.write(itemJson.toString());
                         file.flush();
@@ -85,7 +98,7 @@ public class AddToArchive {
                         System.out.println("Error while writing item JSON");
                 }
 
-                TextPuzzle vP2 = Loader.loadTextPuzzle(itemJson.get("name").toString());
+                JugPuzzle vP2 = Loader.loadJugPuzzle(itemJson.get("name").toString());
                 System.out.println(vP2.getEventId());
                 System.out.println(vP2.getName());
                 System.out.println(vP2.getPresentation());

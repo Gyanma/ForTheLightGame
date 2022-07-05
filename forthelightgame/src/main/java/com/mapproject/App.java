@@ -7,8 +7,6 @@ import com.mapproject.resources.Map;
 import com.mapproject.resources.events.VisualPuzzle;
 
 public final class App {
-    private App() {
-    }
 
     public static void main(String[] args) {
 

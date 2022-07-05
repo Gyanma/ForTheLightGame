@@ -5,6 +5,7 @@ import com.mapproject.resources.events.Enemy;
 import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
 import com.mapproject.resources.events.VisualPuzzle;
+import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.items.Item;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
@@ -55,8 +56,8 @@ public class Loader {
             FileReader reader = new FileReader(
                     new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\"
                             + element + ".json"));
-            TextPuzzle enemy = new Gson().fromJson(reader, TextPuzzle.class);
-            return enemy;
+            TextPuzzle textPuzzle = new Gson().fromJson(reader, TextPuzzle.class);
+            return textPuzzle;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,6 +66,25 @@ public class Loader {
 
     public static TextPuzzle loadTextPuzzle(int i) {
         return loadTextPuzzle(recognizeElement(i));
+    }
+
+    public static JugPuzzle loadJugPuzzle(int i) {
+        return loadJugPuzzle(recognizeElement(i));
+    }
+
+    public static JugPuzzle loadJugPuzzle(String element) {
+
+        try {
+            FileReader reader = new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + ".json"));
+            JugPuzzle jugPuzzle = new Gson().fromJson(reader, JugPuzzle.class);
+            return jugPuzzle;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static Danger loadDanger(String element) {
