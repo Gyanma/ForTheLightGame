@@ -4,7 +4,7 @@ import com.mapproject.enums.Location;
 
 public class JugPuzzle extends TextPuzzle {
 
-    static class Jug {
+    public static class Jug {
         private int jugContent;
         private final int jugCapacity;
 
@@ -27,7 +27,7 @@ public class JugPuzzle extends TextPuzzle {
 
     }
 
-    static class JugSet {
+    public static class JugSet {
 
         private Jug jug1;
         private Jug jug2;
@@ -38,6 +38,12 @@ public class JugPuzzle extends TextPuzzle {
             this.jug1 = new Jug(jug1Content, jug1Capacity);
             this.jug2 = new Jug(jug2Content, jug2Capacity);
             this.jug3 = new Jug(jug3Content, jug3Capacity);
+        }
+
+        public JugSet(Jug jug1, Jug jug2, Jug jug3) {
+            this.jug1 = jug1;
+            this.jug2 = jug2;
+            this.jug3 = jug3;
         }
 
         public Jug getJug1() {
@@ -100,6 +106,22 @@ public class JugPuzzle extends TextPuzzle {
         super(eventId, name, presentation, location, question, answer,
                 isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
         this.playerJugSet = playerJugSet;
+        this.correctJugSet = correctJugSet;
+    }
+
+    public JugSet getPlayerJugSet() {
+        return playerJugSet;
+    }
+
+    public void setPlayerJugSet(JugSet playerJugSet) {
+        this.playerJugSet = playerJugSet;
+    }
+
+    public JugSet getCorrectJugSet() {
+        return correctJugSet;
+    }
+
+    public void setCorrectJugSet(JugSet correctJugSet) {
         this.correctJugSet = correctJugSet;
     }
 

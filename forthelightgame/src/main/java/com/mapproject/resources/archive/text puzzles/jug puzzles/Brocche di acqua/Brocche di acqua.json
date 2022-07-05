@@ -1,0 +1,15 @@
+{
+    "eventId": 2205,
+    "question": "Una volta avvicinato al tavolo, il vecchio ti chiama.\n\"Bentornato giovane. Ti va di giocare?\nLe regole le conosci. Adesso la brocca da 8 decilitri � piena,\ne quelle da 5 e 3 decilitri sono vuote.\nDevi versare l'acqua tra le brocche in modo che\nle brocche da 8 e 5 decilitri abbiano entrambe 4 decilitri d'acqua.\nNaturalmente, puoi solo versare il vino da una\nbrocca a un'altra finché la seconda non è piena.\nNon provare a improvvisare una misura.\nAccetti?\"\n",
+    "isSingleAnswer": true,
+    "tryAgainReply": "",
+    "correctReply": "\"Ben fatto ragazzo\nA te il tuo premio.\"\nIl vecchio ti consegna una bomba fumogena, e rimette l'acqua nella brocca iniziale.\nSaluti il vecchio e ti allontani.\n",
+    "presentation": "Nell'angolo della stanza trovi un vecchio seduto a un tavolo.\nHa tre brocche di fronte a s�. Non sai perch�, ma\nhai come la sensazione di averlo gi� visto...\n",
+    "rewardId": 1015,
+    "answer": "",
+    "incorrectReply": "",
+    "name": "Brocche di acqua",
+    "location": "NORTH_WEST",
+    "surrenderReply": "\"Nessun problema. A presto, ragazzo.\"\nSaluti il vecchio e ti allontani.\n",
+    "isSkippable": true
+}

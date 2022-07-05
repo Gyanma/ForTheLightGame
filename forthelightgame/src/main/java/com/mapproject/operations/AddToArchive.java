@@ -4,13 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 import com.mapproject.enums.Location;
-
-import com.mapproject.resources.events.TextPuzzle;
+import com.mapproject.resources.events.Danger;
 import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.items.Item;
 
@@ -20,65 +21,34 @@ public class AddToArchive {
 
                 JSONObject itemJson = new JSONObject();
 
-                itemJson.put("name", "L'ascia rubata");
-                itemJson.put("presentation", "Nella stanza si ergono tre oni, che stanno discutendo di fronte\n"
-                                + "a cinque forzieri con diversi ornamenti.\n"
-                                + "Sembrano tipi con cui è meglio non avere a che fare.\n"
-                                + "A poca distanza, c'è un folletto che li osserva con furtività.\n");
-                itemJson.put("eventId", 2210);
+                itemJson.put("name", "Brocche di vino");
+                itemJson.put("presentation", "Nell'angolo della stanza trovi un vecchio seduto a un tavolo.\n"
+                                + "Ha tre brocche di fronte a sé. Non sai perché, ma\n"
+                                + "hai come la sensazione di averlo già visto...\n");
+                itemJson.put("eventId", 2214);
                 itemJson.put("isSkippable", true);
-                itemJson.put("location", Location.NORTH_WEST);
-                itemJson.put("question", "Cercando di non attirare l'attenzione degli oni, ti avvicini al folletto\n"
-                                + "e gli chiedi perché sta osservando gli oni.\n"
-                                + "\"Quei bruti mi hanno rubato un ciondolo molto prezioso.\n"
-                                + "Dicevano che sarebbe uno splendido ornamento per le loro asce.\n"
-                                + "Li ho sentiti conversare prima, ma non ho potuto vedere i loro volti.\n"
-                                + "Ho scoperto che hanno un modo molto particolare di lasciare il loro\n"
-                                + "equipaggiamento nei forzieri.\n"
-                                + "Uno di loro lascia lo scudo nel forziere dorato, l'ascia nel forziere di legno e l'arco nel forziere di pietra.\n"
-                                + "Il secondo lascia l'arco nel forziere di pietra e il resto nel forziere di ferro.\n"
-                                + "L'ultimo lascia lo scudo nel forziere di legno e il resto nel forziere d'avorio.\n"
-                                + "Ora sto provando ad aspettare un momento propizio per riprendermi il ciondolo.\"\n"
-                                + "Il folletto si interrompe e ti fa segno di rimanere in silenzio.\n"
-                                + "Ascolti il discorso degli oni:\n"
-                                + "\"Pronti allora? Tu vuoi davvero lasciare il tuo scudo?\"\n"
-                                + "\"Sì, non mi servirà. Del resto anche tu stai lasciando la tua ascia e lui sta lasciando l'arco.\"\n"
-                                + "\"D'accordo allora, andiamo\"\n"
-                                + "Il folletto esclama: \"Guarda! I due oni con l'ascia non hanno ciondoli appesi all'ascia;\n"
-                                + "il mio sarà sicuramente appeso all'ascia che hanno lasciato!\n"
-                                + "Devo andare a recuperarlo!\"\n"
-                                + "Insieme al folletto vi avvicinate ai forzieri. Per qualche motivo gli oni non si sono curati di chiuderli.\n"
-                                + "\"Tu apri il forziere di pietra, io aprirò quello di legno.\"\n"
-                                + "Esegui il comando, ma entrambe le casse sono vuote.\n"
-                                + "Prima che possiate dirvi altro, sentite una voca tuonare.\n"
-                                + "\"Va bene, vado a chiuderli io, ma sappi che toccava a te.\"\n"
-                                + "\"Oh miseria, stanno tornando!\"\n"
-                                + "Il tempo stringe, puoi aprire un solo forziere!\n"
-                                + "Riesci a capire in che forziere si trova l'ascia con il ciondolo?\n");
+                itemJson.put("location", Location.SOUTH_EAST);
+                itemJson.put("question", "Una volta avvicinato al tavolo, il vecchio ti chiama.\n"
+                                + "\"Bentornato giovane. Ti va di giocare?\n"
+                                + "Le regole le conosci. Adesso la brocca da 16 decilitri è piena,\n"
+                                + "e quelle da 9 e 7 decilitri sono vuote.\n"
+                                + "Devi versare il vino tra le brocche in modo che\n"
+                                + "le brocche da 16 e 9 decilitri abbiano entrambe 8 decilitri di vino.\n"
+                                + "Naturalmente, puoi solo versare il vino da una\n"
+                                + "brocca a un'altra finché la seconda non è piena.\n"
+                                + "Non provare a improvvisare una misura.\n"
+                                + "Accetti?\"\n");
                 itemJson.put("isSingleAnswer", true);
-                itemJson.put("answer", "forziere di ferro");
-                itemJson.put("correctReply", "Ti lanci verso il forziere di ferro.\n"
-                                + "Lo apri con tutta la forza che hai in corpo e\n"
-                                + "dentro trovi proprio l'ascia con il ciondolo!\n"
-                                + "Afferri il ciondolo e fai segno al folletto di svignarvela.\n"
-                                + "Tornate al riparo e osservate l'oni chiudere i forzieri.\n"
-                                + "Non sembra notare l'assenza del ciondolo.\n"
-                                + "Una volta che si è allontanato per tornare dai suoi compagni, il folleto ti dice:\n"
-                                + "\"Grazie infinite, senza la tua prontezza di riflessi non sarei mai riuscito a recuperarlo!\n"
-                                + "Tieni questo, ti servirà nel tuo viaggio. A presto!\"\n"
-                                + "Il folletto ti lascia una punta in titanio e vola via.\n");
-                itemJson.put("incorrectReply", "Con gran fretta apri il forziere,\n"
-                                + "ma sfortunatamente l'ascia non sembra essere lì.\n"
-                                + "Il folletto ti incita: \"Non c'è tempo, torniamo al riparo!\"\n"
-                                + "Vi nascondete in fretta e furia e osservate l'oni richiudere i forzieri.\n"
-                                + "Dopo che l'oni lascia la stanza, il folletto ti dice:\n"
-                                + "\"C'è mancato davvero poco. Dovrò aspettare che tornino.\n"
-                                + "Grazie dell'aiuto, viandante. Almeno ho potuto scartare due forzieri.\n"
-                                + "A presto e buona fortuna nelle tue avventure.\"\n"
-                                + "Lasci il folletto alla sua vedetta.\n");
+                itemJson.put("answer", "");
+                itemJson.put("correctReply", "\"Ben fatto ragazzo\n"
+                                + "A te il tuo premio.\"\n"
+                                + "Il vecchio ti consegna una balestra, e rimette il vino nella brocca iniziale.\n"
+                                + "Saluti il vecchio e ti allontani.\n");
+                itemJson.put("incorrectReply", "");
                 itemJson.put("tryAgainReply", "");
-                itemJson.put("surrenderReply", "");
-                itemJson.put("rewardId", Loader.loadItem("punta in titanio").getId());
+                itemJson.put("surrenderReply", "\"Nessun problema. A presto, ragazzo.\"\n"
+                                + "Saluti il vecchio e ti allontani.\n");
+                itemJson.put("rewardId", Loader.loadWeapon("balestra").getId());
                 /*
                  * (int eventId, String name, String presentation, Location location,
                  * String question, String answer, boolean isSingleAnswer,
@@ -90,12 +60,102 @@ public class AddToArchive {
                 try {
                         FileWriter file = new FileWriter(
                                         "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
-                                                        + itemJson.get("name") + ".json");
+                                                        + itemJson.get("name") + "\\" + itemJson.get("name") + ".json");
                         file.write(itemJson.toString());
                         file.flush();
                         file.close();
                 } catch (Exception e) {
-                        System.out.println("Error while writing item JSON");
+                        e.printStackTrace();
+                }
+
+                JSONObject jugObject = new JSONObject();
+                jugObject.put("jugContent", 16);
+                jugObject.put("jugCapacity", 16);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\jug1.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                jugObject = new JSONObject();
+                jugObject.put("jugContent", 0);
+                jugObject.put("jugCapacity", 9);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\jug2.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                jugObject = new JSONObject();
+                jugObject.put("jugContent", 0);
+                jugObject.put("jugCapacity", 7);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\jug3.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                jugObject = new JSONObject();
+                jugObject.put("jugContent", 8);
+                jugObject.put("jugCapacity", 16);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\correctJug1.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                jugObject = new JSONObject();
+                jugObject.put("jugContent", 8);
+                jugObject.put("jugCapacity", 9);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\correctJug2.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                jugObject = new JSONObject();
+                jugObject.put("jugContent", 0);
+                jugObject.put("jugCapacity", 7);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                                        + itemJson.get("name") + "\\correctJug3.json");
+                        file.write(jugObject.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
                 }
 
                 JugPuzzle vP2 = Loader.loadJugPuzzle(itemJson.get("name").toString());
@@ -111,6 +171,46 @@ public class AddToArchive {
                 System.out.println(vP2.getTryAgainReply());
                 System.out.println(vP2.getSurrenderReply());
                 System.out.println(vP2.getRewardId());
+        }
+
+        public static void addDanger() {
+                JSONObject itemJson = new JSONObject();
+                itemJson.put("name", "Incendio");
+                itemJson.put("eventId", 2101);
+                itemJson.put("presentation", "Ti dirigi verso il centro della stanza\n"
+                                + "quando all'improvviso un muro di fiamme ti avvolge!\n"
+                                + "La stanza era una trappola! Presto, pensa a un modo per spegnere l'incendio");
+                Map<Integer, String> countdown = new HashMap<Integer, String>();
+                countdown.put(1, "Le fiamme si continuano ad alzare.\n");
+                countdown.put(2, "Un pilastro comincia a vacillare!\n");
+                countdown.put(3, "Il pilastro crolla, e per un pelo riesci a schivarlo.\n");
+                countdown.put(4, "Il calore diventa insostenibile...");
+                countdown.put(5, "Non c'è via di scampo... Intossicato dal fumo, svieni..\n");
+                itemJson.put("countdown", countdown);
+                itemJson.put("timeLimit", 75000);
+                itemJson.put("solution", Loader.loadItem("acqua").getId());
+                itemJson.put("prize", Loader.loadItem("armatura").getId());
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dangers\\"
+                                                        + itemJson.get("name") + ".json");
+                        file.write(itemJson.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                Danger danger = Loader.loadDanger(itemJson.get("name").toString());
+                System.out.println(danger.getEventId());
+                System.out.println(danger.getName());
+                System.out.println(danger.getPresentation());
+                System.out.println(danger.getCountdown());
+                System.out.println(danger.getTimeLimit());
+                System.out.println(danger.getSolution());
+                System.out.println(danger.getPrize());
+
         }
 
         public static void addItem(String element) {

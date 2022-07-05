@@ -3,34 +3,32 @@ package com.mapproject.resources.events;
 import java.util.HashMap;
 
 import com.mapproject.enums.Location;
-import com.mapproject.resources.items.Item;
 
 public class Danger extends Event {
 
     private HashMap<Integer, String> countdown;
     private int timeLimit;
-    private Item solution;
-    private Item prize;
+    private int solutionId;
+    private int prizeId;
 
     public Danger(int eventId) {
         super(eventId);
 
     }
 
-    public Danger(int eventId, String name, String description) {
-        super(eventId, name, description, false, Location.EVERYWHERE);
+    public Danger(int eventId, String name, String presentation) {
+        super(eventId, name, presentation, false, Location.EVERYWHERE);
 
     }
 
-    public Danger(int eventId, String name, String description, HashMap<Integer, String> countdown, int timeLimit,
-            Item solution,
-            Item prize) {
-        super(eventId, name, description, false, Location.EVERYWHERE);
+    public Danger(int eventId, String name, String presentation, HashMap<Integer, String> countdown, int timeLimit,
+            int solutionId, int prizeId) {
+        super(eventId, name, presentation, false, Location.EVERYWHERE);
 
         this.countdown = countdown;
         this.timeLimit = timeLimit;
-        this.solution = solution;
-        this.prize = prize;
+        this.solutionId = solutionId;
+        this.prizeId = prizeId;
     }
 
     public HashMap<Integer, String> getCountdown() {
@@ -49,20 +47,20 @@ public class Danger extends Event {
         this.timeLimit = timeLimit;
     }
 
-    public Item getSolution() {
-        return solution;
+    public int getSolution() {
+        return solutionId;
     }
 
-    public void setSolution(Item solution) {
-        this.solution = solution;
+    public void setSolution(int solutionId) {
+        this.solutionId = solutionId;
     }
 
-    public Item getPrize() {
-        return prize;
+    public int getPrize() {
+        return prizeId;
     }
 
-    public void setPrize(Item prize) {
-        this.prize = prize;
+    public void setPrize(int prizeId) {
+        this.prizeId = prizeId;
     }
 
 }

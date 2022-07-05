@@ -5,11 +5,14 @@ import com.mapproject.resources.events.Enemy;
 import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
 import com.mapproject.resources.events.VisualPuzzle;
+import com.mapproject.resources.events.JugPuzzle.Jug;
+import com.mapproject.resources.events.JugPuzzle.JugSet;
 import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.items.Item;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
 import java.io.IOException;
+
 import java.io.File;
 import java.io.FileReader;
 
@@ -68,23 +71,64 @@ public class Loader {
         return loadTextPuzzle(recognizeElement(i));
     }
 
-    public static JugPuzzle loadJugPuzzle(int i) {
-        return loadJugPuzzle(recognizeElement(i));
-    }
-
     public static JugPuzzle loadJugPuzzle(String element) {
 
         try {
-            FileReader reader = new FileReader(
+
+            JugPuzzle jugPuzzle = new Gson().fromJson(new FileReader(
                     new File(
                             "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
-                                    + element + ".json"));
-            JugPuzzle jugPuzzle = new Gson().fromJson(reader, JugPuzzle.class);
+                                    + element + "\\" + element + ".json")),
+                    JugPuzzle.class);
+
+            Jug jug1 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\jug1.json")),
+                    Jug.class);
+
+            Jug jug2 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\jug2.json")),
+                    Jug.class);
+
+            Jug jug3 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\jug3.json")),
+                    Jug.class);
+
+            jugPuzzle.setPlayerJugSet(new JugSet(jug1, jug2, jug3));
+
+            Jug correctJug1 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\correctJug1.json")),
+                    Jug.class);
+
+            Jug correctJug2 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\correctJug2.json")),
+                    Jug.class);
+
+            Jug correctJug3 = new Gson().fromJson(new FileReader(
+                    new File(
+                            "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\text puzzles\\jug puzzles\\"
+                                    + element + "\\correctJug3.json")),
+                    Jug.class);
+
+            jugPuzzle.setCorrectJugSet(new JugSet(correctJug1, correctJug2, correctJug3));
             return jugPuzzle;
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static JugPuzzle loadJugPuzzle(int i) {
+        return loadJugPuzzle(recognizeElement(i));
     }
 
     public static Danger loadDanger(String element) {
