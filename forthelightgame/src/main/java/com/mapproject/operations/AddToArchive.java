@@ -173,23 +173,15 @@ public class AddToArchive {
                 System.out.println(vP2.getRewardId());
         }
 
-        public static void addDanger() {
+        public static void addEnemy() {
                 JSONObject itemJson = new JSONObject();
-                itemJson.put("name", "Incendio");
-                itemJson.put("eventId", 2101);
+                itemJson.put("name", "Animali Aggressivi");
+                itemJson.put("eventId", 2104);
                 itemJson.put("presentation", "Ti dirigi verso il centro della stanza\n"
-                                + "quando all'improvviso un muro di fiamme ti avvolge!\n"
-                                + "La stanza era una trappola! Presto, pensa a un modo per spegnere l'incendio");
-                Map<Integer, String> countdown = new HashMap<Integer, String>();
-                countdown.put(1, "Le fiamme si continuano ad alzare.\n");
-                countdown.put(2, "Un pilastro comincia a vacillare!\n");
-                countdown.put(3, "Il pilastro crolla, e per un pelo riesci a schivarlo.\n");
-                countdown.put(4, "Il calore diventa insostenibile...");
-                countdown.put(5, "Non c'è via di scampo... Intossicato dal fumo, svieni..\n");
-                itemJson.put("countdown", countdown);
-                itemJson.put("timeLimit", 75000);
-                itemJson.put("solution", Loader.loadItem("acqua").getId());
-                itemJson.put("prize", Loader.loadItem("armatura").getId());
+                                + "ma tutto intorno a te vedi un branco di bestie selvagge!\n"
+                                + "Provi a colpirle ma non sembra avere effetto! Devi distrarle, e alla svelta!\n");
+                itemJson.put("location", Location.EVERYWHERE);
+                itemJson.put("isSkippable", false);
 
                 try {
                         FileWriter file = new FileWriter(
@@ -206,6 +198,8 @@ public class AddToArchive {
                 System.out.println(danger.getEventId());
                 System.out.println(danger.getName());
                 System.out.println(danger.getPresentation());
+                System.out.println(danger.isSkippable());
+                System.out.println(danger.getLocation());
                 System.out.println(danger.getCountdown());
                 System.out.println(danger.getTimeLimit());
                 System.out.println(danger.getSolution());
