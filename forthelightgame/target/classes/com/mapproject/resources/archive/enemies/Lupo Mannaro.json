@@ -1,0 +1,24 @@
+{
+    "presentation": "Oh no! Al centro della stanza c'� un lupo mannaro!\nSembra molto aggressivo, fai attenzione!\n",
+    "eventId": 2401,
+    "baseAttack": 1,
+    "attacks": {
+        "Graffio": {
+            "damage": 10,
+            "accuracy": 100,
+            "specialEffect": 0
+        },
+        "Ululato": {
+            "damage": 0,
+            "accuracy": 100,
+            "specialEffect": 1
+        }
+    },
+    "healthPoints": 50,
+    "manualDescription": "Lupo mannaro:\nNon � un grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nUlulato: nessun danno, ma migliora il suo attacco;\n",
+    "name": "Lupo Mannaro",
+    "location": "EVERYWHERE",
+    "isSkippable": true,
+    "isFlying": false,
+    "baseDefense": 1
+}

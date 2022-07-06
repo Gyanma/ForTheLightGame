@@ -5,8 +5,8 @@
     "alias": [
         "Mappa"
     ],
-    "pickupable": true,
-    "throwable": true,
+    "pickupable": false,
+    "throwable": false,
     "used": false,
     "manualDescription": "Usala per vedere tutte le stanze raggiungibili e la stanza di partenza."
 }

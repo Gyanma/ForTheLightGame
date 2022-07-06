@@ -1,0 +1,24 @@
+{
+    "presentation": "Oh no! Al centro della stanza c'� un gargoyle!\nSi dirige verso di te, fai attenzione!\n",
+    "eventId": 2404,
+    "baseAttack": 1,
+    "attacks": {
+        "Graffio": {
+            "damage": 10,
+            "accuracy": 100,
+            "specialEffect": 0
+        },
+        "Colpo in picchiata": {
+            "damage": 30,
+            "accuracy": 90,
+            "specialEffect": 5
+        }
+    },
+    "healthPoints": 50,
+    "manualDescription": "Gargoyle:\n� in grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nColpo in picchiata: danno alto, ma richiede due turni;\n",
+    "name": "Gargoyle",
+    "location": "EVERYWHERE",
+    "isSkippable": true,
+    "isFlying": true,
+    "baseDefense": 1
+}

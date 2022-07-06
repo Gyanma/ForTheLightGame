@@ -4,15 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 import com.mapproject.enums.Location;
-import com.mapproject.resources.events.Danger;
+import com.mapproject.resources.events.Enemy;
 import com.mapproject.resources.events.JugPuzzle;
+import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.items.Item;
 
 public class AddToArchive {
@@ -175,17 +178,65 @@ public class AddToArchive {
 
         public static void addEnemy() {
                 JSONObject itemJson = new JSONObject();
-                itemJson.put("name", "Animali Aggressivi");
-                itemJson.put("eventId", 2104);
-                itemJson.put("presentation", "Ti dirigi verso il centro della stanza\n"
-                                + "ma tutto intorno a te vedi un branco di bestie selvagge!\n"
-                                + "Provi a colpirle ma non sembra avere effetto! Devi distrarle, e alla svelta!\n");
+                itemJson.put("name", "Cerbero");
+                itemJson.put("eventId", 2453);
+                itemJson.put("presentation", "Al centro della stanza vedi una bestia gigantesca!\n"
+                                + "Cerbero, il leggendario cane a tre teste, ti si para davanti.\n"
+                                + "L'ultima battaglia del tuo viaggio sta per avere inizio!\n");
                 itemJson.put("location", Location.EVERYWHERE);
-                itemJson.put("isSkippable", false);
+                itemJson.put("isSkippable", true);
+
+                Map<String, Map<String, Integer>> attacks = new HashMap<>();
+                Map<String, Integer> attackStats = new HashMap<>();
+                attackStats.put("damage", 40);
+                attackStats.put("accuracy", 100);
+                attackStats.put("specialEffect", 0);
+                attacks.put("Morso Feroce", attackStats);
+                attackStats = new HashMap<>();
+                attackStats.put("damage", 0);
+                attackStats.put("accuracy", 100);
+                attackStats.put("specialEffect", 9);
+                attacks.put("Ruggito Minaccioso", attackStats);
+                attackStats = new HashMap<>();
+                attackStats.put("damage", 60);
+                attackStats.put("accuracy", 60);
+                attackStats.put("specialEffect", 3);
+                attacks.put("Palla di fuoco", attackStats);
+                attackStats = new HashMap<>();
+                attackStats.put("damage", 0);
+                attackStats.put("accuracy", 100);
+                attackStats.put("specialEffect", 10);
+                attacks.put("Sensi acuti", attackStats);
+
+                itemJson.put("attacks", attacks);
+
+                itemJson.put("healthPoints", 150);
+                itemJson.put("isFlying", false);
+                itemJson.put("baseAttack", 2);
+                itemJson.put("baseDefense", 2);
+
+                itemJson.put("manualDescription", "Cerbero:\n"
+                                + "Non è in grado di volare\n"
+                                + "Punti salute: 10\n"
+                                + "Attacchi:\n"
+                                + "Morso Feroce: danno alto, nessun effetto speciale;\n"
+                                + "Ruggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\n"
+                                + "Palla di fuoco: danno molto alto, precisione ridotta, probabilità di infliggere bruciatura;\n"
+                                + "Sensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpirà sicuramente;\n");
+                /*
+                 * private Map<String, List<Integer>> attacks;
+                 * 
+                 * private int healthPoints;
+                 * private boolean isFlying;
+                 * private int baseAttack;
+                 * private int baseAgility;
+                 * 
+                 * private String manualDescription;
+                 */
 
                 try {
                         FileWriter file = new FileWriter(
-                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dangers\\"
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\enemies\\"
                                                         + itemJson.get("name") + ".json");
                         file.write(itemJson.toString());
                         file.flush();
@@ -194,25 +245,28 @@ public class AddToArchive {
                         e.printStackTrace();
                 }
 
-                Danger danger = Loader.loadDanger(itemJson.get("name").toString());
+                Enemy danger = Loader.loadEnemy(itemJson.get("name").toString());
                 System.out.println(danger.getEventId());
                 System.out.println(danger.getName());
                 System.out.println(danger.getPresentation());
                 System.out.println(danger.isSkippable());
                 System.out.println(danger.getLocation());
-                System.out.println(danger.getCountdown());
-                System.out.println(danger.getTimeLimit());
-                System.out.println(danger.getSolution());
-                System.out.println(danger.getPrize());
+                System.out.println(danger.getHealthPoints());
+                System.out.println(danger.isFlying());
+                System.out.println(danger.getBaseAttack());
+                System.out.println(danger.getBaseDefense());
+                System.out.println(danger.getManualDescription());
+                System.out.println(danger.getAttacks());
 
         }
 
+        // TODO aggiorna formazione boss in mapBuilder
         public static void addItem(String element) {
 
                 FileReader reader = null;
                 try {
                         reader = new FileReader(
-                                        new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\items\\"
+                                        new File("forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\enemies\\"
                                                         + element
                                                         + ".json"));
                 } catch (FileNotFoundException e1) {
@@ -230,6 +284,52 @@ public class AddToArchive {
                 } catch (Exception e) {
                         System.out.println("Error while writing item JSON");
                 }
+
+        }
+
+        public static void addPacificEncounter() {
+                JSONObject itemJson = new JSONObject();
+                itemJson.put("name", "Fontana divina");
+                itemJson.put("presentation",
+                                "Nell'angolo della stanza vedi una fontana. Sembra essere un qualche luogo sacro...\n");
+                itemJson.put("eventId", 2504);
+                itemJson.put("isSkippable", true);
+                itemJson.put("location", Location.SOUTH_WEST);
+                itemJson.put("description", "Ti avvicini alla fontana.\n"
+                                + "Accanto ad essa trovi un'incisione su una lastra\n"
+                                + "\"La sacra fontana di Legrejoux fu costruita dai monaci del dio Sole molti secoli fa.\n"
+                                + "Da tempo immemore concede grazie a chi si ferma per pregare il dio Sole.\n");
+                itemJson.put("itemGivenResponse", "Decidi di fermarti a pregare vicino alla fontana...\n");
+                itemJson.put("itemNotGivenResponse", "Abbandoni la fontana e continui per la tua strada...\n");
+                List<Integer> itemIds = new ArrayList<>();
+                itemIds.add(-1);
+                itemJson.put("requestedItemId", itemIds);
+                itemIds = new ArrayList<>();
+                itemIds.add(-1);
+                itemJson.put("giftedItemId", itemIds);
+
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\pacific encounters\\"
+                                                        + itemJson.get("name") + ".json");
+                        file.write(itemJson.toString());
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                PacificEncounter vP2 = Loader.loadPacificEncounter(itemJson.get("name").toString());
+                System.out.println(vP2.getEventId());
+                System.out.println(vP2.getName());
+                System.out.println(vP2.getPresentation());
+                System.out.println(vP2.getLocation());
+                System.out.println(vP2.isSkippable());
+                System.out.println(vP2.getDescription());
+                System.out.println(vP2.getItemGivenResponse());
+                System.out.println(vP2.getItemNotGivenResponse());
+                System.out.println(vP2.getRequestedItemId());
+                System.out.println(vP2.getGiftedItemId());
 
         }
 }

@@ -1,0 +1,18 @@
+{
+    "presentation": "Nell'angolo della stanza vedi una figura spettrale...\nSembra star leggendo dei libri.\nDietro di lui vedi anche degli scaffali pieni di libri.\n",
+    "eventId": 2501,
+    "itemNotGivenResponse": "\"Oh, che peccato...\"\nIn un attimo, la figura sparisce con gli scaffali...",
+    "name": "Biblioteca Segreta",
+    "description": "Ti avvicini alla figura.\nQuando sei abbastanza vicino, si gira e inizia a parlarti.\n\"Benvenuto, viaggiatore. Anche tu ti stai cimentando nel labirinto.\nAnch'io quando ero ancora in vita l'ho esplorato da cima a fondo...\nSono riuscito a descrivere tutto ci� che ho trovato nella mia esplorazione.\nOra voglio solo collezionare pietre preziose, come diamanti o perle.\nSe ne hai, posso darti una copia del mio bestiario o del mio libro mastro!\nIl bestiario descrive tutti i mostri che ho trovato.\nInvece il libro mastro descrive tutti gli oggetti che ho trovato.\nCosa ne pensi? Ti interessa?\"\n",
+    "location": "SOUTH_EAST",
+    "giftedItemId": [
+        1026,
+        1027
+    ],
+    "isSkippable": true,
+    "requestedItemId": [
+        1029,
+        1020
+    ],
+    "itemGivenResponse": "\"Perfetto, ecco a te.\"\nLa figura ti porge il libro, e una volta ricevuta la sua ricompensa, svanisce con i suoi libri...\n"
+}
