@@ -260,7 +260,6 @@ public class AddToArchive {
 
         }
 
-        // TODO aggiorna formazione boss in mapBuilder
         public static void addItem(String element) {
 
                 FileReader reader = null;

@@ -204,112 +204,190 @@ public class Loader {
     }
 
     private static String recognizeElement(int i) {
-        // TODO return strings
-        switch (i / 1000) {// check the first digit to get if it's event or item
-            case 1: // it's an item
-
-                i = i % 1000;
-                switch (i / 100) {// check the second digit to get if it's weapon or item
-
-                    case 1: // it's a weapon
-
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "spada";
-                            case 2:
-                                return "ascia";
-                            case 3:
-                                return "pugnale";
-                            case 4:
-                                return "katana";
-                            case 5:
-                                return "maglio";
-                            case 6:
-                                return "arco";
-                            case 7:
-                                return "lancia";
-                            case 8:
-                                return "fionda";
-                            case 9:
-                                return "balestra";
-                            case 10:
-                                return "shuriken";
-                            default:
-                                return "";
-                        }
-
-                    case 2: // it's an item
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "fune";
-                            default:
-                                return "";
-                        }
+        switch (i / 100) {// check the first digit to get if it's event or item
+            case 10:// it's an item
+                switch (i % 100) {
+                    case 0:
+                        return "mappa";
+                    case 1:
+                        return "fune";
+                    case 2:
+                        return "cibo";
+                    case 3:
+                        return "acqua";
+                    case 4:
+                        return "vanga";
+                    case 5:
+                        return "sacca";
+                    case 6:
+                        return "torcia";
+                    case 7:
+                        return "acchiappasogni";
+                    case 8:
+                        return "pitture di guerra";
+                    case 9:
+                        return "monocolo del cacciatore";
+                    case 10:
+                        return "calzari magici";
+                    case 11:
+                        return "libro della forza";
+                    case 12:
+                        return "libro dell'agilità";
+                    case 13:
+                        return "libro della destrezza";
+                    case 14:
+                        return "libro delle maledizioni";
+                    case 15:
+                        return "bomba fumogena";
+                    case 16:
+                        return "armatura";
+                    case 17:
+                        return "fiala del sangue";
+                    case 18:
+                        return "affilatore";
+                    case 19:
+                        return "punta in titanio";
+                    case 20:
+                        return "sacca di perle";
+                    case 21:
+                        return "pozione di cura";
+                    case 22:
+                        return "pozione del fuoco";
+                    case 23:
+                        return "pozione del fulmine";
+                    case 24:
+                        return "pozione del gelo";
+                    case 25:
+                        return "pozione del veleno";
+                    case 26:
+                        return "libro mastro";
+                    case 27:
+                        return "bestiario";
+                    case 28:
+                        return "mappa mistica";
+                    case 29:
+                        return "sacca di diamanti";
                     default:
                         return "";
                 }
-
-            case 2: // it's an event
-
-                i = i % 1000;
-                switch (i / 100) { // check the second digit to get the type of event
-
-                    case 1: // it's a danger event
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "Incendio";
-                            default:
-                                return "";
-                        }
-                    case 2: // it's a TextPuzzle event
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "TextPuzzle";
-                            default:
-                                return "";
-                        }
-                    case 3: // it's a VisualPuzzle event
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "VisualPuzzle";
-                            default:
-                                return "";
-                        }
-                    case 4: // it's an Enemy event
-                        i = i % 100;
-
-                        switch (i / 50) { // check if it's a normal evemy or a boss
-
-                            case 1: // it's a normal enemy
-                                i = i % 50;
-                                switch (i) {
-                                    case 1:
-                                        return "Enemy";
-                                    default:
-                                        return "";
-                                }
-                            case 2: // it's a boss
-                                i = i % 50;
-                                switch (i) {
-                                    case 1:
-                                        return "Boss";
-                                    default:
-                                        return "";
-                                }
-                        }
-                    case 5: // it's a Pacific event
-                        i = i % 100;
-                        switch (i) {
-                            case 1:
-                                return "Pacific";
-                            default:
-                                return "";
-                        }
+            case 11:// it's a weapon
+                switch (i % 100) {
+                    case 1:
+                        return "spada";
+                    case 2:
+                        return "ascia";
+                    case 3:
+                        return "pugnale";
+                    case 4:
+                        return "arco";
+                    case 5:
+                        return "lancia";
+                    case 6:
+                        return "fionda";
+                    case 7:
+                        return "katana";
+                    case 8:
+                        return "maglio";
+                    case 9:
+                        return "balestra";
+                    case 10:
+                        return "shuriken";
+                    default:
+                        return "";
+                }
+            case 21:// it's a danger
+                i = i % 100;
+                switch (i % 100) {
+                    case 1:
+                        return "incendio";
+                    case 2:
+                        return "stanza allagata";
+                    case 3:
+                        return "spettri";
+                    case 4:
+                        return "animali aggressivi";
+                    default:
+                        return "";
+                }
+            case 22: // it's a text puzzle
+                i = i % 100;
+                switch (i % 100) {
+                    case 1:
+                        return "carte da gioco";
+                    case 2:
+                        return "bottino da pirati";
+                    case 3:
+                        return "500 perle";
+                    case 4:
+                        return "i centauri";
+                    case 5:
+                        return "brocche di acqua";
+                    case 6:
+                        return "la spedizione";
+                    case 7:
+                        return "il premio";
+                    case 8:
+                        return "fila di mattoni";
+                    case 9:
+                        return "inscatolamento";
+                    case 10:
+                        return "il ciondolo rubato";
+                    case 11:
+                        return "i sospettati";
+                    case 12:
+                        return "brocche di latte";
+                    case 13:
+                        return "il furto";
+                    case 14:
+                        return "brocche di vino";
+                    default:
+                        return "";
+                }
+            case 23: // it's a visual puzzle
+                i = i % 100;
+                switch (i % 100) {
+                    case 1:
+                        return "33333!";
+                    case 2:
+                        return "combinazione criptica";
+                    case 3:
+                        return "gli zeri";
+                    default:
+                        return "";
+                }
+            case 24: // it's an enemy
+                i = i % 100;
+                switch (i % 100) {
+                    case 1:
+                        return "lupo mannaro";
+                    case 2:
+                        return "draghetto";
+                    case 3:
+                        return "melma";
+                    case 4:
+                        return "gargoyle";
+                    case 51:
+                        return "idra";
+                    case 52:
+                        return "guardiano alato";
+                    case 53:
+                        return "cerbero";
+                    default:
+                        return "";
+                }
+            case 25: // it's a pacific encounter
+                i = i % 100;
+                switch (i % 100) {
+                    case 1:
+                        return "bibilioteca segreta";
+                    case 2:
+                        return "esploratore";
+                    case 3:
+                        return "venditore di pozioni";
+                    case 4:
+                        return "fontana divina";
+                    default:
+                        return "";
                 }
             default:
                 return "";

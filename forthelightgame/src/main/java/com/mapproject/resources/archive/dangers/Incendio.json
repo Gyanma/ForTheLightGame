@@ -1,1 +1,17 @@
-{"presentation":"Ti dirigi verso il centro della stanza\nquando all'improvviso un muro di fiamme ti avvolge!\nLa stanza era una trappola! Presto, pensa a un modo per spegnere l'incendio\n","timeLimit":75000,"eventId":2101,"name":"Incendio","countdown":{"1":"Le fiamme si continuano ad alzare.\n","2":"Un pilastro comincia a vacillare!\n","3":"Il pilastro crolla, e per un pelo riesci a schivarlo.\n","4":"Il calore diventa insostenibile...","5":"Non c'è via di scampo... Intossicato dal fumo, svieni..\n"},"location":"EVERYWHERE","solutionId":1003,"isSkippable":false,"prizeId":1016}
+{
+    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso un muro di fiamme ti avvolge!\nLa stanza era una trappola! Presto, pensa a un modo per spegnere l'incendio\n",
+    "timeLimit": 75000,
+    "eventId": 2101,
+    "name": "Incendio",
+    "countdown": {
+        "1": "Le fiamme si continuano ad alzare.\n",
+        "2": "Un pilastro comincia a vacillare!\n",
+        "3": "Il pilastro crolla, e per un pelo riesci a schivarlo.\n",
+        "4": "Il calore diventa insostenibile...",
+        "5": "Non c'ï¿½ via di scampo... Intossicato dal fumo, svieni..\n"
+    },
+    "location": "EVERYWHERE",
+    "solutionId": 1003,
+    "isSkippable": false,
+    "prizeId": 1016
+}

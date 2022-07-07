@@ -1,1 +1,15 @@
-{"eventId":2209,"question":"Quando approcci l'elfo, lui ti saluta con aria di superiorità \"Oh, salve.\nStavo giusto cercando qualcuno con cui lamentarmi di quell'idiota del mio capo.\nQueste casse misurano 30 cm per ogni dimensione.\nPosso utilizzare una coppia di casse per trasportare queste scatole\nche invece misurano 20x20x10.\nAnche un bambino vedrebbe che con due casse posso trasportare non più di 10 scatole\ne invece il mio capo dice che \"sono troppo poche\"!\nCome se ci fosse un modo per trasportarne di più che\nIO non sono riuscito a trovare. Bah\"\nInizi a riflettere sulle parole dell'elfo... chissà se...\nL'elfo interrompe il tuo flusso di pensieri.\nCosa ti turba? Pensi forse che abbia ragione lui?\nSentiamo dunque, quante scatole riusciresti a trasportare?\"\n","isSingleAnswer":true,"tryAgainReply":"Spieghi la tua idea all'elfo, ma lui ti risponde in malo modo\nOh, che assurdità. Sapevo di non podermi affidare a te.\n","correctReply":"Spieghi all'elfo come posizionare le scatole e le casse\nper trasportarne 12.\nL'elfo ti risponde:\"Tsk, certo. Lo sapevo anche io.\nOra levati di mezzo. C'è del lavoro da fare qui.\"\nMentre si allontana, dalla bisaccia dell'elfo casca un otre pieno d'acqua.\nDecidi di prenderlo, come... ringraziamento, e ti allontani.\n","presentation":"C'è un elfo che guarda con insistenza due casse vuote...\n","rewardId":1003,"answer":"12","incorrectReply":"","name":"Inscatolamento","location":"NORTH_WEST","surrenderReply":"\"Ecco. Ora spero che ti renda conto che ho ragione. Addio.\"\nTi allontani dall'elfo prima di passare alla violenza.\n","isSkippable":true}
+{
+    "eventId": 2209,
+    "question": "Quando approcci l'elfo, lui ti saluta con aria di superioritï¿½ \"Oh, salve.\nStavo giusto cercando qualcuno con cui lamentarmi di quell'idiota del mio capo.\nQueste casse misurano 30 cm per ogni dimensione.\nPosso utilizzare una coppia di casse per trasportare queste scatole\nche invece misurano 20x20x10.\nAnche un bambino vedrebbe che con due casse posso trasportare non piï¿½ di 10 scatole\ne invece il mio capo dice che \"sono troppo poche\"!\nCome se ci fosse un modo per trasportarne di piï¿½ che\nIO non sono riuscito a trovare. Bah\"\nInizi a riflettere sulle parole dell'elfo... chissï¿½ se...\nL'elfo interrompe il tuo flusso di pensieri.\nCosa ti turba? Pensi forse che abbia ragione lui?\nSentiamo dunque, quante scatole riusciresti a trasportare?\"\n",
+    "isSingleAnswer": true,
+    "tryAgainReply": "Spieghi la tua idea all'elfo, ma lui ti risponde in malo modo\nOh, che assurditï¿½. Sapevo di non podermi affidare a te.\n",
+    "correctReply": "Spieghi all'elfo come posizionare le scatole e le casse\nper trasportarne 12.\nL'elfo ti risponde:\"Tsk, certo. Lo sapevo anche io.\nOra levati di mezzo. C'ï¿½ del lavoro da fare qui.\"\nMentre si allontana, dalla bisaccia dell'elfo casca un otre pieno d'acqua.\nDecidi di prenderlo, come... ringraziamento, e ti allontani.\n",
+    "presentation": "C'ï¿½ un elfo che guarda con insistenza due casse vuote...\n",
+    "rewardId": 1003,
+    "answer": "12",
+    "incorrectReply": "",
+    "name": "Inscatolamento",
+    "location": "NORTH_WEST",
+    "surrenderReply": "\"Ecco. Ora spero che ti renda conto che ho ragione. Addio.\"\nTi allontani dall'elfo prima di passare alla violenza.\n",
+    "isSkippable": true
+}

@@ -1,1 +1,8 @@
-{"presentation":"La porta sembra bloccata da un qualche meccanismo. Esaminalo e scopri come aprirla.","eventId":4002,"name":"Combinazione Criptica","description":"Per aprire la porta, dovrai premere i pulsanti giusti. Ti servirà un due, ma lascia stare quattro!","location":"EVERYWHERE","visualId":2}
+{
+    "presentation": "La porta sembra bloccata da un qualche meccanismo. Esaminalo e scopri come aprirla.",
+    "eventId": 4002,
+    "name": "Combinazione Criptica",
+    "description": "Per aprire la porta, dovrai premere i pulsanti giusti. Ti servirï¿½ un due, ma lascia stare quattro!",
+    "location": "EVERYWHERE",
+    "visualId": 2
+}

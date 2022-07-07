@@ -1,1 +1,34 @@
-{"presentation":"Al centro della stanza vedi una bestia gigantesca!\nCerbero, il leggendario cane a tre teste, ti si para davanti.\nL'ultima battaglia del tuo viaggio sta per avere inizio!\n","eventId":2453,"baseAttack":2,"attacks":{"Ruggito Minaccioso":{"damage":0,"accuracy":100,"specialEffect":9},"Morso Feroce":{"damage":40,"accuracy":100,"specialEffect":0},"Palla di fuoco":{"damage":60,"accuracy":60,"specialEffect":3},"Sensi acuti":{"damage":0,"accuracy":100,"specialEffect":10}},"healthPoints":150,"manualDescription":"Cerbero:\nNon è in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilità di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpirà sicuramente;\n","name":"Cerbero","location":"EVERYWHERE","isSkippable":true,"isFlying":false,"baseDefense":2}
+{
+    "presentation": "Al centro della stanza vedi una bestia gigantesca!\nCerbero, il leggendario cane a tre teste, ti si para davanti.\nL'ultima battaglia del tuo viaggio sta per avere inizio!\n",
+    "eventId": 2453,
+    "baseAttack": 2,
+    "attacks": {
+        "Ruggito Minaccioso": {
+            "damage": 0,
+            "accuracy": 100,
+            "specialEffect": 9
+        },
+        "Morso Feroce": {
+            "damage": 40,
+            "accuracy": 100,
+            "specialEffect": 0
+        },
+        "Palla di fuoco": {
+            "damage": 60,
+            "accuracy": 60,
+            "specialEffect": 3
+        },
+        "Sensi acuti": {
+            "damage": 0,
+            "accuracy": 100,
+            "specialEffect": 10
+        }
+    },
+    "healthPoints": 150,
+    "manualDescription": "Cerbero:\nNon ï¿½ in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilitï¿½ di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpirï¿½ sicuramente;\n",
+    "name": "Cerbero",
+    "location": "EVERYWHERE",
+    "isSkippable": true,
+    "isFlying": false,
+    "baseDefense": 2
+}
