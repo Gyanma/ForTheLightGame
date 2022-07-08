@@ -226,10 +226,10 @@ public class MapBuilder {
         do {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
-        } while (map.getRoom(roomId).getObjects().size() != 0);
+        } while (map.getRoom(roomId).getItems().size() != 0);
         // add the item to the room
         Room tempRoom = map.getRoom(roomId);
-        tempRoom.addObject(item);
+        tempRoom.addItem(item);
         map.addRoom(roomId, tempRoom);
 
         if (Math.random() < 0.5) {
@@ -237,7 +237,7 @@ public class MapBuilder {
             item = Loader.loadItem(itemId);
 
             tempRoom = map.getRoom(roomId);
-            tempRoom.addObject(item);
+            tempRoom.addItem(item);
             map.addRoom(roomId, tempRoom);
         }
     }
@@ -275,11 +275,11 @@ public class MapBuilder {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
 
-        } while (map.getRoom(roomId).getObjects().contains(weapon));
+        } while (map.getRoom(roomId).getItems().contains(weapon));
 
         // add the weapon to the room
         Room tempRoom = map.getRoom(roomId);
-        tempRoom.addObject(weapon);
+        tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
     }
 
@@ -304,7 +304,7 @@ public class MapBuilder {
         weapon = Loader.loadWeapon(weaponId);
         // add the weapon to the room
         Room tempRoom = map.getRoom(roomId);
-        tempRoom.addObject(weapon);
+        tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
 
         // choose a ranged weapon
@@ -324,7 +324,7 @@ public class MapBuilder {
         weapon = Loader.loadWeapon(weaponId);
         // add the weapon to the room
         tempRoom = map.getRoom(roomId);
-        tempRoom.addObject(weapon);
+        tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
 
         // choose a random weapon
@@ -351,7 +351,7 @@ public class MapBuilder {
         }
         // add the weapon to the room
         tempRoom = map.getRoom(roomId);
-        tempRoom.addObject(weapon);
+        tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
     }
 

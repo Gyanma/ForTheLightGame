@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mapproject.resources.items.Item;
-
-enum Status {
-    EXPLORING,
-    PUZZLE_SOLVING,
-    FIGHTING;
-}
+import com.mapproject.enums.Status;
 
 public class Session {
 
@@ -23,9 +18,9 @@ public class Session {
 
     private Map sessionMapPhase3;
 
-    private int currentMap;
+    private int currentPhase;
 
-    private int currentRoom;
+    private int currentRoomId;
 
     private Status currentStatus;
 
@@ -42,34 +37,39 @@ public class Session {
         System.out.println("Phase 3 map loaded");
 
         this.inventory = new ArrayList<Item>();
-        this.currentMap = 1;
+        this.currentPhase = 1;
         this.currentStatus = Status.EXPLORING;
         this.healthPoints = MAX_HEALTH;
         this.isPlayerAlive = true;
     }
 
-    public void setSessionMapPhase1(Map sessionMap) {
-        this.sessionMapPhase1 = sessionMap;
+    public void setSessionMap(int mapNumber, Map map) {
+        if (mapNumber == 1) {
+            this.sessionMapPhase1 = map;
+        } else if (mapNumber == 2) {
+            this.sessionMapPhase2 = map;
+        } else if (mapNumber == 3) {
+            this.sessionMapPhase3 = map;
+        }
     }
 
-    public Map getSessionMapPhase1() {
-        return sessionMapPhase1;
+    public Map getSessionMap(int mapNumber) {
+        if (mapNumber == 1) {
+            return this.sessionMapPhase1;
+        } else if (mapNumber == 2) {
+            return this.sessionMapPhase2;
+        } else if (mapNumber == 3) {
+            return this.sessionMapPhase3;
+        }
+        return null;
     }
 
-    public void setSessionMapPhase2(Map sessionMap) {
-        this.sessionMapPhase2 = sessionMap;
+    public Map getCurrentMap() {
+        return this.getSessionMap(this.currentPhase);
     }
 
-    public Map getSessionMapPhase2() {
-        return sessionMapPhase2;
-    }
-
-    public void setSessionMapPhase3(Map sessionMap) {
-        this.sessionMapPhase3 = sessionMap;
-    }
-
-    public Map getSessionMapPhase3() {
-        return sessionMapPhase3;
+    public Room getCurrentRoom() {
+        return this.getCurrentMap().getRoom(this.currentRoomId);
     }
 
     public void setInventory(List<Item> inventory) {
@@ -80,20 +80,20 @@ public class Session {
         return inventory;
     }
 
-    public void setCurrentMap(int currentMap) {
-        this.currentMap = currentMap;
+    public void setCurrentPhase(int currentPhase) {
+        this.currentPhase = currentPhase;
     }
 
-    public int getCurrentMap() {
-        return currentMap;
+    public int getCurrentPhase() {
+        return currentPhase;
     }
 
-    public void setCurrentRoom(int currentRoom) {
-        this.currentRoom = currentRoom;
+    public void setCurrentRoomId(int currentRoom) {
+        this.currentRoomId = currentRoom;
     }
 
-    public int getCurrentRoom() {
-        return currentRoom;
+    public int getCurrentRoomId() {
+        return currentRoomId;
     }
 
     public void setCurrentStatus(Status currentStatus) {

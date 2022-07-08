@@ -26,7 +26,7 @@ public class Room {
 
     private boolean eventConcluded = false;
 
-    private List<Item> objects = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public Room(int id, int phase) {
         this.id = id;
@@ -102,41 +102,16 @@ public class Room {
         this.eventConcluded = eventConcluded;
     }
 
-    public List<Item> getObjects() {
-        return objects;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setObjects(List<Item> objects) {
-        this.objects = objects;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
-    public void addObject(Item object) {
-        this.objects.add(object);
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Room other = (Room) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
+    public void addItem(Item object) {
+        this.items.add(object);
     }
 
 }

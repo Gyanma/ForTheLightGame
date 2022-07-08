@@ -10,19 +10,20 @@ public class GameHandler {
 
     Session gameSession;
     Scanner gameScanner = new Scanner(System.in);
+    Interpreter interpreter = new Interpreter();
 
     public GameHandler(Session session) {
         this.gameSession = session;
-        gameSession.setCurrentRoom(gameSession.getSessionMapPhase1().getStartingRoomId());
+        gameSession.setCurrentRoomId(gameSession.getCurrentMap().getStartingRoomId());
     }
 
     public void runGame(Session newSession) {
 
         Printer.printFromTxt("Presentazione");
-        String input = gameScanner.nextLine();
-        if (input.equals("sì")) {
-            Printer.printFromTxt("Regole");
-        }
+        // String input = gameScanner.nextLine();
+        // if (input.equals("sì")) {
+        // Printer.printFromTxt("Regole");
+        // }
         Printer.printFromTxt("Inizio");
 
         String command = "";

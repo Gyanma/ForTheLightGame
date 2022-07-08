@@ -12,10 +12,27 @@ import com.mapproject.resources.items.Item;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
 import java.io.IOException;
-
+import java.util.List;
+import java.util.Map;
 import java.io.FileReader;
 
 public class Loader {
+
+    @SuppressWarnings("unchecked")
+    /**
+     * @return
+     */
+    public static Map<String, List<String>> loadDictionary() {
+        try {
+            return new Gson().fromJson(new FileReader(
+                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dictionary.json"),
+                    Map.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static Weapon loadWeapon(String element) {
 
         try {
