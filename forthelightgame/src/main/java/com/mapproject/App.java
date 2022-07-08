@@ -1,6 +1,10 @@
 package com.mapproject;
 
+import java.util.List;
+
+import com.mapproject.operations.AddToArchive;
 import com.mapproject.operations.GameHandler;
+import com.mapproject.operations.Loader;
 import com.mapproject.resources.Session;
 
 public final class App {
@@ -19,11 +23,17 @@ public final class App {
 
     public static void main(String[] args) {
 
-        System.out.println("\t\tFor The Light\n");
-        System.out.println("\tA game by Gianmarco Rutigliano\n");
+        AddToArchive.addList();
+        List<String> list = Loader.loadList("StartsWithLo");
+        for (String s : list) {
+            System.out.println(s);
+        }
 
-        App app = new App();
-        app.start();
+        // System.out.println("\t\tFor The Light\n");
+        // System.out.println("\tA game by Gianmarco Rutigliano\n");
+
+        // App app = new App();
+        // app.start();
 
     }
 }

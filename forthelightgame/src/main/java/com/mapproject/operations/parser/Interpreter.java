@@ -21,6 +21,8 @@ public class Interpreter {
 
     public static void decide(String command, Session gameSession) {
         String newCommand = command;
+
+        // comandi di esplorazione
         if (newCommand.startsWith("Esplora la stanza")) {
             if (newCommand.equals("Esplora la stanza")) {
                 exploreRoomNW(gameSession);
@@ -55,14 +57,18 @@ public class Interpreter {
             }
         }
 
+        // comando di ricerca Item
+        if (newCommand.startsWith("Cerca degli item")) {
+            exploreRoomForItems(gameSession);
+        }
     }
 
     private static void exploreRoomForItems(Session gameSession) {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
             if (gameSession.getCurrentRoom().getItems() != null) {
                 for (Item item : gameSession.getCurrentRoom().getItems()) {
-                    System.out.println("Nella stanza vedi anche un"
-                            + item.getName());
+                    System.out.println("Nella stanza vedi anche "
+                            + item.getName() + "!");
                 }
             }
         }

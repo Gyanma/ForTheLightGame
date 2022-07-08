@@ -1,21 +1,22 @@
 package com.mapproject.operations;
 
-//import java.io.FileWriter;
+import java.util.ArrayList;
 
-//import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
-
+import java.util.List;
 import java.util.Queue;
 import java.util.HashSet;
 import java.util.Set;
 
 import com.mapproject.resources.Map;
 import com.mapproject.resources.Room;
-//import resources.items.Item;
 
 public class Utilities {
 
+    private static List<String> namesWithUn = new ArrayList<String>();
+    private static List<String> namesWithUna = new ArrayList<String>();
+    private static List<String> namesWithUno = new ArrayList<String>();
     private final static int ROOMNUMBER = 16;
 
     public static Set<Integer> findVisitableRooms(int start, int end, Map newMap) {
@@ -114,5 +115,10 @@ public class Utilities {
             i++;
         }
         return roomId;
+    }
+
+    public static String selectArticleForElement(String element, boolean definite, boolean singular) {
+        String article = "un";
+        return article;
     }
 }

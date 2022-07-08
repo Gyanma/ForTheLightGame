@@ -20,6 +20,29 @@ import com.mapproject.resources.items.Item;
 
 public class AddToArchive {
 
+        public static void addList() {
+                List<String> list = new ArrayList<>();
+                list.add("bestiario");
+                list.add("affilatore");
+                list.add("monocolo del cacciatore");
+                list.add("libro");
+                list.add("arco");
+                list.add("maglio");
+                list.add("pugnale");
+
+                Gson gson = new Gson();
+                String json = gson.toJson(list);
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\StartsWithIl.json");
+                        file.write(json);
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+        }
+
         public static void addTextPuzzle() {
 
                 JSONObject itemJson = new JSONObject();
