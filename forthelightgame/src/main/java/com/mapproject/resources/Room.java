@@ -83,7 +83,11 @@ public class Room {
     }
 
     public Event getEvent() {
-        return event;
+        if (event == null) {
+            return null;
+        } else {
+            return event;
+        }
     }
 
     public void setEvent(Event event) {

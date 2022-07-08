@@ -1,0 +1,8 @@
+"La prova consiste nel superare tre labirinti.
+In questi labirinti troverai mostri, pericoli, tesori ed enigmi.
+La mappa in tua dotazione ti permette di vedere la conformazione del labirinto, e la stanza da cui hai iniziato.
+Devi raggiungere la stanza finale tutto intero per superare la mappa, ma attento.
+Nella stanza finale di ogni labirinto troverai un nemico mai visto prima, a guardia del passaggio al labirinto successivo.
+Una volta entrato nella caverna, verrai teletrasportato nel primo labirinto.
+Esplora ogni angolo delle stanze, ma scegli con attenzione cosa prendere.
+La tua sacca potrebbe riempirsi prima che tu te ne accorga."

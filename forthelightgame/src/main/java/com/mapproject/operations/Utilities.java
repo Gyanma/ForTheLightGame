@@ -105,7 +105,7 @@ public class Utilities {
 
     public static int selectRoomFromSet(int randomNumber, Set<Integer> visitableRooms) {
         int roomId = 0;
-        int i = 0;
+        int i = 1;
         for (Integer room : visitableRooms) {
             if (i == randomNumber) {
                 roomId = room;

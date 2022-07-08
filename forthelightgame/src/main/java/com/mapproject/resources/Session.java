@@ -1,9 +1,8 @@
-package com.mapproject;
+package com.mapproject.resources;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mapproject.resources.Map;
 import com.mapproject.resources.items.Item;
 
 enum Status {
@@ -30,23 +29,18 @@ public class Session {
 
     private int healthPoints;
 
-    private final int mode; // 0 is the normal mode, 1 is the demo mode
-
-    public Session(int mode) {
-        this.mode = mode;
-
+    public Session() {
         this.sessionMapPhase1 = new Map(1);
+        System.out.println("Phase 1 map loaded");
         this.sessionMapPhase2 = new Map(2);
+        System.out.println("Phase 2 map loaded");
         this.sessionMapPhase3 = new Map(3);
+        System.out.println("Phase 3 map loaded");
 
         this.inventory = new ArrayList<Item>();
         this.currentRoom = 0;
         this.currentStatus = Status.EXPLORING;
         this.healthPoints = MAX_HEALTH;
-    }
-
-    public int getMode() {
-        return mode;
     }
 
     public void setSessionMapPhase1(Map sessionMap) {
