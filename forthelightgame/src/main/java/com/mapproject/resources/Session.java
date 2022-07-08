@@ -23,11 +23,15 @@ public class Session {
 
     private Map sessionMapPhase3;
 
+    private int currentMap;
+
     private int currentRoom;
 
     private Status currentStatus;
 
     private int healthPoints;
+
+    private boolean isPlayerAlive;
 
     public Session() {
         this.sessionMapPhase1 = new Map(1);
@@ -38,9 +42,10 @@ public class Session {
         System.out.println("Phase 3 map loaded");
 
         this.inventory = new ArrayList<Item>();
-        this.currentRoom = 0;
+        this.currentMap = 1;
         this.currentStatus = Status.EXPLORING;
         this.healthPoints = MAX_HEALTH;
+        this.isPlayerAlive = true;
     }
 
     public void setSessionMapPhase1(Map sessionMap) {
@@ -75,6 +80,14 @@ public class Session {
         return inventory;
     }
 
+    public void setCurrentMap(int currentMap) {
+        this.currentMap = currentMap;
+    }
+
+    public int getCurrentMap() {
+        return currentMap;
+    }
+
     public void setCurrentRoom(int currentRoom) {
         this.currentRoom = currentRoom;
     }
@@ -97,5 +110,13 @@ public class Session {
 
     public int getHealthPoints() {
         return healthPoints;
+    }
+
+    public void setIsPlayerAlive(boolean isPlayerAlive) {
+        this.isPlayerAlive = isPlayerAlive;
+    }
+
+    public boolean isPlayerAlive() {
+        return isPlayerAlive;
     }
 }
