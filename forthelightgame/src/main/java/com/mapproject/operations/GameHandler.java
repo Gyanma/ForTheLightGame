@@ -25,15 +25,20 @@ public class GameHandler {
         // Printer.printFromTxt("Regole");
         // }
         Printer.printFromTxt("Inizio");
-
-        String command = "";
+        boolean action = true;
+        String command;
         String parsedCommand;
+        System.out.println("Cosa vuoi fare?");
         do {
-            System.out.println("Cosa vuoi fare?");
             command = gameScanner.nextLine();
             parsedCommand = Parser.parseCommand(command);
             if (!parsedCommand.equals("Chiudi il gioco")) {
-                Interpreter.decide(parsedCommand, gameSession);
+                action = Interpreter.decide(parsedCommand, gameSession);
+                if (action) {
+                    System.out.println("Cosa vuoi fare?");
+                } else {
+                    System.out.println("Non ho ben capito cosa vuoi fare...");
+                }
             }
 
         } while (!parsedCommand.equals("Chiudi il gioco") && gameSession.isPlayerAlive());

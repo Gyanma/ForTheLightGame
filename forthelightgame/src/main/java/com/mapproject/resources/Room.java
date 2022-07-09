@@ -114,4 +114,8 @@ public class Room {
         this.items.add(object);
     }
 
+    public void removeItem(Item item) {
+        this.items.remove(items.indexOf(item));
+    }
+
 }

@@ -72,6 +72,10 @@ public class Session {
         return this.getCurrentMap().getRoom(this.currentRoomId);
     }
 
+    public void addObjectToInventory(Item item) {
+        this.inventory.add(item);
+    }
+
     public void setInventory(List<Item> inventory) {
         this.inventory = inventory;
     }

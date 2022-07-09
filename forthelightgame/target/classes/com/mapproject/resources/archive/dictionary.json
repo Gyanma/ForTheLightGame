@@ -1,1 +1,249 @@
-{"Affilatore":["l\u0027affilatore","un affilatore"],"Libro delle maledizioni":["il libro delle maledizioni","un libro delle maledizioni","il manuale delle maledizioni","un manuale delle maledizioni","il tomo delle maledizioni","un tomo delle maledizioni"],"Pozione del fuoco":["la pozione del fuoco","una pozione del fuoco","la pozione","una pozione"],"Sacca di perle":["la sacca di perle","una sacca di perle","le perle","delle perle"],"Libro della destrezza":["il libro della destrezza","un libro della destrezza","il manuale della destrezza","un manuale della destrezza","il tomo della destrezza","un tomo della destrezza"],"Fune":["la fune","una fune","la corda","una corda","il lazo","un lazo"],"Mappa":["la mappa","una mappa"],"Spada":["la spada","una spada","la lama","una lama"],"Pozione del fulmine":["la pozione del fulmine","una pozione del fulmine","la pozione","una pozione"],"Torcia":["la torcia","una torcia","la fiaccola","una fiaccola"],"Mappa mistica":["la mappa mistica","una mappa mistica","la mappa","una mappa"],"Fionda":["la fionda","una fionda"],"Maglio":["il maglio","un maglio","il martello","un martello"],"Armatura":["l\u0027armatura","un armatura"],"Lancia":["la lancia","una lancia","l\u0027asta","un\u0027asta","il giavellotto","un giavellotto"],"Pozione del gelo":["la pozione del gelo","una pozione del gelo","la pozione","una pozione"],"Pozione del veleno":["la pozione del veleno","una pozione del veleno","la pozione","una pozione"],"Katana":["la katana","una katana","la spada","una spada"],"Pozione di cura":["la pozione di cura","una pozione di cura","la pozione","una pozione"],"Ascia":["l\u0027ascia","un\u0027ascia","l\u0027accetta","un\u0027accetta","la scure","una scure"],"Arco":["l\u0027arco","un arco"],"Calzari magici":["i calzari magici","dei calzari magici","i calzari","dei calzari","gli stivali magici","degli stivali magici","gli stivali","degli stivali","le scarpe magiche","delle scarpe magiche","le scarpe","delle scarpe"],"Libro mastro":["il libro mastro","un libro mastro"],"Pitture di guerra":["le pitture di guerra","delle pitture di guerra","le pitture","delle pitture"],"Punta in titanio":["la punta in titanio","una punta in titanio","la punta","una punta"],"Fiala del sangue":["la fiala","una fiala","la fiala del sangue","una fiala del sangue"],"Sacca":["la sacca","una sacca","la borsa","una borsa","la bisaccia","una bisaccia"],"Sacca di diamanti":["la sacca di diamanti","una sacca di diamanti","i diamanti","dei diamanti"],"Bomba fumogena":["la bomba fumogena","una bomba fumogena","il fumogeno","un fumogeno"],"Libro dell\u0027agilità":["il libro dell\u0027agilità","un libro dell\u0027agilità","il manuale dell\u0027agilità","un manuale dell\u0027agilità","il tomo dell\u0027agilità","un tomo dell\u0027agilità"],"Balestra":["la balestra","una balestra"],"Bestiario":["il bestiario"],"Cibo":["il cibo","del cibo","il pane","del pane","la pagnotta","una pagnotta","un tozzo di pane","il tozzo di pane"],"Acchiappasogni":["l\u0027acchiappasogni","un acchiappasogni"],"Vanga":["la vanga","una vanga","la pala","una pala"],"Shuriken":["gli shuriken","degli shuriken"],"Pugnale":["il pugnale","un pugnale","il coltello","un coltello"],"Monocolo del cacciatore":["il monocolo del cacciatore","un monocolo del cacciatore","il monocolo","un monocolo","la lente del cacciatore","una lente del cacciatore","la lente","una lente"],"Acqua":["l\u0027otre","un otre","l\u0027acqua","dell\u0027acqua","il fiasco","un fiasco","la borraccia","una borraccia"]}
+{
+    "Affilatore": [
+        "l\u0027affilatore",
+        "un affilatore"
+    ],
+    "Libro delle maledizioni": [
+        "il libro delle maledizioni",
+        "un libro delle maledizioni",
+        "il manuale delle maledizioni",
+        "un manuale delle maledizioni",
+        "il tomo delle maledizioni",
+        "un tomo delle maledizioni"
+    ],
+    "Pozione del fuoco": [
+        "la pozione del fuoco",
+        "una pozione del fuoco",
+        "la pozione",
+        "una pozione"
+    ],
+    "Sacca di perle": [
+        "la sacca di perle",
+        "una sacca di perle",
+        "le perle",
+        "delle perle"
+    ],
+    "Libro della destrezza": [
+        "il libro della destrezza",
+        "un libro della destrezza",
+        "il manuale della destrezza",
+        "un manuale della destrezza",
+        "il tomo della destrezza",
+        "un tomo della destrezza"
+    ],
+    "Fune": [
+        "la fune",
+        "una fune",
+        "la corda",
+        "una corda",
+        "il lazo",
+        "un lazo"
+    ],
+    "Mappa": [
+        "la mappa",
+        "una mappa"
+    ],
+    "Spada": [
+        "la spada",
+        "una spada",
+        "la lama",
+        "una lama"
+    ],
+    "Pozione del fulmine": [
+        "la pozione del fulmine",
+        "una pozione del fulmine",
+        "la pozione",
+        "una pozione"
+    ],
+    "Torcia": [
+        "la torcia",
+        "una torcia",
+        "la fiaccola",
+        "una fiaccola"
+    ],
+    "Mappa mistica": [
+        "la mappa mistica",
+        "una mappa mistica",
+        "la mappa",
+        "una mappa"
+    ],
+    "Fionda": [
+        "la fionda",
+        "una fionda"
+    ],
+    "Maglio": [
+        "il maglio",
+        "un maglio",
+        "il martello",
+        "un martello"
+    ],
+    "Armatura": [
+        "l\u0027armatura",
+        "un armatura"
+    ],
+    "Lancia": [
+        "la lancia",
+        "una lancia",
+        "l\u0027asta",
+        "un\u0027asta",
+        "il giavellotto",
+        "un giavellotto"
+    ],
+    "Pozione del gelo": [
+        "la pozione del gelo",
+        "una pozione del gelo",
+        "la pozione",
+        "una pozione"
+    ],
+    "Pozione del veleno": [
+        "la pozione del veleno",
+        "una pozione del veleno",
+        "la pozione",
+        "una pozione"
+    ],
+    "Katana": [
+        "la katana",
+        "una katana",
+        "la spada",
+        "una spada"
+    ],
+    "Pozione di cura": [
+        "la pozione di cura",
+        "una pozione di cura",
+        "la pozione",
+        "una pozione"
+    ],
+    "Ascia": [
+        "l\u0027ascia",
+        "un\u0027ascia",
+        "l\u0027accetta",
+        "un\u0027accetta",
+        "la scure",
+        "una scure"
+    ],
+    "Arco": [
+        "l\u0027arco",
+        "un arco"
+    ],
+    "Calzari magici": [
+        "i calzari magici",
+        "dei calzari magici",
+        "i calzari",
+        "dei calzari",
+        "gli stivali magici",
+        "degli stivali magici",
+        "gli stivali",
+        "degli stivali",
+        "le scarpe magiche",
+        "delle scarpe magiche",
+        "le scarpe",
+        "delle scarpe"
+    ],
+    "Libro mastro": [
+        "il libro mastro",
+        "un libro mastro"
+    ],
+    "Pitture di guerra": [
+        "le pitture di guerra",
+        "delle pitture di guerra",
+        "le pitture",
+        "delle pitture"
+    ],
+    "Punta in titanio": [
+        "la punta in titanio",
+        "una punta in titanio",
+        "la punta",
+        "una punta"
+    ],
+    "Fiala del sangue": [
+        "la fiala",
+        "una fiala",
+        "la fiala del sangue",
+        "una fiala del sangue"
+    ],
+    "Sacca": [
+        "la sacca",
+        "una sacca",
+        "la borsa",
+        "una borsa",
+        "la bisaccia",
+        "una bisaccia"
+    ],
+    "Sacca di diamanti": [
+        "la sacca di diamanti",
+        "una sacca di diamanti",
+        "i diamanti",
+        "dei diamanti"
+    ],
+    "Bomba fumogena": [
+        "la bomba fumogena",
+        "una bomba fumogena",
+        "il fumogeno",
+        "un fumogeno"
+    ],
+    "Libro dell\u0027agilitï¿½": [
+        "il libro dell\u0027agilitï¿½",
+        "un libro dell\u0027agilitï¿½",
+        "il manuale dell\u0027agilitï¿½",
+        "un manuale dell\u0027agilitï¿½",
+        "il tomo dell\u0027agilitï¿½",
+        "un tomo dell\u0027agilitï¿½"
+    ],
+    "Balestra": [
+        "la balestra",
+        "una balestra"
+    ],
+    "Bestiario": [
+        "il bestiario"
+    ],
+    "Cibo": [
+        "il cibo",
+        "del cibo",
+        "il pane",
+        "del pane",
+        "la pagnotta",
+        "una pagnotta",
+        "un tozzo di pane",
+        "il tozzo di pane"
+    ],
+    "Acchiappasogni": [
+        "l\u0027acchiappasogni",
+        "un acchiappasogni"
+    ],
+    "Vanga": [
+        "la vanga",
+        "una vanga",
+        "la pala",
+        "una pala"
+    ],
+    "Shuriken": [
+        "gli shuriken",
+        "degli shuriken"
+    ],
+    "Pugnale": [
+        "il pugnale",
+        "un pugnale",
+        "il coltello",
+        "un coltello"
+    ],
+    "Monocolo del cacciatore": [
+        "il monocolo del cacciatore",
+        "un monocolo del cacciatore",
+        "il monocolo",
+        "un monocolo",
+        "la lente del cacciatore",
+        "una lente del cacciatore",
+        "la lente",
+        "una lente"
+    ],
+    "Otre": [
+        "l\u0027otre",
+        "un otre",
+        "l\u0027acqua",
+        "dell\u0027acqua",
+        "il fiasco",
+        "un fiasco",
+        "la borraccia",
+        "una borraccia"
+    ]
+}

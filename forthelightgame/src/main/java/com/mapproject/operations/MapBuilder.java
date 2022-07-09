@@ -111,7 +111,7 @@ public class MapBuilder {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
 
-        } while (map.getRoom(roomId).getEvent() != null);
+        } while (map.getRoom(roomId).getEvent() != null && map.getStartingRoomId() != roomId);
 
         // add the puzzle to the room
         Room tempRoom = map.getRoom(roomId);
@@ -140,7 +140,7 @@ public class MapBuilder {
         do {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
-        } while (map.getRoom(roomId).getEvent() != null);
+        } while (map.getRoom(roomId).getEvent() != null && map.getStartingRoomId() != roomId);
 
         // add the danger to the room
         Room tempRoom = map.getRoom(roomId);
@@ -159,7 +159,7 @@ public class MapBuilder {
         do {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
-        } while (map.getRoom(roomId).getEvent() != null);
+        } while (map.getRoom(roomId).getEvent() != null && map.getStartingRoomId() != roomId);
 
         // add the enemy to the room
         Room tempRoom = map.getRoom(roomId);
@@ -184,7 +184,7 @@ public class MapBuilder {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
 
-        } while (map.getRoom(roomId).getEvent() != null);
+        } while (map.getRoom(roomId).getEvent() != null && map.getStartingRoomId() != roomId);
 
         // add the puzzle to the room
         Room tempRoom = map.getRoom(roomId);
@@ -207,7 +207,7 @@ public class MapBuilder {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
 
-        } while (map.getRoom(roomId).getEvent() != null);
+        } while (map.getRoom(roomId).getEvent() != null && map.getStartingRoomId() != roomId);
 
         // add the encounter to the room
         Room tempRoom = map.getRoom(roomId);
@@ -218,7 +218,7 @@ public class MapBuilder {
     private void addItems() {
         // choose a random item
         int itemId;
-        itemId = (int) (Math.random() * 18) + ITEM_BASE_ID + 1; // item id is between 1001 and 1020
+        itemId = (int) (Math.random() * 19) + ITEM_BASE_ID + 1; // item id is between 1001 and 1020
         Item item = Loader.loadItem(itemId);
 
         // choose a random room
@@ -233,7 +233,7 @@ public class MapBuilder {
         map.addRoom(roomId, tempRoom);
 
         if (Math.random() < 0.5) {
-            itemId = (int) (Math.random() * 18) + ITEM_BASE_ID + 1; // item id is between 1001 and 1020
+            itemId = (int) (Math.random() * 19) + ITEM_BASE_ID + 1; // item id is between 1001 and 1020
             item = Loader.loadItem(itemId);
 
             tempRoom = map.getRoom(roomId);
@@ -275,7 +275,7 @@ public class MapBuilder {
             roomId = Utilities.selectRoomFromSet(
                     (int) (Math.random() * map.getVisitableRooms().size() + 1), map.getVisitableRooms());
 
-        } while (map.getRoom(roomId).getItems().contains(weapon));
+        } while (map.getRoom(roomId).getItems().contains(weapon) || map.getStartingRoomId() == roomId);
 
         // add the weapon to the room
         Room tempRoom = map.getRoom(roomId);
@@ -292,13 +292,19 @@ public class MapBuilder {
         // in phase 1, only weapons 1-3 are available
         if (map.getPhase() == 1) {
             weaponId = (int) (Math.random() * 3) + WEAPON_BASE_ID + 1;
-            // in phase 2-3, weapons 4-5 are more likely to be placed (3 to 2)
-        } else {
+
+        } else {// in phase 2-3, weapons 7-8 are more likely to be placed (3 to 2)
             weaponId = (int) (Math.random() * 12);
-            if (weaponId < 6) {
-                weaponId = weaponId / 2 + WEAPON_BASE_ID + 1;
-            } else {
-                weaponId = (weaponId - 6) / 3 + WEAPON_BASE_ID + 3;
+            if (weaponId < 2) {
+                weaponId = WEAPON_BASE_ID + 1;
+            } else if (weaponId >= 2 && weaponId < 4) {
+                weaponId = WEAPON_BASE_ID + 2;
+            } else if (weaponId >= 4 && weaponId < 6) {
+                weaponId = WEAPON_BASE_ID + 3;
+            } else if (weaponId >= 6 && weaponId < 9) {
+                weaponId = WEAPON_BASE_ID + 7;
+            } else if (weaponId >= 9 && weaponId < 12) {
+                weaponId = WEAPON_BASE_ID + 8;
             }
         }
         weapon = Loader.loadWeapon(weaponId);
@@ -308,19 +314,24 @@ public class MapBuilder {
         map.addRoom(roomId, tempRoom);
 
         // choose a ranged weapon
-        // in phase 1, only weapons 6-8 are available
+        // in phase 1, only weapons 4-6 are available
         if (map.getPhase() == 1) {
-            weaponId = (int) (Math.random() * 3) + WEAPON_BASE_ID + 1;
-            // in phase 2-3, weapons 9-10 are more likely to be placed (3 to 2)
-        } else {
+            weaponId = (int) (Math.random() * 3) + WEAPON_BASE_ID + 4;
+
+        } else { // in phase 2-3, weapons 9-10 are more likely to be placed (3 to 2)
             weaponId = (int) (Math.random() * 12);
-            if (weaponId < 6) {
-                weaponId = weaponId / 2 + WEAPON_BASE_ID + 1;
-            } else {
-                weaponId = (weaponId - 6) / 3 + WEAPON_BASE_ID + 3;
+            if (weaponId < 2) {
+                weaponId = WEAPON_BASE_ID + 4;
+            } else if (weaponId >= 2 && weaponId < 4) {
+                weaponId = WEAPON_BASE_ID + 5;
+            } else if (weaponId >= 4 && weaponId < 6) {
+                weaponId = WEAPON_BASE_ID + 6;
+            } else if (weaponId >= 6 && weaponId < 9) {
+                weaponId = WEAPON_BASE_ID + 9;
+            } else if (weaponId >= 9 && weaponId < 12) {
+                weaponId = WEAPON_BASE_ID + 10;
             }
         }
-        weaponId += 5; // add 5 to get to the ranged weapon id
         weapon = Loader.loadWeapon(weaponId);
         // add the weapon to the room
         tempRoom = map.getRoom(roomId);
@@ -328,27 +339,37 @@ public class MapBuilder {
         map.addRoom(roomId, tempRoom);
 
         // choose a random weapon
-        // in phase 1, only weapons 1-3 and 6-8 are available
-        if (map.getPhase() == 1) {
-            weaponId = (int) (Math.random() * 6) + 1;
-            if (weaponId > 3) {
-                weaponId += 2; // 4-6 become 6-8
-            }
-            weaponId += WEAPON_BASE_ID;
+        // in phase 1, only weapons 1-6 are available
+        do {
+            if (map.getPhase() == 1) {
+                weaponId = (int) (Math.random() * 6) + 1 + WEAPON_BASE_ID;
 
-            // in phase 2-3, weapons 4, 5, 9, 10 are more likely to be placed (3 to 2)
-        } else {
-            weaponId = (int) (Math.random() * 24);
-            if (weaponId < 6) { // 0-5 -> weapons 1-3
-                weaponId = (weaponId) / 2 + WEAPON_BASE_ID + 1;
-            } else if (weaponId >= 6 && weaponId < 12) { // 6 - 11 -> weapons 4 or 5
-                weaponId = weaponId / 3 + WEAPON_BASE_ID + 2;
-            } else if (weaponId >= 12 && weaponId < 18) { // 12 - 17 -> weapons 6-8
-                weaponId = weaponId / 2 + WEAPON_BASE_ID;
-            } else { // 18 - 23 -> weapons 9 or 10
-                weaponId = weaponId / 3 + WEAPON_BASE_ID + 3;
+            } else {// in phase 2-3, weapons 7-10 are more likely to be placed (3 to 2)
+                weaponId = (int) (Math.random() * 24);
+                if (weaponId < 2) {
+                    weaponId = WEAPON_BASE_ID + 1;
+                } else if (weaponId >= 2 && weaponId < 4) {
+                    weaponId = WEAPON_BASE_ID + 2;
+                } else if (weaponId >= 4 && weaponId < 6) {
+                    weaponId = WEAPON_BASE_ID + 3;
+                } else if (weaponId >= 6 && weaponId < 8) {
+                    weaponId = WEAPON_BASE_ID + 4;
+                } else if (weaponId >= 9 && weaponId < 10) {
+                    weaponId = WEAPON_BASE_ID + 5;
+                } else if (weaponId >= 10 && weaponId < 12) {
+                    weaponId = WEAPON_BASE_ID + 6;
+                } else if (weaponId >= 12 && weaponId < 15) {
+                    weaponId = WEAPON_BASE_ID + 7;
+                } else if (weaponId >= 15 && weaponId < 18) {
+                    weaponId = WEAPON_BASE_ID + 8;
+                } else if (weaponId >= 18 && weaponId < 21) {
+                    weaponId = WEAPON_BASE_ID + 9;
+                } else if (weaponId >= 21 && weaponId < 24) {
+                    weaponId = WEAPON_BASE_ID + 10;
+                }
             }
-        }
+            weapon = Loader.loadWeapon(weaponId);
+        } while (map.getRoom(roomId).getItems().contains(weapon));
         // add the weapon to the room
         tempRoom = map.getRoom(roomId);
         tempRoom.addItem(weapon);
