@@ -1,13 +1,10 @@
 package com.mapproject.resources.items;
 
-import java.util.List;
-
 public class Item {
 
     private final int id;
     private String name;
     private String description;
-    private List<String> alias;
 
     private boolean pickupable = true;
     private boolean throwable = true;
@@ -19,12 +16,11 @@ public class Item {
         this.id = id;
     }
 
-    public Item(int id, String name, String description, List<String> alias,
+    public Item(int id, String name, String description,
             String manualDescription) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.alias = alias;
         this.manualDescription = manualDescription;
         this.pickupable = true;
         this.throwable = true;
@@ -65,18 +61,6 @@ public class Item {
 
     public void setThrowable(boolean throwable) {
         this.throwable = throwable;
-    }
-
-    public List<String> getAlias() {
-        return alias;
-    }
-
-    public void setAlias(List<String> alias) {
-        this.alias = alias;
-    }
-
-    public void addAlias(String alias) {
-        this.alias.add(alias);
     }
 
     public String getManualDescription() {

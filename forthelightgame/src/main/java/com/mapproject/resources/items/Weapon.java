@@ -1,7 +1,5 @@
 package com.mapproject.resources.items;
 
-import java.util.List;
-
 public class Weapon extends Item {
 
     private int usage;
@@ -14,9 +12,9 @@ public class Weapon extends Item {
     }
 
     public Weapon(int id, String name,
-            String description, List<String> alias, String manualDescription,
+            String description, String manualDescription,
             int usage, int damage, int weight, int accuracy) {
-        super(id, name, description, alias, manualDescription);
+        super(id, name, description, manualDescription);
         this.usage = usage;
         this.damage = damage;
         this.weight = weight;

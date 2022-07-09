@@ -6,10 +6,6 @@
     "usage": 2,
     "name": "Katana",
     "description": "Una katana trovata nel labirinto. Una lama sottile e affilata, frutto dell'ingegno di una cultura lontana.",
-    "alias": [
-        "katana",
-        "spada"
-    ],
     "accuracy": 2,
     "weight": 3,
     "id": 1107

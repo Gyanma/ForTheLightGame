@@ -6,9 +6,6 @@
     "usage": 1,
     "name": "Shuriken",
     "description": "Shuriken trovati nel labirinto. Lame piccole ma acuminate, eredit� di guerrieri di epoche passate.",
-    "alias": [
-        "shuriken"
-    ],
     "accuracy": 3,
     "weight": 1,
     "id": 1110

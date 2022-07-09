@@ -2,10 +2,6 @@
     "id": 1015,
     "name": "Bomba fumogena",
     "description": "Un aggeggio trovato nel labirinto. Questo marchingegno rilascia una cortina di fumo che ti permette di fuggire senza essere visto.",
-    "alias": [
-        "bomba fumogena",
-        "fumogeno"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

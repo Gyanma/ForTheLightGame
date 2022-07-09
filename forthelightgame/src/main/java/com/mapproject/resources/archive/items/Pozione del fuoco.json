@@ -2,9 +2,6 @@
     "id": 1022,
     "name": "Pozione del fuoco",
     "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una fiammata. Utilizzare con cautela.",
-    "alias": [
-        "pozione del fuoco"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

@@ -6,11 +6,6 @@
     "usage": 1,
     "name": "Lancia",
     "description": "Una lancia trovata nel labirinto. Capace di infliggere grossi danni da una grande gittata.",
-    "alias": [
-        "lancia",
-        "asta",
-        "giavellotto"
-    ],
     "accuracy": 1,
     "weight": 3,
     "id": 1105

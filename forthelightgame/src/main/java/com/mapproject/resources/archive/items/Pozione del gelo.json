@@ -2,9 +2,6 @@
     "id": 1024,
     "name": "Pozione del gelo",
     "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una tormenta. Utilizzare con cautela.",
-    "alias": [
-        "pozione del gelo"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

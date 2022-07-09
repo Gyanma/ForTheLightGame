@@ -1,6 +1,7 @@
 package com.mapproject;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mapproject.operations.AddToArchive;
 import com.mapproject.operations.GameHandler;
@@ -23,10 +24,13 @@ public final class App {
 
     public static void main(String[] args) {
 
-        AddToArchive.addList();
-        List<String> list = Loader.loadList("StartsWithLo");
-        for (String s : list) {
-            System.out.println(s);
+        AddToArchive.addMap();
+        Map<String, List<String>> list = Loader.loadDictionary();
+        for (String s : list.keySet()) {
+            if (list.get(s).contains("un'ascia"))
+                System.out.println(s);
+            else
+                System.out.println("no");
         }
 
         // System.out.println("\t\tFor The Light\n");

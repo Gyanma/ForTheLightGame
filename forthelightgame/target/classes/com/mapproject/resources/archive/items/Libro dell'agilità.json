@@ -2,11 +2,6 @@
     "id": 1012,
     "name": "Libro dell\u0027agilit\u00e0",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
-    "alias": [
-        "libro dell\u0027agilit\u00e0",
-        "manuale dell\u0027agilit\u00e0",
-        "tomo dell\u0027agilit\u00e0"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

@@ -2,9 +2,6 @@
     "id": 1016,
     "name": "Armatura",
     "description": "Un\u0027armatura trovata nel labirinto. Una prova pericolosa necessita di una protezione adeguata.",
-    "alias": [
-        "armatura"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

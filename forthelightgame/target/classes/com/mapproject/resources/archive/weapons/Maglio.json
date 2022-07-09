@@ -6,10 +6,6 @@
     "usage": 2,
     "name": "Maglio",
     "description": "Un maglio trovato nel labirinto. Un'arma pesante che permette colpi vigorosi, ma non troppa agilit�.",
-    "alias": [
-        "maglio",
-        "martello"
-    ],
     "accuracy": 3,
     "weight": 2,
     "id": 1108

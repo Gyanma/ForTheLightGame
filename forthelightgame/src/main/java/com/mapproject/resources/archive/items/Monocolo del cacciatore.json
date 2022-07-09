@@ -2,11 +2,6 @@
     "id": 1009,
     "name": "Monocolo del cacciatore",
     "description": "Uno strano monocolo trovato nel labirinto. Una volta indossato, senti i tuoi sensi acuirsi.",
-    "alias": [
-        "monocolo",
-        "monocolo del cacciatore",
-        "lente"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

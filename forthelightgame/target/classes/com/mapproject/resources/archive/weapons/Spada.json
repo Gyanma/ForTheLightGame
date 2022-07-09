@@ -6,10 +6,6 @@
     "usage": 2,
     "name": "Spada",
     "description": "Una spada trovata nel labirinto. Un'arma bilanciata per ogni tipo di combattente.",
-    "alias": [
-        "spada",
-        "lama"
-    ],
     "accuracy": 2,
     "weight": 2,
     "id": 1101

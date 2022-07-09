@@ -2,9 +2,6 @@
     "id": 1008,
     "name": "Pitture di guerra",
     "description": "Un set di pittura da guerra trovato nel labirinto. Quando applicate, infondono una forza mai vista.",
-    "alias": [
-        "pitture di guerra"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

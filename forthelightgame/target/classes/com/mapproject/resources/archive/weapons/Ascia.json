@@ -6,11 +6,6 @@
     "usage": 2,
     "name": "Ascia",
     "description": "Un'ascia trovata nel labirinto. Potente, ma al contempo pesante, richiede molta forza per essere usata.",
-    "alias": [
-        "ascia",
-        "accetta",
-        "scure"
-    ],
     "accuracy": 1,
     "weight": 3,
     "id": 1102

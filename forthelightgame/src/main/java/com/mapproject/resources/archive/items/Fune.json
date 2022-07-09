@@ -2,12 +2,8 @@
     "id": 1001,
     "name": "Fune",
     "description": "Una fune trovata nel labirinto. Ora manca solo il fedora.",
-    "alias": [
-        "fune",
-        "corda"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Puoi usarla per fuggire da buche o trappole, o donarla a chi ne ha bisogno."
+    "manualDescription": "Puoi usarla per fuggire da buche o trappole."
 }

@@ -11,28 +11,13 @@ import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.items.Item;
 import com.mapproject.resources.items.Weapon;
 import com.google.gson.Gson;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Loader {
-
-    @SuppressWarnings("unchecked")
-    public static List<String> loadList(String element) {
-        try {
-            return new Gson().fromJson(new FileReader(
-                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\" + element + ".json"),
-                    List.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     @SuppressWarnings("unchecked")
     /**
@@ -239,7 +224,7 @@ public class Loader {
                     case 2:
                         return "cibo";
                     case 3:
-                        return "acqua";
+                        return "otre";
                     case 4:
                         return "vanga";
                     case 5:

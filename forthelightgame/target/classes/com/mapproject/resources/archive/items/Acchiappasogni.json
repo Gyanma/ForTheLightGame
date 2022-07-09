@@ -2,9 +2,6 @@
     "id": 1007,
     "name": "Acchiappasogni",
     "description": "Un acchiappasogni trovato nel labirinto. I mostri sembrano volerne stare alla larga il pi\u00f9 possibile.",
-    "alias": [
-        "acchiappasogni"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

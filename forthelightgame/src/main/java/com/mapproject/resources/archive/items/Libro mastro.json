@@ -2,9 +2,6 @@
     "id": 1026,
     "name": "Libro mastro",
     "description": "Un tomo ottenuto nel labirinto. Ti dar\u00e0 ogni informazione necessaria su ogni oggetto che potresti trovare.",
-    "alias": [
-        "Libro mastro"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false

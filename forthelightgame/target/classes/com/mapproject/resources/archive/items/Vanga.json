@@ -2,10 +2,6 @@
     "id": 1004,
     "name": "Vanga",
     "description": "Una vanga trovata nel labirinto. L\u0027attrezzo fondamentale di un esploratore preparato.",
-    "alias": [
-        "vanga",
-        "pala"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

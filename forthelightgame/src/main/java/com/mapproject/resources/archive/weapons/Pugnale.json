@@ -6,10 +6,6 @@
     "usage": 2,
     "name": "Pugnale",
     "description": "Un pugnale trovato nel labirinto. Perfetto per chi preferisce combattere dall'ombra.",
-    "alias": [
-        "pugnale",
-        "coltello"
-    ],
     "accuracy": 3,
     "weight": 1,
     "id": 1103

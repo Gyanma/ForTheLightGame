@@ -14,9 +14,6 @@ import com.mapproject.resources.Room;
 
 public class Utilities {
 
-    private static List<String> namesWithUn = new ArrayList<String>();
-    private static List<String> namesWithUna = new ArrayList<String>();
-    private static List<String> namesWithUno = new ArrayList<String>();
     private final static int ROOMNUMBER = 16;
 
     public static Set<Integer> findVisitableRooms(int start, int end, Map newMap) {

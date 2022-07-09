@@ -2,13 +2,8 @@
     "id": 1002,
     "name": "Cibo",
     "description": "Un tozzo di pane trovato nel labirinto. Di norma non sapresti cosa farne, ma chiss\u00e0 cosa ti aspetta nel labirinto.",
-    "alias": [
-        "pane",
-        "cibo",
-        "pagnotta"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Il cibo può attirare animali in fuga, o essere donato a chi ne ha più bisogno."
+    "manualDescription": "Il cibo può attirare animali in fuga."
 }

@@ -2,10 +2,6 @@
     "id": 1019,
     "name": "Punta in titanio",
     "description": "Una punta trovata nel labirinto. Se il tuo obietivo \u00e8 trafiggere, non puoi sbagliarti.",
-    "alias": [
-        "punta in titanio",
-        "punta"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,

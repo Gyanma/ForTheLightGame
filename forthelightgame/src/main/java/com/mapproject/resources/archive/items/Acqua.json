@@ -1,15 +1,9 @@
 {
     "id": 1003,
-    "name": "Acqua",
-    "description": "Una borraccia di acqua trovata nel labirinto. Molte razze sopravvivono bevendo: una nozione non cos� banale per una specie che non ne ha mai avuto bisogno.",
-    "alias": [
-        "acqua",
-        "otre",
-        "fiasco",
-        "borraccia"
-    ],
+    "name": "Otre",
+    "description": "Un otre di acqua trovata nel labirinto. Molte razze sopravvivono bevendo: una nozione non cos� banale per una specie che non ne ha mai avuto bisogno.",
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "L\u0027acqua può essere usata per spegnere incendi, o donata a chi ne ha più bisogno."
+    "manualDescription": "L\u0027acqua può essere usata per spegnere incendi."
 }

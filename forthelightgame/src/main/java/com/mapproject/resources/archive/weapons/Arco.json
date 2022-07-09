@@ -6,9 +6,6 @@
     "usage": 1,
     "name": "Arco",
     "description": "Un arco trovato nel labirinto. Un'arma da usare a distanza, semplice ed efficace.",
-    "alias": [
-        "arco"
-    ],
     "accuracy": 2,
     "weight": 2,
     "id": 1104

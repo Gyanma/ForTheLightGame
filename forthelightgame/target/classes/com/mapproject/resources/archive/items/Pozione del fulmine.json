@@ -2,9 +2,6 @@
     "id": 1023,
     "name": "Pozione del fulmine",
     "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una saetta. Utilizzare con cautela.",
-    "alias": [
-        "pozione del fulmine"
-    ],
     "pickupable": true,
     "throwable": true,
     "used": false,
