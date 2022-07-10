@@ -1,7 +1,5 @@
 package com.mapproject.resources.events;
 
-import com.mapproject.enums.Location;
-
 public class TextPuzzle extends Event {
 
     private String question;
@@ -20,11 +18,11 @@ public class TextPuzzle extends Event {
 
     private int rewardId; // item reward in case of correct answer
 
-    public TextPuzzle(int eventId, String name, String presentation, Location location,
+    public TextPuzzle(int eventId, String name, String presentation,
             String question, String answer, boolean isSingleAnswer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
             int rewardId) {
-        super(eventId, name, presentation, true, location);
+        super(eventId, name, presentation, true);
         this.question = question;
         this.answer = answer;
         this.isSingleAnswer = isSingleAnswer;

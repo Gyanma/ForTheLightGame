@@ -1,16 +1,15 @@
 {
-    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso il pavimeno si apre sotto di te!\nPer fortuna non ti fai troppo male. Mentre ti rialzi, senti uno strano rumore.\nTi guardi attorno e noti che al lato del fossato si sono aperti due passaggi\ne sta iniziando a uscire un getto d'acqua! Presto, devi uscire\nda questa trappola!\n",
+    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso il pavimeno si apre sotto di te!\nPer fortuna non ti fai troppo male. Mentre ti rialzi, senti uno strano rumore.\nTi guardi attorno e noti che al lato del fossato si sono aperti due passaggi\ne sta iniziando a uscire un getto d'acqua! Presto, devi uscire\nda questa trappola!",
     "timeLimit": 75000,
     "eventId": 2102,
     "name": "Stanza allagata",
     "countdown": {
-        "1": "L'acqua ti arriva gi� alle ginocchia.\n",
-        "2": "Avanti, l'acqua continua a salire!\n",
-        "3": "L'acqua ti � arrivata al petto!\n",
-        "4": "Ormai l'acqua ti arriva alla gola!\n",
-        "5": "Troppo tardi, il fossato � completamente riempito...\nProvi a restare a galla il pi� possibile, ma svieni per la troppa fatica...\n"
+        "1": "L'acqua ti arriva gi� alle ginocchia.",
+        "2": "Avanti, l'acqua continua a salire!",
+        "3": "L'acqua ti � arrivata al petto!",
+        "4": "Ormai l'acqua ti arriva alla gola!",
+        "5": "Troppo tardi, il fossato � completamente riempito...\nProvi a restare a galla il pi� possibile, ma svieni per la troppa fatica..."
     },
-    "location": "EVERYWHERE",
     "solutionId": 1001,
     "isSkippable": false,
     "prizeId": 1020

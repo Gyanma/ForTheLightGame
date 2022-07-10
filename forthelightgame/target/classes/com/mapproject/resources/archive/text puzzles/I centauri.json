@@ -1,15 +1,14 @@
 {
     "eventId": 2204,
-    "question": "Una volta avvicinato alle creature, chiedi al padre cosa stia succedendo.\n\"Uno dei miei figli ha calpestato il raccolto, ma non vuole uscire allo scoperto.\nLi ho interrogati in ordine dal maggiore al pi� giovane e queste sono le loro risposte.\"\nDopo aver ascoltato il padre, acquisisci queste informazioni.\nPrimogenito A: afferma di essere innocente.\nSecondogenito B: afferma che A stia dicendo il vero.\nTerzogenito C: afferma che D stia mentendo.\nQuartogenito D: afferma di essere innocente.\nUna delle risposte ti sembra estremamente strana. Quale?\n",
+    "question": "Una volta avvicinato alle creature, chiedi al padre cosa stia succedendo.\n\"Uno dei miei figli ha calpestato il raccolto, ma non vuole uscire allo scoperto.\nLi ho interrogati in ordine dal maggiore al pi� giovane e queste sono le loro risposte.\"\nDopo aver ascoltato il padre, acquisisci queste informazioni.\nPrimogenito A: afferma di essere innocente.\nSecondogenito B: afferma che A stia dicendo il vero.\nTerzogenito C: afferma che D stia mentendo.\nQuartogenito D: afferma di essere innocente.\nUna delle risposte ti sembra estremamente strana. Quale?",
     "isSingleAnswer": true,
     "tryAgainReply": "Il centauro non sembra prestarti particolare attenzione...\nForse non � convinto della tua risposta.\n",
-    "correctReply": "\"Ma certo. La risposta del mio terzogenito � troppo strana\nper essere lasciata stare. Grazie forestiero.\nPrendi questo dono, in segno di ringraziamento.\"\nIl centauro ti passa un set di pitture di guerra.\n",
-    "presentation": "Nell'angolo della stanza noti un gruppo di centauri.\nNe conti un adulto e quattro giovani, e ascoltando i loro\ndiscorsi sembrano essere un padre e quattro figli.\n",
+    "correctReply": "\"Ma certo. La risposta del mio terzogenito � troppo strana\nper essere lasciata stare. Grazie forestiero.\nPrendi questo dono, in segno di ringraziamento.\"\nIl centauro ti passa un set di pitture di guerra.",
+    "presentation": "Nell'angolo della stanza noti un gruppo di centauri.\nNe conti un adulto e quattro giovani, e ascoltando i loro\ndiscorsi sembrano essere un padre e quattro figli.",
     "rewardId": 1008,
     "answer": "Terzogenito C",
     "incorrectReply": "",
     "name": "I centauri",
-    "location": "SOUTH_WEST",
-    "surrenderReply": "\"Oh certo, non preccuparti.\nGrazie lo stesso dell'aiuto, forestiero.\"\n",
+    "surrenderReply": "\"Oh certo, non preccuparti.\nGrazie lo stesso dell'aiuto, forestiero.\"",
     "isSkippable": true
 }

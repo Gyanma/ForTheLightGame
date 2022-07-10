@@ -1,5 +1,5 @@
 {
-    "presentation": "Al centro della stanza vedi una bestia gigantesca!\nCerbero, il leggendario cane a tre teste, ti si para davanti.\nL'ultima battaglia del tuo viaggio sta per avere inizio!\n",
+    "presentation": "Al centro della stanza vedi una bestia gigantesca!\nCerbero, il leggendario cane a tre teste, ti si para davanti.\nL'ultima battaglia del tuo viaggio sta per avere inizio!",
     "eventId": 2453,
     "baseAttack": 2,
     "attacks": {
@@ -25,9 +25,8 @@
         }
     },
     "healthPoints": 150,
-    "manualDescription": "Cerbero:\nNon � in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilit� di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpir� sicuramente;\n",
+    "manualDescription": "Cerbero:\nNon � in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilit� di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpir� sicuramente;",
     "name": "Cerbero",
-    "location": "EVERYWHERE",
     "isSkippable": true,
     "isFlying": false,
     "baseDefense": 2

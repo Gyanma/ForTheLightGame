@@ -1,1 +1,14 @@
-{"eventId":2214,"question":"Una volta avvicinato al tavolo, il vecchio ti chiama.\n\"Bentornato giovane. Ti va di giocare?\nLe regole le conosci. Adesso la brocca da 16 decilitri è piena,\ne quelle da 9 e 7 decilitri sono vuote.\nDevi versare il vino tra le brocche in modo che\nle brocche da 16 e 9 decilitri abbiano entrambe 8 decilitri di vino.\nNaturalmente, puoi solo versare il vino da una\nbrocca a un'altra finché la seconda non è piena.\nNon provare a improvvisare una misura.\nAccetti?\"\n","isSingleAnswer":true,"tryAgainReply":"","correctReply":"\"Ben fatto ragazzo\nA te il tuo premio.\"\nIl vecchio ti consegna una balestra, e rimette il vino nella brocca iniziale.\nSaluti il vecchio e ti allontani.\n","presentation":"Nell'angolo della stanza trovi un vecchio seduto a un tavolo.\nHa tre brocche di fronte a sé. Non sai perché, ma\nhai come la sensazione di averlo già visto...\n","rewardId":1109,"answer":"","incorrectReply":"","name":"Brocche di vino","location":"SOUTH_EAST","surrenderReply":"\"Nessun problema. A presto, ragazzo.\"\nSaluti il vecchio e ti allontani.\n","isSkippable":true}
+{
+    "eventId": 2214,
+    "question": "Una volta avvicinato al tavolo, il vecchio ti chiama.\n\"Bentornato giovane. Ti va di giocare?\nLe regole le conosci. Adesso la brocca da 16 decilitri ï¿½ piena,\ne quelle da 9 e 7 decilitri sono vuote.\nDevi versare il vino tra le brocche in modo che\nle brocche da 16 e 9 decilitri abbiano entrambe 8 decilitri di vino.\nNaturalmente, puoi solo versare il vino da una\nbrocca a un'altra finchï¿½ la seconda non ï¿½ piena.\nNon provare a improvvisare una misura.\nAccetti?\"",
+    "isSingleAnswer": true,
+    "tryAgainReply": "",
+    "correctReply": "\"Ben fatto ragazzo\nA te il tuo premio.\"\nIl vecchio ti consegna una balestra, e rimette il vino nella brocca iniziale.\nSaluti il vecchio e ti allontani.",
+    "presentation": "Nell'angolo della stanza trovi un vecchio seduto a un tavolo.\nHa tre brocche di fronte a sï¿½. Non sai perchï¿½, ma\nhai come la sensazione di averlo giï¿½ visto...",
+    "rewardId": 1109,
+    "answer": "",
+    "incorrectReply": "",
+    "name": "Brocche di vino",
+    "surrenderReply": "\"Nessun problema. A presto, ragazzo.\"\nSaluti il vecchio e ti allontani.",
+    "isSkippable": true
+}

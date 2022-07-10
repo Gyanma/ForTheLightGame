@@ -3,8 +3,6 @@ package com.mapproject.resources.events;
 import java.util.List;
 import java.util.Map;
 
-import com.mapproject.enums.Location;
-
 public class Enemy extends Event {
 
     private Map<String, Map<String, Integer>> attacks;
@@ -17,10 +15,10 @@ public class Enemy extends Event {
 
     private String manualDescription;
 
-    public Enemy(int eventId, String name, String description, Location location, boolean isSkippable,
+    public Enemy(int eventId, String name, String description, boolean isSkippable,
             String manualDescription, Map<String, Map<String, Integer>> attacks,
             int healthPoints, boolean isFlying, int baseAttack, int baseDefense) {
-        super(eventId, name, description, isSkippable, location);
+        super(eventId, name, description, isSkippable);
         this.attacks = attacks;
         this.manualDescription = manualDescription;
         this.healthPoints = healthPoints;

@@ -1,5 +1,5 @@
 {
-    "presentation": "Al centro della stanza si erge un'Idra!\nSta proteggendo l'uscita dal labirinto.\nSconfiggila per superare la prima prova.\n",
+    "presentation": "Al centro della stanza si erge un'Idra!\nSta proteggendo l'uscita dal labirinto.\nSconfiggila per superare la prima prova.",
     "eventId": 2451,
     "baseAttack": 1,
     "attacks": {
@@ -20,9 +20,8 @@
         }
     },
     "healthPoints": 100,
-    "manualDescription": "Idra:\nNon � in gradi di volare\nPunti salute: 100\nAttacchi:\nMorso: danno medio, nessun effetto speciale;\nSoffio acido: danno medio, precisione ridotta, possibilit� di diffondere tossine;\nRigenerazione: nessun danno, precisione ridotta, rigenera Hp, ma richiede due turni;\n",
+    "manualDescription": "Idra:\nNon � in gradi di volare\nPunti salute: 100\nAttacchi:\nMorso: danno medio, nessun effetto speciale;\nSoffio acido: danno medio, precisione ridotta, possibilit� di diffondere tossine;\nRigenerazione: nessun danno, precisione ridotta, rigenera Hp, ma richiede due turni;",
     "name": "Idra",
-    "location": "EVERYWHERE",
     "isSkippable": true,
     "isFlying": false,
     "baseDefense": 1

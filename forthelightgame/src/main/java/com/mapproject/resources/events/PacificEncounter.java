@@ -2,8 +2,6 @@ package com.mapproject.resources.events;
 
 import java.util.List;
 
-import com.mapproject.enums.Location;
-
 public class PacificEncounter extends Event {
 
     private String description;
@@ -13,10 +11,10 @@ public class PacificEncounter extends Event {
                                            // if it requires any item, it will be -2
     private List<Integer> giftedItemId;
 
-    public PacificEncounter(int eventId, String name, String presentation, boolean isSkippable, Location location,
+    public PacificEncounter(int eventId, String name, String presentation, boolean isSkippable,
             String description, String itemGivenResponse, String itemNotGivenResponse,
             List<Integer> requestedItemId, List<Integer> giftedItemId) {
-        super(eventId, name, presentation, isSkippable, location);
+        super(eventId, name, presentation, isSkippable);
         this.description = description;
         this.requestedItemId = requestedItemId;
         this.giftedItemId = giftedItemId;

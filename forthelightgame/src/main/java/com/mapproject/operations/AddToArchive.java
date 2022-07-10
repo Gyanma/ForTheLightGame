@@ -12,7 +12,6 @@ import java.util.Map;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
-import com.mapproject.enums.Location;
 import com.mapproject.resources.events.Enemy;
 import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.events.PacificEncounter;
@@ -303,7 +302,6 @@ public class AddToArchive {
                                 + "hai come la sensazione di averlo già visto...\n");
                 itemJson.put("eventId", 2214);
                 itemJson.put("isSkippable", true);
-                itemJson.put("location", Location.SOUTH_EAST);
                 itemJson.put("question", "Una volta avvicinato al tavolo, il vecchio ti chiama.\n"
                                 + "\"Bentornato giovane. Ti va di giocare?\n"
                                 + "Le regole le conosci. Adesso la brocca da 16 decilitri è piena,\n"
@@ -438,7 +436,6 @@ public class AddToArchive {
                 System.out.println(vP2.getEventId());
                 System.out.println(vP2.getName());
                 System.out.println(vP2.getPresentation());
-                System.out.println(vP2.getLocation());
                 System.out.println(vP2.getQuestion());
                 System.out.println(vP2.getAnswer());
                 System.out.println(vP2.isSingleAnswer());
@@ -456,7 +453,6 @@ public class AddToArchive {
                 itemJson.put("presentation", "Al centro della stanza vedi una bestia gigantesca!\n"
                                 + "Cerbero, il leggendario cane a tre teste, ti si para davanti.\n"
                                 + "L'ultima battaglia del tuo viaggio sta per avere inizio!\n");
-                itemJson.put("location", Location.EVERYWHERE);
                 itemJson.put("isSkippable", true);
 
                 Map<String, Map<String, Integer>> attacks = new HashMap<>();
@@ -523,7 +519,6 @@ public class AddToArchive {
                 System.out.println(danger.getName());
                 System.out.println(danger.getPresentation());
                 System.out.println(danger.isSkippable());
-                System.out.println(danger.getLocation());
                 System.out.println(danger.getHealthPoints());
                 System.out.println(danger.isFlying());
                 System.out.println(danger.getBaseAttack());
@@ -566,7 +561,6 @@ public class AddToArchive {
                                 "Nell'angolo della stanza vedi una fontana. Sembra essere un qualche luogo sacro...\n");
                 itemJson.put("eventId", 2504);
                 itemJson.put("isSkippable", true);
-                itemJson.put("location", Location.SOUTH_WEST);
                 itemJson.put("description", "Ti avvicini alla fontana.\n"
                                 + "Accanto ad essa trovi un'incisione su una lastra\n"
                                 + "\"La sacra fontana di Legrejoux fu costruita dai monaci del dio Sole molti secoli fa.\n"
@@ -595,7 +589,6 @@ public class AddToArchive {
                 System.out.println(vP2.getEventId());
                 System.out.println(vP2.getName());
                 System.out.println(vP2.getPresentation());
-                System.out.println(vP2.getLocation());
                 System.out.println(vP2.isSkippable());
                 System.out.println(vP2.getDescription());
                 System.out.println(vP2.getItemGivenResponse());

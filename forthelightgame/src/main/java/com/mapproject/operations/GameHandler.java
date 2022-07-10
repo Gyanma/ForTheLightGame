@@ -15,6 +15,7 @@ public class GameHandler {
     public GameHandler(Session session) {
         this.gameSession = session;
         gameSession.setCurrentRoomId(gameSession.getCurrentMap().getStartingRoomId());
+        gameSession.addObjectToInventory(Loader.loadItem("mappa"));
     }
 
     public void runGame(Session newSession) {
@@ -25,7 +26,7 @@ public class GameHandler {
         // Printer.printFromTxt("Regole");
         // }
         Printer.printFromTxt("Inizio");
-        boolean action = true;
+        int action = 1;
         String command;
         String parsedCommand;
 
@@ -35,14 +36,16 @@ public class GameHandler {
             parsedCommand = Parser.parseCommand(command);
             if (!parsedCommand.equals("Chiudi il gioco")) {
                 action = Interpreter.decide(parsedCommand, gameSession);
-                if (action) {
+                if (action == 1) {
                     System.out.println("Cosa vuoi fare?");
-                } else {
+                } else if (action == 2) {
                     System.out.println("Non ho ben capito cosa vuoi fare...");
-                }
-            }
+                } else
+                    action = 0;
+            } else
+                action = 0;
 
-        } while (!parsedCommand.equals("Chiudi il gioco") && gameSession.isPlayerAlive());
+        } while (action != 0 && gameSession.isPlayerAlive());
 
         System.out.println("Arrivederci!");
     }

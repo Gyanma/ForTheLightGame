@@ -1,15 +1,14 @@
 {
     "eventId": 2207,
-    "question": "Ti avvicini al soldato e gli domandi cosa lo affligga.\n\"Oh, salve. Sto cercando di contare quanto dovr� ricevere in premio\nper una ronda di qualche giorno fa.\nMi stavo dirigendo dalla caserma verso il municipio.\nHo percorso 500 metri quando ho sentito dietro di me un grido.\nUn commerciante stava venendo derubato!\nSono corso indietro a soccorrerlo, e alla mia sola vista il ladro � fuggito.\nDopodich�, sono tornato sui miei passi e ho raggiunto il municipio.\nDa l�, svolte le mie mansioni, sono tornato alla caserma.\nTutta la ronda si � svolta sulla strada principale del paese,\ne so che il municipio dista 800 metri dal municipio.\nSe il premio consiste in una moneta d'oro per ogni 100 metri che ho percorso\nquante monete d'oro mi spettano come premio?\"\n",
+    "question": "Ti avvicini al soldato e gli domandi cosa lo affligga.\n\"Oh, salve. Sto cercando di contare quanto dovr� ricevere in premio\nper una ronda di qualche giorno fa.\nMi stavo dirigendo dalla caserma verso il municipio.\nHo percorso 500 metri quando ho sentito dietro di me un grido.\nUn commerciante stava venendo derubato!\nSono corso indietro a soccorrerlo, e alla mia sola vista il ladro � fuggito.\nDopodich�, sono tornato sui miei passi e ho raggiunto il municipio.\nDa l�, svolte le mie mansioni, sono tornato alla caserma.\nTutta la ronda si � svolta sulla strada principale del paese,\ne so che il municipio dista 800 metri dal municipio.\nSe il premio consiste in una moneta d'oro per ogni 100 metri che ho percorso\nquante monete d'oro mi spettano come premio?\"",
     "isSingleAnswer": true,
-    "tryAgainReply": "\"Ne siete sicuro? Non mi convince...\"\n",
-    "correctReply": "\"Oh grazie, grazie infinite\" dice il soldato.\n\"Prendete questo come segno di riconoscenza\"\nIl soldato ti porge una fune.\n\"Vi potrebbe servire in questo labirinto. A presto, e ancora grazie\"\nIl soldato si allontana.\n",
-    "presentation": "In lontananza vedi un soldato umano, rannicchiato.\nSta contando sulle dita e sussurra qualcosa a s� stesso.\n",
+    "tryAgainReply": "\"Ne siete sicuro? Non mi convince...\"",
+    "correctReply": "\"Oh grazie, grazie infinite\" dice il soldato.\n\"Prendete questo come segno di riconoscenza\"\nIl soldato ti porge una fune.\n\"Vi potrebbe servire in questo labirinto. A presto, e ancora grazie\"\nIl soldato si allontana.",
+    "presentation": "In lontananza vedi un soldato umano, rannicchiato.\nSta contando sulle dita e sussurra qualcosa a s� stesso.",
     "rewardId": 1001,
     "answer": "26",
     "incorrectReply": "",
     "name": "Il premio",
-    "location": "NORTH_EAST",
-    "surrenderReply": "\"Oh non vi preoccupate, posso risolvere\nquesto problema da solo, grazie ugualmente\"\n",
+    "surrenderReply": "\"Oh non vi preoccupate, posso risolvere\nquesto problema da solo, grazie ugualmente\"",
     "isSkippable": true
 }

@@ -1,15 +1,14 @@
 {
     "eventId": 2206,
-    "question": "Mentre ti avvicini, il grifone ti nota, e inizia a parlarti.\n\"Nobile viaggiatore, ho bisogno di aiuto. Mi trovo in una situazione surreale.\nIo e il mio branco ci stiamo preparando per una grande spedizione.\nA me � stato affidato il compito di preparare le provviste, ma non capisco quante ce ne serviranno!\nLa nostra destinazione � la Torre d'Avorio, e per arrivarci partiremo dalla\nTorre di Giada, passando per la Torre d'Ambra e per la Torre di Rubini.\nPer raggiungere la Torre d'Ambra dalla Torre di Giada sono necessari tre giorni.\nPer raggiungere la Torre di Rubini dalla Torre d'Ambra � necessario un giorno.\nPer raggiungere la Torre d'Avorio dalla Torre di Rubini sono necessari due giorni.\nPer� quando ho proposto che servissero provviste per sei giorni\nil capobranco mi ha risposto che sono esagerate!\nCosa intendeva dire? Per quanti giorni dovremo viaggiare?\"\n",
+    "question": "Mentre ti avvicini, il grifone ti nota, e inizia a parlarti.\n\"Nobile viaggiatore, ho bisogno di aiuto. Mi trovo in una situazione surreale.\nIo e il mio branco ci stiamo preparando per una grande spedizione.\nA me � stato affidato il compito di preparare le provviste, ma non capisco quante ce ne serviranno!\nLa nostra destinazione � la Torre d'Avorio, e per arrivarci partiremo dalla\nTorre di Giada, passando per la Torre d'Ambra e per la Torre di Rubini.\nPer raggiungere la Torre d'Ambra dalla Torre di Giada sono necessari tre giorni.\nPer raggiungere la Torre di Rubini dalla Torre d'Ambra � necessario un giorno.\nPer raggiungere la Torre d'Avorio dalla Torre di Rubini sono necessari due giorni.\nPer� quando ho proposto che servissero provviste per sei giorni\nil capobranco mi ha risposto che sono esagerate!\nCosa intendeva dire? Per quanti giorni dovremo viaggiare?\"",
     "isSingleAnswer": true,
-    "tryAgainReply": "\"No, non � possibile, ho gi� provato a proporre anche quel numero...\"\n",
-    "correctReply": "\"Ma certo, le provviste bastano per quattro giorni!\nDevo assolutamente prepararmi. Grazie dell'aiuto, straniero.\nNon ho molto da offrirti, ma posso donarti questo in segno di riconoscenza.\"\nLa creatura afferra un monocolo e te lo porge.\nUna volta che lo afferri, il grifone ti saluta e spicca il volo.\n",
-    "presentation": "Nell'angolo della stanza vedi un maestoso grifone.\nSembra molto affaccendato per qualche motivo.\n",
+    "tryAgainReply": "\"No, non � possibile, ho gi� provato a proporre anche quel numero...\"",
+    "correctReply": "\"Ma certo, le provviste bastano per quattro giorni!\nDevo assolutamente prepararmi. Grazie dell'aiuto, straniero.\nNon ho molto da offrirti, ma posso donarti questo in segno di riconoscenza.\"\nLa creatura afferra un monocolo e te lo porge.\nUna volta che lo afferri, il grifone ti saluta e spicca il volo.",
+    "presentation": "Nell'angolo della stanza vedi un maestoso grifone.\nSembra molto affaccendato per qualche motivo.",
     "rewardId": 1009,
     "answer": "4",
     "incorrectReply": "",
     "name": "La spedizione",
-    "location": "SOUTH_EAST",
-    "surrenderReply": "\"Perdonami, ti ho solo sottratto del tempo prezioso.\nTi ringrazio ugualmente\"\nLasci il grifone a rimuginare sul suo problema.\n",
+    "surrenderReply": "\"Perdonami, ti ho solo sottratto del tempo prezioso.\nTi ringrazio ugualmente\"\nLasci il grifone a rimuginare sul suo problema.",
     "isSkippable": true
 }

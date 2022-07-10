@@ -1,16 +1,15 @@
 {
-    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso ti ritrovi completamente al buio!\nNell'oscurit� senti delle voci poco rassicuranti...\nFai in fretta, devi trovare il modo di illuminare la stanza!\n",
+    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso ti ritrovi completamente al buio!\nNell'oscurit� senti delle voci poco rassicuranti...\nFai in fretta, devi trovare il modo di illuminare la stanza!",
     "timeLimit": 75000,
     "eventId": 2103,
     "name": "Spettri",
     "countdown": {
-        "1": "Ora ci si mettono anche gli spifferi...\n",
-        "2": "Qualcuno ti ha sussurrato nell'orecchio! Ti volti di scatto ma non vedi ancora nulla.\n",
-        "3": "Una mano gelida ti tocca la spalla! Ti allontani, ma alla cieca non puoi fare molto...\n",
-        "4": "Le voci diventano sempre di pi�, e sempre pi� assillanti!\n",
-        "5": "Vieni afferrato da qualcosa, e in men che non si dica, perdi i sensi...\n"
+        "1": "Ora ci si mettono anche gli spifferi...",
+        "2": "Qualcuno ti ha sussurrato nell'orecchio! Ti volti di scatto ma non vedi ancora nulla.",
+        "3": "Una mano gelida ti tocca la spalla! Ti allontani, ma alla cieca non puoi fare molto...",
+        "4": "Le voci diventano sempre di pi�, e sempre pi� assillanti!",
+        "5": "Vieni afferrato da qualcosa, e in men che non si dica, perdi i sensi..."
     },
-    "location": "EVERYWHERE",
     "solutionId": 1006,
     "isSkippable": false,
     "prizeId": 1017

@@ -1,10 +1,9 @@
 {
-    "presentation": "Nell'angolo della stanza vedi un umano vestito da esploratore...\nSembra molto indaffarato con delle mappe.\n",
+    "presentation": "Nell'angolo della stanza vedi un umano vestito da esploratore...\nSembra molto indaffarato con delle mappe.",
     "eventId": 2502,
-    "itemNotGivenResponse": "\"Oh, peccato... Alla prossima!\"\nL'esploratore torna a guardare le sue mappe.\n",
+    "itemNotGivenResponse": "\"Oh, peccato... Alla prossima!\"\nL'esploratore torna a guardare le sue mappe.",
     "name": "Esploratore",
-    "description": "Ti avvicini all'esploratore'.\nQuando sei abbastanza vicino, si gira e inizia a parlarti.\n\"Salve, amico. Anche tu cerchi l'uscita del labirinto?\nAllora posso darti una mano.\nSono riuscito a trovare una mappa magica!\nPermette di trovare immediatamente la stanza finale del labirinto e la tua posizione corrente.\nA me non serve, ho memorizzato gi� tutte le stanze.\nMa speravo di trovare qualche tesoro... Se tu hai qualche pietra preziosa\npotremmo fare a cambio, che ne dici?\"\n",
-    "location": "SOUTH_EAST",
+    "description": "Ti avvicini all'esploratore'.\nQuando sei abbastanza vicino, si gira e inizia a parlarti.\n\"Salve, amico. Anche tu cerchi l'uscita del labirinto?\nAllora posso darti una mano.\nSono riuscito a trovare una mappa magica!\nPermette di trovare immediatamente la stanza finale del labirinto e la tua posizione corrente.\nA me non serve, ho memorizzato gi� tutte le stanze.\nMa speravo di trovare qualche tesoro... Se tu hai qualche pietra preziosa\npotremmo fare a cambio, che ne dici?\"",
     "giftedItemId": [
         1027
     ],
@@ -13,5 +12,5 @@
         1029,
         1020
     ],
-    "itemGivenResponse": "\"Oh oh, grazie milla\"\nL'esploratore ti porge la mappa, e una volta ricevuta la sua ricompensa, inizia a correre verso un'altra stanza...\n"
+    "itemGivenResponse": "\"Oh oh, grazie mille\"\nL'esploratore ti porge la mappa, e una volta ricevuta la sua ricompensa, inizia a correre verso un'altra stanza..."
 }

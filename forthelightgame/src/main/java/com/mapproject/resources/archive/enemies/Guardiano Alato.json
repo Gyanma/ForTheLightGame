@@ -1,5 +1,5 @@
 {
-    "presentation": "Al centro della stanza vedi il Guardiano Alato!\nSta proteggendo l'uscita dal labirinto.\nSconfiggilo per superare la seconda prova.\n",
+    "presentation": "Al centro della stanza vedi il Guardiano Alato!\nSta proteggendo l'uscita dal labirinto.\nSconfiggilo per superare la seconda prova.",
     "eventId": 2452,
     "baseAttack": 1,
     "attacks": {
@@ -20,9 +20,8 @@
         }
     },
     "healthPoints": 150,
-    "manualDescription": "Guardiano alato:\n� in grado di volare\nPunti salute: 120\nAttacchi:\nRaggio di luce: danno medio, nessun effetto speciale;\nMaglio divino: danno alto, precisione ridotta, richiede due turni;\nBenedizione: nessun danno, ma aumenta attacco e difesa di base;\n",
+    "manualDescription": "Guardiano alato:\n� in grado di volare\nPunti salute: 120\nAttacchi:\nRaggio di luce: danno medio, nessun effetto speciale;\nMaglio divino: danno alto, precisione ridotta, richiede due turni;\nBenedizione: nessun danno, ma aumenta attacco e difesa di base;",
     "name": "Guardiano Alato",
-    "location": "EVERYWHERE",
     "isSkippable": true,
     "isFlying": false,
     "baseDefense": 1

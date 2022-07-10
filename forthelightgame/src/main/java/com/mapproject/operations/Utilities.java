@@ -8,9 +8,15 @@ import java.util.Set;
 
 import com.mapproject.resources.Map;
 import com.mapproject.resources.Room;
+import com.mapproject.resources.events.Event;
 
 public class Utilities {
 
+    private final static int DANGER_BASE_ID = 2100;
+    private final static int TEXT_PUZZLE_BASE_ID = 2200;
+    private final static int VISUAL_PUZZLE_BASE_ID = 2300;
+    private final static int ENEMIES_BASE_ID = 2400;
+    private final static int PACIFIC_ENCOUNTER_BASE_ID = 2500;
     private final static int ROOMNUMBER = 16;
 
     public static Set<Integer> findVisitableRooms(int start, int end, Map newMap) {
@@ -111,8 +117,20 @@ public class Utilities {
         return roomId;
     }
 
-    public static String selectArticleForElement(String element, boolean definite, boolean singular) {
-        String article = "un";
-        return article;
+    public static String recognizeEvent(Event event) {
+        if (event.getEventId() < DANGER_BASE_ID) {
+            return "danger";
+        } else if (event.getEventId() < TEXT_PUZZLE_BASE_ID) {
+            return "textPuzzle";
+        } else if (event.getEventId() < VISUAL_PUZZLE_BASE_ID) {
+            return "visualPuzzle";
+        } else if (event.getEventId() < ENEMIES_BASE_ID) {
+            return "enemies";
+        } else if (event.getEventId() < PACIFIC_ENCOUNTER_BASE_ID) {
+            return "pacificEncounter";
+        } else {
+            return "";
+        }
+
     }
 }
