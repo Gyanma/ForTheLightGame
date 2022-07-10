@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 2,
     "name": "Ascia",
+    "nameWithDetArticle": "l'ascia",
+    "nameWithIndetArticle": "un'ascia",
     "description": "Un'ascia trovata nel labirinto. Potente, ma al contempo pesante, richiede molta forza per essere usata.",
     "accuracy": 1,
     "weight": 3,

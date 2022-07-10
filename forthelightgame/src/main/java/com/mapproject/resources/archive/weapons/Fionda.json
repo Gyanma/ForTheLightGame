@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 1,
     "name": "Fionda",
+    "nameWithDetArticle": "la fionda",
+    "nameWithIndetArticle": "una fionda",
     "description": "Una fionda trovata nel labirinto. La sua potenza di fuoco lascia a desiderare, ma permette un'estrema agilit� di movimento.",
     "accuracy": 3,
     "weight": 1,

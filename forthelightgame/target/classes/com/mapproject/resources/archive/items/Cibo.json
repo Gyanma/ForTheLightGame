@@ -1,6 +1,8 @@
 {
     "id": 1002,
     "name": "Cibo",
+    "nameWithDetArticle": "il cibo",
+    "nameWithIndetArticle": "del cibo",
     "description": "Un tozzo di pane trovato nel labirinto. Di norma non sapresti cosa farne, ma chiss\u00e0 cosa ti aspetta nel labirinto.",
     "pickupable": true,
     "throwable": true,

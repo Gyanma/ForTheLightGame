@@ -1,6 +1,8 @@
 {
     "id": 1001,
     "name": "Fune",
+    "nameWithDetArticle": "la fune",
+    "nameWithIndetArticle": "una fune",
     "description": "Una fune trovata nel labirinto. Ora manca solo il fedora.",
     "pickupable": true,
     "throwable": true,

@@ -1,6 +1,8 @@
 {
     "id": 1013,
     "name": "Libro della destrezza",
+    "nameWithDetArticle": "il libro della destrezza",
+    "nameWithIndetArticle": "un libro della destrezza",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "pickupable": true,
     "throwable": true,

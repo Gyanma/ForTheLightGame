@@ -1,6 +1,8 @@
 {
     "id": 1004,
     "name": "Vanga",
+    "nameWithDetArticle": "la vanga",
+    "nameWithIndetArticle": "una vanga",
     "description": "Una vanga trovata nel labirinto. L\u0027attrezzo fondamentale di un esploratore preparato.",
     "pickupable": true,
     "throwable": true,

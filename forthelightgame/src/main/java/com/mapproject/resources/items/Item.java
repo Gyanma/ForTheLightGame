@@ -4,6 +4,8 @@ public class Item {
 
     private final int id;
     private String name;
+    private String nameWithDetArticle;
+    private String nameWithIndetArticle;
     private String description;
 
     private boolean pickupable = true;
@@ -16,10 +18,12 @@ public class Item {
         this.id = id;
     }
 
-    public Item(int id, String name, String description,
-            String manualDescription) {
+    public Item(int id, String name, String nameWithDetArticle, String nameWithIndetArticle,
+            String description, String manualDescription) {
         this.id = id;
         this.name = name;
+        this.nameWithDetArticle = nameWithDetArticle;
+        this.nameWithIndetArticle = nameWithIndetArticle;
         this.description = description;
         this.manualDescription = manualDescription;
         this.pickupable = true;
@@ -37,6 +41,22 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNameWithDetArticle() {
+        return nameWithDetArticle;
+    }
+
+    public void setNameWithDetArticle(String nameWithDetArticle) {
+        this.nameWithDetArticle = nameWithDetArticle;
+    }
+
+    public String getNameWithIndetArticle() {
+        return nameWithIndetArticle;
+    }
+
+    public void setNameWithIndetArticle(String nameWithIndetArticle) {
+        this.nameWithIndetArticle = nameWithIndetArticle;
     }
 
     public String getDescription() {

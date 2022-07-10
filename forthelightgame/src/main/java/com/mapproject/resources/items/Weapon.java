@@ -11,10 +11,10 @@ public class Weapon extends Item {
         super(id);
     }
 
-    public Weapon(int id, String name,
+    public Weapon(int id, String name, String nameWithDetArticle, String nameWithIndetArticle,
             String description, String manualDescription,
             int usage, int damage, int weight, int accuracy) {
-        super(id, name, description, manualDescription);
+        super(id, name, nameWithDetArticle, nameWithIndetArticle, description, manualDescription);
         this.usage = usage;
         this.damage = damage;
         this.weight = weight;

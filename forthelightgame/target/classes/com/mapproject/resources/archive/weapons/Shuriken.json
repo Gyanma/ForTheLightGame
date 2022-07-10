@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 1,
     "name": "Shuriken",
+    "nameWithDetArticle": "gli shuriken",
+    "nameWithIndetArticle": "degli shuriken",
     "description": "Shuriken trovati nel labirinto. Lame piccole ma acuminate, eredit� di guerrieri di epoche passate.",
     "accuracy": 3,
     "weight": 1,

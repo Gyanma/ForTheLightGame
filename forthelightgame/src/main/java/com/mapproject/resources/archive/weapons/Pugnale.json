@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 2,
     "name": "Pugnale",
+    "nameWithDetArticle": "il pugnale",
+    "nameWithIndetArticle": "un pugnale",
     "description": "Un pugnale trovato nel labirinto. Perfetto per chi preferisce combattere dall'ombra.",
     "accuracy": 3,
     "weight": 1,

@@ -1,6 +1,8 @@
 {
     "id": 1026,
     "name": "Libro mastro",
+    "nameWithDetArticle": "il libro mastro",
+    "nameWithIndetArticle": "un libro mastro",
     "description": "Un tomo ottenuto nel labirinto. Ti dar\u00e0 ogni informazione necessaria su ogni oggetto che potresti trovare.",
     "pickupable": true,
     "throwable": true,

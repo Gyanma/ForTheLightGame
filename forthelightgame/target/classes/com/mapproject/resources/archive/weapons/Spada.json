@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 2,
     "name": "Spada",
+    "nameWithDetArticle": "la spada",
+    "nameWithIndetArticle": "una spada",
     "description": "Una spada trovata nel labirinto. Un'arma bilanciata per ogni tipo di combattente.",
     "accuracy": 2,
     "weight": 2,

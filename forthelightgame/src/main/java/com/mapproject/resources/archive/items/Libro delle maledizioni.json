@@ -1,6 +1,8 @@
 {
     "id": 1014,
     "name": "Libro delle maledizioni",
+    "nameWithDetArticle": "il libro delle maledizioni",
+    "nameWithIndetArticle": "un libro delle maledizioni",
     "description": "Un antico volume trovato nel labirinto. Contiene maledizioni molto potenti; in pochi hanno saputo domarle.",
     "pickupable": true,
     "throwable": true,

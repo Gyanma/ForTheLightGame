@@ -1,6 +1,8 @@
 {
     "id": 1009,
     "name": "Monocolo del cacciatore",
+    "nameWithDetArticle": "il monocolo del cacciatore",
+    "nameWithIndetArticle": "un monocolo del cacciatore",
     "description": "Uno strano monocolo trovato nel labirinto. Una volta indossato, senti i tuoi sensi acuirsi.",
     "pickupable": true,
     "throwable": true,

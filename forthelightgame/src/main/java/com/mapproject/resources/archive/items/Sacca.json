@@ -1,6 +1,8 @@
 {
     "id": 1005,
     "name": "Sacca",
+    "nameWithDetArticle": "la sacca",
+    "nameWithIndetArticle": "una sacca",
     "description": "Una borsa trovata nel labirinto. Meglio essere preparati a ogni evenienza.",
     "pickupable": true,
     "throwable": true,

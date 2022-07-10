@@ -1,6 +1,8 @@
 {
     "id": 1025,
     "name": "Pozione del veleno",
+    "nameWithDetArticle": "la pozione del veleno",
+    "nameWithIndetArticle": "una pozione del veleno",
     "description": "Una pozione ottenuta nel labirinto. Genera all\u0027istante una nuvola tossica. Utilizzare con cautela.",
     "pickupable": true,
     "throwable": true,

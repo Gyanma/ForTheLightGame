@@ -1,6 +1,8 @@
 {
     "id": 1018,
     "name": "Affilatore",
+    "nameWithDetArticle": "l'affilatore",
+    "nameWithIndetArticle": "un affilatore",
     "description": "Un affilatore trovato nel labirinto. L\u0027antica conoscenza di mastri artigiani migliora qualsiasi lama.",
     "pickupable": true,
     "throwable": true,

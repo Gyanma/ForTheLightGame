@@ -1,6 +1,8 @@
 {
     "id": 1011,
     "name": "Libro della forza",
+    "nameWithDetArticle": "il libro della forza",
+    "nameWithIndetArticle": "un libro della forza",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "pickupable": true,
     "throwable": true,

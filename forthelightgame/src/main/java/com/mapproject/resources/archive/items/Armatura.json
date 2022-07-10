@@ -1,6 +1,8 @@
 {
     "id": 1016,
     "name": "Armatura",
+    "nameWithDetArticle": "l'armatura",
+    "nameWithIndetArticle": "un'armatura",
     "description": "Un\u0027armatura trovata nel labirinto. Una prova pericolosa necessita di una protezione adeguata.",
     "pickupable": true,
     "throwable": true,

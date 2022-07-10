@@ -1,6 +1,8 @@
 {
     "id": 1021,
     "name": "Pozione di cura",
+    "nameWithDetArticle": "la pozione di cura",
+    "nameWithIndetArticle": "una pozione di cura",
     "description": "Una pozione ottenuta nel labirinto. Utile in caso ti senta a secco.",
     "pickupable": true,
     "throwable": true,

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.mapproject.enums.Location;
 import com.mapproject.enums.Status;
 import com.mapproject.operations.Loader;
+import com.mapproject.operations.visualHandler.VisualHandler;
 import com.mapproject.resources.Session;
 import com.mapproject.resources.items.Item;
 
@@ -53,15 +54,23 @@ public class Interpreter {
                 moveToNorth(gameSession);
             } else if (command.contains("sud")) {
                 moveToSouth(gameSession);
-            } else if (command.contains("est")) {
-                moveToEast(gameSession);
             } else if (command.contains("ovest")) {
                 moveToWest(gameSession);
+            } else if (command.contains("est")) {
+                moveToEast(gameSession);
             }
             return true;
 
         } else if (command.startsWith("Raccogli")) {
             getItem(gameSession, command);
+
+            return true;
+        } else if (command.startsWith("Apri mappa")) {
+            try {
+                VisualHandler.drawMap(gameSession.getCurrentMap(), gameSession.getCurrentRoomId());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             return true;
         } else {

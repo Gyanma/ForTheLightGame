@@ -1,6 +1,8 @@
 {
     "id": 1017,
     "name": "Fiala del sangue",
+    "nameWithDetArticle": "la fiala del sangue",
+    "nameWithIndetArticle": "una fiala del sangue",
     "description": "Una fiala trovata nel labirinto. L\u0027etichetta lo descrive come un siero energizzante, che restituisce vitalit\u00e0 a ogni scatto di adrenalina.",
     "pickupable": true,
     "throwable": true,

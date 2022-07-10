@@ -1,6 +1,8 @@
 {
     "id": 1019,
     "name": "Punta in titanio",
+    "nameWithDetArticle": "la punta in titanio",
+    "nameWithIndetArticle": "una punta in titanio",
     "description": "Una punta trovata nel labirinto. Se il tuo obietivo \u00e8 trafiggere, non puoi sbagliarti.",
     "pickupable": true,
     "throwable": true,

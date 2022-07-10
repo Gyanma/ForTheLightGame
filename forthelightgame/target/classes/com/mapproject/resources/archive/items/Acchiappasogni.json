@@ -1,6 +1,8 @@
 {
     "id": 1007,
     "name": "Acchiappasogni",
+    "nameWithDetArticle": "l'acchiappasogni",
+    "nameWithIndetArticle": "un acchiappasogni",
     "description": "Un acchiappasogni trovato nel labirinto. I mostri sembrano volerne stare alla larga il pi\u00f9 possibile.",
     "pickupable": true,
     "throwable": true,

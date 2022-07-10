@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 2,
     "name": "Katana",
+    "nameWithDetArticle": "la katana",
+    "nameWithIndetArticle": "una katana",
     "description": "Una katana trovata nel labirinto. Una lama sottile e affilata, frutto dell'ingegno di una cultura lontana.",
     "accuracy": 2,
     "weight": 3,

@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 2,
     "name": "Maglio",
+    "nameWithDetArticle": "il maglio",
+    "nameWithIndetArticle": "un maglio",
     "description": "Un maglio trovato nel labirinto. Un'arma pesante che permette colpi vigorosi, ma non troppa agilit�.",
     "accuracy": 3,
     "weight": 2,

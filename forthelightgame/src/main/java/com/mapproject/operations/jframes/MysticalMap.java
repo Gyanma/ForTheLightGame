@@ -68,7 +68,7 @@ public class MysticalMap extends javax.swing.JFrame {
 
                 jTextField2.setText("jTextField2");
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setTitle("Mappa Mistica");
                 setPreferredSize(new java.awt.Dimension(920, 950));
                 addWindowListener(new java.awt.event.WindowAdapter() {

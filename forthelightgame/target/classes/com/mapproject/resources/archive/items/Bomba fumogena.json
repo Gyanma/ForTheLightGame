@@ -1,6 +1,8 @@
 {
     "id": 1015,
     "name": "Bomba fumogena",
+    "nameWithDetArticle": "la bomba fumogena",
+    "nameWithIndetArticle": "una bomba fumogena",
     "description": "Un aggeggio trovato nel labirinto. Questo marchingegno rilascia una cortina di fumo che ti permette di fuggire senza essere visto.",
     "pickupable": true,
     "throwable": true,

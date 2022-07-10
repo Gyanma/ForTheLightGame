@@ -28,6 +28,7 @@ public class GameHandler {
         boolean action = true;
         String command;
         String parsedCommand;
+
         System.out.println("Cosa vuoi fare?");
         do {
             command = gameScanner.nextLine();

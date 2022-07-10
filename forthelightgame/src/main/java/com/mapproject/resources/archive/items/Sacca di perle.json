@@ -1,6 +1,8 @@
 {
     "id": 1020,
     "name": "Sacca di perle",
+    "nameWithDetArticle": "la sacca di perle",
+    "nameWithIndetArticle": "una sacca di perle",
     "description": "Una sacca di perle ottenuta nel labirinto. Sono molto ricercate da collezionisti di tutto il mondo.",
     "pickupable": true,
     "throwable": true,

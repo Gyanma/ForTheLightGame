@@ -1,6 +1,8 @@
 {
     "id": 1012,
     "name": "Libro dell\u0027agilit\u00e0",
+    "nameWithDetArticle": "il libro dell'agilità",
+    "nameWithIndetArticle": "un libro dell'agilità",
     "description": "Un antico volume trovato nel labirinto. Contiene benedizioni molto potenti, ma di breve durata.",
     "pickupable": true,
     "throwable": true,

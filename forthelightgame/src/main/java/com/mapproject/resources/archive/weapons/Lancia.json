@@ -5,6 +5,8 @@
     "throwable": true,
     "usage": 1,
     "name": "Lancia",
+    "nameWithDetArticle": "la lancia",
+    "nameWithIndetArticle": "una lancia",
     "description": "Una lancia trovata nel labirinto. Capace di infliggere grossi danni da una grande gittata.",
     "accuracy": 1,
     "weight": 3,
