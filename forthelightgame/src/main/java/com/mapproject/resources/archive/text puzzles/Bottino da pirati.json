@@ -8,7 +8,7 @@
     "presentation": "Senti un brusio, e man mano che ti avvicini all'angolo della stanza\nriconosci la lingua degli umani. Vedi tre umani vestiti con abiti bizzarri.\nRicordi dal tuo addestramento che gli umani vestiti in quel modo vengono\nchiamati dagli altri umani \"pirati\". Sembrano discutere animatamente.",
     "answer": "9",
     "incorrectReply": "I pirati stanno ancora combattendo tra loro.\nIn silenzio ti avvicini alle loro sacche e provi a recuperare i diamanti.\nMa che succede? I pirati hanno rubato 9 diamanti!\nLa tua intuizione era dunque sbagliata?\nMa non hai tempo di meravigliarti che senti una lama puntata sulla schiena.\n\"Cosa credevi di fare, canaglia?\"\nAl diavolo i diamanti, ora bisogna pensare a salvarsi la pelle.\nSvelto, in che stanza vuoi fuggire?\nSembra che tu li abbia seminati. Non hai recuperato i diamanti, ma almeno sei ancora tutto intero.",
-    "name": "Bottino da pirati",
+    "name": "Pirati",
     "surrenderReply": "Quei pirati sembrano minacciosi.\nMeglio non correre rischi. Continuiamo.",
     "isSkippable": true
 }

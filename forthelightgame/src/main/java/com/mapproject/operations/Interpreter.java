@@ -1,22 +1,19 @@
-package com.mapproject.operations.parser;
-
-import java.util.List;
-import java.util.Map;
+package com.mapproject.operations;
 
 import com.mapproject.enums.Status;
-import com.mapproject.operations.Loader;
-import com.mapproject.operations.Printer;
-import com.mapproject.operations.Utilities;
 import com.mapproject.operations.visualHandler.VisualHandler;
 import com.mapproject.resources.Session;
+import com.mapproject.resources.events.Danger;
+import com.mapproject.resources.events.PacificEncounter;
+import com.mapproject.resources.events.TextPuzzle;
+import com.mapproject.resources.events.VisualPuzzle;
 import com.mapproject.resources.items.Item;
 
 public class Interpreter {
 
-    private static Map<String, List<String>> dictionary;
+    private static boolean isMapOpened = false;
 
     public Interpreter() {
-        dictionary = Loader.loadDictionary();
     }
 
     public static int decide(String command, Session gameSession) {
@@ -24,7 +21,6 @@ public class Interpreter {
         // Exploring section
 
         // explore room command
-
         if (command.equals("Esplora stanza")) {
             exploreRoom(gameSession);
             return 1;
@@ -36,28 +32,34 @@ public class Interpreter {
 
             // change room commands
         } else if (command.startsWith("Spostati a")) {
-            if (command.contains("nord")) {
-                moveToNorth(gameSession);
-            } else if (command.contains("sud")) {
-                moveToSouth(gameSession);
-            } else if (command.contains("ovest")) {
-                moveToWest(gameSession);
-            } else if (command.contains("est")) {
-                moveToEast(gameSession);
-            } else {
-                return 2;
-            }
-            if (Utilities.recognizeEvent(gameSession.getCurrentRoom().getEvent()) == "Danger") {
-                launchDanger(gameSession);
-            }
+            if (gameSession.getCurrentRoom().getEvent() == null ||
+                    gameSession.getCurrentRoom().getEvent().isSkippable()) {
+                command = command.replace("Spostati a", "");
+                command = command.trim();
+                if (command.contains("nord")) {
+                    moveToNorth(gameSession);
+                } else if (command.contains("sud")) {
+                    moveToSouth(gameSession);
+                } else if (command.contains("ovest")) {
+                    moveToWest(gameSession);
+                } else if (command.contains("est")) {
+                    moveToEast(gameSession);
+                } else {
+                    return 2;
+                }
+                if (gameSession.getCurrentRoom().getEvent() != null &&
+                        gameSession.getCurrentRoom().getEvent().getClass() == Danger.class)
+                    launchDanger(gameSession);
 
-            // TODO handle danger room and boss rooms
+                if (gameSession.getCurrentRoom().getEvent() != null &&
+                        gameSession.getCurrentMap().getEndRoomId() == gameSession.getCurrentRoomId()) {
+                    System.out.println("Senti una presenza inquietante... Dev'essere la stanza finale");
+                }
+            }
             return 1;
 
             // get item commands
-        } else if (command.startsWith("Raccogli"))
-
-        {
+        } else if (command.startsWith("Raccogli")) {
             getItem(gameSession, command);
             return 1;
 
@@ -66,22 +68,36 @@ public class Interpreter {
             drawMap(gameSession);
             return 1;
 
-            // move to another room command
+            // reach an npc command
         } else if (command.startsWith("Raggiungi")) {
-            startEvent(gameSession);
-            return 1;
+            command = command.replace("Raggiungi", "");
+            command = command.trim();
+            System.out.println(command);
+            if (command.equals(gameSession.getCurrentRoom().getEvent().getName().toLowerCase())) {
+                startEvent(gameSession);
+                return 1;
+            } else if (command.equals("meccanismo") &&
+                    gameSession.getCurrentRoom().getEvent().getClass() == VisualPuzzle.class) {
+                startVisualPuzzle(gameSession);
+                return 1;
+            } else
+                return 2;
 
             // exit map command
-        } else if (command.equals("Esci")) {
-
+        } else if (command.equals("Esci"))
             return changeToNextMap(gameSession);
 
-            // Inventory section
+        // Inventory section
 
-            // open inventory command
-        } else if (command.equals("Apri inventario")) {
+        // open inventory command
+        else if (command.equals("Apri inventario")) {
             openInventory(gameSession);
             return 1;
+
+        } else if (command.startsWith("Usa")) {
+            command = command.replace("Usa", "");
+            return InventoryHandler.useItem(gameSession, command);
+
         } else if (command.equals("Chiudi inventario")) {
             closeInventory(gameSession);
             return 1;
@@ -91,7 +107,24 @@ public class Interpreter {
         }
     }
 
+    private static void startVisualPuzzle(Session gameSession) {
+        try {
+            int result = VisualHandler.selectVisual(gameSession.getCurrentRoom().getEvent().getEventId());
+            if (result == 1) {
+                gameSession.getCurrentRoom().setEvent(null);
+                System.out.println("Senti i meccanismi che si attivano dietro i muri. adesso loe porte si aprono!");
+            } else if (result == 0) {
+                System.out.println("Questo enigma è davvero ostico... bisogna pensarci meglio.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private static void launchDanger(Session gameSession) {
+
+        // TODO set danger.
     }
 
     private static int changeToNextMap(Session gameSession) {
@@ -175,52 +208,41 @@ public class Interpreter {
 
     private static void startEvent(Session gameSession) {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            switch (Utilities.recognizeEvent(gameSession.getCurrentRoom().getEvent())) {
-                case "textPuzzle":
-                    gameSession.setCurrentStatus(Status.PUZZLE_SOLVING);
-                    // TODO gestione puzzle solving
-                    break;
-                case "visualPuzzle":
-                    gameSession.setCurrentStatus(Status.PUZZLE_SOLVING);
-                    // TODO gestione puzzle visual
-                    break;
-                case "pacificEncounter":
-                    gameSession.setCurrentStatus(Status.IN_PACIFIC_ENCOUNTER);
-                    // TODO gestione pacific encounter
-                    break;
-                case "enemy":
-                    gameSession.setCurrentStatus(Status.FIGHTING);
-                    // TODO gestione enemy
-                    break;
-                default:
-                    break;
+            if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
+                gameSession.setCurrentStatus(Status.PUZZLE_SOLVING);
+                TextPuzzle textPuzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
+                System.out.println(textPuzzle.getQuestion());
+
+            } else if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
+                gameSession.setCurrentStatus(Status.IN_PACIFIC_ENCOUNTER);
+                PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
+                System.out.println(encounter.getDescription());
+
+            } else if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
+                gameSession.setCurrentStatus(Status.FIGHTING);
+
             }
-            ;
-        } else {
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
-        }
+
     }
 
     private static void drawMap(Session gameSession) {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            if (gameSession.getInventory().contains(Loader.loadItem("mappa"))) {
-                // TODO add normal map
-                try {
-                    VisualHandler.drawMap(gameSession.getCurrentMap(), gameSession.getCurrentRoomId());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else if (gameSession.getInventory().contains(Loader.loadItem("mappa mistica"))) {
+            if (true) {
+                if (gameSession.getInventory().contains(Loader.loadItem("mappa"))) {
+                    gameSession.drawVisualMap(false);
+                    isMapOpened = true;
 
-                try {
-                    VisualHandler.drawMap(gameSession.getCurrentMap(), gameSession.getCurrentRoomId());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("Non hai una mappa!");
-            }
+                } else if (gameSession.getInventory().contains(Loader.loadItem("mappa mistica"))) {
+                    gameSession.drawVisualMap(true);
+                    isMapOpened = true;
 
+                } else {
+                    System.out.println("Non hai una mappa!");
+                }
+            } else
+                System.out.println("Hai già aperto la mappa!");
         } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
             System.out.println("Non hai chiuso l'inventario!");
         else
@@ -232,8 +254,7 @@ public class Interpreter {
         boolean found = false;
         String itemName = command;
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-
-            itemName.replace("Raccogli", " ");
+            itemName.replace("Raccogli", "");
             itemName.trim();
             for (Item item : gameSession.getCurrentRoom().getItems()) {
                 if (itemName.contains(item.getName())) {
@@ -309,7 +330,7 @@ public class Interpreter {
                         gameSession.getCurrentMap().getRoom(currentRoomId).getNorth().getId());
                 System.out.println("Ti sposti verso la stanza a nord.");
             } else {
-                System.out.println("Non ci sono stanze a ovest!");
+                System.out.println("Non ci sono stanze a nord!");
             }
         } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
             System.out.println("Non hai chiuso l'inventario!");
@@ -325,7 +346,8 @@ public class Interpreter {
 
                 System.out.println(gameSession.getCurrentRoom().getEvent().getPresentation());
 
-            }
+            } else
+                System.out.println("Sembra tutto tranquillo qui...");
         } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
             System.out.println("Non hai chiuso l'inventario!");
         else
@@ -340,7 +362,8 @@ public class Interpreter {
                     System.out.println("Nella stanza vedi "
                             + (item.getNameWithIndetArticle()) + "!");
                 }
-            }
+            } else
+                System.out.println("Non c'è nulla qui...");
         } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
             System.out.println("Non hai chiuso l'inventario!");
         else

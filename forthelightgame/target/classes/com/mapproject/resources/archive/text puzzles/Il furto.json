@@ -8,7 +8,7 @@
     "rewardId": 1007,
     "answer": "Il cavaliere",
     "incorrectReply": "Chiedi al cavaliere di aprire la gabbia, pronto\na perquisire il colpevole. Mentre la grata si apre,\nil leprecauno ti rivolge uno sguardo di ghiaccio.\n\"Stai facendo un grave errore.\" Rimani sbigottito dalle parole della creatura.\nMa prima che tu possa rispondere, il cavaliere ti incita:\n\"Avanti, avete decretato il colpevole. Adesso � ora di condurlo a giustizia!\"\nTi ricordi le parole del cavaliere, e inizi a dubitare della sua bont�.\nTi giri verso il cavaliere per chiedere spiegazioni, ma in un batter d'occhio\ni leprecauni approfittano per svignarsela.\n\"Dove andate?! Tornate qui, mostri!\"\nIl cavaliere inizia a inseguirli, e nella foga, un medaglione casca dalla sua bisaccia.\nChe fosse tutto un inganno progettato dal cavaliere?",
-    "name": "Il furto",
+    "name": "Cavaliere",
     "surrenderReply": "\"Umph. D'accordo allora. Sar� io solo\na scoprire il marrano che ha osato farmi questo torto.\"\nLasci il cavaliere ancora intento a urlare ai leprecauni.",
     "isSkippable": true
 }

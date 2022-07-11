@@ -4,12 +4,12 @@ import javax.swing.JTextField;
 
 import com.mapproject.resources.Map;
 
-public class MysticalMap extends javax.swing.JFrame {
+public class VisualMap extends javax.swing.JFrame {
 
         /**
          * Creates new form MysticalMap
          */
-        public MysticalMap() {
+        public VisualMap() {
                 initComponents();
         }
 
@@ -832,16 +832,17 @@ public class MysticalMap extends javax.swing.JFrame {
         }// </editor-fold>
 
         private void formWindowActivated(java.awt.event.WindowEvent evt) {
-                if (recognizeRoom(currentRoom) != null) {
-                        recognizeRoom(currentRoom).setBackground(new java.awt.Color(0, 204, 204));
+                if (isMysticMap) {
+                        if (recognizeRoom(currentRoom) != null) {
+                                recognizeRoom(currentRoom).setBackground(new java.awt.Color(0, 204, 204));
+                        }
+                        if (recognizeRoom(drawnMap.getEndRoomId()) != null) {
+                                recognizeRoom(drawnMap.getEndRoomId()).setText("E");
+                        }
                 }
                 if (recognizeRoom(drawnMap.getStartingRoomId()) != null) {
                         recognizeRoom(drawnMap.getStartingRoomId()).setText("S");
                 }
-                if (recognizeRoom(drawnMap.getEndRoomId()) != null) {
-                        recognizeRoom(drawnMap.getEndRoomId()).setText("E");
-                }
-
                 clearPassage();
 
         }
@@ -1068,7 +1069,7 @@ public class MysticalMap extends javax.swing.JFrame {
          *
          * @param map
          */
-        public static void main(Map map, int room) {
+        public void main(Map map, int room, boolean isMystic) {
                 /* Set the Nimbus look and feel */
                 // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
                 // (optional) ">
@@ -1087,19 +1088,19 @@ public class MysticalMap extends javax.swing.JFrame {
                                 }
                         }
                 } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(MysticalMap.class.getName()).log(
+                        java.util.logging.Logger.getLogger(VisualMap.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(MysticalMap.class.getName()).log(
+                        java.util.logging.Logger.getLogger(VisualMap.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(MysticalMap.class.getName()).log(
+                        java.util.logging.Logger.getLogger(VisualMap.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(MysticalMap.class.getName()).log(
+                        java.util.logging.Logger.getLogger(VisualMap.class.getName()).log(
                                         java.util.logging.Level.SEVERE, null,
                                         ex);
                 }
@@ -1107,16 +1108,18 @@ public class MysticalMap extends javax.swing.JFrame {
 
                 drawnMap = map;
                 currentRoom = room;
+                isMysticMap = isMystic;
 
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                new MysticalMap().setVisible(true);
+                                new VisualMap().setVisible(true);
                         }
                 });
         }
 
         private static Map drawnMap = new Map();
         private static int currentRoom;
+        private static boolean isMysticMap;
         // Variables declaration - do not modify
         private javax.swing.Box.Filler filler1;
         private javax.swing.JTextField jTextField2;

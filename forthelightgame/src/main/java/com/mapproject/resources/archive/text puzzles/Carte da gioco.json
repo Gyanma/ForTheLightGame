@@ -8,7 +8,7 @@
     "presentation": "Nell'angolo della stanza noti un'ombra che si agita. Ti avvicini e vedi un goblin dietro a un carretto.\nAppena il goblin ti nota, inizia a urlare: \"Venghino, signori, venghino. Tutti possono giocare,\n ma solo i pi\u00f9 furbi possono vincere.\"",
     "answer": "Quadri+Jolly+Cuori+Fiori+Picche",
     "incorrectReply": "\"Oh che peccato, forse non siete cos\u00ec sveglio come pensavo.\"\nIl goblin scopre le carte, e per un breve secondo riesci a intravedere le figure:\ni Quadri, poi il Jolly, i Cuori, i Fiori e infine le Picche...\nMa in men che non si dica il goblin lancia un fumogeno a terra.\nTi copri gli occhi e il naso e ti alliontani dalla nuvola. \nDopo che il fumo si dissipa, noti che sia il goblin sia il carretto sono spariti...",
-    "name": "Carte da gioco",
+    "name": "Goblin",
     "surrenderReply": "\"Vuole arrendersi? Davvero?\nChe peccato. Sar\u00e0 per un'altra volta\"\nIl goblin fa un gesto con la mano e in un'istante sia lui che il carretto non si vedono pi\u00f9",
     "isSkippable": true
 }

@@ -4,11 +4,11 @@
     "isSingleAnswer": true,
     "tryAgainReply": "Spieghi la tua idea all'elfo, ma lui ti risponde in malo modo\nOh, che assurdit�. Sapevo di non podermi affidare a te.",
     "correctReply": "Spieghi all'elfo come posizionare le scatole e le casse\nper trasportarne 12.\nL'elfo ti risponde:\"Tsk, certo. Lo sapevo anche io.\nOra levati di mezzo. C'� del lavoro da fare qui.\"\nMentre si allontana, dalla bisaccia dell'elfo casca un otre pieno d'acqua.\nDecidi di prenderlo, come... ringraziamento, e ti allontani.",
-    "presentation": "C'� un elfo che guarda con insistenza due casse vuote...",
+    "presentation": "C'è un elfo che guarda con insistenza due casse vuote...",
     "rewardId": 1003,
     "answer": "12",
     "incorrectReply": "",
-    "name": "Inscatolamento",
+    "name": "Elfo",
     "surrenderReply": "\"Ecco. Ora spero che ti renda conto che ho ragione. Addio.\"\nTi allontani dall'elfo prima di passare alla violenza.",
     "isSkippable": true
 }

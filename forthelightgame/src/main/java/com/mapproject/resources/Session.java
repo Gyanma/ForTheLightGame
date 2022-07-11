@@ -1,10 +1,12 @@
 package com.mapproject.resources;
 
+import java.awt.AWTEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.mapproject.resources.items.Item;
 import com.mapproject.enums.Status;
+import com.mapproject.operations.jframes.VisualMap;
 
 public class Session {
 
@@ -74,6 +76,11 @@ public class Session {
 
     public void addObjectToInventory(Item item) {
         this.inventory.add(item);
+    }
+
+    public void drawVisualMap(boolean isMystic) {
+        VisualMap currentMap = new VisualMap();
+        currentMap.main(getCurrentMap(), getCurrentRoomId(), isMystic);
     }
 
     public void setInventory(List<Item> inventory) {

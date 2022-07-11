@@ -13,9 +13,9 @@ public class VisualPuzzle extends Event {
             int visualId, String description) {
 
         super(eventId, name, presentation, false);
-        setVisualId(visualId);
-        setDescription(description);
-        setSolved(false);
+        this.visualId = visualId;
+        this.description = description;
+        this.isSolved = false;
     }
 
     public int loadPuzzle() {

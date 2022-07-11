@@ -2,9 +2,8 @@
     "presentation": "Nell'angolo della stanza vedi un banchetto con una strana figura dietro di esso...",
     "eventId": 2503,
     "itemNotGivenResponse": "\"Oh, che peccato... A presto!\"\nLa figura svanisce in una nuvola di fumo.",
-    "name": "Venditore di pozioni",
+    "name": "Banchetto",
     "description": "Ti avvicini al banchetto.\nQuando sei abbastanza vicino, il proprietario del banchetto esclama:\n\"Salve, stimato cliente. Qui vendiamo ogni tipo di pozione che potete desiderare.\nFate la vostra offerta e tutto ci� che desiderate vi sar� dato.\nAbbiamo pozioni del fuoco, del gelo, del fulmine, del veleno e anche di cura!\nSe pensate di avere un oggetto di egual valore, proponetecelo! Non siate timido!",
-    "location": "SOUTH_WEST",
     "giftedItemId": [
         1021,
         1022,

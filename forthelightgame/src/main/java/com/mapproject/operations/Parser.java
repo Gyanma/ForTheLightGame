@@ -1,17 +1,14 @@
-package com.mapproject.operations.parser;
+package com.mapproject.operations;
 
-import java.util.List;
-import java.util.Map;
-
-import com.mapproject.operations.Loader;
+//import java.util.List;
+//import java.util.Map;
 
 public class Parser {
-
-    Map<String, List<String>> dictionary;
-    private static String directionPattern = "a\\s(nord|sud)-(est|ovest)$";
+    // private static Map<String, List<String>> dictionary;
+    // private static String directionPattern = "a\\s(nord|sud)-(est|ovest)$";
 
     public Parser() {
-        this.dictionary = Loader.loadDictionary();
+        // dictionary = Loader.loadDictionary();
     }
 
     public static String parseCommand(String command) {

@@ -16,6 +16,7 @@ public class Utilities {
     private final static int TEXT_PUZZLE_BASE_ID = 2200;
     private final static int VISUAL_PUZZLE_BASE_ID = 2300;
     private final static int ENEMIES_BASE_ID = 2400;
+    private final static int BOSS_BASE_ID = 2450;
     private final static int PACIFIC_ENCOUNTER_BASE_ID = 2500;
     private final static int ROOMNUMBER = 16;
 
@@ -118,19 +119,20 @@ public class Utilities {
     }
 
     public static String recognizeEvent(Event event) {
-        if (event.getEventId() < DANGER_BASE_ID) {
+        if (event.getEventId() < DANGER_BASE_ID)
             return "danger";
-        } else if (event.getEventId() < TEXT_PUZZLE_BASE_ID) {
+        else if (event.getEventId() < TEXT_PUZZLE_BASE_ID)
             return "textPuzzle";
-        } else if (event.getEventId() < VISUAL_PUZZLE_BASE_ID) {
+        else if (event.getEventId() < VISUAL_PUZZLE_BASE_ID)
             return "visualPuzzle";
-        } else if (event.getEventId() < ENEMIES_BASE_ID) {
+        else if (event.getEventId() < ENEMIES_BASE_ID)
             return "enemies";
-        } else if (event.getEventId() < PACIFIC_ENCOUNTER_BASE_ID) {
+        else if (event.getEventId() < BOSS_BASE_ID)
+            return "boss";
+        else if (event.getEventId() < PACIFIC_ENCOUNTER_BASE_ID)
             return "pacificEncounter";
-        } else {
+        else
             return "";
-        }
 
     }
 }

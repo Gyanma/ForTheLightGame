@@ -8,7 +8,7 @@
     "rewardId": 1019,
     "answer": "forziere di ferro",
     "incorrectReply": "Con gran fretta apri il forziere,\nma sfortunatamente l'ascia non sembra essere l�.\nIl folletto ti incita: \"Non c'� tempo, torniamo al riparo!\"\nVi nascondete in fretta e furia e osservate l'oni richiudere i forzieri.\nDopo che l'oni lascia la stanza, il folletto ti dice:\n\"C'� mancato davvero poco. Dovr� aspettare che tornino.\nGrazie dell'aiuto, viandante. Almeno ho potuto scartare due forzieri.\nA presto e buona fortuna nelle tue avventure.\"\nLasci il folletto alla sua vedetta.",
-    "name": "Il ciondolo rubato",
+    "name": "folletto",
     "surrenderReply": "",
     "isSkippable": true
 }

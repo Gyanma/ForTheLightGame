@@ -3,12 +3,12 @@ package com.mapproject.operations.visualHandler;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-import com.mapproject.operations.jframes.MysticalMap;
-import com.mapproject.resources.Map;
-
 public class VisualHandler {
 
+    private final static int VISUAL_PUZZLE_BASE_ID = 2300;
+
     public static int selectVisual(int visualId) throws Exception {
+        visualId -= VISUAL_PUZZLE_BASE_ID;
         if (visualId == 1 || visualId == 2 || visualId == 3) {
             return buildQueueVisual(visualId);
         } else {
@@ -37,12 +37,6 @@ public class VisualHandler {
             e.printStackTrace();
             return consumer.getReturnedValue();
         }
-
-    }
-
-    public static void drawMap(Map map, int currentRoomId) throws Exception {
-
-        MysticalMap.main(map, currentRoomId);
 
     }
 
