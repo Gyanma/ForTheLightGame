@@ -14,7 +14,7 @@ public class GameHandler {
     public GameHandler(Session session) {
         this.gameSession = session;
         gameSession.setCurrentRoomId(gameSession.getCurrentMap().getStartingRoomId());
-        gameSession.addObjectToInventory(Loader.loadItem("mappa"));
+        gameSession.addItemToInventory(Loader.loadItem("mappa"));
     }
 
     public void runGame(Session newSession) {
@@ -29,16 +29,16 @@ public class GameHandler {
         String command;
         String parsedCommand;
 
-        System.out.println("Cosa vuoi fare?");
+        System.out.println("\nCosa vuoi fare?");
         do {
             command = gameScanner.nextLine();
             parsedCommand = Parser.parseCommand(command);
             if (!parsedCommand.equals("Chiudi il gioco")) {
                 action = Interpreter.decide(parsedCommand, gameSession);
                 if (action == 1 && gameSession.getCurrentStatus() != Status.PUZZLE_SOLVING) {
-                    System.out.println("Cosa vuoi fare?");
+                    System.out.println("\nCosa vuoi fare?");
                 } else if (action == 2) {
-                    System.out.println("Non ho ben capito cosa vuoi fare...");
+                    System.out.println("\nNon ho ben capito cosa vuoi fare...");
                 } else
                     action = 0;
             } else

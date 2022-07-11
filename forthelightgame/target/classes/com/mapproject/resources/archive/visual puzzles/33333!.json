@@ -3,5 +3,6 @@
     "eventId": 2301,
     "name": "33333!",
     "description": "Una semplice sottrazione. Il primo numero meno il secondo deve dare 33333. \nPer� puoi usare ogni cifra da 1 a 9 una volta sola. Pensi di farcela?",
-    "visualId": 1
+    "visualId": 1,
+    "isSkippable": false
 }

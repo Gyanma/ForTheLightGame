@@ -3,5 +3,6 @@
     "eventId": 2303,
     "name": "Gli Zeri",
     "description": "Quattro pannelli, quattro pulsanti. Quando i pannelli mostreranno tutti 0, la via sar� libera.",
-    "visualId": 3
+    "visualId": 3,
+    "isSkippable": false
 }

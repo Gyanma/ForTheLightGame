@@ -3,5 +3,6 @@
     "eventId": 2302,
     "name": "Combinazione Criptica",
     "description": "Per aprire la porta, dovrai premere i pulsanti giusti. Ti servir� un due, ma lascia stare quattro!",
-    "visualId": 2
+    "visualId": 2,
+    "isSkippable": false
 }

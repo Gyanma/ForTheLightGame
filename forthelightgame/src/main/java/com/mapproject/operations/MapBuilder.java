@@ -354,7 +354,7 @@ public class MapBuilder {
                     weaponId = WEAPON_BASE_ID + 3;
                 } else if (weaponId >= 6 && weaponId < 8) {
                     weaponId = WEAPON_BASE_ID + 4;
-                } else if (weaponId >= 9 && weaponId < 10) {
+                } else if (weaponId >= 8 && weaponId < 10) {
                     weaponId = WEAPON_BASE_ID + 5;
                 } else if (weaponId >= 10 && weaponId < 12) {
                     weaponId = WEAPON_BASE_ID + 6;

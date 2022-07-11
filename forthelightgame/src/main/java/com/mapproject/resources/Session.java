@@ -1,6 +1,5 @@
 package com.mapproject.resources;
 
-import java.awt.AWTEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +31,8 @@ public class Session {
 
     public Session() {
         this.sessionMapPhase1 = new Map(1);
-        System.out.println("Phase 1 map loaded");
         this.sessionMapPhase2 = new Map(2);
-        System.out.println("Phase 2 map loaded");
         this.sessionMapPhase3 = new Map(3);
-        System.out.println("Phase 3 map loaded");
 
         this.inventory = new ArrayList<Item>();
         this.currentPhase = 1;
@@ -74,13 +70,20 @@ public class Session {
         return this.getCurrentMap().getRoom(this.currentRoomId);
     }
 
-    public void addObjectToInventory(Item item) {
+    public void addItemToInventory(Item item) {
         this.inventory.add(item);
+    }
+
+    public void removeItemFromInventory(Item item) {
+        this.inventory.remove(item);
     }
 
     public void drawVisualMap(boolean isMystic) {
         VisualMap currentMap = new VisualMap();
-        currentMap.main(getCurrentMap(), getCurrentRoomId(), isMystic);
+        currentMap.main(getCurrentMap(), getCurrentRoomId(), true);
+
+        // TODO correggi il mystic
+
     }
 
     public void setInventory(List<Item> inventory) {

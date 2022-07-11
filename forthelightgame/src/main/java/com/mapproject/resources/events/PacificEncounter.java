@@ -8,7 +8,7 @@ public class PacificEncounter extends Event {
     private String itemGivenResponse;
     private String itemNotGivenResponse;
     private List<Integer> requestedItemId; // if the encounter doesnt require an item, it will be -1
-                                           // if it requires any item, it will be -2
+                                           // if any item can be given, it will be -2
     private List<Integer> giftedItemId;
 
     public PacificEncounter(int eventId, String name, String presentation, boolean isSkippable,
