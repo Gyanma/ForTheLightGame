@@ -15,13 +15,14 @@ public class GameHandler {
         this.gameSession = session;
         gameSession.setCurrentRoomId(gameSession.getCurrentMap().getStartingRoomId());
         gameSession.addItemToInventory(Loader.loadItem("mappa"));
+        InventoryHandler.initSingleUseItems();
     }
 
     public void runGame(Session newSession) {
 
         Printer.printFromTxt("Presentazione");
         // String input = gameScanner.nextLine();
-        // if (input.equals("sì")) {
+        // if (input.equals("Sì")) {
         // Printer.printFromTxt("Regole");
         // }
         Printer.printFromTxt("Inizio");
@@ -39,10 +40,16 @@ public class GameHandler {
                     System.out.println("\nCosa vuoi fare?");
                 } else if (action == 2) {
                     System.out.println("\nNon ho ben capito cosa vuoi fare...");
-                } else
-                    action = 0;
+                }
             } else
                 action = 0;
+            if (action == 0) {
+                System.out.println("Sei sicuro? (sì/no)");
+                if (!gameScanner.nextLine().equals("sì")) {
+                    action = 1;
+                    System.out.println("\nCosa vuoi fare?");
+                }
+            }
 
         } while (action != 0 && gameSession.isPlayerAlive());
 

@@ -19,6 +19,27 @@ import com.mapproject.resources.items.Item;
 
 public class AddToArchive {
 
+        public static void name() {
+                List<String> singleUseItems = new ArrayList<String>();
+                singleUseItems.add("Libro della forza");
+                singleUseItems.add("Libro dell'agilità");
+                singleUseItems.add("Libro della destrezza");
+                singleUseItems.add("Fiala del sangue");
+                singleUseItems.add("Acchiappasogni");
+                Gson gson = new Gson();
+                String json = gson.toJson(singleUseItems);
+                try {
+                        FileWriter file = new FileWriter(
+                                        "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\singleUseItems.json");
+                        file.write(json);
+                        file.flush();
+                        file.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+        }
+
         public static void addMap() {
                 Map<String, List<String>> map = new HashMap<String, List<String>>();
                 List<String> list = new ArrayList<String>();

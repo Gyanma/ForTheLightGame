@@ -13,11 +13,13 @@ public class Session {
 
     private List<Item> inventory;
 
-    private Map sessionMapPhase1;
+    private int inventoryCapacity = 16;
 
-    private Map sessionMapPhase2;
+    private GameMap sessionMapPhase1;
 
-    private Map sessionMapPhase3;
+    private GameMap sessionMapPhase2;
+
+    private GameMap sessionMapPhase3;
 
     private int currentPhase;
 
@@ -27,21 +29,22 @@ public class Session {
 
     private int healthPoints;
 
-    private boolean isPlayerAlive;
+    private double attackModifier = 1;
+
+    private double armorModifier = 1;
 
     public Session() {
-        this.sessionMapPhase1 = new Map(1);
-        this.sessionMapPhase2 = new Map(2);
-        this.sessionMapPhase3 = new Map(3);
+        this.sessionMapPhase1 = new GameMap(1);
+        this.sessionMapPhase2 = new GameMap(2);
+        this.sessionMapPhase3 = new GameMap(3);
 
         this.inventory = new ArrayList<Item>();
         this.currentPhase = 1;
         this.currentStatus = Status.EXPLORING;
         this.healthPoints = MAX_HEALTH;
-        this.isPlayerAlive = true;
     }
 
-    public void setSessionMap(int mapNumber, Map map) {
+    public void setSessionMap(int mapNumber, GameMap map) {
         if (mapNumber == 1) {
             this.sessionMapPhase1 = map;
         } else if (mapNumber == 2) {
@@ -51,7 +54,7 @@ public class Session {
         }
     }
 
-    public Map getSessionMap(int mapNumber) {
+    public GameMap getSessionMap(int mapNumber) {
         if (mapNumber == 1) {
             return this.sessionMapPhase1;
         } else if (mapNumber == 2) {
@@ -62,7 +65,7 @@ public class Session {
         return null;
     }
 
-    public Map getCurrentMap() {
+    public GameMap getCurrentMap() {
         return this.getSessionMap(this.currentPhase);
     }
 
@@ -80,10 +83,7 @@ public class Session {
 
     public void drawVisualMap(boolean isMystic) {
         VisualMap currentMap = new VisualMap();
-        currentMap.main(getCurrentMap(), getCurrentRoomId(), true);
-
-        // TODO correggi il mystic
-
+        currentMap.main(getCurrentMap(), getCurrentRoomId(), isMystic);
     }
 
     public void setInventory(List<Item> inventory) {
@@ -126,11 +126,40 @@ public class Session {
         return healthPoints;
     }
 
-    public void setIsPlayerAlive(boolean isPlayerAlive) {
-        this.isPlayerAlive = isPlayerAlive;
+    public boolean isPlayerAlive() {
+        if (this.healthPoints > 0)
+            return true;
+        else
+            return false;
+
     }
 
-    public boolean isPlayerAlive() {
-        return isPlayerAlive;
+    public int getMaxHealthPoints() {
+        return MAX_HEALTH;
     }
+
+    public void setAttackModifier(double attackModifier) {
+        this.attackModifier = attackModifier;
+    }
+
+    public double getAttackModifier() {
+        return attackModifier;
+    }
+
+    public void setArmorModifier(double armorModifier) {
+        this.armorModifier = armorModifier;
+    }
+
+    public double getArmorModifier() {
+        return armorModifier;
+    }
+
+    public int getInventoryCapacity() {
+        return inventoryCapacity;
+    }
+
+    public void setInventoryCapacity(int inventoryCapacity) {
+        this.inventoryCapacity = inventoryCapacity;
+    }
+
 }

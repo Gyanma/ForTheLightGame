@@ -4,6 +4,7 @@ import com.mapproject.enums.Status;
 import com.mapproject.operations.visualHandler.VisualHandler;
 import com.mapproject.resources.Session;
 import com.mapproject.resources.events.Danger;
+import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
 import com.mapproject.resources.events.VisualPuzzle;
@@ -34,13 +35,13 @@ public class Interpreter {
                     gameSession.getCurrentRoom().getEvent().isSkippable()) {
                 command = command.replace("Spostati a ", "");
                 command = command.trim();
-                if (command.contains("nord")) {
+                if (command.equals("nord")) {
                     moveToNorth(gameSession);
-                } else if (command.contains("sud")) {
+                } else if (command.equals("sud")) {
                     moveToSouth(gameSession);
-                } else if (command.contains("ovest")) {
+                } else if (command.equals("ovest")) {
                     moveToWest(gameSession);
-                } else if (command.contains("est")) {
+                } else if (command.equals("est")) {
                     moveToEast(gameSession);
                 } else {
                     return 2;
@@ -66,6 +67,8 @@ public class Interpreter {
 
             // get item commands
         } else if (command.startsWith("Raccogli")) {
+            command.replace("Raccogli ", "");
+            command.trim();
             getItem(gameSession, command);
             return 1;
 
@@ -103,7 +106,12 @@ public class Interpreter {
         } else if (command.startsWith("Usa")) {
             command = command.replace("Usa ", "");
             command = command.trim();
-            return InventoryHandler.useItem(gameSession, command);
+            if (gameSession.getCurrentStatus() == Status.IN_DANGER) {
+                checkEscape(gameSession, command);
+                return 1;
+
+            } else
+                return InventoryHandler.useItem(gameSession, command);
 
             // examine item command
         } else if (command.startsWith("Esamina")) {
@@ -118,11 +126,9 @@ public class Interpreter {
             InventoryHandler.throwItem(gameSession, command);
             return 1;
 
-            // close inventory command
-        } else if (command.equals("Chiudi inventario")) {
-            closeInventory(gameSession);
-            return 1;
+            // Event section
 
+            // Pacific Encounter
             // donate item in pacific encounter command
         } else if (command.startsWith("Consegna")) {
             command = command.replace("Consegna ", "");
@@ -135,9 +141,32 @@ public class Interpreter {
             pray(gameSession);
             return 1;
 
-            // leave pacific encounter command
+            // Jug Puzzle
+            // pour jug command
+        } else if (command.startsWith("Svuota")) {
+            command = command.replace("Svuota ", "");
+            command = command.trim();
+            if (command.contains("brocca")) {
+                solveJugPuzzle(gameSession, command);
+                return 1;
+            } else {
+                return 2;
+            }
+
+            // leave pacific encounter or puzzle command
         } else if (command.equals("Abbandona")) {
-            leavePacificEncounter(gameSession);
+            leaveEncounter(gameSession);
+            return 1;
+
+            // Battle section
+            // attack command
+        } else if (command.startsWith("Attacca")) {
+            attack(gameSession, command);
+            return 1;
+
+            // escape command
+        } else if (command.startsWith("Fuggi")) {
+            escapeBattle(gameSession);
             return 1;
 
             // possible response to text puzzle
@@ -151,19 +180,119 @@ public class Interpreter {
         }
     }
 
-    private static void leavePacificEncounter(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
+    private static void checkEscape(Session gameSession, String command) {
+        System.out.println(command);
+        Danger danger = (Danger) gameSession.getCurrentRoom().getEvent();
+        if (command.equals(Loader.loadItem(danger.getSolution()).getName())) {
+            System.out.println("Yay");
+            System.out.println(danger.getSolved());
+            gameSession.setCurrentStatus(Status.EXPLORING);
+            gameSession.getCurrentRoom().setEvent(null);
+        } else {
+            System.out.println("Non funziona!");
+        }
+    }
+
+    private static void escapeBattle(Session gameSession) {
+    }
+
+    private static void attack(Session gameSession, String command) {
+        if (gameSession.getCurrentStatus() == Status.FIGHTING) {
+            // TODO: implement attack
+        } else
+            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+    }
+
+    private static void solveJugPuzzle(Session gameSession, String command) {
+        if (gameSession.getCurrentRoom().getEvent().getClass() == JugPuzzle.class &&
+                gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
+            JugPuzzle jugPuzzle = (JugPuzzle) gameSession.getCurrentRoom().getEvent();
+
+            // pour jugs
+            if (command.startsWith("brocca 1")) {
+                if (command.endsWith("brocca 2")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug1(), jugPuzzle.getPlayerJugSet().getJug2());
+                    System.out.println("Hai svuoltato la brocca 1 nella brocca 2.");
+                } else if (command.endsWith("brocca 3")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug1(), jugPuzzle.getPlayerJugSet().getJug3());
+                    System.out.println("Hai svuoltato la brocca 1 nella brocca 3.");
+                } else {
+                    System.out.println("Non capisco quali brocche usare!");
+                }
+
+            } else if (command.startsWith("brocca 2")) {
+                if (command.endsWith("brocca 1")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug2(), jugPuzzle.getPlayerJugSet().getJug1());
+                    System.out.println("Hai svuoltato la brocca 2 nella brocca 1.");
+                } else if (command.endsWith("brocca 3")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug2(), jugPuzzle.getPlayerJugSet().getJug3());
+                    System.out.println("Hai svuoltato la brocca 2 nella brocca 3.");
+                } else {
+                    System.out.println("Non capisco quali brocche usare!");
+                }
+
+            } else if (command.startsWith("brocca 3")) {
+                if (command.endsWith("brocca 1")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug3(), jugPuzzle.getPlayerJugSet().getJug1());
+                    System.out.println("Hai svuoltato la brocca 3 nella brocca 1.");
+                } else if (command.endsWith("brocca 2")) {
+                    jugPuzzle.pourJug(jugPuzzle.getPlayerJugSet().getJug3(), jugPuzzle.getPlayerJugSet().getJug2());
+                    System.out.println("Hai svuoltato la brocca 3 nella brocca 2.");
+                } else {
+                    System.out.println("Non capisco quali brocche usare!");
+                }
+            } else {
+                System.out.println("Non capisco quali brocche usare!");
+            }
+
+            // check if puzzle is solved
+            if (jugPuzzle.isCorrect()) {
+                System.out.println(jugPuzzle.getCorrectReply());
+                gameSession.setCurrentStatus(Status.EXPLORING);
+                if (Utilities.recognizeItem(jugPuzzle.getRewardId()) == "item") {
+                    gameSession.addItemToInventory(Loader.loadItem(jugPuzzle.getRewardId()));
+                    System.out.println(
+                            "Hai ricevuto " + Loader.loadItem(jugPuzzle.getRewardId()).getNameWithIndetArticle() + ".");
+                } else {
+                    gameSession.addItemToInventory(Loader.loadWeapon(jugPuzzle.getRewardId()));
+                    System.out.println(
+                            "Hai ricevuto "
+                                    + Loader.loadWeapon(jugPuzzle.getRewardId()).getNameWithIndetArticle() + ".");
+                }
+                gameSession.getCurrentRoom().setEvent(null);
+            } else {
+                System.out.println("Ora la brocca 1 contiene" + jugPuzzle.getPlayerJugSet().getJug1().getJugContent()
+                        + " decilitri.");
+                System.out.println("Ora la brocca 2 contiene" + jugPuzzle.getPlayerJugSet().getJug2().getJugContent()
+                        + " decilitri.");
+                System.out.println("Ora la brocca 3 contiene" + jugPuzzle.getPlayerJugSet().getJug3().getJugContent()
+                        + " decilitri.");
+                gameSession.getCurrentRoom().setEvent(jugPuzzle);
+            }
+
+        } else
+            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+
+    }
+
+    private static void leaveEncounter(Session gameSession) {
+        if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER
+                || gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
                 PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
                 System.out.println(encounter.getItemNotGivenResponse());
                 gameSession.setCurrentStatus(Status.EXPLORING);
                 gameSession.getCurrentRoom().setEvent(null);
-            } else {
+            } else if (gameSession.getCurrentRoom().getEvent().getClass() == JugPuzzle.class
+                    || gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
+                TextPuzzle puzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
+                System.out.println(puzzle.getSurrenderReply());
+                gameSession.setCurrentStatus(Status.EXPLORING);
+            } else
                 System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
-            }
-        } else {
+
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
-        }
 
     }
 
@@ -189,40 +318,53 @@ public class Interpreter {
     private static void donateItem(Session gameSession, String command) {
         if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
             PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
+            boolean itemFound = false;
             for (Integer itemId : encounter.getRequestedItemId()) {
-                if (Loader.loadItem(itemId).getName().toLowerCase().equals(command)) {
+                if (itemId == -2) {
+                    EventHandler.exchangeItem(gameSession, command);
+                    itemFound = true;
+                    break;
+                }
+                if (command.contains(Loader.loadItem(itemId).getName().toLowerCase())) {
                     if (gameSession.getInventory().contains((Loader.loadItem(itemId)))) {
-                        gameSession.removeItemFromInventory(Loader.loadItem(itemId));
-                        System.out.println(encounter.getItemGivenResponse());
-                        gameSession.addItemToInventory(Loader.loadItem(itemId));
-                        System.out.println("Hai ricevuto " + Loader.loadItem(itemId).getNameWithIndetArticle());
-                    } else
-                        System.out.println("Non ho capito di che oggetto parli.");
+                        EventHandler.exchangeItem(gameSession, command);
+                        itemFound = true;
+                    }
                 }
             }
+            if (!itemFound) {
+                System.out.println("Non ho capito di che oggetto parli.");
+            } else {
+                System.out.println(encounter.getItemGivenResponse());
+                gameSession.setCurrentStatus(Status.EXPLORING);
+                gameSession.getCurrentRoom().setEvent(null);
+            }
         } else
-            System.out.println("La tua generosità è lodevole, ma non c'è nessuno a cui donare nulla qui.");
+            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+
     }
 
     private static void checkAnswer(Session gameSession, String command) {
-        if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
-            TextPuzzle textPuzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
-            if (textPuzzle.getAnswer().equals(command)) {
-                System.out.println(textPuzzle.getCorrectReply());
-                textPuzzle.getRewardId();
-                gameSession.setCurrentStatus(Status.EXPLORING);
-                gameSession.getCurrentRoom().setEvent(null);
-            } else {
-                if (textPuzzle.getTryAgainReply() != null) {
-                    System.out.println(textPuzzle.getIncorrectReply());
+        if (gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
+            if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
+                TextPuzzle textPuzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
+                if (textPuzzle.getAnswer().equals(command)) {
+                    System.out.println(textPuzzle.getCorrectReply());
+                    gameSession.addItemToInventory(Loader.loadItem(textPuzzle.getRewardId()));
                     gameSession.setCurrentStatus(Status.EXPLORING);
                     gameSession.getCurrentRoom().setEvent(null);
                 } else {
-                    System.out.println(textPuzzle.getTryAgainReply());
+                    if (textPuzzle.getTryAgainReply() != null) {
+                        System.out.println(textPuzzle.getIncorrectReply());
+                        gameSession.setCurrentStatus(Status.EXPLORING);
+                        gameSession.getCurrentRoom().setEvent(null);
+                    } else {
+                        System.out.println(textPuzzle.getTryAgainReply());
+                    }
                 }
-
             }
-        }
+        } else
+            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 
     private static void startVisualPuzzle(Session gameSession) {
@@ -243,34 +385,29 @@ public class Interpreter {
 
     }
 
-    private static void launchDanger(Session gameSession) {
-
-        // TODO set danger.
-    }
-
     private static int changeToNextMap(Session gameSession) {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
             if (gameSession.getCurrentRoom().getId() == gameSession.getCurrentMap().getEndRoomId()) {
-                // if (gameSession.getCurrentRoom().getEvent() != null) {
-                switch (gameSession.getCurrentPhase()) {
-                    case 1:
-                        gameSession.setCurrentPhase(2);
-                        gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
-                        System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
-                        return 1;
-                    case 2:
-                        gameSession.setCurrentPhase(3);
-                        gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
-                        System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
-                        return 1;
-                    case 3:
-                        Printer.printFromTxt("Ending");
-                        return 0;
-                    default:
-                        return 0;
-                }
-                // } else
-                // System.out.println("Devi ancora sconfiggere il boss!"); // TODO set boss.
+                if (gameSession.getCurrentRoom().getEvent() != null) {
+                    switch (gameSession.getCurrentPhase()) {
+                        case 1:
+                            gameSession.setCurrentPhase(2);
+                            gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
+                            System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
+                            return 1;
+                        case 2:
+                            gameSession.setCurrentPhase(3);
+                            gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
+                            System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
+                            return 1;
+                        case 3:
+                            Printer.printFromTxt("Ending");
+                            return 0;
+                        default:
+                            return 0;
+                    }
+                } else
+                    System.out.println("Devi ancora sconfiggere il boss!");
 
             } else
                 System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
@@ -280,53 +417,100 @@ public class Interpreter {
         return 1;
     }
 
-    private static void closeInventory(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY) {
-            gameSession.setCurrentStatus(Status.EXPLORING);
-            System.out.println("Hai chiuso l'inventario.");
-        } else
-            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+    private static void openInventory(Session gameSession) {
+        if (gameSession.getInventory().size() == 0) {
+            System.out.println("Al momento, l'inventario è vuoto.");
+        } else {
+            System.out.println("Nell'inventario hai:");
+            int counter = 0;
+            do {
+                if (gameSession.getInventory().size() - counter >= 4) {
+                    System.out.println(
+                            gameSession.getInventory().get(counter).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 1).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 2).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 3).getName());
+                    counter += 4;
+                } else if (gameSession.getInventory().size() - counter == 3) {
+                    System.out.println(
+                            gameSession.getInventory().get(counter).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 1).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 2).getName());
+                    counter += 3;
+                } else if (gameSession.getInventory().size() - counter == 2) {
+                    System.out.println(
+                            gameSession.getInventory().get(counter).getName() + "\t"
+                                    + gameSession.getInventory().get(counter + 1).getName());
+                    counter += 2;
+                } else if (gameSession.getInventory().size() - counter == 1) {
+                    System.out.println(
+                            gameSession.getInventory().get(counter).getName());
+                    counter += 1;
+                }
+
+            } while (counter < gameSession.getInventory().size());
+        }
     }
 
-    private static void openInventory(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            gameSession.setCurrentStatus(Status.LOOKING_INVENTORY);
-            if (gameSession.getInventory().size() == 0) {
-                System.out.println("Hai aperto l'inventario.\nAl momento, l'inventario è vuoto.");
-            } else {
-                System.out.println("Hai aperto l'inventario.\nNell'inventario hai:");
-                int counter = 0;
-                do {
-                    if (gameSession.getInventory().size() - counter >= 4) {
-                        System.out.println(
-                                gameSession.getInventory().get(counter).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 1).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 2).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 3).getName());
-                        counter += 4;
-                    } else if (gameSession.getInventory().size() - counter == 3) {
-                        System.out.println(
-                                gameSession.getInventory().get(counter).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 1).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 2).getName());
-                        counter += 3;
-                    } else if (gameSession.getInventory().size() - counter == 2) {
-                        System.out.println(
-                                gameSession.getInventory().get(counter).getName() + "\t"
-                                        + gameSession.getInventory().get(counter + 1).getName());
-                        counter += 2;
-                    } else if (gameSession.getInventory().size() - counter == 1) {
-                        System.out.println(
-                                gameSession.getInventory().get(counter).getName());
-                        counter += 1;
+    private static void launchDanger(Session gameSession) {
+        gameSession.setCurrentStatus(Status.IN_DANGER);
+        Danger danger = (Danger) gameSession.getCurrentRoom().getEvent();
+        System.out.println(danger.getPresentation());
+        class DangerQueue implements Runnable {
+
+            @Override
+            public void run() {
+                for (int i = 1; i < 5; i++) {
+                    if (gameSession.getCurrentStatus() != Status.IN_DANGER) {
+                        break;
                     }
 
-                } while (counter < gameSession.getInventory().size() - 1);
+                    try {
+                        Thread.sleep(danger.getTimeLimit() / 50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(danger.getCountdown().get(i));
+
+                }
+                if (gameSession.getCurrentStatus() == Status.IN_DANGER) {
+                    try {
+                        Thread.sleep(danger.getTimeLimit() / 5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(danger.getCountdown().get(5));
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (gameSession.getCurrentStatus() == Status.EXPLORING) {
+                    gameSession.addItemToInventory(Loader.loadItem(danger.getPrize()));
+                    gameSession.getCurrentRoom().setEvent(null);
+                } else if (gameSession.getCurrentStatus() == Status.IN_DANGER) {
+                    System.out.println("Ti risvegli. Chissà quanto tempo è passato.\n"
+                            + "In qualche modo sei ancora tutto intero.");
+
+                    gameSession.getCurrentRoom().setEvent(null);
+                    gameSession.setCurrentStatus(Status.EXPLORING);
+                    System.out.println(gameSession.getInventory().size());
+
+                    if (gameSession.getInventory().size() > 1) {
+                        Item item = gameSession.getInventory()
+                                .get((int) Math.random() * gameSession.getInventory().size());
+                        gameSession.removeItemFromInventory(item);
+                        System.out.println(
+                                "Ti controlli le tasche e noti di aver perso " + item.getNameWithIndetArticle());
+
+                    }
+
+                }
             }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Hai già aperto l'inventario!");
-        else
-            System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+        }
+
+        new Thread(new DangerQueue()).start();
     }
 
     private static void startEvent(Session gameSession) {
@@ -363,9 +547,7 @@ public class Interpreter {
                 System.out.println("Non hai una mappa!");
             }
 
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
 
     }
@@ -374,24 +556,30 @@ public class Interpreter {
         boolean found = false;
         String itemName = command;
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            itemName.replace("Raccogli ", "");
-            itemName.trim();
-            for (Item item : gameSession.getCurrentRoom().getItems()) {
-                if (itemName.contains(item.getName())) {
-                    gameSession.addItemToInventory(item);
-                    gameSession.getCurrentRoom().removeItem(item);
-                    found = true;
-                    System.out.println("Hai raccolto " + item.getNameWithDetArticle() + ".");
-                    break;
+            if (gameSession.getInventory().size() + 1 < gameSession.getInventoryCapacity()) {
+                for (Item item : gameSession.getCurrentRoom().getItems()) {
+                    if (itemName.contains(item.getName())) {
+                        if (gameSession.getInventory().contains(item)) {
+                            System.out.println("Hai già " + item.getNameWithIndetArticle() + "!");
+                            found = true;
+                            break;
+                        } else {
+                            gameSession.addItemToInventory(item);
+                            gameSession.getCurrentRoom().removeItem(item);
+                            found = true;
+                            System.out.println("Hai raccolto " + item.getNameWithDetArticle() + ".");
+                            break;
+                        }
+                    }
                 }
-            }
-            if (!found) {
-                System.out.println("Non c'è nessun item con questo nome...");
-            }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+                if (!found) {
+                    System.out.println("Non c'è nessun item con questo nome...");
+                }
+            } else
+                System.out.println("Non hai spazio per altri oggetti!");
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+
     }
 
     private static void moveToWest(Session gameSession) {
@@ -404,9 +592,7 @@ public class Interpreter {
             } else {
                 System.out.println("Non ci sono stanze a ovest!");
             }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 
@@ -420,9 +606,7 @@ public class Interpreter {
             } else {
                 System.out.println("Non ci sono stanze a est!");
             }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 
@@ -436,9 +620,7 @@ public class Interpreter {
             } else {
                 System.out.println("Non ci sono stanze a sud!");
             }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 
@@ -452,9 +634,7 @@ public class Interpreter {
             } else {
                 System.out.println("Non ci sono stanze a nord!");
             }
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
 
     }
@@ -468,9 +648,7 @@ public class Interpreter {
 
             } else
                 System.out.println("Sembra tutto tranquillo qui...");
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 
@@ -484,9 +662,7 @@ public class Interpreter {
                 }
             } else
                 System.out.println("Non c'è nulla qui...");
-        } else if (gameSession.getCurrentStatus() == Status.LOOKING_INVENTORY)
-            System.out.println("Non hai chiuso l'inventario!");
-        else
+        } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
     }
 

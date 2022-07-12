@@ -1,5 +1,5 @@
 {
-    "damage": 3,
+    "damage": 50,
     "manualDescription": "Un'arma corpo a corpo. Peso alto, danno alto e precisione bassa.",
     "pickupable": true,
     "throwable": true,
@@ -8,7 +8,7 @@
     "nameWithDetArticle": "l'ascia",
     "nameWithIndetArticle": "un'ascia",
     "description": "Un'ascia trovata nel labirinto. Potente, ma al contempo pesante, richiede molta forza per essere usata.",
-    "accuracy": 1,
-    "weight": 3,
+    "accuracy": 85,
+    "weight": 30,
     "id": 1102
 }

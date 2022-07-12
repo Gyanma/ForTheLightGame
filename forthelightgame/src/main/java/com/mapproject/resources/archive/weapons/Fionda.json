@@ -1,5 +1,5 @@
 {
-    "damage": 1,
+    "damage": 20,
     "manualDescription": "Un'arma a distanza. Danno basso, ma peso basso e precisione alta.",
     "pickupable": true,
     "throwable": true,
@@ -8,7 +8,7 @@
     "nameWithDetArticle": "la fionda",
     "nameWithIndetArticle": "una fionda",
     "description": "Una fionda trovata nel labirinto. La sua potenza di fuoco lascia a desiderare, ma permette un'estrema agilit� di movimento.",
-    "accuracy": 3,
-    "weight": 1,
+    "accuracy": 95,
+    "weight": 70,
     "id": 1106
 }

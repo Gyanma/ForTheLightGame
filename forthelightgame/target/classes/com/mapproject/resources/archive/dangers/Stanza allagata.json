@@ -11,6 +11,7 @@
         "5": "Troppo tardi, il fossato � completamente riempito...\nProvi a restare a galla il pi� possibile, ma svieni per la troppa fatica..."
     },
     "solutionId": 1001,
+    "solved": "Con la tua fune riesci a uscire dalla trappola! C'è mancato davvero poco...",
     "isSkippable": false,
     "prizeId": 1020
 }

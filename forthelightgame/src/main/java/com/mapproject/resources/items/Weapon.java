@@ -3,9 +3,9 @@ package com.mapproject.resources.items;
 public class Weapon extends Item {
 
     private int usage;
-    private int damage;
-    private int weight;
-    private int accuracy;
+    private double damage;
+    private double weight;
+    private double accuracy;
 
     public Weapon(int id) {
         super(id);
@@ -13,7 +13,7 @@ public class Weapon extends Item {
 
     public Weapon(int id, String name, String nameWithDetArticle, String nameWithIndetArticle,
             String description, String manualDescription,
-            int usage, int damage, int weight, int accuracy) {
+            int usage, double damage, double weight, double accuracy) {
         super(id, name, nameWithDetArticle, nameWithIndetArticle, description, manualDescription);
         this.usage = usage;
         this.damage = damage;
@@ -30,42 +30,27 @@ public class Weapon extends Item {
         this.usage = usage;
     }
 
-    public void setDamage(int damage) throws Exception {
-        if (damage < 4 && damage > 0) {
-            this.damage = damage;
-        } else {
-            throw new Exception("Damage must be between 1 and 3");
-        }
-
+    public void setDamage(double damage) {
+        this.damage = damage;
     }
 
-    public int getDamage() throws Exception {
+    public double getDamage() {
         return this.damage;
     }
 
-    public void setWeight(int weight) throws Exception {
-        if (weight < 4 && weight > 0) {
-            this.weight = weight;
-        } else {
-            throw new Exception("Weight must be between 1 and 3");
-        }
-
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
-    public int getWeight() throws Exception {
+    public double getWeight() {
         return this.weight;
     }
 
-    public void setAccuracy(int accuracy) throws Exception {
-        if (accuracy < 4 && accuracy > 0) {
-            this.accuracy = accuracy;
-        } else {
-            throw new Exception("Accuracy must be between 1 and 3");
-        }
-
+    public void setAccuracy(double accuracy) {
+        this.accuracy = accuracy;
     }
 
-    public int getAccuracy() throws Exception {
+    public double getAccuracy() {
         return this.accuracy;
     }
 }

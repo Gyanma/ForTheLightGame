@@ -2,7 +2,7 @@ package com.mapproject.operations.jframes;
 
 import javax.swing.JTextField;
 
-import com.mapproject.resources.Map;
+import com.mapproject.resources.GameMap;
 
 public class VisualMap extends javax.swing.JFrame {
 
@@ -1069,7 +1069,7 @@ public class VisualMap extends javax.swing.JFrame {
          *
          * @param map
          */
-        public void main(Map map, int room, boolean isMystic) {
+        public void main(GameMap map, int room, boolean isMystic) {
                 /* Set the Nimbus look and feel */
                 // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
                 // (optional) ">
@@ -1117,7 +1117,7 @@ public class VisualMap extends javax.swing.JFrame {
                 });
         }
 
-        private static Map drawnMap = new Map();
+        private static GameMap drawnMap = new GameMap();
         private static int currentRoom;
         private static boolean isMysticMap;
         // Variables declaration - do not modify

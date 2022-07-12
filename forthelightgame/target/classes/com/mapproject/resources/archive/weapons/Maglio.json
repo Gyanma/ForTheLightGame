@@ -1,5 +1,5 @@
 {
-    "damage": 3,
+    "damage": 50,
     "manualDescription": "Un'arma corpo a corpo. Danni e peso alti, con una precisione media.",
     "pickupable": true,
     "throwable": true,
@@ -8,7 +8,7 @@
     "nameWithDetArticle": "il maglio",
     "nameWithIndetArticle": "un maglio",
     "description": "Un maglio trovato nel labirinto. Un'arma pesante che permette colpi vigorosi, ma non troppa agilit�.",
-    "accuracy": 3,
-    "weight": 2,
+    "accuracy": 90,
+    "weight": 30,
     "id": 1108
 }

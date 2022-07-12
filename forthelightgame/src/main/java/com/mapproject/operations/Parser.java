@@ -15,6 +15,10 @@ public class Parser {
         return command;
     }
 
+    public static String parseDangerResponse(String input) {
+        return input;
+    }
+
     /*
      * for (String s : list.keySet()) {
      * if (list.get(s).contains("un'ascia"))

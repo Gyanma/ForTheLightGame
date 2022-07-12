@@ -1,5 +1,5 @@
 {
-    "damage": 2,
+    "damage": 30,
     "manualDescription": "Un'arma a distanza. Peso medio, danno medio e precisione media.",
     "pickupable": true,
     "throwable": true,
@@ -8,7 +8,7 @@
     "nameWithDetArticle": "l'arco",
     "nameWithIndetArticle": "un arco",
     "description": "Un arco trovato nel labirinto. Un'arma da usare a distanza, semplice ed efficace.",
-    "accuracy": 2,
-    "weight": 2,
+    "accuracy": 90,
+    "weight": 50,
     "id": 1104
 }

@@ -20,6 +20,18 @@ import java.io.FileReader;
 public class Loader {
 
     @SuppressWarnings("unchecked")
+    public static List<String> loadList(String string) {
+        try {
+            return new Gson().fromJson(new FileReader(
+                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\" + string + ".json"),
+                    List.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unchecked")
     /**
      * @return
      */
@@ -403,4 +415,5 @@ public class Loader {
                 return "";
         }
     }
+
 }

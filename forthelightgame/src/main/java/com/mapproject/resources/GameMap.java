@@ -6,14 +6,14 @@ import java.util.Set;
 
 import com.mapproject.operations.MapBuilder;
 
-public class Map {
+public class GameMap {
     private int phase; // fase nel gioco della mappa: parte da 0, aumenta al completamento di una mappa
     private HashMap<Integer, Room> map = new HashMap<>(16);
     private int startingRoomId; // id della stanza iniziale
     private int endRoomId; // id della stanza finale
     private Set<Integer> visitableRooms = new HashSet<>(); // id delle stanze visitabili
 
-    public Map() {
+    public GameMap() {
         setPhase(0);
         setStartingRoomId(0);
         setEndRoomId(0);
@@ -21,10 +21,10 @@ public class Map {
         setVisitableRooms(new HashSet<>());
     }
 
-    public Map(int phase) {
+    public GameMap(int phase) {
         this.phase = phase;
         MapBuilder mapBuilder = new MapBuilder();
-        Map tempMap = mapBuilder.createMap(phase);
+        GameMap tempMap = mapBuilder.createMap(phase);
 
         this.map = tempMap.getMap();
         this.startingRoomId = tempMap.getStartingRoomId();

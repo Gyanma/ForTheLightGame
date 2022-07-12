@@ -11,6 +11,7 @@
         "5": "Non c'� via di scampo... Intossicato dal fumo, svieni..."
     },
     "solutionId": 1003,
+    "solved": "Con l'acqua sei riuscito a spegnere l'incendio prima di affumicarti del tutto.",
     "isSkippable": false,
     "prizeId": 1016
 }

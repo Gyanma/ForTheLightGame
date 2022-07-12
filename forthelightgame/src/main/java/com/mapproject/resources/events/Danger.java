@@ -8,6 +8,7 @@ public class Danger extends Event {
     private int timeLimit;
     private int solutionId;
     private int prizeId;
+    private String solved;
 
     public Danger(int eventId) {
         super(eventId);
@@ -20,13 +21,14 @@ public class Danger extends Event {
     }
 
     public Danger(int eventId, String name, String presentation, HashMap<Integer, String> countdown, int timeLimit,
-            int solutionId, int prizeId) {
+            int solutionId, int prizeId, String solved) {
         super(eventId, name, presentation, false);
 
         this.countdown = countdown;
         this.timeLimit = timeLimit;
         this.solutionId = solutionId;
         this.prizeId = prizeId;
+        this.solved = solved;
     }
 
     public HashMap<Integer, String> getCountdown() {
@@ -59,6 +61,14 @@ public class Danger extends Event {
 
     public void setPrize(int prizeId) {
         this.prizeId = prizeId;
+    }
+
+    public String getSolved() {
+        return solved;
+    }
+
+    public void setSolved(String solved) {
+        this.solved = solved;
     }
 
 }

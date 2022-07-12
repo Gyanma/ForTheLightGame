@@ -6,9 +6,14 @@ import java.util.Queue;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.mapproject.resources.Map;
+import com.mapproject.resources.GameMap;
 import com.mapproject.resources.Room;
+import com.mapproject.resources.events.Danger;
 import com.mapproject.resources.events.Event;
+import com.mapproject.resources.events.PacificEncounter;
+import com.mapproject.resources.events.TextPuzzle;
+import com.mapproject.resources.events.VisualPuzzle;
+import com.mapproject.resources.items.Weapon;
 
 public class Utilities {
 
@@ -18,9 +23,17 @@ public class Utilities {
     private final static int ENEMIES_BASE_ID = 2400;
     private final static int BOSS_BASE_ID = 2450;
     private final static int PACIFIC_ENCOUNTER_BASE_ID = 2500;
+    private final static int ITEM_BASE_ID = 1000;
+    private final static int WEAPON_BASE_ID = 1100;
     private final static int ROOMNUMBER = 16;
 
-    public static Set<Integer> findVisitableRooms(int start, int end, Map newMap) {
+    private static Set<TextPuzzle> placedTextPuzzles = new HashSet<>();
+    private static Set<Danger> placedDangers = new HashSet<>();
+    private static Set<VisualPuzzle> placedVisualPuzzles = new HashSet<>();
+    private static Set<PacificEncounter> placedPacificEncounters = new HashSet<>();
+    private static Set<Weapon> placedWeapons = new HashSet<>();
+
+    public static Set<Integer> findVisitableRooms(int start, int end, GameMap newMap) {
         HashMap<Integer, Boolean> marked = new HashMap<>();
         Queue<Integer> lastMarked = new LinkedList<>();
         Set<Integer> visitableRooms = new HashSet<>();
@@ -135,4 +148,54 @@ public class Utilities {
             return "";
 
     }
+
+    public static String recognizeItem(int itemId) {
+        if (itemId < ITEM_BASE_ID)
+            return "item";
+        else if (itemId < WEAPON_BASE_ID)
+            return "weapon";
+        else
+            return "";
+    }
+
+    public static void addTextPuzzles(TextPuzzle tP) {
+        placedTextPuzzles.add(tP);
+    }
+
+    public static void addDangers(Danger d) {
+        placedDangers.add(d);
+    }
+
+    public static void addVisualPuzzles(VisualPuzzle vP) {
+        placedVisualPuzzles.add(vP);
+    }
+
+    public static void addPacificEncounters(PacificEncounter pE) {
+        placedPacificEncounters.add(pE);
+    }
+
+    public static void addWeapons(Weapon w) {
+        placedWeapons.add(w);
+    }
+
+    public static Set<TextPuzzle> getPlacedTextPuzzles() {
+        return placedTextPuzzles;
+    }
+
+    public static Set<Danger> getPlacedDangers() {
+        return placedDangers;
+    }
+
+    public static Set<VisualPuzzle> getPlacedVisualPuzzles() {
+        return placedVisualPuzzles;
+    }
+
+    public static Set<PacificEncounter> getPlacedPacificEncounters() {
+        return placedPacificEncounters;
+    }
+
+    public static Set<Weapon> getPlacedWeapons() {
+        return placedWeapons;
+    }
+
 }
