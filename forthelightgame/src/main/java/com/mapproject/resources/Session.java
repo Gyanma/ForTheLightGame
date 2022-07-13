@@ -33,6 +33,12 @@ public class Session {
 
     private double armorModifier = 1;
 
+    private double agilityModifier = 1;
+
+    private double accuracyModifier = 1;
+
+    private int armorHits = 0;
+
     public Session() {
         this.sessionMapPhase1 = new GameMap(1);
         this.sessionMapPhase2 = new GameMap(2);
@@ -154,12 +160,36 @@ public class Session {
         return armorModifier;
     }
 
+    public void setAgilityModifier(double agilityModifier) {
+        this.agilityModifier = agilityModifier;
+    }
+
+    public double getAgilityModifier() {
+        return agilityModifier;
+    }
+
+    public void setAccuracyModifier(double accuracyModifier) {
+        this.accuracyModifier = accuracyModifier;
+    }
+
+    public double getAccuracyModifier() {
+        return accuracyModifier;
+    }
+
     public int getInventoryCapacity() {
         return inventoryCapacity;
     }
 
     public void setInventoryCapacity(int inventoryCapacity) {
         this.inventoryCapacity = inventoryCapacity;
+    }
+
+    public int getArmorHits() {
+        return armorHits;
+    }
+
+    public void setArmorHits(int armorHits) {
+        this.armorHits = armorHits;
     }
 
 }

@@ -17,7 +17,7 @@
     "healthPoints": 50,
     "manualDescription": "Draghetto:\n� in grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nFiammata: danno medio, pu� infliggere bruciatura, precisione ridotta;",
     "name": "Draghetto",
-    "isSkippable": true,
+    "isSkippable": false,
     "isFlying": true,
     "baseDefense": 1
 }

@@ -4,6 +4,7 @@ import com.mapproject.enums.Status;
 import com.mapproject.operations.visualHandler.VisualHandler;
 import com.mapproject.resources.Session;
 import com.mapproject.resources.events.Danger;
+import com.mapproject.resources.events.Enemy;
 import com.mapproject.resources.events.JugPuzzle;
 import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
@@ -60,6 +61,8 @@ public class Interpreter {
                     System.out.println("Le porte sono bloccate!");
                 } else if (gameSession.getCurrentRoom().getEvent().getClass() == Danger.class) {
                     System.out.println("Non si scappa!");
+                } else if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
+                    System.out.println("Un mostro ti sbarra la strada!");
                 }
 
             }
@@ -194,6 +197,8 @@ public class Interpreter {
     }
 
     private static void escapeBattle(Session gameSession) {
+
+        // TODO implement escape battle
     }
 
     private static void attack(Session gameSession, String command) {
@@ -317,27 +322,120 @@ public class Interpreter {
 
     private static void donateItem(Session gameSession, String command) {
         if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
+            String itemRequestedByPlayerName = "";
+            String itemGivenByPlayerName = "";
+            Item itemReq = null;
+            Item itemGiv = null;
             PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
             boolean itemFound = false;
-            for (Integer itemId : encounter.getRequestedItemId()) {
-                if (itemId == -2) {
-                    EventHandler.exchangeItem(gameSession, command);
-                    itemFound = true;
-                    break;
-                }
-                if (command.contains(Loader.loadItem(itemId).getName().toLowerCase())) {
-                    if (gameSession.getInventory().contains((Loader.loadItem(itemId)))) {
-                        EventHandler.exchangeItem(gameSession, command);
+            boolean itemReqCorrect = false;
+            boolean itemGivCorrect = false;
+            boolean commandCompound = false;
+
+            if (command.contains("+")) {
+                commandCompound = true;
+                String[] commandSplit = command.split("\\+");
+                itemGivenByPlayerName = commandSplit[0];
+                itemRequestedByPlayerName = commandSplit[1];
+            }
+
+            if (commandCompound) {
+                for (Item item : gameSession.getInventory()) { // check if item given by player is in inventory
+                    if (item.getName().equals(itemGivenByPlayerName)) {
+                        itemGiv = item;
                         itemFound = true;
+                        break;
                     }
                 }
-            }
-            if (!itemFound) {
-                System.out.println("Non ho capito di che oggetto parli.");
+
+                for (Integer itemId : encounter.getRequestedItemId()) { // check if item given by player is in
+                                                                        // encounter
+                    if (itemId == -1) {
+                        itemReqCorrect = false;
+                        break;
+                    }
+
+                    if (itemId == -2) {
+                        itemGivCorrect = true;
+                        break;
+                    }
+                    if (Loader.loadItem(itemId).getName().equals(itemGivenByPlayerName)) {
+                        itemGivCorrect = true;
+                        break;
+                    }
+                }
+
+                for (Integer itemId : encounter.getGiftedItemId()) { // check if item requested by player is in
+                                                                     // encounter
+                    if (itemId == -1) {
+                        itemReqCorrect = false;
+                        break;
+                    }
+                    if (Loader.loadItem(itemId).getName() == itemRequestedByPlayerName) {
+                        itemReq = Loader.loadItem(itemId);
+                        itemReqCorrect = true;
+                        break;
+                    }
+                }
+                if (itemFound && itemReqCorrect && itemGivCorrect) {
+                    gameSession.removeItemFromInventory(itemGiv);
+                    gameSession.addItemToInventory(itemReq);
+                    System.out.println(encounter.getItemGivenResponse());
+                    gameSession.setCurrentStatus(Status.EXPLORING);
+                    gameSession.getCurrentRoom().setEvent(null);
+
+                } else {
+                    System.out.println("Non capisco di quali oggetti parli.");
+                }
+
             } else {
-                System.out.println(encounter.getItemGivenResponse());
-                gameSession.setCurrentStatus(Status.EXPLORING);
-                gameSession.getCurrentRoom().setEvent(null);
+                for (Item item : gameSession.getInventory()) { // check if item given by player is in inventory
+                    if (item.getName().equals(command)) {
+                        itemGiv = item;
+                        itemFound = true;
+                        break;
+                    }
+                }
+                if (encounter.getGiftedItemId().size() == 1) {
+                    for (Integer itemId : encounter.getRequestedItemId()) { // check if item given by player is in
+                        // encounter
+                        if (itemId == -1) {
+                            itemReqCorrect = false;
+                            break;
+                        }
+
+                        if (itemId == -2) {
+                            itemGivCorrect = true;
+                            break;
+                        }
+                        if (Loader.loadItem(itemId).getName().equals(command)) {
+                            itemGivCorrect = true;
+                            break;
+                        }
+                    }
+
+                    for (Integer itemId : encounter.getGiftedItemId()) { // get item requested by player
+                        if (itemId == -1) {
+                            itemReqCorrect = false;
+
+                        } else {
+                            itemReq = Loader.loadItem(itemId);
+                            itemReqCorrect = true;
+                        }
+                    }
+                    if (itemFound && itemReqCorrect && itemGivCorrect) {
+                        gameSession.removeItemFromInventory(itemGiv);
+                        gameSession.addItemToInventory(itemReq);
+                        System.out.println(encounter.getItemGivenResponse());
+                        gameSession.setCurrentStatus(Status.EXPLORING);
+                        gameSession.getCurrentRoom().setEvent(null);
+
+                    } else {
+                        System.out.println("Non capisco di quali oggetti parli.");
+                    }
+                } else
+                    System.out.println("Non capisco di quali oggetti parli.");
+
             }
         } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
@@ -394,6 +492,15 @@ public class Interpreter {
                             gameSession.setCurrentPhase(2);
                             gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
                             System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
+                            if (gameSession.getInventory().contains(Loader.loadItem("Acchiappasogni"))) {
+                                for (Item item : gameSession.getInventory()) {
+                                    if (item.getName().equals("Acchiappasogni")) {
+                                        gameSession.getInventory().remove(item);
+                                        System.out.println("L'acchiappasogni nel tuo inventario si è polverizzato!");
+                                        break;
+                                    }
+                                }
+                            }
                             return 1;
                         case 2:
                             gameSession.setCurrentPhase(3);

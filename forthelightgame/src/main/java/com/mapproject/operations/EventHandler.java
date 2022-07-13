@@ -57,10 +57,4 @@ public class EventHandler {
 
     }
 
-    public static void exchangeItem(Session gameSession, String command) {
-
-        // TODO implement item exchange
-
-    }
-
 }

@@ -17,7 +17,7 @@
     "healthPoints": 50,
     "manualDescription": "Gargoyle:\n� in grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nColpo in picchiata: danno alto, ma richiede due turni;",
     "name": "Gargoyle",
-    "isSkippable": true,
+    "isSkippable": false,
     "isFlying": true,
     "baseDefense": 1
 }

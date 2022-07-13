@@ -17,7 +17,7 @@
     "healthPoints": 50,
     "manualDescription": "Lupo mannaro:\nNon � un grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nUlulato: nessun danno, ma migliora il suo attacco;",
     "name": "Lupo Mannaro",
-    "isSkippable": true,
+    "isSkippable": false,
     "isFlying": false,
     "baseDefense": 1
 }

@@ -28,6 +28,8 @@ public class Room {
 
     private List<Item> items = new ArrayList<>();
 
+    private boolean wasSpadeUsed = false;
+
     public Room(int id, int phase) {
         this.id = id;
         this.phase = phase;
@@ -116,6 +118,14 @@ public class Room {
 
     public void removeItem(Item item) {
         this.items.remove(items.indexOf(item));
+    }
+
+    public boolean wasSpadeUsed() {
+        return wasSpadeUsed;
+    }
+
+    public void setWasSpadeUsed(boolean wasSpadeUsed) {
+        this.wasSpadeUsed = wasSpadeUsed;
     }
 
 }
