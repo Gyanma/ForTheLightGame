@@ -8,7 +8,7 @@
     "nameWithDetArticle": "il maglio",
     "nameWithIndetArticle": "un maglio",
     "description": "Un maglio trovato nel labirinto. Un'arma pesante che permette colpi vigorosi, ma non troppa agilit�.",
-    "accuracy": 90,
-    "weight": 30,
+    "accuracy": 75,
+    "agility": 30,
     "id": 1108
 }

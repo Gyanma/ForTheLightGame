@@ -9,7 +9,7 @@ import com.mapproject.operations.jframes.VisualMap;
 
 public class Session {
 
-    private int MAX_HEALTH = 100;
+    private int maxHealth = 100;
 
     private List<Item> inventory;
 
@@ -31,13 +31,13 @@ public class Session {
 
     private double attackModifier = 1;
 
-    private double armorModifier = 1;
-
     private double agilityModifier = 1;
 
     private double accuracyModifier = 1;
 
     private int armorHits = 0;
+
+    private Fight currentFighting = new Fight();
 
     public Session() {
         this.sessionMapPhase1 = new GameMap(1);
@@ -47,7 +47,8 @@ public class Session {
         this.inventory = new ArrayList<Item>();
         this.currentPhase = 1;
         this.currentStatus = Status.EXPLORING;
-        this.healthPoints = MAX_HEALTH;
+        this.healthPoints = maxHealth;
+
     }
 
     public void setSessionMap(int mapNumber, GameMap map) {
@@ -141,7 +142,11 @@ public class Session {
     }
 
     public int getMaxHealthPoints() {
-        return MAX_HEALTH;
+        return maxHealth;
+    }
+
+    public void setMaxHealthPoints(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public void setAttackModifier(double attackModifier) {
@@ -150,14 +155,6 @@ public class Session {
 
     public double getAttackModifier() {
         return attackModifier;
-    }
-
-    public void setArmorModifier(double armorModifier) {
-        this.armorModifier = armorModifier;
-    }
-
-    public double getArmorModifier() {
-        return armorModifier;
     }
 
     public void setAgilityModifier(double agilityModifier) {
@@ -190,6 +187,14 @@ public class Session {
 
     public void setArmorHits(int armorHits) {
         this.armorHits = armorHits;
+    }
+
+    public Fight getCurrentFighting() {
+        return currentFighting;
+    }
+
+    public void setCurrentFighting(Fight currentFighting) {
+        this.currentFighting = currentFighting;
     }
 
 }

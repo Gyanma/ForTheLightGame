@@ -8,7 +8,7 @@
     "nameWithDetArticle": "l'arco",
     "nameWithIndetArticle": "un arco",
     "description": "Un arco trovato nel labirinto. Un'arma da usare a distanza, semplice ed efficace.",
-    "accuracy": 90,
-    "weight": 50,
+    "accuracy": 75,
+    "agility": 40,
     "id": 1104
 }

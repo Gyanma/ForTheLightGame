@@ -26,9 +26,9 @@ public class Loader {
                     "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\" + string + ".json"),
                     List.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     @SuppressWarnings("unchecked")
@@ -41,9 +41,9 @@ public class Loader {
                     "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dictionary.json"),
                     Map.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     public static Weapon loadWeapon(String element) {
@@ -55,9 +55,8 @@ public class Loader {
             Weapon weapon = new Gson().fromJson(reader, Weapon.class);
             return weapon;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static Weapon loadWeapon(int i) {
@@ -73,9 +72,8 @@ public class Loader {
             Enemy enemy = new Gson().fromJson(reader, Enemy.class);
             return enemy;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static Enemy loadEnemy(int i) {
@@ -91,9 +89,9 @@ public class Loader {
             TextPuzzle textPuzzle = new Gson().fromJson(reader, TextPuzzle.class);
             return textPuzzle;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     public static TextPuzzle loadTextPuzzle(int i) {
@@ -144,9 +142,9 @@ public class Loader {
             jugPuzzle.setCorrectJugSet(new JugSet(correctJug1, correctJug2, correctJug3));
             return jugPuzzle;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     public static JugPuzzle loadJugPuzzle(int i) {
@@ -162,9 +160,9 @@ public class Loader {
             Danger danger = new Gson().fromJson(reader, Danger.class);
             return danger;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     public static Danger loadDanger(int i) {
@@ -180,9 +178,9 @@ public class Loader {
             VisualPuzzle visualPuzzle = new Gson().fromJson(reader, VisualPuzzle.class);
             return visualPuzzle;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
+
         }
-        return null;
     }
 
     public static VisualPuzzle loadVisualPuzzle(int i) {
@@ -198,9 +196,8 @@ public class Loader {
             PacificEncounter pacificEncounter = new Gson().fromJson(reader, PacificEncounter.class);
             return pacificEncounter;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static PacificEncounter loadPacificEncounter(int i) {
@@ -216,9 +213,8 @@ public class Loader {
             Item item = new Gson().fromJson(reader, Item.class);
             return item;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static Item loadItem(int i) {
@@ -289,6 +285,8 @@ public class Loader {
                         return "mappa mistica";
                     case 29:
                         return "sacca di diamanti";
+                    case 34:
+                        return "pergamena magica";
                     default:
                         return "";
                 }

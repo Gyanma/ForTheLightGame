@@ -8,7 +8,7 @@
     "nameWithDetArticle": "la balestra",
     "nameWithIndetArticle": "una balestra",
     "description": "Una balestra trovata nel labirinto. Permette di colpire a distanza con grande forza.",
-    "accuracy": 90,
-    "weight": 30,
+    "accuracy": 75,
+    "agility": 30,
     "id": 1109
 }

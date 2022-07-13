@@ -10,8 +10,8 @@ public class Enemy extends Event {
 
     private int healthPoints;
     private boolean isFlying;
-    private int baseAttack;
-    private int baseDefense;
+    private double baseAttack;
+    private double baseDefense;
 
     private String manualDescription;
 
@@ -60,6 +60,10 @@ public class Enemy extends Event {
         this.healthPoints = healthPoints;
     }
 
+    public boolean isAlive() {
+        return healthPoints > 0;
+    }
+
     public boolean isFlying() {
         return isFlying;
     }
@@ -68,19 +72,19 @@ public class Enemy extends Event {
         this.isFlying = isFlying;
     }
 
-    public int getBaseAttack() {
+    public double getBaseAttack() {
         return baseAttack;
     }
 
-    public void setBaseAttack(int baseAttack) {
+    public void setBaseAttack(double baseAttack) {
         this.baseAttack = baseAttack;
     }
 
-    public int getBaseDefense() {
+    public double getBaseDefense() {
         return baseDefense;
     }
 
-    public void setBaseDefense(int baseDefense) {
+    public void setBaseDefense(double baseDefense) {
         this.baseDefense = baseDefense;
     }
 

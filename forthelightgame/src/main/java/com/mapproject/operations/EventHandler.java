@@ -12,12 +12,15 @@ public class EventHandler {
         }
 
         if (Math.random() < 0.5) {
-            if (Math.random() < 0.5) {
+            if (Math.random() < 0.33) {
                 gameSession.setAttackModifier(gameSession.getAttackModifier() + 0.25);
                 System.out.println("Ti senti più forte!");
+            } else if (Math.random() < 0.66) {
+                gameSession.setAccuracyModifier(gameSession.getAccuracyModifier() + 0.25);
+                System.out.println("Ti senti più preciso nei colpi!");
             } else {
-                gameSession.setArmorModifier(gameSession.getArmorModifier() + 0.25);
-                System.out.println("Ti senti più resistente!");
+                gameSession.setAgilityModifier(gameSession.getAgilityModifier() + 0.25);
+                System.out.println("Ti senti più agile nel movimento!");
             }
         } else {
             int countWeapon = 0;
@@ -43,7 +46,7 @@ public class EventHandler {
                                 System.out.println(
                                         "Adesso sarai più preciso con" + weapon.getNameWithDetArticle() + "!");
                             } else {
-                                weapon.setWeight(weapon.getWeight() + 2.5);
+                                weapon.setAgility(weapon.getAgility() + 2.5);
                                 System.out.println(
                                         "Adesso ti senti più agile quando usi" + weapon.getNameWithDetArticle() + "!");
                             }

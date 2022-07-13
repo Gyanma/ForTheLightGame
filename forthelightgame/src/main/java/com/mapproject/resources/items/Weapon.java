@@ -4,7 +4,7 @@ public class Weapon extends Item {
 
     private int usage;
     private double damage;
-    private double weight;
+    private double agility;
     private double accuracy;
 
     public Weapon(int id) {
@@ -13,11 +13,11 @@ public class Weapon extends Item {
 
     public Weapon(int id, String name, String nameWithDetArticle, String nameWithIndetArticle,
             String description, String manualDescription,
-            int usage, double damage, double weight, double accuracy) {
+            int usage, double damage, double agility, double accuracy) {
         super(id, name, nameWithDetArticle, nameWithIndetArticle, description, manualDescription);
         this.usage = usage;
         this.damage = damage;
-        this.weight = weight;
+        this.agility = agility;
         this.accuracy = accuracy;
 
     }
@@ -38,12 +38,12 @@ public class Weapon extends Item {
         return this.damage;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setAgility(double agility) {
+        this.agility = agility;
     }
 
-    public double getWeight() {
-        return this.weight;
+    public double getAgility() {
+        return this.agility;
     }
 
     public void setAccuracy(double accuracy) {

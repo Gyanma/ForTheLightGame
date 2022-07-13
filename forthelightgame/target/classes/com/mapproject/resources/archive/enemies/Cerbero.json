@@ -1,7 +1,7 @@
 {
     "presentation": "Al centro della stanza vedi una bestia gigantesca!\nCerbero, il leggendario cane a tre teste, ti si para davanti.\nL'ultima battaglia del tuo viaggio sta per avere inizio!",
     "eventId": 2453,
-    "baseAttack": 2,
+    "baseAttack": 1.2,
     "attacks": {
         "Ruggito Minaccioso": {
             "damage": 0,
@@ -29,5 +29,5 @@
     "name": "Cerbero",
     "isSkippable": true,
     "isFlying": false,
-    "baseDefense": 2
+    "baseDefense": 1.2
 }

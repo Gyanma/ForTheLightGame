@@ -15,6 +15,8 @@ public class GameHandler {
         this.gameSession = session;
         gameSession.setCurrentRoomId(gameSession.getCurrentMap().getStartingRoomId());
         gameSession.addItemToInventory(Loader.loadItem("mappa"));
+        gameSession.addItemToInventory(Loader.loadItem("pergamena magica"));
+
         InventoryHandler.initSingleUseItems();
     }
 

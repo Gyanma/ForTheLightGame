@@ -8,7 +8,7 @@
     "nameWithDetArticle": "la katana",
     "nameWithIndetArticle": "una katana",
     "description": "Una katana trovata nel labirinto. Una lama sottile e affilata, frutto dell'ingegno di una cultura lontana.",
-    "accuracy": 90,
-    "weight": 30,
+    "accuracy": 75,
+    "agility": 30,
     "id": 1107
 }

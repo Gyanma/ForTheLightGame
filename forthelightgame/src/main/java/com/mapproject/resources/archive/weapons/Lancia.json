@@ -8,7 +8,7 @@
     "nameWithDetArticle": "la lancia",
     "nameWithIndetArticle": "una lancia",
     "description": "Una lancia trovata nel labirinto. Capace di infliggere grossi danni da una grande gittata.",
-    "accuracy": 85,
-    "weight": 30,
+    "accuracy": 60,
+    "agility": 30,
     "id": 1105
 }

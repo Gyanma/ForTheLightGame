@@ -134,7 +134,6 @@ public class MapBuilder {
                 || puzzleId == TEXT_PUZZLE_BASE_ID + 12
                 || puzzleId == TEXT_PUZZLE_BASE_ID + 14) {
             tempRoom.setEvent(puzzle);
-            System.out.println("Jug puzzle: room " + roomId + " phase: " + map.getPhase());
         }
         tempRoom.setEvent(puzzle);
         map.addRoom(roomId, tempRoom);
@@ -304,7 +303,6 @@ public class MapBuilder {
         Room tempRoom = map.getRoom(roomId);
         tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
-        System.out.println("Added weapon " + weapon.getName());
     }
 
     private void addWeaponsToStartRoom() {
@@ -340,8 +338,6 @@ public class MapBuilder {
         tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
 
-        System.out.println("Added weapon " + weapon.getName());
-
         // choose a ranged weapon
         do {
             // in phase 1, only weapons 4-6 are available
@@ -369,7 +365,6 @@ public class MapBuilder {
         tempRoom = map.getRoom(roomId);
         tempRoom.addItem(weapon);
         map.addRoom(roomId, tempRoom);
-        System.out.println("Added weapon " + weapon.getName());
 
     }
 

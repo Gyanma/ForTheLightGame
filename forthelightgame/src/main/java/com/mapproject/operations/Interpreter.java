@@ -2,6 +2,7 @@ package com.mapproject.operations;
 
 import com.mapproject.enums.Status;
 import com.mapproject.operations.visualHandler.VisualHandler;
+import com.mapproject.resources.Fight;
 import com.mapproject.resources.Session;
 import com.mapproject.resources.events.Danger;
 import com.mapproject.resources.events.Enemy;
@@ -10,6 +11,7 @@ import com.mapproject.resources.events.PacificEncounter;
 import com.mapproject.resources.events.TextPuzzle;
 import com.mapproject.resources.events.VisualPuzzle;
 import com.mapproject.resources.items.Item;
+import com.mapproject.resources.items.Weapon;
 
 public class Interpreter {
 
@@ -164,8 +166,7 @@ public class Interpreter {
             // Battle section
             // attack command
         } else if (command.startsWith("Attacca")) {
-            attack(gameSession, command);
-            return 1;
+            return attack(gameSession, command);
 
             // escape command
         } else if (command.startsWith("Fuggi")) {
@@ -187,7 +188,6 @@ public class Interpreter {
         System.out.println(command);
         Danger danger = (Danger) gameSession.getCurrentRoom().getEvent();
         if (command.equals(Loader.loadItem(danger.getSolution()).getName())) {
-            System.out.println("Yay");
             System.out.println(danger.getSolved());
             gameSession.setCurrentStatus(Status.EXPLORING);
             gameSession.getCurrentRoom().setEvent(null);
@@ -197,15 +197,91 @@ public class Interpreter {
     }
 
     private static void escapeBattle(Session gameSession) {
-
-        // TODO implement escape battle
-    }
-
-    private static void attack(Session gameSession, String command) {
         if (gameSession.getCurrentStatus() == Status.FIGHTING) {
-            // TODO: implement attack
+            if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
+                Enemy enemy = (Enemy) gameSession.getCurrentRoom().getEvent();
+                if (enemy.isSkippable()) {
+                    System.out.println("Riesci a fuggire dalla battaglia!");
+                    gameSession.setCurrentStatus(Status.EXPLORING);
+                    if (gameSession.getCurrentRoomId() != gameSession.getCurrentMap().getEndRoomId()) {
+                        gameSession.getCurrentRoom().setEvent(null);
+                    }
+
+                } else {
+                    System.out.println("Non funziona!");
+                }
+            } else {
+                System.out.println("Da cosa vuoi fuggire, dalle tue responsabilità?");
+            }
+
         } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
+
+    }
+
+    private static int attack(Session gameSession, String command) {
+        if (gameSession.getCurrentStatus() == Status.FIGHTING) {
+            command = command.replace("Attacca ", "");
+            command = command.trim();
+            if (command.contains("+")) {
+                String[] newCommand = command.split("\\+"); // player indicated target of attack
+                if (newCommand[1].equals(gameSession.getCurrentRoom().getEvent().getName())) {
+                    command = newCommand[0];
+                }
+            }
+
+            Weapon chosenWeapon = null;
+
+            for (Item item : gameSession.getInventory()) {
+                if (command.equals(item.getName()) &&
+                        item.getClass() == Weapon.class) {
+                    chosenWeapon = (Weapon) item;
+                }
+            }
+            if (chosenWeapon == null) {
+                System.out.println("Non capisco come vuoi attaccare...");
+                return 1;
+            }
+            gameSession.getCurrentFighting().playersTurn(gameSession, chosenWeapon);
+            if (gameSession.getCurrentFighting().getOpponent().isAlive()) {
+                gameSession.getCurrentFighting().opponentsTurn(gameSession, chosenWeapon);
+            } else {
+                System.out.println("Il nemico è sconfitto!");
+                gameSession.setCurrentStatus(Status.EXPLORING);
+                gameSession.getCurrentRoom().setEvent(null);
+                gameSession.setCurrentFighting(null);
+                gameSession.setHealthPoints(gameSession.getHealthPoints() + 10);
+                gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 10);
+                for (Item item : gameSession.getInventory()) {
+                    if (item.getName().equals("Libro della forza")
+                            && item.isUsed())
+                        gameSession.removeItemFromInventory(item);
+                    if (item.getName().equals("Libro della forza")
+                            && item.isUsed())
+                        gameSession.removeItemFromInventory(item);
+                    else if (item.getName().equals("Libro della destrezza")
+                            && item.isUsed())
+                        gameSession.removeItemFromInventory(item);
+                    else if (item.getName().equals("Fiala del sangue")
+                            && item.isUsed())
+                        gameSession.removeItemFromInventory(item);
+                }
+
+            }
+            if (!gameSession.isPlayerAlive()) {
+                System.out.println("Sei stato sconfitto. La tua prova si conclude qui...");
+                return 0;
+            } else {
+                return 1;
+            }
+        } else if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
+            gameSession.setCurrentStatus(Status.FIGHTING);
+            Fight newFight = new Fight();
+            newFight.setOpponent((Enemy) gameSession.getCurrentRoom().getEvent());
+            gameSession.setCurrentFighting(newFight);
+            System.out.println("Inizia la battaglia!");
+        }
+        return 1;
     }
 
     private static void solveJugPuzzle(Session gameSession, String command) {
@@ -491,21 +567,16 @@ public class Interpreter {
                         case 1:
                             gameSession.setCurrentPhase(2);
                             gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
+                            gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
+                            gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
                             System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
-                            if (gameSession.getInventory().contains(Loader.loadItem("Acchiappasogni"))) {
-                                for (Item item : gameSession.getInventory()) {
-                                    if (item.getName().equals("Acchiappasogni")) {
-                                        gameSession.getInventory().remove(item);
-                                        System.out.println("L'acchiappasogni nel tuo inventario si è polverizzato!");
-                                        break;
-                                    }
-                                }
-                            }
                             return 1;
                         case 2:
                             gameSession.setCurrentPhase(3);
                             gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
                             System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
+                            gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
+                            gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
                             return 1;
                         case 3:
                             Printer.printFromTxt("Ending");
@@ -604,9 +675,14 @@ public class Interpreter {
                     gameSession.setCurrentStatus(Status.EXPLORING);
                     System.out.println(gameSession.getInventory().size());
 
-                    if (gameSession.getInventory().size() > 1) {
-                        Item item = gameSession.getInventory()
-                                .get((int) Math.random() * gameSession.getInventory().size());
+                    if (gameSession.getInventory().size() > 2) {
+                        Item item;
+                        do {
+                            item = gameSession.getInventory()
+                                    .get((int) Math.random() * gameSession.getInventory().size());
+                        } while (item.getName().equals("Mappa") ||
+                                item.getName().equals("Pergamena magica"));
+
                         gameSession.removeItemFromInventory(item);
                         System.out.println(
                                 "Ti controlli le tasche e noti di aver perso " + item.getNameWithIndetArticle());
@@ -632,8 +708,12 @@ public class Interpreter {
                 PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
                 System.out.println(encounter.getDescription());
 
-            } else if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
+            } else if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
                 gameSession.setCurrentStatus(Status.FIGHTING);
+                Fight newFight = new Fight();
+                newFight.setOpponent((Enemy) gameSession.getCurrentRoom().getEvent());
+                gameSession.setCurrentFighting(newFight);
+                System.out.println("Inizia la battaglia!");
 
             }
         } else
@@ -761,7 +841,8 @@ public class Interpreter {
 
     private static void exploreRoomForItems(Session gameSession) {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            if (gameSession.getCurrentRoom().getItems() != null) {
+            if (gameSession.getCurrentRoom().getItems() != null
+                    && gameSession.getCurrentRoom().getItems().size() > 0) {
                 for (Item item : gameSession.getCurrentRoom().getItems()) {
 
                     System.out.println("Nella stanza vedi "

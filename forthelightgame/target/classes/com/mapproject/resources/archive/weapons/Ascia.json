@@ -8,7 +8,7 @@
     "nameWithDetArticle": "l'ascia",
     "nameWithIndetArticle": "un'ascia",
     "description": "Un'ascia trovata nel labirinto. Potente, ma al contempo pesante, richiede molta forza per essere usata.",
-    "accuracy": 85,
-    "weight": 30,
+    "accuracy": 60,
+    "agility": 30,
     "id": 1102
 }

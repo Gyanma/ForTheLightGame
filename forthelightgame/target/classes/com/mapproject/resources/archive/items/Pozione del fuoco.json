@@ -7,5 +7,5 @@
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Puoi usarla su un nemico e infiggergli danni."
+    "manualDescription": "Puoi usarla su un nemico, infliggergli danni e ridurne l'attacco per un turno."
 }
