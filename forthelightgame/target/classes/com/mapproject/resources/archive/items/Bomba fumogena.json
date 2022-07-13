@@ -7,5 +7,5 @@
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Usandola il nemico con cui stai combattendo, potrai uscire dalla stanza senza combattere, e il nemico fuggir\u00e0. Non funziona con i boss."
+    "manualDescription": "Usandola il nemico con cui stai combattendo, potrai uscire dal combattimento e il nemico fuggir\u00e0. Non funziona con i boss."
 }

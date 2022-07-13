@@ -20,7 +20,7 @@
         }
     },
     "healthPoints": 150,
-    "manualDescription": "Guardiano alato:\n� in grado di volare\nPunti salute: 120\nAttacchi:\nRaggio di luce: danno medio, nessun effetto speciale;\nMaglio divino: danno alto, precisione ridotta, richiede due turni;\nBenedizione: nessun danno, ma aumenta attacco e difesa di base;",
+    "manualDescription": "Guardiano alato:\n\u00e8 in grado di volare\nPunti salute: 120\nAttacchi:\nRaggio di luce: danno medio, nessun effetto speciale;\nMaglio divino: danno alto, precisione ridotta, richiede due turni;\nBenedizione: nessun danno, ma aumenta attacco e difesa di base;",
     "name": "Guardiano Alato",
     "isSkippable": true,
     "isFlying": false,

@@ -1,5 +1,5 @@
 {
-    "presentation": "Oh no! Al centro della stanza c'� una minuscola melma!\nSi dirige verso di te, fai attenzione!",
+    "presentation": "Oh no! Al centro della stanza c'\u00e8 una minuscola melma!\nSi dirige verso di te, fai attenzione!",
     "eventId": 2403,
     "baseAttack": 1,
     "attacks": {
@@ -15,7 +15,7 @@
         }
     },
     "healthPoints": 50,
-    "manualDescription": "Melma:\nNon � in grado di volare\nPunti salute: 50\nAttacchi:\nSchianto: danno lieve, bassa probabilit� di infliggere status \"melma\";\nRinforzo: nessun danno, ma migliora la sua difesa;",
+    "manualDescription": "Melma:\nNon \u00e8 in grado di volare\nPunti salute: 50\nAttacchi:\nSchianto: danno lieve, bassa probabilit\u00e0 di infliggere status \"melma\";\nRinforzo: nessun danno, ma migliora la sua difesa;",
     "name": "Melma",
     "isSkippable": false,
     "isFlying": false,

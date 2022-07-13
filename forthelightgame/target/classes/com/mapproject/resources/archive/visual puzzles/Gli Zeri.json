@@ -2,7 +2,7 @@
     "presentation": "La porta sembra bloccata da un qualche meccanismo. Esaminalo e scopri come aprirla.",
     "eventId": 2303,
     "name": "Gli Zeri",
-    "description": "Quattro pannelli, quattro pulsanti. Quando i pannelli mostreranno tutti 0, la via sar� libera.",
+    "description": "Quattro pannelli, quattro pulsanti. Quando i pannelli mostreranno tutti 0, la via sar\u00e0 libera.",
     "visualId": 3,
     "isSkippable": false
 }

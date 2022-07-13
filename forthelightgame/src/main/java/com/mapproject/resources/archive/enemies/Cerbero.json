@@ -25,7 +25,7 @@
         }
     },
     "healthPoints": 150,
-    "manualDescription": "Cerbero:\nNon � in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilit� di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpir� sicuramente;",
+    "manualDescription": "Cerbero:\nNon \u00e8 in grado di volare\nPunti salute: 10\nAttacchi:\nMorso Feroce: danno alto, nessun effetto speciale;\nRuggito Minaccioso: nessun danno, ma riduce il prossimo danno dell'avversario;\nPalla di fuoco: danno molto alto, precisione ridotta, probabilit\u00e0 di infliggere bruciatura;\nSensi acuti: nessun danno, salta il prossimo turno, e l'attacco successivo colpir\u00e0 sicuramente;",
     "name": "Cerbero",
     "isSkippable": true,
     "isFlying": false,

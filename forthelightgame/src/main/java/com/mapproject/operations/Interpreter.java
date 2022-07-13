@@ -86,7 +86,7 @@ public class Interpreter {
         } else if (command.startsWith("Raggiungi")) {
             command = command.replace("Raggiungi ", "");
             command = command.trim();
-            if (command.equals(gameSession.getCurrentRoom().getEvent().getName().toLowerCase())) {
+            if (command.equals(gameSession.getCurrentRoom().getEvent().getName())) {
                 startEvent(gameSession);
                 return 1;
             } else if (command.equals("meccanismo") &&
@@ -187,10 +187,14 @@ public class Interpreter {
     private static void checkEscape(Session gameSession, String command) {
         System.out.println(command);
         Danger danger = (Danger) gameSession.getCurrentRoom().getEvent();
-        if (command.equals(Loader.loadItem(danger.getSolution()).getName())) {
+        if (command.equals(Loader.loadItem(danger.getSolution()).getName())
+                && gameSession.getInventory().contains(Loader.loadItem(danger.getSolution()))) {
             System.out.println(danger.getSolved());
+            gameSession.removeItemFromInventory(Loader.loadItem(danger.getSolution()));
             gameSession.setCurrentStatus(Status.EXPLORING);
             gameSession.getCurrentRoom().setEvent(null);
+        } else if (!gameSession.getInventory().contains(Loader.loadItem(danger.getSolution()))) {
+            System.out.println("Non hai quell'oggetto!");
         } else {
             System.out.println("Non funziona!");
         }
@@ -579,10 +583,10 @@ public class Interpreter {
                             gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
                             return 1;
                         case 3:
-                            Printer.printFromTxt("Ending");
-                            return 0;
+                            Printer.printFromTxt("Finale");
+                            return 3;
                         default:
-                            return 0;
+                            return 1;
                     }
                 } else
                     System.out.println("Devi ancora sconfiggere il boss!");
@@ -745,7 +749,7 @@ public class Interpreter {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
             if (gameSession.getInventory().size() + 1 < gameSession.getInventoryCapacity()) {
                 for (Item item : gameSession.getCurrentRoom().getItems()) {
-                    if (itemName.contains(item.getName())) {
+                    if (itemName.equals(item.getName())) {
                         if (gameSession.getInventory().contains(item)) {
                             System.out.println("Hai già " + item.getNameWithIndetArticle() + "!");
                             found = true;

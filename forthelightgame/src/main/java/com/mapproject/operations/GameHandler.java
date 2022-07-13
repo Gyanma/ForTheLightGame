@@ -53,6 +53,10 @@ public class GameHandler {
                 }
             }
 
+            if (action == 3) {
+                action = 0;
+            }
+
         } while (action != 0 && gameSession.isPlayerAlive());
 
         System.out.println("Arrivederci!");

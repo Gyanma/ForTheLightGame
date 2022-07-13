@@ -4,11 +4,11 @@
     "eventId": 2102,
     "name": "Stanza allagata",
     "countdown": {
-        "1": "L'acqua ti arriva gi� alle ginocchia.",
+        "1": "L'acqua ti arriva gi\u00e0 alle ginocchia.",
         "2": "Avanti, l'acqua continua a salire!",
-        "3": "L'acqua ti � arrivata al petto!",
+        "3": "L'acqua ti \u00e8 arrivata al petto!",
         "4": "Ormai l'acqua ti arriva alla gola!",
-        "5": "Troppo tardi, il fossato � completamente riempito...\nProvi a restare a galla il pi� possibile, ma svieni per la troppa fatica..."
+        "5": "Troppo tardi, il fossato \u00e8 completamente riempito...\nProvi a restare a galla il pi\u00f9 possibile, ma svieni per la troppa fatica..."
     },
     "solutionId": 1001,
     "solved": "Con la tua fune riesci a uscire dalla trappola! C'è mancato davvero poco...",

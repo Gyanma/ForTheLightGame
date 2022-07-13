@@ -1,5 +1,5 @@
 {
-    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso ti ritrovi completamente al buio!\nNell'oscurit� senti delle voci poco rassicuranti...\nFai in fretta, devi trovare il modo di illuminare la stanza!",
+    "presentation": "Ti dirigi verso il centro della stanza\nquando all'improvviso ti ritrovi completamente al buio!\nNell'oscurit\u00e0 senti delle voci poco rassicuranti...\nFai in fretta, devi trovare il modo di illuminare la stanza!",
     "timeLimit": 75000,
     "eventId": 2103,
     "name": "Spettri",
@@ -7,7 +7,7 @@
         "1": "Ora ci si mettono anche gli spifferi...",
         "2": "Qualcuno ti ha sussurrato nell'orecchio! Ti volti di scatto ma non vedi ancora nulla.",
         "3": "Una mano gelida ti tocca la spalla! Ti allontani, ma alla cieca non puoi fare molto...",
-        "4": "Le voci diventano sempre di pi�, e sempre pi� assillanti!",
+        "4": "Le voci diventano sempre di pi\u00f9, e sempre pi\u00f9 assillanti!",
         "5": "Vieni afferrato da qualcosa, e in men che non si dica, perdi i sensi..."
     },
     "solutionId": 1006,

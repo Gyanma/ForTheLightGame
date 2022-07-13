@@ -3,7 +3,7 @@
     "eventId": 2503,
     "itemNotGivenResponse": "\"Oh, che peccato... A presto!\"\nLa figura svanisce in una nuvola di fumo.",
     "name": "Banchetto",
-    "description": "Ti avvicini al banchetto.\nQuando sei abbastanza vicino, il proprietario del banchetto esclama:\n\"Salve, stimato cliente. Qui vendiamo ogni tipo di pozione che potete desiderare.\nFate la vostra offerta e tutto ci� che desiderate vi sar� dato.\nAbbiamo pozioni del fuoco, del gelo, del fulmine, del veleno e anche di cura!\nSe pensate di avere un oggetto di egual valore, proponetecelo! Non siate timido!",
+    "description": "Ti avvicini al banchetto.\nQuando sei abbastanza vicino, il proprietario del banchetto esclama:\n\"Salve, stimato cliente. Qui vendiamo ogni tipo di pozione che potete desiderare.\nFate la vostra offerta e tutto ci\u00f2 che desiderate vi sar\u00e0 dato.\nAbbiamo pozioni del fuoco, del gelo, del fulmine, del veleno e anche di cura!\nSe pensate di avere un oggetto di egual valore, proponetecelo! Non siate timido!",
     "giftedItemId": [
         1021,
         1022,
@@ -15,5 +15,5 @@
     "requestedItemId": [
         -2
     ],
-    "itemGivenResponse": "\"Questo andr� bene. Grazie dei vostri servigi!\"\nLa creatura sparisce con il suo oggetto e lascia dietro di s� proprio la pozione che ti serviva..."
+    "itemGivenResponse": "\"Questo andr\u00e0 bene. Grazie dei vostri servigi!\"\nLa creatura sparisce con il suo oggetto e lascia dietro di s\u00e8 proprio la pozione che ti serviva..."
 }

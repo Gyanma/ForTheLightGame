@@ -7,5 +7,5 @@
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Una volta usato, i nemici ti ignoreranno per il resto della mappa. Al livello successivo, sparisce dall\u0027inventario."
+    "manualDescription": "Una volta usato, i nemici ti ignoreranno per il resto della mappa."
 }

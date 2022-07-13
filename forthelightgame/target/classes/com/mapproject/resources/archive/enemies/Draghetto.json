@@ -1,5 +1,5 @@
 {
-    "presentation": "Oh no! Al centro della stanza c'� un draghetto!\nSembra molto aggressivo, fai attenzione!",
+    "presentation": "Oh no! Al centro della stanza c'\u00e8 un draghetto!\nSembra molto aggressivo, fai attenzione!",
     "eventId": 2402,
     "baseAttack": 1,
     "attacks": {
@@ -15,7 +15,7 @@
         }
     },
     "healthPoints": 50,
-    "manualDescription": "Draghetto:\n� in grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nFiammata: danno medio, pu� infliggere bruciatura, precisione ridotta;",
+    "manualDescription": "Draghetto:\n\u00e8 in grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nFiammata: danno medio, pu\u00f2 infliggere bruciatura, precisione ridotta;",
     "name": "Draghetto",
     "isSkippable": false,
     "isFlying": true,

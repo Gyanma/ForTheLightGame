@@ -3,7 +3,7 @@
     "eventId": 2502,
     "itemNotGivenResponse": "\"Oh, peccato... Alla prossima!\"\nL'esploratore torna a guardare le sue mappe.",
     "name": "Esploratore",
-    "description": "Ti avvicini all'esploratore'.\nQuando sei abbastanza vicino, si gira e inizia a parlarti.\n\"Salve, amico. Anche tu cerchi l'uscita del labirinto?\nAllora posso darti una mano.\nSono riuscito a trovare una mappa magica!\nPermette di trovare immediatamente la stanza finale del labirinto e la tua posizione corrente.\nA me non serve, ho memorizzato gi� tutte le stanze.\nMa speravo di trovare qualche tesoro... Se tu hai qualche pietra preziosa\npotremmo fare a cambio, che ne dici?\"",
+    "description": "Ti avvicini all'esploratore'.\nQuando sei abbastanza vicino, si gira e inizia a parlarti.\n\"Salve, amico. Anche tu cerchi l'uscita del labirinto?\nAllora posso darti una mano.\nSono riuscito a trovare una mappa magica!\nPermette di trovare immediatamente la stanza finale del labirinto e la tua posizione corrente.\nA me non serve, ho memorizzato gi\u00e0 tutte le stanze.\nMa speravo di trovare qualche tesoro... Se tu hai qualche pietra preziosa\npotremmo fare a cambio, che ne dici?\"",
     "giftedItemId": [
         1027
     ],

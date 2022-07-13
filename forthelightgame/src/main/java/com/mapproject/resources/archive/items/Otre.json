@@ -3,7 +3,7 @@
     "name": "Otre",
     "nameWithDetArticle": "l'otre",
     "nameWithIndetArticle": "un otre",
-    "description": "Un otre di acqua trovata nel labirinto. Molte razze sopravvivono bevendo: una nozione non cos� banale per una specie che non ne ha mai avuto bisogno.",
+    "description": "Un otre di acqua trovata nel labirinto. Molte razze sopravvivono bevendo: una nozione non cos\u00ec banale per una specie che non ne ha mai avuto bisogno.",
     "pickupable": true,
     "throwable": true,
     "used": false,

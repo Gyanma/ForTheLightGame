@@ -6,4 +6,4 @@ Ti rechi alla caverna di Arygos, dove incontri il tuo Gran Maestro Thaurissan.
 "Giovane guerriero. Dopo cinque lunghi anni, il tuo addestramento giunge al termine.
 Dovrai affrontare l'ultima prova per acquisire il ruolo di Paladino.
 Dovrai dimostrare coraggio, prodezza in battaglia, ma anche ingegno e compassione per chi incontrerai nel tuo cammino.
-Conosci già la tua missione, o preferisci una spiegazione più dettagliata?"
+Conosci gia' la tua missione, o preferisci una spiegazione piu' dettagliata?"

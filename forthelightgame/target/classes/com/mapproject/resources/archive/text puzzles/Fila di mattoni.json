@@ -1,9 +1,9 @@
 {
     "eventId": 2208,
-    "question": "\"Ehi, tu.\" L'orco ti rivolge la parola appena ti vede.\n\"Dammi una mano. Ho questi nove mattoni da trasportare.\nCe ne sono due di questi che sono pi� pesanti degli altri,\ne li devo trovare per trasportarli per primi.\nMi ricordo che sono uno accanto all'altro, ma non so quali siano.\nLi voglio prendere uno alla volta e vedere cos� quali sono\nquelli pi� pesanti ma ne voglio sollevare il meno possibile\nTu mi sembri sveglio. Pensa a una strategia e dimmi\nquanti mattoni dovrei sollevare nel peggior caso possibile.\"",
+    "question": "\"Ehi, tu.\" L'orco ti rivolge la parola appena ti vede.\n\"Dammi una mano. Ho questi nove mattoni da trasportare.\nCe ne sono due di questi che sono pi\u00f9 pesanti degli altri,\ne li devo trovare per trasportarli per primi.\nMi ricordo che sono uno accanto all'altro, ma non so quali siano.\nLi voglio prendere uno alla volta e vedere cos\u00ec quali sono\nquelli pi\u00f9 pesanti ma ne voglio sollevare il meno possibile\nTu mi sembri sveglio. Pensa a una strategia e dimmi\nquanti mattoni dovrei sollevare nel peggior caso possibile.\"",
     "isSingleAnswer": true,
     "tryAgainReply": "Spieghi la tua strategia all'orco, ma non sembra capirci molto...",
-    "correctReply": "Spieghi la tua strategia all'orco e lui risponde:\n\"Ottimo, mi metto subito al lavoro.\"\nPrima di sollevare il primo mattone, l'orco ti porge un pugnale.\n\"Tieni, l'ho preso a un umano prima, ma � troppo piccolo per i miei gusti\"\nLasci l'orco al suo lavoro.",
+    "correctReply": "Spieghi la tua strategia all'orco e lui risponde:\n\"Ottimo, mi metto subito al lavoro.\"\nPrima di sollevare il primo mattone, l'orco ti porge un pugnale.\n\"Tieni, l'ho preso a un umano prima, ma \u00e8 troppo piccolo per i miei gusti\"\nLasci l'orco al suo lavoro.",
     "presentation": "Nell'angolo della stanza vedi un orco che armeggia\ncon una fila di mattoni.",
     "rewardId": 1103,
     "answer": "4",

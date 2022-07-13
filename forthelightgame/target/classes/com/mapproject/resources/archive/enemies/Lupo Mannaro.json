@@ -1,5 +1,5 @@
 {
-    "presentation": "Oh no! Al centro della stanza c'� un lupo mannaro!\nSembra molto aggressivo, fai attenzione!",
+    "presentation": "Oh no! Al centro della stanza c'\u00e8 un lupo mannaro!\nSembra molto aggressivo, fai attenzione!",
     "eventId": 2401,
     "baseAttack": 1,
     "attacks": {
@@ -15,7 +15,7 @@
         }
     },
     "healthPoints": 50,
-    "manualDescription": "Lupo mannaro:\nNon � un grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nUlulato: nessun danno, ma migliora il suo attacco;",
+    "manualDescription": "Lupo mannaro:\nNon \u00e8 un grado di volare\nPunti salute: 50\nAttacchi:\nGraffio: danno lieve, nessun effetto speciale;\nUlulato: nessun danno, ma migliora il suo attacco;",
     "name": "Lupo Mannaro",
     "isSkippable": false,
     "isFlying": false,
