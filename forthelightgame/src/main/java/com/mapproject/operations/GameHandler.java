@@ -10,6 +10,7 @@ public class GameHandler {
     Session gameSession;
     Scanner gameScanner = new Scanner(System.in);
     Interpreter interpreter = new Interpreter();
+    Parser parser = new Parser();
 
     public GameHandler(Session session) {
         this.gameSession = session;
@@ -46,8 +47,8 @@ public class GameHandler {
             } else
                 action = 0;
             if (action == 0) {
-                System.out.println("Sei sicuro? (sì/no)");
-                if (!gameScanner.nextLine().equals("sì")) {
+                System.out.println("Sei sicuro? (Sì/No)");
+                if (!gameScanner.nextLine().equals("Sì")) {
                     action = 1;
                     System.out.println("\nCosa vuoi fare?");
                 }

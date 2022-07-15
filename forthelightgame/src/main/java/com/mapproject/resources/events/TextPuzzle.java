@@ -4,9 +4,7 @@ public class TextPuzzle extends Event {
 
     private String question;
 
-    private boolean isSingleAnswer; // true if the answer is simple, false if it's composed
-
-    private String answer;// if the answer is composed, the aswers are separated by a "+"
+    private String answer;
 
     private String correctReply; // npc's response in case of correct answer
 
@@ -19,13 +17,12 @@ public class TextPuzzle extends Event {
     private int rewardId; // item reward in case of correct answer
 
     public TextPuzzle(int eventId, String name, String presentation,
-            String question, String answer, boolean isSingleAnswer,
-            String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
+            String question, String answer, String correctReply, String incorrectReply, String tryAgainReply,
+            String surrenderReply,
             int rewardId) {
         super(eventId, name, presentation, true);
         this.question = question;
         this.answer = answer;
-        this.isSingleAnswer = isSingleAnswer;
         this.correctReply = correctReply;
         this.incorrectReply = incorrectReply;
         this.tryAgainReply = tryAgainReply;
@@ -48,14 +45,6 @@ public class TextPuzzle extends Event {
 
     public void setAnswer(String answer) {
         this.answer = answer;
-    }
-
-    public boolean isSingleAnswer() {
-        return isSingleAnswer;
-    }
-
-    public void setSingleAnswer(boolean isSingleAnswer) {
-        this.isSingleAnswer = isSingleAnswer;
     }
 
     public String getCorrectReply() {

@@ -23,6 +23,7 @@ public class Interpreter {
         // Exploring section
 
         // explore room command
+
         if (command.equals("Esplora stanza")) {
             exploreRoom(gameSession);
             return 1;
@@ -33,10 +34,10 @@ public class Interpreter {
             return 1;
 
             // change room commands
-        } else if (command.startsWith("Spostati a")) {
+        } else if (command.startsWith("Spostati")) {
             if (gameSession.getCurrentRoom().getEvent() == null ||
                     gameSession.getCurrentRoom().getEvent().isSkippable()) {
-                command = command.replace("Spostati a ", "");
+                command = command.replace("Spostati ", "");
                 command = command.trim();
                 if (command.equals("nord")) {
                     moveToNorth(gameSession);
@@ -72,8 +73,8 @@ public class Interpreter {
 
             // get item commands
         } else if (command.startsWith("Raccogli")) {
-            command.replace("Raccogli ", "");
-            command.trim();
+            command = command.replace("Raccogli ", "");
+            command = command.trim();
             getItem(gameSession, command);
             return 1;
 
@@ -86,13 +87,16 @@ public class Interpreter {
         } else if (command.startsWith("Raggiungi")) {
             command = command.replace("Raggiungi ", "");
             command = command.trim();
-            if (command.equals(gameSession.getCurrentRoom().getEvent().getName())) {
-                startEvent(gameSession);
-                return 1;
-            } else if (command.equals("meccanismo") &&
-                    gameSession.getCurrentRoom().getEvent().getClass() == VisualPuzzle.class) {
-                startVisualPuzzle(gameSession);
-                return 1;
+            if (gameSession.getCurrentRoom().getEvent() != null) {
+                if (command.equals(gameSession.getCurrentRoom().getEvent().getName())) {
+                    startEvent(gameSession);
+                    return 1;
+                } else if (command.equals("meccanismo") &&
+                        gameSession.getCurrentRoom().getEvent().getClass() == VisualPuzzle.class) {
+                    startVisualPuzzle(gameSession);
+                    return 1;
+                } else
+                    return 2;
             } else
                 return 2;
 
@@ -111,17 +115,19 @@ public class Interpreter {
         } else if (command.startsWith("Usa")) {
             command = command.replace("Usa ", "");
             command = command.trim();
-            if (gameSession.getCurrentStatus() == Status.IN_DANGER) {
+            if (gameSession.getCurrentStatus() == Status.IN_DANGER
+                    && gameSession.getCurrentRoom().getEvent() != null) {
                 checkEscape(gameSession, command);
                 return 1;
 
-            } else
-                return InventoryHandler.useItem(gameSession, command);
-
+            } else {
+                InventoryHandler.useItem(gameSession, command);
+                return 1;
+            }
             // examine item command
         } else if (command.startsWith("Esamina")) {
             command = command.replace("Esamina ", "");
-            command.trim();
+            command = command.trim();
             InventoryHandler.examineItem(gameSession, command);
             return 1;
             // throw item command
@@ -158,20 +164,18 @@ public class Interpreter {
                 return 2;
             }
 
-            // leave pacific encounter or puzzle command
+            // leave event or battle command
         } else if (command.equals("Abbandona")) {
-            leaveEncounter(gameSession);
+            if (gameSession.getCurrentStatus() == Status.FIGHTING) {
+                escapeBattle(gameSession);
+            } else
+                leaveEncounter(gameSession);
             return 1;
 
             // Battle section
             // attack command
         } else if (command.startsWith("Attacca")) {
             return attack(gameSession, command);
-
-            // escape command
-        } else if (command.startsWith("Fuggi")) {
-            escapeBattle(gameSession);
-            return 1;
 
             // possible response to text puzzle
         } else if (gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
@@ -185,7 +189,6 @@ public class Interpreter {
     }
 
     private static void checkEscape(Session gameSession, String command) {
-        System.out.println(command);
         Danger danger = (Danger) gameSession.getCurrentRoom().getEvent();
         if (command.equals(Loader.loadItem(danger.getSolution()).getName())
                 && gameSession.getInventory().contains(Loader.loadItem(danger.getSolution()))) {
@@ -201,7 +204,7 @@ public class Interpreter {
     }
 
     private static void escapeBattle(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.FIGHTING) {
+        if (gameSession.getCurrentRoom().getEvent() != null) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
                 Enemy enemy = (Enemy) gameSession.getCurrentRoom().getEvent();
                 if (enemy.isSkippable()) {
@@ -215,7 +218,7 @@ public class Interpreter {
                     System.out.println("Non funziona!");
                 }
             } else {
-                System.out.println("Da cosa vuoi fuggire, dalle tue responsabilità?");
+                System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
             }
 
         } else
@@ -224,14 +227,16 @@ public class Interpreter {
     }
 
     private static int attack(Session gameSession, String command) {
-        if (gameSession.getCurrentStatus() == Status.FIGHTING) {
+        if (gameSession.getCurrentStatus() == Status.FIGHTING
+                && gameSession.getCurrentRoom().getEvent() != null) {
             command = command.replace("Attacca ", "");
             command = command.trim();
             if (command.contains("+")) {
                 String[] newCommand = command.split("\\+"); // player indicated target of attack
                 if (newCommand[1].equals(gameSession.getCurrentRoom().getEvent().getName())) {
                     command = newCommand[0];
-                }
+                } else
+                    return 2;
             }
 
             Weapon chosenWeapon = null;
@@ -260,7 +265,7 @@ public class Interpreter {
                     if (item.getName().equals("Libro della forza")
                             && item.isUsed())
                         gameSession.removeItemFromInventory(item);
-                    if (item.getName().equals("Libro della forza")
+                    if (item.getName().equals("Libro dell'accuratezza")
                             && item.isUsed())
                         gameSession.removeItemFromInventory(item);
                     else if (item.getName().equals("Libro della destrezza")
@@ -278,18 +283,22 @@ public class Interpreter {
             } else {
                 return 1;
             }
-        } else if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
+        } else if (gameSession.getCurrentRoom().getEvent() != null &&
+                gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
             gameSession.setCurrentStatus(Status.FIGHTING);
             Fight newFight = new Fight();
             newFight.setOpponent((Enemy) gameSession.getCurrentRoom().getEvent());
             gameSession.setCurrentFighting(newFight);
             System.out.println("Inizia la battaglia!");
-        }
+        } else
+            System.out.println("Non c'è nessuno da attaccare!");
+
         return 1;
     }
 
     private static void solveJugPuzzle(Session gameSession, String command) {
-        if (gameSession.getCurrentRoom().getEvent().getClass() == JugPuzzle.class &&
+        if (gameSession.getCurrentRoom().getEvent() != null &&
+                gameSession.getCurrentRoom().getEvent().getClass() == JugPuzzle.class &&
                 gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
             JugPuzzle jugPuzzle = (JugPuzzle) gameSession.getCurrentRoom().getEvent();
 
@@ -361,8 +370,9 @@ public class Interpreter {
     }
 
     private static void leaveEncounter(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER
-                || gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
+        if (gameSession.getCurrentRoom().getEvent() != null &&
+                (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER
+                        || gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING)) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
                 PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
                 System.out.println(encounter.getItemNotGivenResponse());
@@ -382,7 +392,8 @@ public class Interpreter {
     }
 
     private static void pray(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
+        if (gameSession.getCurrentRoom().getEvent() != null &&
+                gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
                 PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
                 if (encounter.getRequestedItemId().size() == 1 && encounter.getRequestedItemId().contains(-1)) {
@@ -401,7 +412,8 @@ public class Interpreter {
     }
 
     private static void donateItem(Session gameSession, String command) {
-        if (gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
+        if (gameSession.getCurrentRoom().getEvent() != null &&
+                gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
             String itemRequestedByPlayerName = "";
             String itemGivenByPlayerName = "";
             Item itemReq = null;
@@ -509,6 +521,9 @@ public class Interpreter {
                         System.out.println(encounter.getItemGivenResponse());
                         gameSession.setCurrentStatus(Status.EXPLORING);
                         gameSession.getCurrentRoom().setEvent(null);
+                        if (gameSession.getInventory().contains(Loader.loadItem("mappa mistica"))
+                                && gameSession.getInventory().contains(Loader.loadItem("mappa")))
+                            gameSession.removeItemFromInventory(Loader.loadItem("mappa"));
 
                     } else {
                         System.out.println("Non capisco di quali oggetti parli.");
@@ -523,7 +538,8 @@ public class Interpreter {
     }
 
     private static void checkAnswer(Session gameSession, String command) {
-        if (gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
+        if (gameSession.getCurrentRoom().getEvent() != null &&
+                gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
                 TextPuzzle textPuzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
                 if (textPuzzle.getAnswer().equals(command)) {
@@ -532,7 +548,7 @@ public class Interpreter {
                     gameSession.setCurrentStatus(Status.EXPLORING);
                     gameSession.getCurrentRoom().setEvent(null);
                 } else {
-                    if (textPuzzle.getTryAgainReply() != null) {
+                    if (textPuzzle.getTryAgainReply() == null) {
                         System.out.println(textPuzzle.getIncorrectReply());
                         gameSession.setCurrentStatus(Status.EXPLORING);
                         gameSession.getCurrentRoom().setEvent(null);
@@ -553,47 +569,43 @@ public class Interpreter {
             if (result == 1) {
                 gameSession.getCurrentRoom().setEvent(null);
                 System.out
-                        .println("Senti i meccanismi che si attivano dietro i muri. Adesso le porte si possono aprire");
+                        .println(
+                                "Senti i meccanismi che si attivano dietro i muri. Adesso le porte si possono aprire");
             } else if (result == 0) {
                 System.out.println("Questo enigma è davvero ostico... bisogna pensarci meglio.");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     private static int changeToNextMap(Session gameSession) {
-        if (gameSession.getCurrentStatus() == Status.EXPLORING) {
-            if (gameSession.getCurrentRoom().getId() == gameSession.getCurrentMap().getEndRoomId()) {
-                if (gameSession.getCurrentRoom().getEvent() != null) {
-                    switch (gameSession.getCurrentPhase()) {
-                        case 1:
-                            gameSession.setCurrentPhase(2);
-                            gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
-                            gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
-                            gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
-                            System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
-                            return 1;
-                        case 2:
-                            gameSession.setCurrentPhase(3);
-                            gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
-                            System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
-                            gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
-                            gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
-                            return 1;
-                        case 3:
-                            Printer.printFromTxt("Finale");
-                            return 3;
-                        default:
-                            return 1;
-                    }
-                } else
-                    System.out.println("Devi ancora sconfiggere il boss!");
-
+        if (gameSession.getCurrentStatus() == Status.EXPLORING &&
+                gameSession.getCurrentRoom().getId() == gameSession.getCurrentMap().getEndRoomId()) {
+            if (gameSession.getCurrentRoom().getEvent() == null) {
+                switch (gameSession.getCurrentPhase()) {
+                    case 1:
+                        gameSession.setCurrentPhase(2);
+                        gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
+                        gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
+                        gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
+                        System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
+                        return 1;
+                    case 2:
+                        gameSession.setCurrentPhase(3);
+                        gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
+                        System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
+                        gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
+                        gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
+                        return 1;
+                    case 3:
+                        Printer.printFromTxt("Finale");
+                        return 3;
+                    default:
+                        return 1;
+                }
             } else
-                System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
-
+                System.out.println("Devi ancora sconfiggere il boss!");
         } else
             System.out.println("C'è un momento e un luogo per ogni cosa, ma non ora.");
         return 1;
@@ -745,11 +757,10 @@ public class Interpreter {
 
     private static void getItem(Session gameSession, String command) {
         boolean found = false;
-        String itemName = command;
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
             if (gameSession.getInventory().size() + 1 < gameSession.getInventoryCapacity()) {
                 for (Item item : gameSession.getCurrentRoom().getItems()) {
-                    if (itemName.equals(item.getName())) {
+                    if (command.equals(item.getName())) {
                         if (gameSession.getInventory().contains(item)) {
                             System.out.println("Hai già " + item.getNameWithIndetArticle() + "!");
                             found = true;
@@ -834,7 +845,6 @@ public class Interpreter {
         if (gameSession.getCurrentStatus() == Status.EXPLORING) {
             if (gameSession.getCurrentRoom().getEvent() != null) {
                 System.out.println("Che succede?");
-
                 System.out.println(gameSession.getCurrentRoom().getEvent().getPresentation());
 
             } else

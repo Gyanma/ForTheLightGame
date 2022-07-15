@@ -1,5 +1,5 @@
 {
-    "id": 1013,
+    "id": 1012,
     "name": "Libro della destrezza",
     "nameWithDetArticle": "il libro della destrezza",
     "nameWithIndetArticle": "un libro della destrezza",
@@ -7,5 +7,5 @@
     "pickupable": true,
     "throwable": true,
     "used": false,
-    "manualDescription": "Una volta utilizzato, la tua accuratezza aumenter\u00e0 di molto fino alla fine del prossimo combattimento."
+    "manualDescription": "Una volta utilizzato, la tua agilit\u00e0 aumenter\u00e0 di molto fino alla fine del prossimo combattimento."
 }

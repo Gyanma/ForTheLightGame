@@ -1,0 +1,48 @@
+{
+    "Raccogli": [
+        "Raccogli",
+        "Prendi"
+    ],
+    "Spostati": [
+        "Spostati verso",
+        "Muoviti verso",
+        "Cammina verso"
+    ],
+    "Raggiungi": [
+        "Parla con",
+        "Interagisci con"
+    ],
+    "Usa": [
+        "Usa",
+        "Utilizza",
+        "Attiva",
+        "Lancia"
+    ],
+    "Cerca": [
+        "Cerca"
+    ],
+    "Esamina": [
+        "Esamina",
+        "Osserva",
+        "Ispeziona",
+        "Studia"
+    ],
+    "Getta": [
+        "Getta",
+        "Butta",
+        "Butta via",
+        "Sbarazzati"
+    ],
+    "Consegna": [
+        "Dai",
+        "Consegna",
+        "Offri"
+    ],
+    "Svuota": [
+        "Svuota",
+        "Versa il contenuto della"
+    ],
+    "Attacca": [
+        "Attacca"
+    ]
+}

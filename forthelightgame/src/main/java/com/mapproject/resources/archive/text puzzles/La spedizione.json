@@ -1,7 +1,6 @@
 {
     "eventId": 2206,
     "question": "Mentre ti avvicini, il grifone ti nota, e inizia a parlarti.\n\"Nobile viaggiatore, ho bisogno di aiuto. Mi trovo in una situazione surreale.\nIo e il mio branco ci stiamo preparando per una grande spedizione.\nA me \u00e8 stato affidato il compito di preparare le provviste, ma non capisco quante ce ne serviranno!\nLa nostra destinazione \u00e8 la Torre d'Avorio, e per arrivarci partiremo dalla\nTorre di Giada, passando per la Torre d'Ambra e per la Torre di Rubini.\nPer raggiungere la Torre d'Ambra dalla Torre di Giada sono necessari tre giorni.\nPer raggiungere la Torre di Rubini dalla Torre d'Ambra \u00e8 necessario un giorno.\nPer raggiungere la Torre d'Avorio dalla Torre di Rubini sono necessari due giorni.\nPer\u00f2 quando ho proposto che servissero provviste per sei giorni\nil capobranco mi ha risposto che sono esagerate!\nCosa intendeva dire? Per quanti giorni dovremo viaggiare?\"",
-    "isSingleAnswer": true,
     "tryAgainReply": "\"No, non \u00e8 possibile, ho gi\u00e0 provato a proporre anche quel numero...\"",
     "correctReply": "\"Ma certo, le provviste bastano per quattro giorni!\nDevo assolutamente prepararmi. Grazie dell'aiuto, straniero.\nNon ho molto da offrirti, ma posso donarti questo in segno di riconoscenza.\"\nLa creatura afferra un monocolo e te lo porge.\nUna volta che lo afferri, il grifone ti saluta e spicca il volo.",
     "presentation": "Nell'angolo della stanza vedi un maestoso grifone.\nSembra molto affaccendato per qualche motivo.",

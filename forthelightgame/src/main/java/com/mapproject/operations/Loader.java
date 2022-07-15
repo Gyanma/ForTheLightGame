@@ -35,10 +35,10 @@ public class Loader {
     /**
      * @return
      */
-    public static Map<String, List<String>> loadDictionary() {
+    public static Map<String, List<String>> loadDictionary(String dictionary) {
         try {
             return new Gson().fromJson(new FileReader(
-                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\dictionary.json"),
+                    "forthelightgame\\src\\main\\java\\com\\mapproject\\resources\\archive\\" + dictionary + ".json"),
                     Map.class);
         } catch (IOException e) {
             return null;
@@ -250,9 +250,9 @@ public class Loader {
                     case 11:
                         return "libro della forza";
                     case 12:
-                        return "libro dell'agilità";
-                    case 13:
                         return "libro della destrezza";
+                    case 13:
+                        return "libro dell'accuratezza";
                     case 14:
                         return "libro delle maledizioni";
                     case 15:

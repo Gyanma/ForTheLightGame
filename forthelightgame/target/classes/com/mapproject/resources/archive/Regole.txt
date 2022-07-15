@@ -1,8 +1,11 @@
 "La prova consiste nel superare tre labirinti.
 In questi labirinti troverai mostri, pericoli, tesori ed enigmi.
 La mappa in tua dotazione ti permette di vedere la conformazione del labirinto, e la stanza da cui hai iniziato.
+Avrai anche una pergamena magica, per sapere in ogni momento le tue condizioni fisiche.
+Nei labirinti troverai creature di ogni tipo.
+Sei libero di interagirvi, ma attento, non tutti sono amichevoli.
 Devi raggiungere la stanza finale tutto intero per superare la mappa, ma attento.
 Nella stanza finale di ogni labirinto troverai un nemico mai visto prima, a guardia del passaggio al labirinto successivo.
 Una volta entrato nella caverna, verrai teletrasportato nel primo labirinto.
-Esplora ogni angolo delle stanze, ma scegli con attenzione cosa prendere.
-La tua sacca potrebbe riempirsi prima che tu te ne accorga."
+Esplora ogni angolo delle stanze e cerca ogni oggetto che puoi, ma scegli con attenzione cosa prendere.
+Il tuo inventario potrebbe riempirsi prima che tu te ne accorga."

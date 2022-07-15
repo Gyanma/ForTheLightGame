@@ -31,6 +31,14 @@
         "il tomo della destrezza",
         "un tomo della destrezza"
     ],
+    "Libro della forza": [
+        "il libro della forza",
+        "un libro della forza",
+        "il manuale della forza",
+        "un manuale della forza",
+        "il tomo della forza",
+        "un tomo della forza"
+    ],
     "Fune": [
         "la fune",
         "una fune",
@@ -41,7 +49,9 @@
     ],
     "Mappa": [
         "la mappa",
-        "una mappa"
+        "una mappa",
+        "la mappa mistica",
+        "una mappa mistica"
     ],
     "Spada": [
         "la spada",
@@ -60,12 +70,6 @@
         "una torcia",
         "la fiaccola",
         "una fiaccola"
-    ],
-    "Mappa mistica": [
-        "la mappa mistica",
-        "una mappa mistica",
-        "la mappa",
-        "una mappa"
     ],
     "Fionda": [
         "la fionda",
@@ -181,13 +185,13 @@
         "il fumogeno",
         "un fumogeno"
     ],
-    "Libro dell\u0027agilit\u00e0": [
-        "il libro dell\u0027agilit\u00e0",
-        "un libro dell\u0027agilit\u00e0",
-        "il manuale dell\u0027agilit\u00e0",
-        "un manuale dell\u0027agilit\u00e0",
-        "il tomo dell\u0027agilit\u00e0",
-        "un tomo dell\u0027agilit\u00e0"
+    "Libro dell\u0027accuratezza": [
+        "il libro dell\u0027accuratezza",
+        "un libro dell\u0027accuratezza",
+        "il manuale dell\u0027accuratezza",
+        "un manuale dell\u0027accuratezza",
+        "il tomo dell\u0027accuratezza",
+        "un tomo dell\u0027accuratezza"
     ],
     "Balestra": [
         "la balestra",
@@ -245,5 +249,116 @@
         "un fiasco",
         "la borraccia",
         "una borraccia"
+    ],
+    "Pergamena magica": [
+        "la pergamena magica",
+        "una pergamena magica",
+        "la pergamena",
+        "una pergamena"
+    ],
+    "Item": [
+        "gli item",
+        "degli item",
+        "gli strumenti",
+        "degli strumenti",
+        "gli oggetti",
+        "degli oggetti"
+    ],
+    "Cerbero": [
+        "il cerbero",
+        "un cerbero",
+        "Cerbero"
+    ],
+    "Draghetto": [
+        "il draghetto",
+        "un draghetto"
+    ],
+    "Gargoyle": [
+        "il gargoyle",
+        "un gargoyle"
+    ],
+    "Guardiano Alato": [
+        "il guardiano alato",
+        "un guardiano alato"
+    ],
+    "Idra": [
+        "l\u0027idra",
+        "un\u0027idra"
+    ],
+    "Lupo mannaro": [
+        "il lupo",
+        "un lupo",
+        "il lupo mannaro",
+        "un lupo mannaro"
+    ],
+    "Melma": [
+        "la melma",
+        "una melma"
+    ],
+    "Figura": [
+        "la figura",
+        "una figura"
+    ],
+    "Esploratore": [
+        "l\u0027esploratore",
+        "un esploratore"
+    ],
+    "Fontana": [
+        "la fontana",
+        "una fontana"
+    ],
+    "Banchetto": [
+        "il banchetto",
+        "un banchetto"
+    ],
+    "Vecchio": [
+        "il vecchio",
+        "un vecchio"
+    ],
+    "Avventuriero": [
+        "l\u0027avventuriero",
+        "un avventuriero"
+    ],
+    "Pirati": [
+        "i pirati",
+        "dei pirati"
+    ],
+    "Goblin": [
+        "il goblin",
+        "un goblin"
+    ],
+    "Orco": [
+        "l\u0027orco",
+        "un orco"
+    ],
+    "Centauri": [
+        "i centauri",
+        "dei centauri",
+        "il centauro",
+        "un centauro"
+    ],
+    "Nani": [
+        "i nani",
+        "dei nani"
+    ],
+    "Folletto": [
+        "il folletto",
+        "un folletto"
+    ],
+    "Cavaliere": [
+        "il cavaliere",
+        "un cavaliere"
+    ],
+    "Soldato": [
+        "il soldato",
+        "un soldato"
+    ],
+    "Elfo": [
+        "l\u0027elfo",
+        "un elfo"
+    ],
+    "Grifone": [
+        "il grifone",
+        "un grifone"
     ]
 }

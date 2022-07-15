@@ -89,20 +89,20 @@ public class JugPuzzle extends TextPuzzle {
     private JugSet correctJugSet;
 
     public JugPuzzle(int eventId, String name, String presentation,
-            String question, String answer, boolean isSingleAnswer,
+            String question, String answer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
             int reward) {
         super(eventId, name, presentation, question, answer,
-                isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
+                correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
 
     }
 
     public JugPuzzle(int eventId, String name, String presentation,
-            String question, String answer, boolean isSingleAnswer,
+            String question, String answer,
             String correctReply, String incorrectReply, String tryAgainReply, String surrenderReply,
             int reward, JugSet playerJugSet, JugSet correctJugSet) {
         super(eventId, name, presentation, question, answer,
-                isSingleAnswer, correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
+                correctReply, incorrectReply, tryAgainReply, surrenderReply, reward);
         this.playerJugSet = playerJugSet;
         this.correctJugSet = correctJugSet;
     }

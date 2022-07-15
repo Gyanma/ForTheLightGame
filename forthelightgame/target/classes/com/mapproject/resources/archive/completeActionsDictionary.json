@@ -1,0 +1,50 @@
+{
+    "Esplora stanza": [
+        "Esplora la stanza",
+        "Perlustra la stanza",
+        "Ispeziona la stanza",
+        "Osserva la stanza"
+    ],
+    "Cerca item": [
+        "Cerca degli item",
+        "Cerca gli item",
+        "Cerca degli oggetti",
+        "Cerca gli oggetti",
+        "Cerca degli item nella stanza",
+        "Cerca gli item nella stanza",
+        "Cerca degli oggetti nella stanza",
+        "Cerca gli oggetti nella stanza "
+    ],
+    "Apri mappa": [
+        "Usa la mappa",
+        "Apri la mappa",
+        "Guarda la mappa"
+    ],
+    "Raggiungi meccanismo": [
+        "Sblocca il meccanismo",
+        "Esamina il meccanismo"
+    ],
+    "Esci": [
+        "Esci",
+        "Raggiungi l'uscita",
+        "Esci dal labirinto",
+        "Raggiungi la prossima mappa"
+    ],
+    "Apri inventario": [
+        "Apri l'inventario",
+        "Guarda l'inventario"
+    ],
+    "Prega": [
+        "Prega",
+        "Prega il Dio Sole",
+        "Prega il dio Sole",
+        "Prega alla fontana"
+    ],
+    "Abbandona": [
+        "Abbandona",
+        "Fuggi",
+        "Scappa",
+        "Allontanati",
+        "Vattene"
+    ]
+}
