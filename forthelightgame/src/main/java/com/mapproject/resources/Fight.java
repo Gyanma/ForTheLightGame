@@ -41,123 +41,127 @@ public class Fight {
         boolean bookOfAgility = false;
         boolean didAttackMiss = false;
 
-        for (Item item : gameSession.getInventory()) {
-            if (item.getName().equals("Libro della destrezza")
-                    && item.isUsed())
-                bookOfAgility = true;
-        }
-        for (String attackName : opponent.getAttacks().keySet()) {
-            if (counter == chosenAttack) {
-                chosenAttackName = attackName;
-                System.out.println(chosenAttackName);
-            }
-            counter++;
-        }
-
-        System.out.println("Il nemico usa " + chosenAttackName);
-        Map<String, Integer> attackStats = opponent.getAttackStats(chosenAttackName);
-        double damage = attackStats.get("damage");
-
-        damage *= opponent.getBaseAttack();
-        if (opponentDebuff.get("Fuoco")) {
-            damage *= 0.85;
-            opponentDebuff.put("Fuoco", false);
-        }
-
         if (opponentDebuff.get("Fatica")) {
             opponentDebuff.put("Fatica", false);
             fatigue = true;
             System.out.println("Il nemico è affaticato, non riesce ad attaccare.");
         }
 
-        double dodgeChance;
-        dodgeChance = chosenWeapon.getAgility();
-        if (bookOfAgility)
-            dodgeChance *= gameSession.getAgilityModifier();
-        else
-            dodgeChance *= gameSession.getAgilityModifier();
-
-        if (cantMissStatus != 1 && !fatigue) {
-            double accuracy = attackStats.get("accuracy");
-            if (opponentDebuff.get("Gelo")) {
-                accuracy *= 0.85;
-                opponentDebuff.put("Gelo", false);
-            }
-            if (damage > 0) {
-                if (Math.random() * 100 < dodgeChance
-                        || Math.random() + 100 > accuracy) {
-
-                    System.out.println("Sei riuscito a schivare l'attacco!");
-                    didAttackMiss = true;
-
-                }
-            }
+        for (Item item : gameSession.getInventory()) {
+            if (item.getName().equals("Libro della destrezza")
+                    && item.isUsed())
+                bookOfAgility = true;
         }
 
-        if (!didAttackMiss && !fatigue) {
-            gameSession.setHealthPoints(gameSession.getHealthPoints() - (int) damage);
-            System.out.println("Hai subito " + damage + " danni!");
-            if (gameSession.isPlayerAlive())
-                applyEffects(attackStats);
+        if (!fatigue) {
 
-            if (gameSession.isPlayerAlive()) {
-                if (playerDebuff.get("Bruciatura")) {
-                    gameSession.setHealthPoints(gameSession.getHealthPoints() - 5);
-                    System.out.println("Hai subito 5 danni a causa della bruciatura!");
-                    burnCounter--;
-                    if (burnCounter == 0 && gameSession.isPlayerAlive()) {
-                        playerDebuff.put("Bruciatura", false);
-                        System.out.println("La bruciatura si è calmata!");
-                    }
+            // choose attack
+            for (String attackName : opponent.getAttacks().keySet()) {
+                if (counter == chosenAttack) {
+                    chosenAttackName = attackName;
                 }
-                if (playerDebuff.get("Tossina") && gameSession.isPlayerAlive()) {
-                    gameSession.setHealthPoints(gameSession.getHealthPoints() - 10);
-                    System.out.println("Hai subito 10 danni a causa della tossina!");
-                    playerPoisonCounter--;
-                    if (playerPoisonCounter == 0 && gameSession.isPlayerAlive()) {
-                        playerDebuff.put("Tossina", false);
-                        System.out.println("Sei riuscito a sopravvivere al veleno!");
-                    }
+                counter++;
+            }
 
+            System.out.println("Il nemico usa " + chosenAttackName);
+            Map<String, Integer> attackStats = opponent.getAttackStats(chosenAttackName);
+            double damage = attackStats.get("damage");
+
+            damage *= opponent.getBaseAttack();
+            if (opponentDebuff.get("Fuoco")) {
+                damage *= 0.85;
+                opponentDebuff.put("Fuoco", false);
+            }
+
+            double dodgeChance;
+            dodgeChance = chosenWeapon.getAgility();
+            if (bookOfAgility)
+                dodgeChance *= gameSession.getAgilityModifier();
+            else
+                dodgeChance *= gameSession.getAgilityModifier();
+
+            if (cantMissStatus != 1 && !fatigue) {
+                double accuracy = attackStats.get("accuracy");
+                if (opponentDebuff.get("Gelo")) {
+                    accuracy *= 0.85;
+                    opponentDebuff.put("Gelo", false);
                 }
+                if (damage > 0) {
+                    if (Math.random() * 100 < dodgeChance
+                            || Math.random() * 100 > accuracy) {
 
-                if (opponentDebuff.get("Tossina")) {
-                    opponent.setHealthPoints(opponent.getHealthPoints() - 10);
-                    System.out.println("Il nemico ha subito 10 danni a causa della tossina!");
-                    opponentPoisonCounter--;
-                    if (opponentPoisonCounter == 0 && opponent.isAlive()) {
-                        opponentDebuff.put("Tossina", false);
-                        System.out.println("Il nemico è riuscito a sopravvivere al veleno!");
-                    }
-                }
+                        System.out.println("Sei riuscito a schivare l'attacco!");
+                        didAttackMiss = true;
 
-                if (opponentDebuff.get("Maledetto")) {
-                    double curseResult = Math.random();
-                    if (curseResult < 0.33) {
-                        opponent.setHealthPoints(opponent.getHealthPoints() - 20);
-                        System.out.println("Il nemico ha subito 20 danni a causa della maledizione!");
-                    } else if (curseResult < 0.66) {
-                        opponentDebuff.put("Fatica", true);
-                        System.out.println("Il nemico viene affaticato dalla maledizione!");
-                    } else {
-                        opponentDebuff.put("Tossina", true);
-                        System.out.println("Il nemico viene intossicato dalla maledizione!");
-                        opponentPoisonCounter = 5;
-                    }
-
-                    if (Math.random() < 0.25) {
-                        gameSession.setHealthPoints(gameSession.getHealthPoints() - 10);
-                        System.out.println("La maledizione colpisce anche te! Hai subito 10 danni!");
-                    }
-                    curseCounter--;
-
-                    if (curseCounter == 0 && opponent.isAlive()) {
-                        opponentDebuff.put("Maledetto", false);
-                        System.out.println("La maledizione si placa...");
                     }
                 }
             }
 
+            if (!didAttackMiss && !fatigue) {
+                gameSession.setHealthPoints(gameSession.getHealthPoints() - (int) damage);
+                System.out.println("Hai subito " + damage + " danni!");
+                if (gameSession.isPlayerAlive())
+                    applyEffects(attackStats);
+
+                if (gameSession.isPlayerAlive()) {
+                    if (playerDebuff.get("Bruciatura")) {
+                        gameSession.setHealthPoints(gameSession.getHealthPoints() - 5);
+                        System.out.println("Hai subito 5 danni a causa della bruciatura!");
+                        burnCounter--;
+                        if (burnCounter == 0 && gameSession.isPlayerAlive()) {
+                            playerDebuff.put("Bruciatura", false);
+                            System.out.println("La bruciatura si è calmata!");
+                        }
+                    }
+                    if (playerDebuff.get("Tossina") && gameSession.isPlayerAlive()) {
+                        gameSession.setHealthPoints(gameSession.getHealthPoints() - 10);
+                        System.out.println("Hai subito 10 danni a causa della tossina!");
+                        playerPoisonCounter--;
+                        if (playerPoisonCounter == 0 && gameSession.isPlayerAlive()) {
+                            playerDebuff.put("Tossina", false);
+                            System.out.println("Sei riuscito a sopravvivere al veleno!");
+                        }
+
+                    }
+
+                    if (opponentDebuff.get("Tossina")) {
+                        opponent.setHealthPoints(opponent.getHealthPoints() - 10);
+                        System.out.println("Il nemico ha subito 10 danni a causa della tossina!");
+                        opponentPoisonCounter--;
+                        if (opponentPoisonCounter == 0 && opponent.isAlive()) {
+                            opponentDebuff.put("Tossina", false);
+                            System.out.println("Il nemico è riuscito a sopravvivere al veleno!");
+                        }
+                    }
+
+                    if (opponentDebuff.get("Maledetto")) {
+                        double curseResult = Math.random();
+                        if (curseResult < 0.33) {
+                            opponent.setHealthPoints(opponent.getHealthPoints() - 20);
+                            System.out.println("Il nemico ha subito 20 danni a causa della maledizione!");
+                        } else if (curseResult < 0.66) {
+                            opponentDebuff.put("Fatica", true);
+                            System.out.println("Il nemico viene affaticato dalla maledizione!");
+                        } else {
+                            opponentDebuff.put("Tossina", true);
+                            System.out.println("Il nemico viene intossicato dalla maledizione!");
+                            opponentPoisonCounter = 5;
+                        }
+
+                        if (Math.random() < 0.25) {
+                            gameSession.setHealthPoints(gameSession.getHealthPoints() - 10);
+                            System.out.println("La maledizione colpisce anche te! Hai subito 10 danni!");
+                        }
+                        curseCounter--;
+
+                        if (curseCounter == 0 && opponent.isAlive()) {
+                            opponentDebuff.put("Maledetto", false);
+                            System.out.println("La maledizione si placa...");
+                        }
+                    }
+                }
+
+            }
         }
 
         if (cantMissStatus > 0)

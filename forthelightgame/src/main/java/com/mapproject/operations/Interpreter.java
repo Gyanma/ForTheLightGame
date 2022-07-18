@@ -261,6 +261,7 @@ public class Interpreter {
                 gameSession.setCurrentFighting(null);
                 gameSession.setHealthPoints(gameSession.getHealthPoints() + 10);
                 gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 10);
+                System.out.println("Guadagni 10 punti vita!");
                 for (Item item : gameSession.getInventory()) {
                     if (item.getName().equals("Libro della forza")
                             && item.isUsed())
@@ -412,6 +413,8 @@ public class Interpreter {
     }
 
     private static void donateItem(Session gameSession, String command) {
+
+        // TODO aggiustare
         if (gameSession.getCurrentRoom().getEvent() != null &&
                 gameSession.getCurrentStatus() == Status.IN_PACIFIC_ENCOUNTER) {
             String itemRequestedByPlayerName = "";
@@ -538,6 +541,7 @@ public class Interpreter {
     }
 
     private static void checkAnswer(Session gameSession, String command) {
+        // TODO aggiungi counter di indovinelli risolti
         if (gameSession.getCurrentRoom().getEvent() != null &&
                 gameSession.getCurrentStatus() == Status.PUZZLE_SOLVING) {
             if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
@@ -589,14 +593,29 @@ public class Interpreter {
                         gameSession.setCurrentRoomId(gameSession.getSessionMap(2).getStartingRoomId());
                         gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
                         gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
+                        System.out.println("Hai superato il primo labirinto!");
+                        System.out.println("La tua salute è completamente rigenerata!");
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         System.out.println("Hai raggiunto la prima stanza del secondo labirinto! Buona fortuna!");
                         return 1;
                     case 2:
                         gameSession.setCurrentPhase(3);
                         gameSession.setCurrentRoomId(gameSession.getSessionMap(3).getStartingRoomId());
-                        System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
                         gameSession.setMaxHealthPoints(gameSession.getMaxHealthPoints() + 20);
                         gameSession.setHealthPoints(gameSession.getMaxHealthPoints());
+                        System.out.println("Hai superato il secondo labirinto!");
+                        System.out.println("La tua salute è completamente rigenerata!");
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Hai raggiunto la prima stanza del terzo labirinto! Buona fortuna!");
+
                         return 1;
                     case 3:
                         Printer.printFromTxt("Finale");
@@ -620,20 +639,20 @@ public class Interpreter {
             do {
                 if (gameSession.getInventory().size() - counter >= 4) {
                     System.out.println(
-                            gameSession.getInventory().get(counter).getName() + "\t"
-                                    + gameSession.getInventory().get(counter + 1).getName() + "\t"
-                                    + gameSession.getInventory().get(counter + 2).getName() + "\t"
+                            gameSession.getInventory().get(counter).getName() + "\t\t"
+                                    + gameSession.getInventory().get(counter + 1).getName() + "\t\t"
+                                    + gameSession.getInventory().get(counter + 2).getName() + "\t\t"
                                     + gameSession.getInventory().get(counter + 3).getName());
                     counter += 4;
                 } else if (gameSession.getInventory().size() - counter == 3) {
                     System.out.println(
-                            gameSession.getInventory().get(counter).getName() + "\t"
-                                    + gameSession.getInventory().get(counter + 1).getName() + "\t"
+                            gameSession.getInventory().get(counter).getName() + "\t\t"
+                                    + gameSession.getInventory().get(counter + 1).getName() + "\t\t"
                                     + gameSession.getInventory().get(counter + 2).getName());
                     counter += 3;
                 } else if (gameSession.getInventory().size() - counter == 2) {
                     System.out.println(
-                            gameSession.getInventory().get(counter).getName() + "\t"
+                            gameSession.getInventory().get(counter).getName() + "\t\t"
                                     + gameSession.getInventory().get(counter + 1).getName());
                     counter += 2;
                 } else if (gameSession.getInventory().size() - counter == 1) {
@@ -717,12 +736,12 @@ public class Interpreter {
             if (gameSession.getCurrentRoom().getEvent().getClass() == TextPuzzle.class) {
                 gameSession.setCurrentStatus(Status.PUZZLE_SOLVING);
                 TextPuzzle textPuzzle = (TextPuzzle) gameSession.getCurrentRoom().getEvent();
-                System.out.println(textPuzzle.getQuestion());
+                System.out.println(textPuzzle.getQuestion() + "\n");
 
             } else if (gameSession.getCurrentRoom().getEvent().getClass() == PacificEncounter.class) {
                 gameSession.setCurrentStatus(Status.IN_PACIFIC_ENCOUNTER);
                 PacificEncounter encounter = (PacificEncounter) gameSession.getCurrentRoom().getEvent();
-                System.out.println(encounter.getDescription());
+                System.out.println(encounter.getDescription() + "\n");
 
             } else if (gameSession.getCurrentRoom().getEvent().getClass() == Enemy.class) {
                 gameSession.setCurrentStatus(Status.FIGHTING);

@@ -1,0 +1,14 @@
+Raggiungi l'uscita del labirinto. All'esterno trovi ad attenderti il Gran Maestro e
+gli altri compagni che prima di te hanno superato la prova.
+"Ben fatto, allievi. La prova è terminata.
+Avete tutti dimostrato grandi abilita', coraggio e prodezza. 
+Siete pronti a entrare nei ranghi dei Paladini.
+Il benessere e la protezione della nostra capitale e del nostro regno è nelle vostre mani.
+Per la Luce!"
+Con grande enfasi ti unisci al coro dei tuoi compagni nel rispondere:
+
+"PER LA LUCE"
+
+
+
+Congratulazioni per essere arrivato alla fine del gioco.

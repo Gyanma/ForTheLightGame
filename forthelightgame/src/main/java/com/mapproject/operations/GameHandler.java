@@ -42,13 +42,19 @@ public class GameHandler {
                 if (action == 1 && gameSession.getCurrentStatus() != Status.PUZZLE_SOLVING) {
                     System.out.println("\nCosa vuoi fare?");
                 } else if (action == 2) {
-                    System.out.println("\nNon ho ben capito cosa vuoi fare...");
+                    System.out.println("\nNon ho ben capito cosa vuoi fare...\n");
                 }
             } else
                 action = 0;
+
             if (action == 0) {
-                System.out.println("Sei sicuro? (Sì/No)");
-                if (!gameScanner.nextLine().equals("Sì")) {
+                System.out.println("Sei sicuro? (S/N)");
+                String answer = gameScanner.nextLine();
+                while (!answer.equals("S") && !answer.equals("N")) {
+                    System.out.println("Non ho capito.");
+                    answer = gameScanner.nextLine();
+                }
+                if (answer.equals("N")) {
                     action = 1;
                     System.out.println("\nCosa vuoi fare?");
                 }

@@ -3,7 +3,7 @@
     "eventId": 2504,
     "itemNotGivenResponse": "Abbandoni la fontana e continui per la tua strada...",
     "name": "Fontana",
-    "description": "Ti avvicini alla fontana.\nAccanto ad essa trovi un'incisione su una lastra\n\"La sacra fontana di Legrejoux fu costruita dai monaci del dio Sole molti secoli fa.\nDa tempo immemore concede grazie a chi si ferma per pregare il dio Sole.",
+    "description": "Ti avvicini alla fontana.\nAccanto ad essa trovi un'incisione su una lastra\n\"La sacra fontana di Legrejoux fu costruita dai monaci del dio Sole molti secoli fa.\nDa tempo immemore concede grazie a chi si ferma per pregare il dio Sole.\"",
     "giftedItemId": [
         -1
     ],
